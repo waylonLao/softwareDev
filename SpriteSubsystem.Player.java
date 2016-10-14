@@ -1,3 +1,4 @@
+//need Getters and setters and Javadoc
 package SpriteSubsystem;
 
 import InventorySubsystem.Item;
