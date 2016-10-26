@@ -1,7 +1,14 @@
 package MainCode;
-
+/**
+* @author nklemenc
+*/
 public class Player extends Sprite {
 	
+	public Player(int health, Weapon weaponID) {
+		super(health, weaponID);
+		// TODO Auto-generated constructor stub
+	}
+
 	private int roomID;
 	
 	public void useItem(){
