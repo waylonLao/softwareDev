@@ -32,6 +32,8 @@ public class MainGUI extends Application {
         });
         
         Text text = new Text();
+        Text inventoryText = new Text();
+        Text battleText = new Text();
         text.setFont(new Font(20));
         text.setWrappingWidth(200);
         text.setTextAlignment(TextAlignment.JUSTIFY);
