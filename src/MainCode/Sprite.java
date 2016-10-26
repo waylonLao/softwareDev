@@ -1,12 +1,25 @@
 package MainCode;
-
+/**
+* @author nklemenc
+*/
 public class Sprite {
 	
 	private int Health;
-	private int WeaponID;
+	private Weapon WeaponID;
 	
 	
 	
+	/**
+	 * @param health
+	 * @param weaponID
+	 */
+	public Sprite(int health, Weapon weaponID) {
+		Health = health;
+		WeaponID = weaponID;
+	}
+
+
+
 	/**
 	 * @return the health
 	 */
@@ -28,7 +41,7 @@ public class Sprite {
 	/**
 	 * @return the weaponID
 	 */
-	public int getWeaponID() {
+	public Weapon getWeaponID() {
 		return WeaponID;
 	}
 
@@ -37,14 +50,17 @@ public class Sprite {
 	/**
 	 * @param weaponID the weaponID to set
 	 */
-	public void setWeaponID(int weaponID) {
+	public void setWeaponID(Weapon weaponID) {
 		WeaponID = weaponID;
 	}
 
 
 
-	public void doDamage(){
-		//TODO get sprite's weapon damage, update target's Health
+	public void doDamage(Monster target){
+		target.setHealth(target.getHealth() - this.getWeaponID().getWeaponDamage());
+		System.out.println("You deal " + this.getWeaponID().getWeaponDamage() + " damage to the " + target.getMonsterName());
+		System.out.println("The " + target.getMonsterName() + " now has " + target.getHealth() + " health ");
+		
 	}
 
 }
