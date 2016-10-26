@@ -61,7 +61,7 @@ public class MainMenuGUI extends Application{
 
 		border.setCenter(addGridPane());
 		border.setRight(addFlowPane());
-		/*
+		
 		//stackpane setup
 		StackPane.setMargin(labelTitle, new Insets(10,10,10,10));
 		StackPane.setAlignment(labelTitle, Pos.TOP_CENTER);
@@ -76,7 +76,7 @@ public class MainMenuGUI extends Application{
 		//stage setup
 		mainMenuStage.setTitle("Galaxy Explorer");
 		mainMenuStage.setScene(mainMenuScene);
-		mainMenuStage.show();*/
+		mainMenuStage.show();
 	}
 	private Node addFlowPane() {
 		// TODO Auto-generated method stub
