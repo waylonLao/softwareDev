@@ -1,6 +1,6 @@
 package MainCode;
 /**
-* @author nklemenc
+* edited by nklemenc
 */
 public class Weapon extends Item {
 	private int weaponDamage;
