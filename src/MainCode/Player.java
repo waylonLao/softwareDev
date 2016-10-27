@@ -5,7 +5,7 @@ package MainCode;
 public class Player extends Sprite {
 	
 	public Player(int health, Weapon weaponID) {
-		super(health, weaponID);
+		super(health, weaponID, "Player");
 		// TODO Auto-generated constructor stub
 	}
 
