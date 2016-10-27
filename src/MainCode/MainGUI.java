@@ -18,7 +18,7 @@ import javafx.scene.text.*;
 public class MainGUI extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage){
         Button btn = new Button();
         btn.setText("Click it'");
         TextField tf1 = new TextField();
