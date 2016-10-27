@@ -4,8 +4,9 @@ package MainCode;
 */
 public class Sprite {
 	
-	private int Health;
-	private Weapon WeaponID;
+	private int health;
+	private Weapon weaponID;
+	private String name;
 	
 	
 	
@@ -13,9 +14,10 @@ public class Sprite {
 	 * @param health
 	 * @param weaponID
 	 */
-	public Sprite(int health, Weapon weaponID) {
-		Health = health;
-		WeaponID = weaponID;
+	public Sprite(int h, Weapon w, String n) {
+		health = h;
+		weaponID = w;
+		name = n;
 	}
 
 
@@ -24,7 +26,7 @@ public class Sprite {
 	 * @return the health
 	 */
 	public int getHealth() {
-		return Health;
+		return health;
 	}
 
 
@@ -32,8 +34,8 @@ public class Sprite {
 	/**
 	 * @param health the health to set
 	 */
-	public void setHealth(int health) {
-		Health = health;
+	public void setHealth(int newHealth) {
+		health = newHealth;
 	}
 
 
@@ -42,7 +44,7 @@ public class Sprite {
 	 * @return the weaponID
 	 */
 	public Weapon getWeaponID() {
-		return WeaponID;
+		return weaponID;
 	}
 
 
@@ -50,16 +52,38 @@ public class Sprite {
 	/**
 	 * @param weaponID the weaponID to set
 	 */
-	public void setWeaponID(Weapon weaponID) {
-		WeaponID = weaponID;
+	public void setWeaponID(Weapon newWeaponID) {
+		weaponID = newWeaponID;
+	}
+	
+	
+	
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
 	}
 
 
 
-	public void doDamage(Monster target){
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public void doDamage(Sprite target){
 		target.setHealth(target.getHealth() - this.getWeaponID().getWeaponDamage());
-		System.out.println("You deal " + this.getWeaponID().getWeaponDamage() + " damage to the " + target.getMonsterName());
-		System.out.println("The " + target.getMonsterName() + " now has " + target.getHealth() + " health ");
+		System.out.println(this.getName() + " dealt " + this.getWeaponID().getWeaponDamage() + " damage to the " + target.getName());
+		System.out.println("The " + target.getName() + " now has " + target.getHealth() + " health ");
+		if(target.getHealth() <= 0){
+			System.out.println(target.getName() + " has been defeated!");
+		}
+		
 		
 	}
 
