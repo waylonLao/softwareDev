@@ -5,7 +5,6 @@ package MainCode;
 public class Monster extends Sprite {
 
 	private int monsterID;
-	private String monsterName;
 	private String monsterDescription;
 	private Item itemDrop;
 	
@@ -17,9 +16,8 @@ public class Monster extends Sprite {
 	 * @param itemDrop
 	 */
 	public Monster(int health, Weapon wpn, int monsterID, String monsterName, String monsterDescription, Item itemDrop) {
-		super(health, wpn);
+		super(health, wpn, monsterName);
 		this.monsterID = monsterID;
-		this.monsterName = monsterName;
 		this.monsterDescription = monsterDescription;
 		this.itemDrop = itemDrop;
 	}
@@ -35,18 +33,7 @@ public class Monster extends Sprite {
 	public void setMonsterID(int monsterID) {
 		this.monsterID = monsterID;
 	}
-	/**
-	 * @return the monsterName
-	 */
-	public String getMonsterName() {
-		return monsterName;
-	}
-	/**
-	 * @param monsterName the monsterName to set
-	 */
-	public void setMonsterName(String monsterName) {
-		this.monsterName = monsterName;
-	}
+
 	/**
 	 * @return the monsterDescription
 	 */
