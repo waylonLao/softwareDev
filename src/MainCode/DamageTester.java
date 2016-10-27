@@ -15,6 +15,13 @@ public class DamageTester {
 		Monster testMonster = new Monster(200, testWeapon, 1, "Test Monster", "This is a test Monster", testItem);
 		
 		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
+		testPlayer.doDamage(testMonster);
 	}
 
 }
