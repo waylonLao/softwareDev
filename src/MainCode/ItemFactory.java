@@ -1,5 +1,6 @@
 package MainCode;
 
-public class ItemFactory {
+public class ItemFactory implements ItemInterface {
 
+	if()
 }

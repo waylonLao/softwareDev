@@ -1,5 +1,8 @@
 package MainCode;
 
-public class ItemInterface {
+public interface ItemInterface {
 
+	default void createItem() {
+		
+	}
 }
