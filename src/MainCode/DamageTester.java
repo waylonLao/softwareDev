@@ -22,6 +22,8 @@ public class DamageTester {
 		testPlayer.doDamage(testMonster);
 		testPlayer.doDamage(testMonster);
 		testPlayer.doDamage(testMonster);
+		
+		System.out.println(testPlayer.takeDamage(testMonster));
 	}
 
 }
