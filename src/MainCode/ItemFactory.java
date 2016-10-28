@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class ItemFactory implements ItemInterface {
 
-	public Item getItemName(){
+	public Random createItem(){
 	Random number = new Random(4);
-	
+
 	if(number <= 2)
 	{
 		return new HealthKit(1);
@@ -18,4 +18,6 @@ public class ItemFactory implements ItemInterface {
 	
 	return null;
 	}
+	
+}
 }

@@ -2,7 +2,7 @@ package MainCode;
 
 public interface ItemInterface {
 
-	default void createItem() {
+	public default Item createItem() {
 		
 	}
 }

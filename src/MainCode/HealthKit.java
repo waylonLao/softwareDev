@@ -1,9 +1,10 @@
 package MainCode;
 
 public class HealthKit extends Item implements ItemInterface {
+	private int itemID;
 	
 	public HealthKit(int itemID) {
-		super(itemID);
+		super();
 	}
 
 	public Item createHealthKit()

@@ -5,14 +5,14 @@ package MainCode;
  * @author Theos
  */
 class Item {
-    private int itemID;
+    
     private String itemName;
     private String itemDescription;
     private String itemUse;
     
-    public Item(int itemID)
+    public Item()
     {
-        itemID = 0;
+        
         itemName = "null";
         itemDescription = "null";
         itemUse = "null";
