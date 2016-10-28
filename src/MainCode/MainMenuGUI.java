@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -24,8 +25,52 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainMenuGUI extends Application{
-
+	
 	@Override
+	public void start(Stage primaryStage) throws Exception 
+	{	
+		Button newGame = new Button("New Game");
+		Button loadGame = new Button("Load Game");
+		Button help = new Button("Help");
+		Button quit= new Button("Quit");
+		
+		HBox hB1 = new HBox();
+		hB1.getChildren().addAll(newGame, loadGame, help, quit);
+		hB1.setSpacing(70);
+		hB1.setPadding(new Insets(5));
+
+		
+		Circle circle = new Circle(50);
+		circle.setFill(Color.RED);
+		
+		BorderPane bp= new BorderPane();
+		bp.setBottom(hB1);
+		bp.setCenter(circle);
+		
+		Scene scene = new Scene(bp, 510, 600);
+		primaryStage.setTitle("Galaxy Explorer");
+		primaryStage.setScene(scene);
+		primaryStage.show();	
+		
+		
+		newGame.setOnAction(e -> circle.setFill(Color.RED));
+		loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
+		help.setOnAction(e -> circle.setFill(Color.GREEN));
+		quit.setOnAction(e -> circle.setFill(Color.ORANGE));
+		
+		
+
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		launch(args);
+		
+
+	}
+
+	/*@Override
 	public void start(Stage maninMenuStage) throws Exception {
 		
 		//create Label
@@ -140,7 +185,7 @@ public class MainMenuGUI extends Application{
 		public static void main(String[] args)
 		 {
 		        launch(args);
-		 }
+		 }*/
 		    
 		
 	}
