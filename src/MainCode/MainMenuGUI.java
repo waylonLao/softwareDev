@@ -41,7 +41,7 @@ public class MainMenuGUI extends Application{
 
 		
 		Circle circle = new Circle(50);
-		circle.setFill(Color.RED);
+		circle.setFill(Color.CYAN);
 		
 		BorderPane bp= new BorderPane();
 		bp.setBottom(hB1);
