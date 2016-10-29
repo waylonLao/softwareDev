@@ -22,6 +22,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class MainMenuGUI extends Application{
@@ -34,18 +35,23 @@ public class MainMenuGUI extends Application{
 		Button help = new Button("Help");
 		Button quit= new Button("Quit");
 		
-		HBox hB1 = new HBox();
-		hB1.getChildren().addAll(newGame, loadGame, help, quit);
-		hB1.setSpacing(70);
-		hB1.setPadding(new Insets(5));
-
+		newGame.setMaxWidth(Double.MAX_VALUE);
+		loadGame.setMaxWidth(Double.MAX_VALUE);
+		help.setMaxWidth(Double.MAX_VALUE);
+		quit.setMaxWidth(Double.MAX_VALUE);
 		
-		Circle circle = new Circle(50);
-		circle.setFill(Color.CYAN);
+		Text text = new Text();
+		text.setText("Galaxy Explorer");
+		text.setTextAlignment(TextAlignment.CENTER);
+		
+		VBox vB1 = new VBox();
+		vB1.getChildren().addAll(newGame, loadGame, help, quit);
+		vB1.setSpacing(70);
+		vB1.setPadding(new Insets(120, 100, 10, 100));
 		
 		BorderPane bp= new BorderPane();
-		bp.setBottom(hB1);
-		bp.setCenter(circle);
+		bp.setCenter(vB1);
+		bp.setTop(text);
 		
 		Scene scene = new Scene(bp, 510, 600);
 		primaryStage.setTitle("Galaxy Explorer");
@@ -53,10 +59,10 @@ public class MainMenuGUI extends Application{
 		primaryStage.show();	
 		
 		
-		newGame.setOnAction(e -> circle.setFill(Color.RED));
+		/*newGame.setOnAction(e -> circle.setFill(Color.RED));
 		loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
 		help.setOnAction(e -> circle.setFill(Color.GREEN));
-		quit.setOnAction(e -> circle.setFill(Color.ORANGE));
+		quit.setOnAction(e -> circle.setFill(Color.ORANGE));*/
 		
 		
 
