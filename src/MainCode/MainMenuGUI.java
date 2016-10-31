@@ -41,8 +41,13 @@ public class MainMenuGUI extends Application{
 		quit.setMaxWidth(Double.MAX_VALUE);
 		
 		Text text = new Text();
-		text.setText("Galaxy Explorer");
+		/*text.setText("Galaxy Explorer");
 		text.setTextAlignment(TextAlignment.CENTER);
+		
+		HBox textBox = new HBox();
+		textBox.getChildren().addAll(text);
+		textBox.setSpacing(70);
+		textBox.setPadding(new Insets(120, 100, 10, 100));*/
 		
 		VBox vB1 = new VBox();
 		vB1.getChildren().addAll(newGame, loadGame, help, quit);
