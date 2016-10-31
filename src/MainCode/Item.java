@@ -6,13 +6,14 @@ package MainCode;
  */
 class Item {
     
+	private int itemID;
     private String itemName;
     private String itemDescription;
     private String itemUse;
     
     public Item()
     {
-        
+        itemID = 0;
         itemName = "null";
         itemDescription = "null";
         itemUse = "null";
@@ -73,6 +74,12 @@ class Item {
     public void setItemUse(String itemUse) {
         this.itemUse = itemUse;
     }
+
+	@Override
+	public String toString() {
+		return "Item [itemID=" + itemID + ", itemName=" + itemName + ", itemDescription=" + itemDescription
+				+ ", itemUse=" + itemUse + "]";
+	}
     
     
     

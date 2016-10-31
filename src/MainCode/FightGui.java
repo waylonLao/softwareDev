@@ -18,7 +18,7 @@ public class FightGui extends Application{
 	
 	
 	
-	Item testItem = new Item(1);
+	Item testItem = new Item();
 	Weapon testWeapon = new Weapon(1, 25);
 	Weapon testWeapon2 = new Weapon(1, 10);
 	

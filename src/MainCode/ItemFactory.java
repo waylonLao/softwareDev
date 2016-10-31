@@ -1,23 +1,31 @@
 package MainCode;
 
-import java.util.Random;
 
 public class ItemFactory implements ItemInterface {
 
-	public Random createItem(){
-	Random number = new Random(4);
-
-	if(number <= 2)
+	static RandomGenerator rG = new RandomGenerator();
+	static int randomNumber = rG.generate(4);
+	
+	public Item manufactureItem()
+	{
+		
+	if(randomNumber <= 2)
 	{
 		return new HealthKit(1);
 	}
-	else if(number >= 3)
+	else if(randomNumber >= 3)
 	{
 		return new ConcussionGrenade(2);
 	}
 	
 	return null;
 	}
-	
+	public static void main(String[] args)
+	{
+		Item randomItem = new Item();
+		ItemFactory iF = new ItemFactory();
+		randomItem = iF.manufactureItem();
+		System.out.println(randomItem.toString());
+	}
 }
-}
+
