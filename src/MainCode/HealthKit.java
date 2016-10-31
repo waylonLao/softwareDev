@@ -3,27 +3,23 @@ package MainCode;
 public class HealthKit extends Item implements ItemInterface {
 	
 	
-	public HealthKit(int itemID) {
+	public HealthKit() {
 		super();
+		setItemName("Health Kit");
+		setItemUse("Use to heal yourself for 50 HP.");
+		setItemDescription("A white box with a swiss army cross on it.");
+		
 	}
 
 	public Item createHealthKit()
 	{
-		Item consumable = new Item();
-		
-		consumable.setItemName("Health Kit");
-		consumable.setItemDescription("A white box with a swiss army cross on it");
-		consumable.setItemUse("Use to heal yourself for 50 HP");
-		return consumable;
-		
+		HealthKit hK = new HealthKit();
+		return hK;
 	}
 
 	@Override
 	public String toString() {
-		return "HealthKit [createHealthKit()=" + createHealthKit() + ", getItemID()=" + getItemID() + ", getItemName()="
-				+ getItemName() + ", getItemDescription()=" + getItemDescription() + ", getItemUse()=" + getItemUse()
-				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ "]";
+		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 	
 	

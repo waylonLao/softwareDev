@@ -2,24 +2,23 @@ package MainCode;
 
 public class ConcussionGrenade extends Item implements ItemInterface{
 
-	public ConcussionGrenade(int itemID) {
+	public ConcussionGrenade() {
 		super();
+		setItemName("Concussion Grenade");
+		setItemDescription("A powerful stun grenade.");
+		setItemUse("Use to stun monster for a turn.");
 		// TODO Auto-generated constructor stub
-	}
-	
-	@Override
-	public String toString() {
-		return "ConcussionGrenade [createConcussionGrenade()=" + createConcussionGrenade() + "]";
 	}
 
 	public Item createConcussionGrenade()
 	{
-		Item grenade = new Item();
-		grenade.setItemName("Concussion Grenade");
-		grenade.setItemDescription("A powerful stun grenade");
-		grenade.setItemUse("Use to stun monster for a turn");
-		return null;
+		ConcussionGrenade cG = new ConcussionGrenade();
+		return cG;
 		
+	}
+	@Override
+	public String toString() {
+		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
 }

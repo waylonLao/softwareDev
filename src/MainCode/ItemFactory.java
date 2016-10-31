@@ -11,11 +11,11 @@ public class ItemFactory implements ItemInterface {
 		
 	if(randomNumber <= 2)
 	{
-		return new HealthKit(1);
+		return new HealthKit();
 	}
 	else if(randomNumber >= 3)
 	{
-		return new ConcussionGrenade(2);
+		return new ConcussionGrenade();
 	}
 	
 	return null;
