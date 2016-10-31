@@ -8,7 +8,7 @@ public class DamageTester {
 	public static void main(String[] args) {
 		
 		
-		Item testItem = new Item(1);
+		Item testItem = new Item();
 		Weapon testWeapon = new Weapon(1, 25);
 		
 		Player testPlayer = new Player(200, testWeapon);
