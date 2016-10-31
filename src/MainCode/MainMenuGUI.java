@@ -41,8 +41,8 @@ public class MainMenuGUI extends Application{
 		quit.setMaxWidth(Double.MAX_VALUE);
 		
 		Text text = new Text();
-		/*text.setText("Galaxy Explorer");
-		text.setTextAlignment(TextAlignment.CENTER);
+		text.setText("Galaxy Explorer");
+		/*text.setTextAlignment(TextAlignment.CENTER);
 		
 		HBox textBox = new HBox();
 		textBox.getChildren().addAll(text);
