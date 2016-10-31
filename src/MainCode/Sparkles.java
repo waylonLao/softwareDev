@@ -1,5 +1,9 @@
 package MainCode;
 
+/**
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
 public class Sparkles extends Item implements ItemInterface{
 	public Sparkles()
 	{

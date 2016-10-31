@@ -1,5 +1,9 @@
 package MainCode;
 
+/**
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
 public class ECell extends Item implements ItemInterface{
 
 	public ECell()

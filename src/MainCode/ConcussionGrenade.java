@@ -1,5 +1,9 @@
 package MainCode;
 
+/**
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
 public class ConcussionGrenade extends Item implements ItemInterface{
 
 	public ConcussionGrenade() {

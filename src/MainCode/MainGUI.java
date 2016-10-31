@@ -11,9 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.text.*;
+
 /**
- *
- * @author Theos
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
  */
 public class MainGUI extends Application {
     

@@ -3,9 +3,10 @@ package MainCode;
 
 import java.util.ArrayList;
 
+
 /**
- *
- * @author Theos
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
  */
 public class Inventory {
     

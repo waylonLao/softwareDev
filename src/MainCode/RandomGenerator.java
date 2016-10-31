@@ -2,6 +2,10 @@ package MainCode;
 
 import java.util.Random;
 
+/**
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
 public class RandomGenerator {
 
 	static Random number = new Random();

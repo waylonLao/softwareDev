@@ -1,8 +1,9 @@
 package MainCode;
+
 /**
-*
-* @author Theos
-*/
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
 public class Room {
   
    private int roomID;

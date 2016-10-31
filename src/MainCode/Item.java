@@ -1,8 +1,7 @@
 package MainCode;
-
 /**
- *
- * @author Theos
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
  */
 class Item {
     

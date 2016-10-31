@@ -6,7 +6,7 @@ public class Weapon extends Item {
 	private int weaponDamage;
 
 	public Weapon(int itemID, int weaponDmg) {
-		super(itemID);
+		super();
 		weaponDamage = weaponDmg;
 		// TODO Auto-generated constructor stub
 	}
