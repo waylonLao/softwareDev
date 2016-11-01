@@ -9,7 +9,7 @@ public class ItemFactory implements ItemInterface {
 
 	static RandomGenerator rG = new RandomGenerator();
 	static int randomNumber = rG.generate(100);
-	static int randomNumber2 = rG.generate(3);
+	static int randomNumber2 = rG.generate(4);
 	
 	public Item manufactureItem()
 	{
@@ -34,11 +34,11 @@ public class ItemFactory implements ItemInterface {
 	{
 		return new PlasmaInducer();
 	}
-	else if(randomNumber <=80)
+	else if(randomNumber <=75)
 	{
 		return new DisintegratingPistol();
 	}
-	else if(randomNumber <= 85)
+	else if(randomNumber <= 80)
 	{
 		return new LeadPipe();
 	}

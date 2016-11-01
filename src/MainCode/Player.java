@@ -4,7 +4,7 @@ package MainCode;
 */
 public class Player extends Sprite {
 	
-	public final int sparkleCounter = 0;
+	public int sparkleCounter = 0;
 	
 	public Player(int health, Weapon weaponID) {
 		super(health, weaponID, "Player");
