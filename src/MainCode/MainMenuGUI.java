@@ -1,5 +1,7 @@
 package MainCode;
 
+import javax.swing.GroupLayout.Alignment;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -40,23 +42,22 @@ public class MainMenuGUI extends Application{
 		help.setMaxWidth(Double.MAX_VALUE);
 		quit.setMaxWidth(Double.MAX_VALUE);
 		
-		Text text = new Text();
-		text.setText("Galaxy Explorer");
-		/*text.setTextAlignment(TextAlignment.CENTER);
+		Label title = new Label("Galaxy Explorer");
+		//text.setAlignment(Pos.CENTER);
 		
 		HBox textBox = new HBox();
-		textBox.getChildren().addAll(text);
+		textBox.getChildren().addAll(title);
 		textBox.setSpacing(70);
-		textBox.setPadding(new Insets(120, 100, 10, 100));*/
+		textBox.setPadding(new Insets(120, 100, 10, 100));
 		
 		VBox vB1 = new VBox();
-		vB1.getChildren().addAll(newGame, loadGame, help, quit);
+		vB1.getChildren().addAll(title, newGame, loadGame, help, quit);
 		vB1.setSpacing(70);
 		vB1.setPadding(new Insets(120, 100, 10, 100));
 		
 		BorderPane bp= new BorderPane();
 		bp.setCenter(vB1);
-		bp.setTop(text);
+		bp.setTop(title);
 		
 		Scene scene = new Scene(bp, 510, 600);
 		primaryStage.setTitle("Galaxy Explorer");
