@@ -9,4 +9,6 @@ public class MonsterFactory implements monsterInterface
 {
 	static RandomGenerator rg = new RandomGenerator();
 	static int randomNumber = rg.generate(100);
+	
+	//Put the if/else statements here after Monsters are made.
 }

@@ -32,33 +32,37 @@ public class MainMenuGUI extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception 
 	{	
+		//Make the buttons
 		Button newGame = new Button("New Game");
 		Button loadGame = new Button("Load Game");
 		Button help = new Button("Help");
 		Button quit= new Button("Quit");
 		
+		//Align buttons
 		newGame.setMaxWidth(Double.MAX_VALUE);
 		loadGame.setMaxWidth(Double.MAX_VALUE);
 		help.setMaxWidth(Double.MAX_VALUE);
 		quit.setMaxWidth(Double.MAX_VALUE);
 		
+		//Make the title, make it pretty, and center it
 		Label title = new Label("Galaxy Explorer");
-		//text.setAlignment(Pos.CENTER);
+		title.setFont(Font.font("Arial", 40));
+		title.setPadding(new Insets(20, 0, 0, 0));
+		title.setMaxWidth(Double.MAX_VALUE);
+		title.setAlignment(Pos.CENTER);
 		
-		HBox textBox = new HBox();
-		textBox.getChildren().addAll(title);
-		textBox.setSpacing(70);
-		textBox.setPadding(new Insets(120, 100, 10, 100));
-		
+		//Add buttons to vertical box
 		VBox vB1 = new VBox();
-		vB1.getChildren().addAll(title, newGame, loadGame, help, quit);
+		vB1.getChildren().addAll(newGame, loadGame, help, quit);
 		vB1.setSpacing(70);
 		vB1.setPadding(new Insets(120, 100, 10, 100));
 		
+		//Add label and box to border pane
 		BorderPane bp= new BorderPane();
 		bp.setCenter(vB1);
 		bp.setTop(title);
 		
+		//Set up the stage
 		Scene scene = new Scene(bp, 510, 600);
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
