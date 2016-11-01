@@ -13,6 +13,14 @@ public class Tool extends Item{
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * 
+	 */
+	public Tool() {
+		setSparkleValue(2);
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getToolID() {
 		return toolID;
 	}
