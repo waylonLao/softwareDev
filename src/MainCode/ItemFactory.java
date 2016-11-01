@@ -18,11 +18,11 @@ public class ItemFactory implements ItemInterface {
 	{
 		return new HealthKit();
 	}
-	else if(randomNumber <= 45)
+	else if(randomNumber <= 50)
 	{
 		return new ConcussionGrenade();
 	}
-	else if(randomNumber <= 50)
+	else if(randomNumber <= 60)
 	{
 		return new ECell();
 	}
