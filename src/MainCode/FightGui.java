@@ -19,8 +19,8 @@ public class FightGui extends Application{
 	
 	
 	Item testItem = new Item();
-	Weapon testWeapon = new Weapon(1, 25);
-	Weapon testWeapon2 = new Weapon(1, 10);
+	Weapon testWeapon = new Weapon();
+	Weapon testWeapon2 = new Weapon();
 	
 	Player testPlayer = new Player(200, testWeapon);
 	Monster testMonster = new Monster(200, testWeapon2, 1, "Test Monster", "This is a test Monster", testItem);

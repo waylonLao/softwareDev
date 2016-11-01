@@ -10,6 +10,7 @@ public class Sparkles extends Item implements ItemInterface{
 		setItemName("Sparkles");
 		setItemDescription("Currency of the Stars.");
 		setItemUse("Collect for a higher score.");
+		setSparkleValue(1);
 	}
 	
 	@Override

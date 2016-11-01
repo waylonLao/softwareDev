@@ -4,7 +4,7 @@ package MainCode;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class HealthKit extends Item implements ItemInterface {
+public class HealthKit extends Consumable implements ItemInterface {
 	
 	
 	public HealthKit() {
@@ -12,6 +12,7 @@ public class HealthKit extends Item implements ItemInterface {
 		setItemName("Health Kit");
 		setItemUse("Use to heal yourself for 50 HP.");
 		setItemDescription("A white box with a swiss army cross on it.");
+		setSparkleValue(1);
 		
 	}
 

@@ -4,13 +4,14 @@ package MainCode;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class ConcussionGrenade extends Item implements ItemInterface{
+public class ConcussionGrenade extends Consumable implements ItemInterface{
 
 	public ConcussionGrenade() {
 		super();
 		setItemName("Concussion Grenade");
 		setItemDescription("A powerful stun grenade.");
 		setItemUse("Use to stun monster for a turn.");
+		setSparkleValue(1);
 		// TODO Auto-generated constructor stub
 	}
 

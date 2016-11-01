@@ -4,7 +4,7 @@ package MainCode;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class PlasmaInducer extends Item implements ItemInterface{
+public class PlasmaInducer extends Weapon implements ItemInterface{
 
 	public PlasmaInducer()
 	{

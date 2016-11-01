@@ -9,6 +9,7 @@ class Item {
     private String itemName;
     private String itemDescription;
     private String itemUse;
+    private int sparkleValue;
     
     public Item()
     {
@@ -16,6 +17,7 @@ class Item {
         itemName = "null";
         itemDescription = "null";
         itemUse = "null";
+        setSparkleValue(0);
     }
 
     /**
@@ -79,7 +81,25 @@ class Item {
 		return "Item [itemID=" + itemID + ", itemName=" + itemName + ", itemDescription=" + itemDescription
 				+ ", itemUse=" + itemUse + "]";
 	}
-    
+
+	/**
+	 * @return the sparkleValue
+	 */
+	public int getSparkleValue() {
+		return sparkleValue;
+	}
+
+	/**
+	 * @param sparkleValue the sparkleValue to set
+	 */
+	public void setSparkleValue(int sparkleValue) {
+		this.sparkleValue = sparkleValue;
+	}
+    /*
+	public void dismantle(Item item)
+	{
+		setSparkleCounter( + item.getSparkleValue());
+	}*/
     
     
 }

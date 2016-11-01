@@ -4,7 +4,7 @@ package MainCode;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class LeadPipe extends Item implements ItemInterface{
+public class LeadPipe extends Weapon implements ItemInterface{
 
 	public LeadPipe()
 	{
