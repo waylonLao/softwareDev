@@ -38,6 +38,12 @@ public class HealthKit extends Consumable implements ItemInterface {
 	public String toString() {
 		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
+
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

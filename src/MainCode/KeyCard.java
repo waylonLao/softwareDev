@@ -47,4 +47,10 @@ public class KeyCard extends Tool implements ItemInterface{
 		this.isKeyItem = isKeyItem;
 	}
 
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

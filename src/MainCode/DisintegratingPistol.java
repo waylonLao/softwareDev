@@ -20,4 +20,10 @@ public class DisintegratingPistol extends Weapon implements ItemInterface{
 		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

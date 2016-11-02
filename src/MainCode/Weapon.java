@@ -2,7 +2,7 @@ package MainCode;
 /**
 * edited by nklemenc
 */
-public class Weapon extends Item 
+public class Weapon extends Item implements ItemInterface
 {
 	private int weaponDamage;
 
@@ -36,6 +36,12 @@ public class Weapon extends Item
 	public void setWeaponDamage(int weaponDamage) 
 	{
 		this.weaponDamage = weaponDamage;
+	}
+
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -69,5 +69,10 @@ public class ItemFactory implements ItemInterface {
 		randomItem = iF.manufactureItem();
 		System.out.println(randomItem.toString());
 	}
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

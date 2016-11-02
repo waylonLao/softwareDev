@@ -40,4 +40,10 @@ public class ConcussionGrenade extends Consumable implements ItemInterface{
 		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
