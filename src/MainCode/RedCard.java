@@ -10,12 +10,24 @@ package MainCode;
  */
 public class RedCard extends KeyCard
 {
+	private boolean isKeyItem;
+	
 	public RedCard()
 	{
 		setColor("RED");
 		setItemName("Red Key Card");
 		setItemDescription("A red security card.");
 		setItemUse("Use this to open red doors.");
-		
+		this.isKeyItem = true;
+	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
 	}
 }

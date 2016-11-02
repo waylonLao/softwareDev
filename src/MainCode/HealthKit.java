@@ -6,6 +6,7 @@ package MainCode;
  */
 public class HealthKit extends Consumable implements ItemInterface {
 	
+	private boolean isKeyItem;
 	
 	public HealthKit() {
 		super();
@@ -13,6 +14,7 @@ public class HealthKit extends Consumable implements ItemInterface {
 		setItemUse("Use to heal yourself for 50 HP.");
 		setItemDescription("A white box with a swiss army cross on it.");
 		setSparkleValue(1);
+		this.isKeyItem = false;
 		
 	}
 
@@ -20,6 +22,16 @@ public class HealthKit extends Consumable implements ItemInterface {
 	{
 		HealthKit hK = new HealthKit();
 		return hK;
+	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
 	}
 
 	@Override

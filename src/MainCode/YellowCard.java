@@ -10,6 +10,7 @@ package MainCode;
  */
 public class YellowCard extends KeyCard{
 	
+	private boolean isKeyItem;
 	
 	public YellowCard()
 	{
@@ -18,6 +19,17 @@ public class YellowCard extends KeyCard{
 		setItemName("Yellow Key Card");
 		setItemDescription("A yellow key card.");
 		setItemUse("Use this to open yellow doors.");
+		this.isKeyItem = true;
+	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
 	}
 
 }

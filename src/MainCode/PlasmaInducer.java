@@ -6,11 +6,24 @@ package MainCode;
  */
 public class PlasmaInducer extends Weapon implements ItemInterface{
 
+	private boolean isKeyItem;
+	
 	public PlasmaInducer()
 	{
 		setItemName("Plasma Inducer");
 		setItemDescription("Nikola would have been proud of this invention");
 		setItemUse("Equip to fight monsters.");
+		this.isKeyItem = false;
+	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
 	}
 	
 	@Override

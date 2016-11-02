@@ -18,8 +18,17 @@ public class BlueCard extends KeyCard{
 		setItemName("Blue Key Card");
 		setItemDescription("A blue key card.");
 		setItemUse("Use this to open blue doors.");
-		isKeyItem = true;
-		
-		
+		this.isKeyItem = true;
 	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
+	}
+	
 }

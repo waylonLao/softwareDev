@@ -5,6 +5,8 @@ package MainCode;
  * Date: Oct 31, 2016
  */
 public class ECell extends Tool implements ItemInterface{
+	
+	private boolean isKeyItem;
 
 	public ECell()
 	{
@@ -12,6 +14,17 @@ public class ECell extends Tool implements ItemInterface{
 		setItemName("E-Cell");
 		setItemDescription("A glowing green rode of an E-Cell.");
 		setItemUse("Use to power main rooms.");
+		this.isKeyItem = true;
+	}
+	
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
 	}
 	
 	@Override
