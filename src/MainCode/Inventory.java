@@ -41,4 +41,9 @@ public class Inventory {
         this.consumableInventory = consumableInventory;
     }
     
+    public void addItem(Item newItem)
+    {
+    	
+    }
+    
 }

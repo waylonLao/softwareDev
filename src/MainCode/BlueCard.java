@@ -9,6 +9,8 @@ package MainCode;
  * Date: Nov 1, 2016
  */
 public class BlueCard extends KeyCard{
+	
+	private boolean isKeyItem;
 
 	public BlueCard()
 	{
@@ -16,6 +18,7 @@ public class BlueCard extends KeyCard{
 		setItemName("Blue Key Card");
 		setItemDescription("A blue key card.");
 		setItemUse("Use this to open blue doors.");
+		isKeyItem = true;
 		
 		
 	}
