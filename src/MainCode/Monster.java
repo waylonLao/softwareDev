@@ -21,19 +21,9 @@ public class Monster extends Sprite {
 		this.monsterID = monsterID;
 		this.monsterDescription = monsterDescription;
 		this.itemDrop = itemDrop;
-		this.monsterName = monsterName;
+		this.setMonsterName(monsterName);
 	}
 	
-	public String getMonsterName()
-	{
-		return monsterName;
-	}
-
-	public void setMonsterName(String monsterName)
-	{
-		this.monsterName = monsterName;
-	}
-
 	/**
 	 * @return the monsterID
 	 */
@@ -70,6 +60,16 @@ public class Monster extends Sprite {
 	 */
 	public void setItemDrop(Item itemDrop) {
 		this.itemDrop = itemDrop;
+	}
+
+	public String getMonsterName()
+	{
+		return monsterName;
+	}
+
+	public void setMonsterName(String monsterName)
+	{
+		this.monsterName = monsterName;
 	}
 	
 	
