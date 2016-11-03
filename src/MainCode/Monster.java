@@ -21,6 +21,7 @@ public class Monster extends Sprite {
 		this.monsterDescription = monsterDescription;
 		this.itemDrop = itemDrop;
 	}
+	
 	/**
 	 * @return the monsterID
 	 */
