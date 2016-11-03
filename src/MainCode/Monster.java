@@ -7,6 +7,7 @@ public class Monster extends Sprite {
 	private int monsterID;
 	private String monsterDescription;
 	private Item itemDrop;
+	private String monsterName;
 	
 	
 	/**
@@ -20,8 +21,19 @@ public class Monster extends Sprite {
 		this.monsterID = monsterID;
 		this.monsterDescription = monsterDescription;
 		this.itemDrop = itemDrop;
+		this.monsterName = monsterName;
 	}
 	
+	public String getMonsterName()
+	{
+		return monsterName;
+	}
+
+	public void setMonsterName(String monsterName)
+	{
+		this.monsterName = monsterName;
+	}
+
 	/**
 	 * @return the monsterID
 	 */
