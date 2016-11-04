@@ -15,36 +15,29 @@ package MainCode.Monster;
  */
 
 
-import MainCode.BlueCard;
-import MainCode.Item;
-import MainCode.LeadPipe;
+
+import MainCode.Items.HealthKit;
+import MainCode.Items.KeyCard;
+import MainCode.Items.LeadPipe;
 
 public class CyborgPirate extends Monster implements monsterInterface
 {
-
-	private Item itemDrop;
-	
 	public CyborgPirate()
-{
-	//super(health, wpn, monsterID, monsterName, monsterDescription, itemDrop);
-	super(100, new LeadPipe(), 7, "Cyborg Pirate ", "A robotic pirate with a bad attitude. ");
-	this.setItemDrop(new BlueCard());
-		
-}
+	{
+		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMaxHealth(100);
+		setWeapon(new LeadPipe());
+		setMonsterID(9);
+		setItemDrop(new KeyCard());
 
-	public Item getItemDrop() {
-		return itemDrop;
-	}
-
-	public void setItemDrop(Item itemDrop) {
-		this.itemDrop = itemDrop;
 	}
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-		
+
 	}
+	
 	
 }
 
