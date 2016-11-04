@@ -10,7 +10,7 @@ public class Sprite {
 	
 	protected int health;
 	protected int maxHealth;
-	protected Weapon weapon;
+	protected MainCode.Items.Weapon weapon;
 	protected String name;
 	
 	
@@ -18,7 +18,7 @@ public class Sprite {
 	{
 		this.health = 0;
 		this.maxHealth = health;
-		this.weapon = new Weapon();
+		this.weapon = new MainCode.Items.Weapon();
 		this.name = "";
 	}
 	
@@ -26,7 +26,7 @@ public class Sprite {
 	 * @param health
 	 * @param weaponID
 	 */
-	public Sprite(int h, Weapon w, String n) {
+	public Sprite(int h, MainCode.Items.Weapon w, String n) {
 		maxHealth = h;
 		health = h;
 		weapon = w;
@@ -74,7 +74,7 @@ public class Sprite {
 	/**
 	 * @return the weaponID
 	 */
-	public Weapon getWeapon() {
+	public MainCode.Items.Weapon getWeapon() {
 		return weapon;
 	}
 
@@ -83,7 +83,7 @@ public class Sprite {
 	/**
 	 * @param weaponID the weaponID to set
 	 */
-	public void setWeapon(Weapon newWeapon) {
+	public void setWeapon(MainCode.Items.Weapon newWeapon) {
 		weapon = newWeapon;
 	}
 	
