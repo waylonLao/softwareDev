@@ -28,7 +28,7 @@ public class PlasmaInducer extends Weapon implements ItemInterface{
 	
 	@Override
 	public String toString() {
-		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
+		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
 }

@@ -17,10 +17,9 @@ public class ItemFactory implements ItemInterface {
 		randomNumber = rG.generate(100);
 		randomNumber2 = rG.generate(4);
 	}
-	public Item manufactureItem(int a, int b)
+	public Item manufactureItem(int a)
 	{
 		randomNumber = rG.generate(a);
-		randomNumber2 = rG.generate(b);
 		
 	if(randomNumber <= 25)
 	{
@@ -52,30 +51,15 @@ public class ItemFactory implements ItemInterface {
 	}
 	else if(randomNumber <= 90)
 	{
-		if(randomNumber2 == 1)
-		{
-			return new RedCard();
-		}
-		else if(randomNumber2 == 2)
-		{
-			return new BlueCard();
-		}
-		else if(randomNumber2 == 3)
-		{
-			return new YellowCard();
-		}
-		else return new Sparkles();
-	}
-	else 
-	{
 		return new Sparkles();
 	}
+	return null;
 	}
 	public static void main(String[] args)
 	{
 		Item randomItem = new Item();
 		ItemFactory iF = new ItemFactory();
-		randomItem = iF.manufactureItem();
+		randomItem = iF.manufactureItem(100);
 		System.out.println(randomItem.toString());
 	}
 	@Override

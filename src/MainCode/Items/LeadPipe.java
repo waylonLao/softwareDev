@@ -10,6 +10,7 @@ public class LeadPipe extends Weapon{
 	
 	public LeadPipe()
 	{
+		setItemID(1);
 		setItemName("Lead Pipe");
 		setItemDescription("A long heavy pipe made out of lead.");
 		setItemUse("Equip to fight monsters.");
@@ -28,7 +29,7 @@ public class LeadPipe extends Weapon{
 	
 	@Override
 	public String toString() {
-		return getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
+		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
 	/* (non-Javadoc)
