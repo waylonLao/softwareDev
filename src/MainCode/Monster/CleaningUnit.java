@@ -1,6 +1,11 @@
 package MainCode.Monster;
+
+import MainCode.Items.ConcussionGrenade;
+import MainCode.Items.HealthKit;
+import MainCode.Items.LeadPipe;
+
 /**
- * Class: cyborgPirate.java
+ * Class: cleaningUnit.java
  * 
  * @author afirdaus
  * @version 1.0
@@ -16,19 +21,16 @@ package MainCode.Monster;
 
 
 
-import MainCode.Items.HealthKit;
-import MainCode.Items.KeyCard;
-import MainCode.Items.LeadPipe;
+public class CleaningUnit extends Monster implements monsterInterface
 
-public class CyborgPirate extends Monster implements monsterInterface
 {
-	public CyborgPirate()
+	public CleaningUnit()
 	{
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
-		setItemDrop(new KeyCard());
+		setItemDrop(new HealthKit());
 
 	}
 
@@ -39,7 +41,7 @@ public class CyborgPirate extends Monster implements monsterInterface
 	}
 	
 	
-}
-
+	
+	}
 
 
