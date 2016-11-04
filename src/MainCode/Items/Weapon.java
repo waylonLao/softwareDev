@@ -6,19 +6,12 @@ public class Weapon extends Item implements ItemInterface
 {
 	private int weaponDamage;
 
-	public Weapon(int weaponDmg) 
-	{
-		super();
-		setSparkleValue(2);
-		weaponDamage = weaponDmg;
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
+     /**
 	 * 
 	 */
 	public Weapon() 
 	{
+		setIsWeapon(true);
 		weaponDamage = 1;
 	}
 

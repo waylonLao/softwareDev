@@ -7,7 +7,7 @@ package MainCode.Items;
 public class KeyCard extends Tool implements ItemInterface{
 
 	private String color;
-	private boolean isKeyItem;
+	
 	
 	public KeyCard()
 	{
@@ -15,7 +15,7 @@ public class KeyCard extends Tool implements ItemInterface{
 		setItemDescription("A small plastic card.");
 		setItemUse("Use to unlock colored doors.");
 		setSparkleValue(5);
-		this.isKeyItem = true;
+		setIsKeyItem(true);
 	}
 	
 	@Override
@@ -35,16 +35,6 @@ public class KeyCard extends Tool implements ItemInterface{
 	 */
 	public void setColor(String color) {
 		this.color = color;
-	}
-	
-	public boolean isKeyItem()
-	{
-		return isKeyItem;
-	}
-
-	public void setKeyItem(boolean isKeyItem)
-	{
-		this.isKeyItem = isKeyItem;
 	}
 
 	@Override

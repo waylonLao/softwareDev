@@ -10,7 +10,7 @@ package MainCode.Items;
  */
 public class BlueCard extends KeyCard{
 	
-	private boolean isKeyItem;
+	
 
 	public BlueCard()
 	{
@@ -18,17 +18,9 @@ public class BlueCard extends KeyCard{
 		setItemName("Blue Key Card");
 		setItemDescription("A blue key card.");
 		setItemUse("Use this to open blue doors.");
-		this.isKeyItem = true;
+		setIsKeyItem(true);
 	}
 	
-	public boolean isKeyItem()
-	{
-		return isKeyItem;
-	}
 
-	public void setKeyItem(boolean isKeyItem)
-	{
-		this.isKeyItem = isKeyItem;
-	}
 	
 }
