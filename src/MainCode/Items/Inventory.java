@@ -13,6 +13,10 @@ public class Inventory {
     private ArrayList<Item> keyItemInventory = new ArrayList<Item>();
     private ArrayList<Item> consumableInventory = new ArrayList<Item>();
 
+    public Inventory()
+    {
+    	
+    }
     /**
      * @return the keyItemInventory
      */
@@ -49,5 +53,15 @@ public class Inventory {
     {
     	keyItemInventory.add(item);
     }
+    
+    public void showInventory()
+    {
+    	consumableInventory.toString();
+    	consumableInventory.toString();
+    }
 
+    public static void main(String[] args)
+    {
+    	
+    }
 }

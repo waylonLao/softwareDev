@@ -161,10 +161,6 @@ public class Room {
    
    //Methods
    
-   public void showInventory()
-   {
-       
-   }
    public void quickJump()
    {
        
