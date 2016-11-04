@@ -6,12 +6,12 @@ public class Player extends Sprite {
 	
 	public int sparkleCounter = 0;
 	
+	private Room roomID;
+	
 	public Player(int health, Weapon weaponID) {
 		super(health, weaponID, "Player");
 		setSparkleCounter(0);
 	}
-
-	private int roomID;
 	
 	public void useItem(){
 		//TODO use item and update inventory
@@ -21,8 +21,20 @@ public class Player extends Sprite {
 		//TODO update weaponID
 	}
 	
-	public void move(){
-		//TODO move player to different room
+	
+
+	/**
+	 * @return the roomID
+	 */
+	public Room getRoomID() {
+		return roomID;
+	}
+
+	/**
+	 * @param roomID the roomID to set
+	 */
+	public void setRoomID(Room roomID) {
+		this.roomID = roomID;
 	}
 
 	/**
