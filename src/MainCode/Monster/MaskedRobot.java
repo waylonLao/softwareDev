@@ -19,9 +19,6 @@ import MainCode.Items.LeadPipe;
  */
 
 
-
-
-
 public class MaskedRobot extends Monster implements monsterInterface
 {
 	public MaskedRobot()
