@@ -27,7 +27,7 @@ public class FightGui extends Application{
 	Weapon testWeapon2 = new Weapon();
 	
 	Player testPlayer = new Player(200, testWeapon);
-	Monster testMonster = new Monster(200, testWeapon2, 1, "Test Monster", "This is a test Monster", testItem);
+	Monster testMonster = new Monster();
 
 	Text monsterName = new Text(testMonster.getName());
 	Text playerName = new Text(testPlayer.getName());

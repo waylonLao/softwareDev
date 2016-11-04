@@ -1,8 +1,5 @@
 package MainCode.Monster;
 
-
-import MainCode.Weapon;
-
 /**
 * @author nklemenc
 */
