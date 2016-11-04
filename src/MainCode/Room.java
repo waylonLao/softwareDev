@@ -19,6 +19,10 @@ public class Room {
    private boolean powered;
 
    //Constructor
+   public Room()
+   {
+	   
+   }
    public Room(int roomID)
    {
        roomID = 0;
