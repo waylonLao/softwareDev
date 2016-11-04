@@ -1,7 +1,6 @@
 package MainCode.Monster;
 
-
-import MainCode.Weapon;
+import MainCode.Items.Weapon;
 
 /**
 * @author nklemenc
