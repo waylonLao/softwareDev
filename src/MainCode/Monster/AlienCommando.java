@@ -31,6 +31,7 @@ public class AlienCommando extends Monster implements monsterInterface
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
+		setItemDrop(new ConcussionGrenade());
 
 	}
 
