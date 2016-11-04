@@ -15,6 +15,7 @@ public class LeadPipe extends Weapon{
 		setItemDescription("A long heavy pipe made out of lead.");
 		setItemUse("Equip to fight monsters.");
 		this.isKeyItem = false;
+		setWeaponDamage(25);
 	}
 	
 	public boolean isKeyItem()
