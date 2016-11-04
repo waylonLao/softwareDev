@@ -1,7 +1,7 @@
 package MainCode.Monster;
 
 
-import MainCode.Weapon;
+import MainCode.Items.Item;
 
 /**
 * @author nklemenc
@@ -11,13 +11,13 @@ public class Monster extends Sprite {
 	protected int monsterID;
 	private String monsterName;
 	private String monsterDescription;
-	//private Item itemDrop;
+	private Item itemDrop;
 	
 	public Monster()
 	{
 		super();
 		this.monsterID = 0;
-		this.monsterName = "null";
+		this.setMonsterName("null");
 		this.monsterDescription = "null";
 	}
 	
@@ -27,7 +27,7 @@ public class Monster extends Sprite {
 	 * @param monsterDescription
 	 * @param itemDrop
 	 */
-	public Monster(int health, Weapon weapon, int monsterId, 
+	/*public Monster(int health, Weapon weapon, int monsterId, 
 			String name, String monsterDescription)// Item itemDrop)
 	{
 	
@@ -35,16 +35,10 @@ public class Monster extends Sprite {
 		this.monsterID = 0;
 		this.monsterDescription = "null";
 		//this.itemDrop = "null";
-	}
+	}*/
 	
 
-	public void setMonsterName(String monsterName)
-	{
-		// TODO Auto-generated method stub
-		this.monsterName = monsterName;
-	}
-	
-	
+
 	/**
 	 * @return the monsterID
 	 */
@@ -70,22 +64,27 @@ public class Monster extends Sprite {
 	public void setMonsterDescription(String monsterDescription) {
 		this.monsterDescription = monsterDescription;
 	}
-	/**
-	 * @return the itemDrop
-	 */
-	/*public Item getItemDrop() {
-		return itemDrop;
-	}
-	*//**
-	 * @param itemDrop the itemDrop to set
-	 *//*
-	public void setItemDrop(Item itemDrop) {
-		this.itemDrop = itemDrop;
-	}*/
+
 	@Override
 	public String toString() {
 		return "Monster [monsterID=" + monsterID + ", monsterDescription=" + monsterDescription 
 				+  "]";
+	}
+
+	public Item getItemDrop() {
+		return itemDrop;
+	}
+
+	public void setItemDrop(Item itemDrop) {
+		this.itemDrop = itemDrop;
+	}
+
+	public String getMonsterName() {
+		return monsterName;
+	}
+
+	public void setMonsterName(String monsterName) {
+		this.monsterName = monsterName;
 	}
 	
 }

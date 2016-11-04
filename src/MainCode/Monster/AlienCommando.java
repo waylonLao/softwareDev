@@ -24,16 +24,15 @@ import MainCode.Items.Weapon;
 
 public class AlienCommando extends Monster implements monsterInterface
 {
-	private Item itemDrop;
 
 	public AlienCommando()
 	{
-		
+
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
 		setMaxHealth(100);
-		setWeapon(lP);
+		setWeapon(new LeadPipe());
 		setMonsterID(9);
-		this.setItemDrop(new ConcussionGrenade());
+		setItemDrop(new ConcussionGrenade());
 
 	}
 

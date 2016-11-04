@@ -1,5 +1,6 @@
 package MainCode.Monster;
 
+
 /**
 * @author nklemenc
 */

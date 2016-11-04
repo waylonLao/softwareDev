@@ -34,8 +34,7 @@ public class CarbonNanotubeRope extends Tool implements ItemInterface{
 
 	@Override
 	public void createItem() {
-		// TODO Auto-generated method stub
-		
+		CarbonNanotubeRope cN = new CarbonNanotubeRope();
 	}
 
 }
