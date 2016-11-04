@@ -1,4 +1,10 @@
 package MainCode;
+
+import MainCode.Items.Item;
+import MainCode.Items.Weapon;
+import MainCode.Monster.Monster;
+import MainCode.Monster.Player;
+
 /**
 * @author nklemenc
 */
