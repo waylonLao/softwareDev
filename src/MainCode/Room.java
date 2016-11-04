@@ -12,8 +12,9 @@ public class Room {
    private int monsterChance;
    private int puzzleChance;
    private int itemChance;
+   private Item[] items;
    
-   private int monsterID;
+   private Monster monsterID;
    private boolean quickJumpCapable;
    private boolean powered;
 
@@ -25,9 +26,17 @@ public class Room {
        monsterChance = 0;
        puzzleChance = 0;
        itemChance = 0;
-       monsterID = 0;
+       monsterID = null;
        quickJumpCapable = false;
        powered = false;
+   }
+   public Room(int id, String d, Item[] i, Monster m, boolean qj, boolean p){
+	   roomID = id;
+	   roomDescription = d;
+	   items = i;
+	   monsterID = m;
+	   boolean quickJumpCapable = qj;
+	   boolean powered = p;
    }
    
    //Getters and Setters
@@ -104,14 +113,14 @@ public class Room {
    /**
     * @return the monsterID
     */
-   public int getMonsterID() {
+   public Monster getMonsterID() {
        return monsterID;
    }
 
    /**
     * @param monsterID the monsterID to set
     */
-   public void setMonsterID(int monsterID) {
+   public void setMonsterID(Monster monsterID) {
        this.monsterID = monsterID;
    }
 
