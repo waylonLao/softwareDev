@@ -12,8 +12,15 @@ public class ItemFactory implements ItemInterface {
 	static int randomNumber = rG.generate(100);
 	static int randomNumber2 = rG.generate(4);
 	
-	public Item manufactureItem()
+	public ItemFactory()
 	{
+		randomNumber = rG.generate(100);
+		randomNumber2 = rG.generate(4);
+	}
+	public Item manufactureItem(int a, int b)
+	{
+		randomNumber = rG.generate(a);
+		randomNumber2 = rG.generate(b);
 		
 	if(randomNumber <= 25)
 	{

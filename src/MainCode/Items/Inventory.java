@@ -57,11 +57,25 @@ public class Inventory {
     public void showInventory()
     {
     	consumableInventory.toString();
-    	consumableInventory.toString();
     }
-
-    public static void main(String[] args)
+    
+ @Override
+	public String toString() {
+		return "Inventory [keyItemInventory=" + keyItemInventory + ", consumableInventory=" + consumableInventory + "]";
+	}
+	public static void main(String[] args)
     {
+    	Inventory iV = new Inventory();
+    	ItemFactory iF = new ItemFactory();
+    	
+    	iV.addItem(iF.manufactureItem(75,2));
+    	iV.addItem(iF.manufactureItem(50,3));
+    	iV.addItem(iF.manufactureItem(100,4));
+    	iV.addItem(iF.manufactureItem(100,2));
+    	
+    	iV.showInventory();
+    	
+    	System.out.println(iV);
     	
     }
 }
