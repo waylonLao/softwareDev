@@ -68,10 +68,10 @@ public class Inventory {
     	Inventory iV = new Inventory();
     	ItemFactory iF = new ItemFactory();
     	
-    	iV.addItem(iF.manufactureItem(75,2));
-    	iV.addItem(iF.manufactureItem(50,3));
-    	iV.addItem(iF.manufactureItem(100,4));
-    	iV.addItem(iF.manufactureItem(100,2));
+    	iV.addItem(iF.manufactureItem(75));
+    	iV.addItem(iF.manufactureItem(50));
+    	iV.addItem(iF.manufactureItem(100));
+    	iV.addItem(iF.manufactureItem(100));
     	
     	iV.showInventory();
     	
