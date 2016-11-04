@@ -1,18 +1,25 @@
 package MainCode.Monster;
 
-import MainCode.Items.Item;
-import MainCode.Items.Weapon;
+
+import MainCode.Weapon;
 
 /**
 * @author nklemenc
 */
 public class Monster extends Sprite {
 
-	private int monsterID;
-	private String monsterDescription;
-	private Item itemDrop;
+	protected int monsterID;
 	private String monsterName;
+	private String monsterDescription;
+	//private Item itemDrop;
 	
+	public Monster()
+	{
+		super();
+		this.monsterID = 0;
+		this.monsterName = "null";
+		this.monsterDescription = "null";
+	}
 	
 	/**
 	 * @param monsterID
@@ -20,13 +27,23 @@ public class Monster extends Sprite {
 	 * @param monsterDescription
 	 * @param itemDrop
 	 */
-	public Monster(int health, Weapon wpn, int monsterID, String monsterName, String monsterDescription, Item itemDrop) {
-		super(health, wpn, monsterName);
-		this.monsterID = monsterID;
-		this.monsterDescription = monsterDescription;
-		this.itemDrop = itemDrop;
-		this.setMonsterName(monsterName);
+	public Monster(int health, Weapon weapon, int monsterId, 
+			String name, String monsterDescription)// Item itemDrop)
+	{
+	
+		super(health, weapon, name);
+		this.monsterID = 0;
+		this.monsterDescription = "null";
+		//this.itemDrop = "null";
 	}
+	
+
+	public void setMonsterName(String monsterName)
+	{
+		// TODO Auto-generated method stub
+		this.monsterName = monsterName;
+	}
+	
 	
 	/**
 	 * @return the monsterID
@@ -56,27 +73,19 @@ public class Monster extends Sprite {
 	/**
 	 * @return the itemDrop
 	 */
-	public Item getItemDrop() {
+	/*public Item getItemDrop() {
 		return itemDrop;
 	}
-	/**
+	*//**
 	 * @param itemDrop the itemDrop to set
-	 */
+	 *//*
 	public void setItemDrop(Item itemDrop) {
 		this.itemDrop = itemDrop;
+	}*/
+	@Override
+	public String toString() {
+		return "Monster [monsterID=" + monsterID + ", monsterDescription=" + monsterDescription 
+				+  "]";
 	}
-
-	public String getMonsterName()
-	{
-		return monsterName;
-	}
-
-	public void setMonsterName(String monsterName)
-	{
-		this.monsterName = monsterName;
-	}
-	
-	
-	
 	
 }

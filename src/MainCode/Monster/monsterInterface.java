@@ -1,3 +1,4 @@
+package MainCode.Monster;
 /**Class: ITECH
 	* @author Waylon Lao
 	* @version 1.0
@@ -10,12 +11,9 @@
 	* Purpose: – Describe the purpose of this class
 	*/
 
-package MainCode.Monster;
 
 public interface monsterInterface
 {
-	public default Monster createMonster()
-	{
-		return this.createMonster();
-	}
+	public void createMonster();
+
 }

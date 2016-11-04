@@ -1,5 +1,6 @@
 package MainCode.Monster;
 
+
 import MainCode.RandomGenerator;
 
 ///-Josh
@@ -12,6 +13,75 @@ public class MonsterFactory implements monsterInterface
 {
 	static RandomGenerator rg = new RandomGenerator();
 	static int randomNumber = rg.generate(100);
-	
+
 	//Put the if/else statements here after Monsters are made.
+
+	public Monster manufactureMonster()
+	{
+		if(randomNumber <=20)	
+		{
+			return new AlienCommando();
+			
+		}
+		else if (randomNumber <=10)
+		{
+		return new CyborgPirate();	
+		}
+		else if (randomNumber <=20)
+		{
+		return new cleaningUnit();	
+		}
+		else if (randomNumber <=35)
+		{
+		return new littleGreenMan();	
+		}
+		else if (randomNumber <=45)
+		{
+		return new maskedRobot();	
+		}
+		else if (randomNumber <=55)
+		{
+		return new returnCleaningUnit();	
+		}
+		else if (randomNumber <=65)
+		{
+		return new roboChef();	
+		}
+		else if (randomNumber <=75)
+		{
+		return new robotDoorman();
+		}
+		else if (randomNumber <=85)
+		{
+		return new spaceKraken();
+		}
+		else if (randomNumber <=95)
+		{
+		return new tunnelingHorror();
+		}
+		else if (randomNumber <=100)
+		{
+		return new Zorexian();
+		}
+		else
+			return null;
+	}
+	
+	public static void main(String[] args)
+	{
+		Monster ranMonster = new Monster();
+		MonsterFactory mF = new MonsterFactory();
+		ranMonster = mF.manufactureMonster();
+		System.out.println(ranMonster.toString());
+	}
+	@Override
+	public void createMonster() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
 }

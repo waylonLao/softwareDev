@@ -1,18 +1,26 @@
 package MainCode.Monster;
 
-import MainCode.Items.Weapon;
+
+import MainCode.Weapon;
 
 /**
 * @author nklemenc
 */
 public class Sprite {
 	
-	private int health;
-	private int maxHealth;
-	private Weapon weaponID;
-	private String name;
+	protected int health;
+	protected int maxHealth;
+	protected Weapon weapon;
+	protected String name;
 	
 	
+	public Sprite()
+	{
+		this.health = 0;
+		this.maxHealth = health;
+		this.weapon = new Weapon();
+		this.name = "";
+	}
 	
 	/**
 	 * @param health
@@ -21,7 +29,7 @@ public class Sprite {
 	public Sprite(int h, Weapon w, String n) {
 		maxHealth = h;
 		health = h;
-		weaponID = w;
+		weapon = w;
 		name = n;
 	}
 
@@ -66,8 +74,8 @@ public class Sprite {
 	/**
 	 * @return the weaponID
 	 */
-	public Weapon getWeaponID() {
-		return weaponID;
+	public Weapon getWeapon() {
+		return weapon;
 	}
 
 
@@ -75,8 +83,8 @@ public class Sprite {
 	/**
 	 * @param weaponID the weaponID to set
 	 */
-	public void setWeaponID(Weapon newWeaponID) {
-		weaponID = newWeaponID;
+	public void setWeapon(Weapon newWeapon) {
+		weapon = newWeapon;
 	}
 	
 	
@@ -100,21 +108,21 @@ public class Sprite {
 
 
 	public String doDamage(Sprite target){
-		target.setHealth(target.getHealth() - this.getWeaponID().getWeaponDamage());
+		target.setHealth(target.getHealth() - this.getWeapon().getWeaponDamage());
 		if(target.getHealth() <= 0){
 			return target.getName() + " has been defeated!";
 		}
-		return this.getName() + " dealt " + this.getWeaponID().getWeaponDamage() + " damage to the " + target.getName();
+		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();
 		
 		
 	}
 	
 	public String takeDamage(Sprite target){
-		this.setHealth(this.getHealth() - target.getWeaponID().getWeaponDamage());
+		this.setHealth(this.getHealth() - target.getWeapon().getWeaponDamage());
 		if(this.getHealth() <= 0){
 			return "You died.";
 		}
-		return target.getName() + " has dealt " + target.getWeaponID().getWeaponDamage() + " damage to you ";
+		return target.getName() + " has dealt " + target.getWeapon().getWeaponDamage() + " damage to you ";
 	}
 
 }
