@@ -18,7 +18,7 @@ public class DamageTester {
 		Weapon testWeapon = new Weapon();
 		
 		Player testPlayer = new Player(200, testWeapon);
-		Monster testMonster = new Monster(200, testWeapon, 1, "Test Monster", "This is a test Monster", testItem);
+		Monster testMonster = new Monster();
 		
 		testPlayer.doDamage(testMonster);
 		testPlayer.doDamage(testMonster);

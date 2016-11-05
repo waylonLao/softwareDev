@@ -42,8 +42,7 @@ public class ConcussionGrenade extends Consumable implements ItemInterface{
 
 	@Override
 	public void createItem() {
-		// TODO Auto-generated method stub
-		
+		ConcussionGrenade cG = new ConcussionGrenade();
 	}
 
 }

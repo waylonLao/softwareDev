@@ -14,6 +14,7 @@ public class PlasmaInducer extends Weapon implements ItemInterface{
 		setItemDescription("Nikola would have been proud of this invention");
 		setItemUse("Equip to fight monsters.");
 		this.isKeyItem = false;
+		setWeaponDamage(100);
 	}
 	
 	public boolean isKeyItem()

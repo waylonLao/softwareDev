@@ -1,12 +1,11 @@
 package MainCode.Monster;
 
 import MainCode.Items.ConcussionGrenade;
-import MainCode.Items.Item;
+import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
-import MainCode.Items.Weapon;
 
 /**
- * Class: alienCommando.java
+ * Class: cleaningUnit.java
  * 
  * @author afirdaus
  * @version 1.0
@@ -22,17 +21,16 @@ import MainCode.Items.Weapon;
 
 
 
-public class AlienCommando extends Monster implements monsterInterface
+public class CleaningUnit extends Monster implements monsterInterface
+
 {
-
-	public AlienCommando()
+	public CleaningUnit()
 	{
-
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
-		setItemDrop(new ConcussionGrenade());
+		setItemDrop(new HealthKit());
 
 	}
 
@@ -41,4 +39,9 @@ public class AlienCommando extends Monster implements monsterInterface
 		// TODO Auto-generated method stub
 
 	}
-}
+	
+	
+	
+	}
+
+

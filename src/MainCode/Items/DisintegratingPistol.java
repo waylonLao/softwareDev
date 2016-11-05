@@ -12,7 +12,7 @@ public class DisintegratingPistol extends Weapon implements ItemInterface{
 		setItemName("Disintegrating Pistol");
 		setItemDescription("It feels lighter than expected and has a simple trigger to fire.");
 		setItemUse("Equip to fight monsters.");
-		
+		setWeaponDamage(75);
 	}
 	
 	@Override
