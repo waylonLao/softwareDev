@@ -21,7 +21,7 @@ public class Room {
    private boolean quickJumpCapable;
    private boolean powered;
 
-   //Constructor
+   //Constructors
    public Room()
    {
 	   
