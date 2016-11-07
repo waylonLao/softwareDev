@@ -6,10 +6,7 @@ import MainCode.Item;
 import MainCode.LeadPipe;
 
 public class returnCleaningUnit extends Monster implements monsterInterface
-{
-
-private Item itemDrop;
-	
+{	
 	public returnCleaningUnit()
 {
 	//super(health, wpn, monsterID, monsterName, monsterDescription, itemDrop);
