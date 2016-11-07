@@ -41,23 +41,23 @@ public class MonsterFactory implements monsterInterface
 		}
 		else if (randomNumber <=55)
 		{
-		return new returnCleaningUnit();	
+		return new ReturnCleaningUnit();	
 		}
 		else if (randomNumber <=65)
 		{
-		return new roboChef();	
+		return new RoboChef();	
 		}
 		else if (randomNumber <=75)
 		{
-		return new robotDoorman();
+		return new RobotDoorman();
 		}
 		else if (randomNumber <=85)
 		{
-		return new spaceKraken();
+		return new SpaceKraken();
 		}
 		else if (randomNumber <=95)
 		{
-		return new tunnelingHorror();
+		return new TunnelingHorror();
 		}
 		else if (randomNumber <=100)
 		{

@@ -2,14 +2,12 @@ package MainCode.Monster;
 
 
 
-
 import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.LeadPipe;
 
-public class Zorexian extends Monster implements monsterInterface
+public class TunnelingHorror extends Monster implements monsterInterface
 {
-
-	public Zorexian()
+	public TunnelingHorror()
 	{
 
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
@@ -25,6 +23,4 @@ public class Zorexian extends Monster implements monsterInterface
 		// TODO Auto-generated method stub
 
 	}
-
-
 }
