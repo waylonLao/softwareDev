@@ -29,15 +29,15 @@ public class MonsterFactory implements monsterInterface
 		}
 		else if (randomNumber <=20)
 		{
-		return new cleaningUnit();	
+		return new CleaningUnit();	
 		}
 		else if (randomNumber <=35)
 		{
-		return new littleGreenMan();	
+		return new LittleGreenMan();	
 		}
 		else if (randomNumber <=45)
 		{
-		return new maskedRobot();	
+		return new MaskedRobot();	
 		}
 		else if (randomNumber <=55)
 		{
