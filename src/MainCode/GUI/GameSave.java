@@ -19,8 +19,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class GameSave {
+	
+	
 
-    public static Properties prop = new Properties();
+    /*public static Properties prop = new Properties();
 
     public void SaveGame(String point){
         try{
@@ -65,6 +67,6 @@ public class GameSave {
             }
         }
         return result;
-    }
+    }*/
 
 }

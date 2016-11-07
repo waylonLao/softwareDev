@@ -15,8 +15,10 @@ package MainCode.GUI;
 import java.util.Scanner;
 
 public class Main {
+	
+	
 
-    public static GameSave GS = new GameSave();
+    /*public static GameSave GS = new GameSave();
     public static Scanner in = new Scanner(System.in);
     public static String question;
 
@@ -82,5 +84,5 @@ public class Main {
 
         }
 
-    }
+    }*/
 }
