@@ -1,10 +1,11 @@
 package MainCode.Monster;
 
+import java.io.Serializable;
 
 /**
 * @author nklemenc
 */
-public class Sprite {
+public class Sprite implements Serializable {
 	
 	protected int health;
 	protected int maxHealth;

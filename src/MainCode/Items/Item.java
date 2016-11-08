@@ -1,9 +1,12 @@
 package MainCode.Items;
+
+import java.io.Serializable;
+
 /**
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class Item {
+public class Item implements Serializable{
     
 	private int itemID;
     private String itemName;

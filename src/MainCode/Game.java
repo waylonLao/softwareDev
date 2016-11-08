@@ -21,6 +21,7 @@ import java.io.ObjectOutputStream;
 
 import MainCode.Items.*;
 import MainCode.Monster.*;
+import MainCode.Rooms.*;
 
 public class Game
 {
@@ -31,11 +32,14 @@ public class Game
 	{
 		outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
 		outputs.writeObject(new Player(500, new LeadPipe()));
+		outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
 	}
 	
 	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
+		System.out.println(inputs.readObject());
+		System.out.println("-----------------");
 		System.out.println(inputs.readObject());
 	}
 	
