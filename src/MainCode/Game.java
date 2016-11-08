@@ -19,8 +19,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import MainCode.Items.LeadPipe;
-import MainCode.Monster.Player;
+import MainCode.Items.*;
+import MainCode.Monster.*;
 
 public class Game
 {
@@ -33,12 +33,13 @@ public class Game
 		outputs.writeObject(new Player(500, new LeadPipe()));
 	}
 	
-	public void loadGame() throws FileNotFoundException, IOException
+	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
+		System.out.println(inputs.readObject());
 	}
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		try
 		{
