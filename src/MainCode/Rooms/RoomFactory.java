@@ -76,7 +76,7 @@ public class RoomFactory {
 	
 	
 	
-	static Door[] room0Doors = {new Door(room1, "north"), new Door(room19, "south"), new Door(room11, "east"), new Door(room20, "west")};
+	static Door[] room0Doors = {new Door(room1, "north"), new Door(room19, "south", true), new Door(room11, "east"), new Door(room20, "west")};
 	static Door[] room1Doors = {new Door(room2, "north"), new Door(room0, "south"), new Door(room31, "east"), new Door(room25, "west")};
 	static Door[] room2Doors = {new Door(room3, "north"), new Door(room1, "south"), new Door(room31, "east"), new Door(room25, "west")};
 	static Door[] room3Doors = {new Door(room4, "north"), new Door(room2, "south"), new Door(room18, "east"), new Door(null, "west")};
@@ -110,35 +110,61 @@ public class RoomFactory {
 	static Door[] room31Doors = {new Door(room15, "northeast"), new Door(room14, "southeast"), new Door(room2, "northwest"), new Door(room1, "southwest")};
 	
 	
-	public static Map<Room, Door[]> myMap = new HashMap<Room, Door[]>();
+	public static Map<Room, Door[]> myMap = new HashMap<Room, Door[]>()
+	{
+	    {
+	        put(room0, room0Doors);
+	        put(room1, room1Doors);
+	        put(room2, room2Doors);
+	        put(room3, room3Doors);
+	        put(room4, room4Doors);
+	        put(room5, room5Doors);
+	        put(room6, room6Doors);
+	        put(room7, room7Doors);
+	        put(room8, room8Doors);
+	        put(room9, room9Doors);
+	        put(room10, room10Doors);
+	        put(room11, room11Doors);
+	        put(room12, room12Doors);
+	        put(room13, room13Doors);
+	        put(room14, room14Doors);
+	        put(room15, room15Doors);
+	        put(room16, room16Doors);
+	        put(room17, room17Doors);
+	        put(room18, room18Doors);
+	        put(room19, room19Doors);
+	        put(room20, room20Doors);
+	        put(room21, room21Doors);
+	        put(room22, room22Doors);
+	        put(room23, room23Doors);
+	        put(room24, room24Doors);
+	        put(room25, room25Doors);
+	        put(room26, room26Doors);
+	        put(room27, room27Doors);
+	        put(room28, room28Doors);
+	        put(room29, room29Doors);
+	        put(room30, room30Doors);
+	        put(room31, room31Doors);
+	    }
+	};
+	
 	
 	public static void main(String[]args){
-		myMap.put(room0, room0Doors);
-		
-		Player testPlayer = new Player(200, null);
-		testPlayer.setRoomID(room0);
-		System.out.println("TESTING: First show the description of the player's current room");
-		System.out.println(testPlayer.getRoomID().getRoomDescription());
+		if(myMap.get(room0)[1].getIsLocked() == true)
+		System.out.println("Door Locked");
+		else
+			System.out.println("Door not locked");
 		
 		
-		System.out.println("\nTESTING: Next show the possible directions the player can move");
+		System.out.println("Unlocking Doors");
 		
-		for(int i = 0; i < myMap.get(testPlayer.getRoomID()).length; i++){
-			System.out.println(myMap.get(testPlayer.getRoomID())[i].direction);
-		}
+		myMap.get(room0)[1].setIsLocked(false);
 		
 		
-		System.out.println("\nTESTING: Finally move the player to the northern room and show the new description");
-		testPlayer.setRoomID(myMap.get(testPlayer.getRoomID())[0].connection);
-		
-		System.out.println(testPlayer.getRoomID().getRoomDescription());
+		if(myMap.get(room0)[1].getIsLocked() == true)
+			System.out.println("Door Locked");
+			else
+				System.out.println("Door not locked");
 	}
-	
-
-
-
-	
-	
-	
 	
 }

@@ -2,24 +2,21 @@ package MainCode.Monster;
 
 
 import MainCode.Items.Item;
+import MainCode.Items.Weapon;
 
 /**
 * @author nklemenc
 */
 public class Monster extends Sprite {
 
-	protected int monsterID;
-	private String monsterName;
 	private String monsterDescription;
 	private Item itemDrop;
-	private int monsterStrength;
 	
-	public Monster()
+	public Monster(int h, Weapon w, String n, String md, Item i)
 	{
-		super();
-		this.monsterID = 0;
-		this.setMonsterName("null");
-		this.monsterDescription = "null";
+		super(h,w,n);
+		monsterDescription = md;
+		itemDrop = i;
 	}
 	
 	/**
@@ -41,19 +38,6 @@ public class Monster extends Sprite {
 
 
 	/**
-	 * @return the monsterID
-	 */
-	public int getMonsterID() {
-		return monsterID;
-	}
-	/**
-	 * @param monsterID the monsterID to set
-	 */
-	public void setMonsterID(int monsterID) {
-		this.monsterID = monsterID;
-	}
-
-	/**
 	 * @return the monsterDescription
 	 */
 	public String getMonsterDescription() {
@@ -66,11 +50,7 @@ public class Monster extends Sprite {
 		this.monsterDescription = monsterDescription;
 	}
 
-	@Override
-	public String toString() {
-		return "Monster [monsterID=" + monsterID + ", monsterDescription=" + monsterDescription 
-				+  "]";
-	}
+
 
 	public Item getItemDrop() {
 		return itemDrop;
@@ -80,26 +60,7 @@ public class Monster extends Sprite {
 		this.itemDrop = itemDrop;
 	}
 
-	public String getMonsterName() {
-		return monsterName;
-	}
 
-	public void setMonsterName(String monsterName) {
-		this.monsterName = monsterName;
-	}
-
-	/**
-	 * @return the monsterStrength
-	 */
-	public int getMonsterStrength() {
-		return monsterStrength;
-	}
-
-	/**
-	 * @param monsterStrength the monsterStrength to set
-	 */
-	public void setMonsterStrength(int monsterStrength) {
-		this.monsterStrength = monsterStrength;
-	}
+	
 	
 }

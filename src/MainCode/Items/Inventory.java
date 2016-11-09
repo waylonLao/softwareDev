@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Inventory {
     
-    private ArrayList<Item> keyItemInventory = new ArrayList<Item>();
+    private ArrayList<Key> keyItemInventory = new ArrayList<Key>();
     private ArrayList<Item> consumableInventory = new ArrayList<Item>();
 
     public Inventory()
@@ -20,14 +20,14 @@ public class Inventory {
     /**
      * @return the keyItemInventory
      */
-    public ArrayList<Item> getKeyItemInventory() {
+    public ArrayList<Key> getKeyItemInventory() {
         return keyItemInventory;
     }
 
     /**
      * @param keyItemInventory the keyItemInventory to set
      */
-    public void setKeyItemInventory(ArrayList<Item> keyItemInventory) {
+    public void setKeyItemInventory(ArrayList<Key> keyItemInventory) {
         this.keyItemInventory = keyItemInventory;
     }
 
@@ -65,17 +65,6 @@ public class Inventory {
 	}
 	public static void main(String[] args)
     {
-    	Inventory iV = new Inventory();
-    	ItemFactory iF = new ItemFactory();
-    	
-    	iV.addItem(iF.manufactureItem(75));
-    	iV.addItem(iF.manufactureItem(50));
-    	iV.addItem(iF.manufactureItem(100));
-    	iV.addItem(iF.manufactureItem(100));
-    	
-    	iV.showInventory();
-    	
-    	System.out.println(iV);
     	
     }
 }

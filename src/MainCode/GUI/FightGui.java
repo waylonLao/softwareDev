@@ -21,20 +21,7 @@ public class FightGui extends Application{
 	private Button returnBtn = new Button("Return");
 	
 	
-	
-	Item testItem = new Item();
-	Weapon testWeapon = new Weapon();
-	Weapon testWeapon2 = new Weapon();
-	
-	Player testPlayer = new Player(200, testWeapon);
-	Monster testMonster = new Monster();
 
-	Text monsterName = new Text(testMonster.getName());
-	Text playerName = new Text(testPlayer.getName());
-	
-	
-	Text playerHealth = new Text(String.valueOf(testPlayer.getHealth()) + "/" + String.valueOf(testPlayer.getMaxHealth()));
-	Text monsterHealth = new Text(String.valueOf(testMonster.getHealth()) + "/" + String.valueOf(testMonster.getMaxHealth()));
 	
 	Text currentActions = new Text();
 	Text lastActions = new Text();
@@ -50,18 +37,23 @@ public class FightGui extends Application{
 		
 		
 		attackBtn.setOnAction(e -> doDamage());
-		returnBtn.setOnAction(e -> primaryStage.close());
+		returnBtn.setOnAction(e -> returnMainScene());
 		
-		Scene scene = new Scene(mainPane, 500, 500);
+		Scene fightScene = new Scene(mainPane, 500, 500);
 		
 	    primaryStage.setTitle("Fight GUI"); // Set title
-	    primaryStage.setScene(scene); // Place the scene in the stage
+	    primaryStage.setScene(fightScene); // Place the scene in the stage
 	    primaryStage.show(); // Display the stage
 	    
 	    
 	}
 
 	
+	private void returnMainScene() {
+		primaryStage.setScene(mainScene);
+	}
+
+
 	private GridPane getGrid(){
 		GridPane myGrid = new GridPane();
 		myGrid.setAlignment(Pos.CENTER);
