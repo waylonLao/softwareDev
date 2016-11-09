@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import MainCode.Items.Item;
 import MainCode.Monster.Monster;
+import MainCode.Puzzles.Puzzle;
 
 /**
  * @author Joshua Tran
@@ -24,6 +25,7 @@ public class Room implements Serializable{
 	private Item item;
 	private ArrayList<Item> roomItemArray;
 	private ArrayList<Monster> roomMonsterArray;
+	private ArrayList<Puzzle> roomPuzzleArray;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -192,6 +194,18 @@ public class Room implements Serializable{
 		this.roomMonsterArray = roomMonsterArray;
 	}
 	
+	/**
+	 * @return the roomPuzzleArray
+	 */
+	public ArrayList<Puzzle> getRoomPuzzleArray() {
+		return roomPuzzleArray;
+	}
+	/**
+	 * @param roomPuzzleArray the roomPuzzleArray to set
+	 */
+	public void setRoomPuzzleArray(ArrayList<Puzzle> roomPuzzleArray) {
+		this.roomPuzzleArray = roomPuzzleArray;
+	}
 	//add item to room
 	public void addItem(Item item)
 	{
@@ -201,6 +215,11 @@ public class Room implements Serializable{
 	public void addMonster(Monster monster)
 	{
 		roomMonsterArray.add(monster);
+	}
+	//add puzzle to room
+	public void addPuzzle(Puzzle puzzle)
+	{
+		roomPuzzleArray.add(puzzle);
 	}
 	
 	public void quickJump()

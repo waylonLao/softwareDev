@@ -6,6 +6,7 @@ package MainCode.Rooms;
 
 import MainCode.Items.LeadPipe;
 import MainCode.Items.RedCard;
+import MainCode.Monster.RogueCleaningUnit;
 
 /**
  * @author Joshua Tran
@@ -41,7 +42,7 @@ public class CryoRoom extends Room{
 					+ " To the west and east there are black doors, the west is labeled Engine Room and the east is labeled Ship AI.  "
 					+ "To the north and south are red doors labeled Cryogenics Room");
 			addItem(new LeadPipe());
-			addMonster(new R);
+			addMonster(new RogueCleaningUnit());
 		}
 		else if(a == 2)
 		{
