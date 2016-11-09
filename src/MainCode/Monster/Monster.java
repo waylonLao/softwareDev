@@ -87,4 +87,5 @@ public class Monster extends Sprite {
 		this.monsterName = monsterName;
 	}
 	
+	
 }

@@ -3,6 +3,7 @@ package MainCode.Monster;
 import java.io.Serializable;
 
 import MainCode.Items.Weapon;
+import MainCode.Rooms.Door;
 import MainCode.Rooms.Room;
 
 /**
@@ -25,6 +26,14 @@ public class Player extends Sprite implements Serializable {
 	
 	public void equipItem(){
 		//TODO update weaponID
+	}
+	
+	public String move(Door d){
+		if(d.getIsLocked()){
+			return "The door is locked shut.";
+		}
+		this.setRoomID(d.getConnection());
+		return d.getConnection().getRoomDescription();
 	}
 	
 	

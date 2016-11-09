@@ -1,5 +1,7 @@
 package MainCode.Items;
 
+import MainCode.Monster.Sprite;
+
 /**
  * @author Joshua Tran
  * Date: Oct 31, 2016
@@ -12,7 +14,7 @@ public class ConcussionGrenade extends Consumable implements ItemInterface{
 		super();
 		setItemName("Concussion Grenade");
 		setItemDescription("A powerful stun grenade.");
-		setItemUse("Use to stun monster for a turn.");
+		setItemUse("You throw out a concussion grenade.");
 		setSparkleValue(1);
 		this.isKeyItem = false;
 		// TODO Auto-generated constructor stub
@@ -33,6 +35,10 @@ public class ConcussionGrenade extends Consumable implements ItemInterface{
 	public void setKeyItem(boolean isKeyItem)
 	{
 		this.isKeyItem = isKeyItem;
+	}
+	
+	public void itemFuction(Sprite target){
+		target.setStunDuration(2);
 	}
 	
 	@Override
