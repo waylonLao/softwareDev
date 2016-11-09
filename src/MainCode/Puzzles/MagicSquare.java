@@ -8,10 +8,11 @@ package MainCode.Puzzles;
  * @author Joshua Tran
  * Date: Nov 9, 2016
  */
-public class BinaryPuzzle extends Puzzle{
-
-	public BinaryPuzzle()
+public class MagicSquare extends Puzzle{
+	
+	public MagicSquare()
 	{
-		setPuzzleName("Binary Puzzle");
+		setPuzzleName("Magic Square");
 	}
+
 }
