@@ -37,6 +37,12 @@ public class ServerBank extends Room{
 					+ "Each door in the room has a nameplate above it; the blue door to the north reads Server Bank 2, "
 					+ "the Blue door to the South reads Server Room 4, and the black door to the West reads AI");
 		}
-		else return;
+		else if(a == 4)
+		{
+			setRoomName("Server Bank 4");
+			setRoomDescription("This room is abnormally dark even compared to the crippled ship.  "
+					+ "The light blinking on the server bank are creating a dancing shadow effect, giving a serial effect. "
+					+ "Each door in the room has a nameplate above it; the blue door to the West reads To Cryo Room, and the Blue door to the South reads Server Room 3");
+		}
 	}
 }
