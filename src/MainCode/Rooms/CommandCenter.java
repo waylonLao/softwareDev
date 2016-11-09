@@ -4,6 +4,8 @@
  */
 package MainCode.Rooms;
 
+import MainCode.Monster.TunnelingHorror;
+
 /**
  * @author Joshua Tran
  * Date: Nov 9, 2016

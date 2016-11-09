@@ -73,6 +73,32 @@ public class Hallway extends Room{
 					+ "The door to the west has the words Cryogenics Room written above it, "
 					+ "and to the east, there is the rest of the hallway leading to a server bank.");
 		}
+		else if(a == 6)
+		{
+			setRoomName("Hallway 6");
+			setRoomDescription("If 10M not fought) The hallway towards Communications is long, and includes two sections. "
+					+ "The walls are a neutral grey in color, with the outlines of wall panels visible in some places. "
+					+ "In the northeast corner of this hallway, near the cryo room door, sits an energy cell chest. "
+					+ "(If 10M fought) This section of the hallway seems more damaged than the other. "
+					+ "There are panels missing from the walls, with severed, sparking wires protruding from them, "
+					+ "and the walkway is deformed. The energy cell chest that was in the corner is crushed along with that entire wall. "
+					+ "(Note, if you somehow managed to get through here without getting the cell, it is now permanently lost) "
+					+ "To the west is to the second section of the hallway towards the comm room, and to the east is the cryo room. "
+					+ "The door to the north has the word Engine written over it.");
+			addItem(new ECell());
+			addPuzzle(new BinaryPuzzle());
+			
+		}
+		else if(a == 7)
+		{
+			setRoomName("Hallway 7");
+			setRoomDescription("If 10M not fought) The second section of the hallway towards the com room seems "
+					+ "identical to the first, though it is missing the energy cell chest. "
+					+ "(If 10M fought) The second section of the hallway towards the comm room shows signs "
+					+ "of the recent attack, with sections of the outer hull visibly bent inward. "
+					+ "To the west is Communications, and to the rest of the hallway towards the cryo room. "
+					+ "The door to the north has the word Engine written over it.");
+		}
 	}
 
 }
