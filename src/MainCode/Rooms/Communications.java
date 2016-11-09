@@ -12,6 +12,7 @@ public class Communications extends Room{
 	
 	public Communications()
 	{
+		setQuickJumpCapable(true);
 		setRoomName("Communicatiions");
 		setRoomDescription("This room is a uniform drab grey like the others. "
 				+ "A few computer terminals with blinking lights populate the otherwise sparsely furnished room. "

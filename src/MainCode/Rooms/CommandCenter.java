@@ -14,6 +14,7 @@ public class CommandCenter extends Room{
 
 	public CommandCenter()
 	{
+		setQuickJumpCapable(true);
 		setRoomName("Command Center");
 		setRoomDescription("When you enter, the room is lit only by back power making it very dim. "
 				+ "Knowing where the energy cell for the room goes you turn right and begin to make your "

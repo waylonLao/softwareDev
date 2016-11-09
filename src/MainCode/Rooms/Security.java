@@ -16,6 +16,7 @@ public class Security extends Room{
 	
 	public Security()
 	{
+		setQuickJumpCapable(true);
 		setRoomName("Security");
 		setRoomDescription("Just like the other rooms it is dull gray but with a flickering overhead light.  "
 				+ "Looking around the room the all the monitors are static except for the one in the command center which appears to be in working order.  "

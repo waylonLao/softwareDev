@@ -1,6 +1,5 @@
 package MainCode.Rooms;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,7 +11,7 @@ import MainCode.Puzzles.Puzzle;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class Room implements Serializable{
+public class Room {
 
 	private int roomID;
 	private String roomName;
