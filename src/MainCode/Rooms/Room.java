@@ -23,6 +23,7 @@ public class Room implements Serializable{
 	private Item[] items;
 	private Item item;
 	private ArrayList<Item> roomItemArray;
+	private ArrayList<Monster> roomMonsterArray;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -178,9 +179,28 @@ public class Room implements Serializable{
 
 	//Methods
 
+	/**
+	 * @return the roomMonsterArray
+	 */
+	public ArrayList<Monster> getRoomMonsterArray() {
+		return roomMonsterArray;
+	}
+	/**
+	 * @param roomMonsterArray the roomMonsterArray to set
+	 */
+	public void setRoomMonsterArray(ArrayList<Monster> roomMonsterArray) {
+		this.roomMonsterArray = roomMonsterArray;
+	}
+	
+	//add item to room
 	public void addItem(Item item)
 	{
 		roomItemArray.add(item);
+	}
+	//add monster to room
+	public void addMonster(Monster monster)
+	{
+		roomMonsterArray.add(monster);
 	}
 	
 	public void quickJump()
@@ -199,10 +219,7 @@ public class Room implements Serializable{
 	{
 
 	}
-	public void populateRoom()
-	{
 
-	}
 	public Item getItem()
 	{
 		return item;

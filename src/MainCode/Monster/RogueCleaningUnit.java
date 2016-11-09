@@ -21,12 +21,12 @@ import MainCode.Items.LeadPipe;
 
 
 
-public class CleaningUnit extends Monster implements monsterInterface
+public class RogueCleaningUnit extends Monster implements monsterInterface
 
 {
-	public CleaningUnit()
+	public RogueCleaningUnit()
 	{
-		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
