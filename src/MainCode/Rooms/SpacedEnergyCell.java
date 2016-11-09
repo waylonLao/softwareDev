@@ -13,8 +13,6 @@ public class SpacedEnergyCell extends Room{
 	public SpacedEnergyCell()
 	{
 		setRoomName("Spaced Energy Cell");
-		
-		if()
 	}
 
 }

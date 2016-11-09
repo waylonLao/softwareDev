@@ -22,7 +22,7 @@ import MainCode.Items.Weapon;
 
 
 
-public class AlienCommando extends Monster implements monsterInterface
+public class AlienCommando extends Monster implements MonsterInterface
 {
 
 	public AlienCommando()

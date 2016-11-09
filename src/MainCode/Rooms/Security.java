@@ -6,6 +6,7 @@ package MainCode.Rooms;
 
 import MainCode.Items.CarbonNanotubeRope;
 import MainCode.Items.CommandCard;
+import MainCode.Puzzles.MagicSquare;
 
 /**
  * @author Joshua Tran
@@ -24,6 +25,7 @@ public class Security extends Room{
 				+ "Having never been told the code you try to hack into it by solving the magic square puzzle.");
 		addItem(new CommandCard());
 		addItem(new CarbonNanotubeRope());
+		addPuzzle(new MagicSquare());
 	}
 
 }

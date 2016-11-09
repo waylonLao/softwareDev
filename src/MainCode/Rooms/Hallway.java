@@ -65,6 +65,14 @@ public class Hallway extends Room{
 			addItem(new ECell());
 			addPuzzle(new BinaryPuzzle());
 		}
+		else if(a == 5)
+		{
+			setRoomName("Hallway 5");
+			setRoomDescription("The walls of this hallway are a uniform grey throughout. "
+					+ "Only about a quarter of the lights are working, so it is fairly dark. "
+					+ "The door to the west has the words Cryogenics Room written above it, "
+					+ "and to the east, there is the rest of the hallway leading to a server bank.");
+		}
 	}
 
 }
