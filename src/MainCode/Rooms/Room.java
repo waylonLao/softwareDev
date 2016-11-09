@@ -13,6 +13,7 @@ import MainCode.Monster.Monster;
 public class Room implements Serializable{
 
 	private int roomID;
+	private String roomName;
 	private String roomDescription;
 	//chances to get a monster, puzzle or item
 	private int monsterChance;
@@ -202,6 +203,18 @@ public class Room implements Serializable{
 	public void setItem(Item item)
 	{
 		this.item = item;
+	}
+	/**
+	 * @return the roomName
+	 */
+	public String getRoomName() {
+		return roomName;
+	}
+	/**
+	 * @param roomName the roomName to set
+	 */
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
 	}
 	@Override
 	public String toString()
