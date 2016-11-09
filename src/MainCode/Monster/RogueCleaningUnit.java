@@ -21,7 +21,7 @@ import MainCode.Items.LeadPipe;
 
 
 
-public class RogueCleaningUnit extends Monster implements monsterInterface
+public class RogueCleaningUnit extends Monster implements MonsterInterface
 
 {
 	public RogueCleaningUnit()
