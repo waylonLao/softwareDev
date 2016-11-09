@@ -1,6 +1,7 @@
 package MainCode.Rooms;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import MainCode.Items.Item;
@@ -21,6 +22,7 @@ public class Room implements Serializable{
 	private int itemChance;
 	private Item[] items;
 	private Item item;
+	private ArrayList<Item> roomItemArray;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -176,6 +178,11 @@ public class Room implements Serializable{
 
 	//Methods
 
+	public void addItem(Item item)
+	{
+		roomItemArray.add(item);
+	}
+	
 	public void quickJump()
 	{
 
@@ -215,6 +222,18 @@ public class Room implements Serializable{
 	 */
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
+	}
+	/**
+	 * @return the roomItemArray
+	 */
+	public ArrayList<Item> getRoomItemArray() {
+		return roomItemArray;
+	}
+	/**
+	 * @param roomItemArray the roomItemArray to set
+	 */
+	public void setRoomItemArray(ArrayList<Item> roomItemArray) {
+		this.roomItemArray = roomItemArray;
 	}
 	@Override
 	public String toString()
