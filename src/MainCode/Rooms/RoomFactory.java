@@ -10,7 +10,7 @@ public class RoomFactory {
 
 
 	
-	static Room room0 = new Room(0, "The room has 4 doors and each door has a name playe above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", null, null, false, true);
+	static Room room0 = new Room(0, "The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", null, null, false, true);
 	
 	static Room room1 = new Room(1, "The walls are dull grey and lined with the statis units for other crew members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\". To the north and south are red doors labeled \"Cryogenics Room\"", null, null, false, true);
 	
