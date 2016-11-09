@@ -12,6 +12,7 @@ public class Monster extends Sprite {
 	private String monsterName;
 	private String monsterDescription;
 	private Item itemDrop;
+	private int monsterStrength;
 	
 	public Monster()
 	{
@@ -85,6 +86,20 @@ public class Monster extends Sprite {
 
 	public void setMonsterName(String monsterName) {
 		this.monsterName = monsterName;
+	}
+
+	/**
+	 * @return the monsterStrength
+	 */
+	public int getMonsterStrength() {
+		return monsterStrength;
+	}
+
+	/**
+	 * @param monsterStrength the monsterStrength to set
+	 */
+	public void setMonsterStrength(int monsterStrength) {
+		this.monsterStrength = monsterStrength;
 	}
 	
 	

@@ -1,16 +1,17 @@
 package MainCode.Rooms;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import MainCode.Items.Item;
 import MainCode.Monster.Monster;
+import MainCode.Puzzles.Puzzle;
 
 /**
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class Room implements Serializable{
+public class Room {
 
 	private int roomID;
 	private String roomName;
@@ -21,6 +22,9 @@ public class Room implements Serializable{
 	private int itemChance;
 	private Item[] items;
 	private Item item;
+	private ArrayList<Item> roomItemArray;
+	private ArrayList<Monster> roomMonsterArray;
+	private ArrayList<Puzzle> roomPuzzleArray;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -176,6 +180,47 @@ public class Room implements Serializable{
 
 	//Methods
 
+	/**
+	 * @return the roomMonsterArray
+	 */
+	public ArrayList<Monster> getRoomMonsterArray() {
+		return roomMonsterArray;
+	}
+	/**
+	 * @param roomMonsterArray the roomMonsterArray to set
+	 */
+	public void setRoomMonsterArray(ArrayList<Monster> roomMonsterArray) {
+		this.roomMonsterArray = roomMonsterArray;
+	}
+	
+	/**
+	 * @return the roomPuzzleArray
+	 */
+	public ArrayList<Puzzle> getRoomPuzzleArray() {
+		return roomPuzzleArray;
+	}
+	/**
+	 * @param roomPuzzleArray the roomPuzzleArray to set
+	 */
+	public void setRoomPuzzleArray(ArrayList<Puzzle> roomPuzzleArray) {
+		this.roomPuzzleArray = roomPuzzleArray;
+	}
+	//add item to room
+	public void addItem(Item item)
+	{
+		roomItemArray.add(item);
+	}
+	//add monster to room
+	public void addMonster(Monster monster)
+	{
+		roomMonsterArray.add(monster);
+	}
+	//add puzzle to room
+	public void addPuzzle(Puzzle puzzle)
+	{
+		roomPuzzleArray.add(puzzle);
+	}
+	
 	public void quickJump()
 	{
 
@@ -192,10 +237,7 @@ public class Room implements Serializable{
 	{
 
 	}
-	public void populateRoom()
-	{
 
-	}
 	public Item getItem()
 	{
 		return item;
@@ -215,6 +257,18 @@ public class Room implements Serializable{
 	 */
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
+	}
+	/**
+	 * @return the roomItemArray
+	 */
+	public ArrayList<Item> getRoomItemArray() {
+		return roomItemArray;
+	}
+	/**
+	 * @param roomItemArray the roomItemArray to set
+	 */
+	public void setRoomItemArray(ArrayList<Item> roomItemArray) {
+		this.roomItemArray = roomItemArray;
 	}
 	@Override
 	public String toString()

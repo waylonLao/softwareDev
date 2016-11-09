@@ -20,7 +20,7 @@ import MainCode.Items.LeadPipe;
 
 
 
-	public class LittleGreenMan extends Monster implements monsterInterface
+	public class LittleGreenMan extends Monster implements MonsterInterface
 	{
 		public LittleGreenMan()
 		{

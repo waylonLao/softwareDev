@@ -4,6 +4,10 @@
  */
 package MainCode.Rooms;
 
+import MainCode.Items.LeadPipe;
+import MainCode.Items.RedCard;
+import MainCode.Monster.RogueCleaningUnit;
+
 /**
  * @author Joshua Tran
  * Date: Nov 9, 2016
@@ -27,6 +31,7 @@ public class CryoRoom extends Room{
 					+ "Thanks to your knowledge of the ship you know you need to get to the AI to figure out what happened and why you're the only crew member awake."
 					+ " All other times: The room has 4 doors and each door has a name plate above it.  To the west is a yellow door marked, to the east is a blue door both marked Hallway."
 					+ "The south holds a grey door labeled Command Center and to the north is a red door labeled Cryogenics Room");
+			addItem(new RedCard());
 		}
 		else if(a == 1)
 		{
@@ -36,6 +41,8 @@ public class CryoRoom extends Room{
 					+ " You Pick up the lead pipe to start attacking with The room has 4 doors and each door has a name plate above it. "
 					+ " To the west and east there are black doors, the west is labeled Engine Room and the east is labeled Ship AI.  "
 					+ "To the north and south are red doors labeled Cryogenics Room");
+			addItem(new LeadPipe());
+			addMonster(new RogueCleaningUnit());
 		}
 		else if(a == 2)
 		{
