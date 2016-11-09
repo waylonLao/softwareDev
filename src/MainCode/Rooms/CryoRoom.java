@@ -41,7 +41,7 @@ public class CryoRoom extends Room{
 		{
 			setRoomName("Cryo Room 2");
 			setRoomDescription("The crew in this rooms appears to be fine as well, sleeping in their chambers."
-					+ "The room is a dull metal grey with four doors each with a name plate. "  
+					+ "The room is a dull metal grey with four doors each with a name plate. " 
 					+ "To the west and east there are black doors, the west is labeled Engine Room and the east is labeled Ship AI.  "
 					+ "To the north and south are red doors labeled Cryogenics Room");
 		}
