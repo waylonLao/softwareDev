@@ -14,6 +14,7 @@ public class ShipWeapons extends Room{
 	
 	public ShipWeapons()
 	{
+		setNumberOfExits(3);
 		setQuickJumpCapable(true);
 		setRoomName("Ship Weapons");
 		setRoomDescription("The walls in this room are formed by dark paneling, "

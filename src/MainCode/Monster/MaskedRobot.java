@@ -23,7 +23,7 @@ public class MaskedRobot extends Monster implements MonsterInterface
 {
 	public MaskedRobot()
 	{
-		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMonsterName("Masked Robot");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);

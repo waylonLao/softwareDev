@@ -68,7 +68,7 @@ public class Monster extends Sprite {
 
 	@Override
 	public String toString() {
-		return "Monster [monsterID=" + monsterID + ", monsterDescription=" + monsterDescription 
+		return "Monster: " + monsterName + ", monsterDescription=" + monsterDescription 
 				+  "]";
 	}
 

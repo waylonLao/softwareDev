@@ -20,6 +20,7 @@ public class CryoRoom extends Room{
 		
 		if(a == 0)
 		{
+			setNumberOfExits(4);
 			setRoomName("Cryo Room");
 			setRoomDescription("First time description: You begin waking up, your eyes are gritty and your head is foggy. "
 					+ " You glance around and unease starts to creep in.  You were supposed to be at a new planet, there should be others around, and more light or sounds, "
@@ -35,6 +36,7 @@ public class CryoRoom extends Room{
 		}
 		else if(a == 1)
 		{
+			setNumberOfExits(4);
 			setRoomName("Cryo Room 1");
 			setRoomDescription("The walls are dull grey and lined with the stasis units for other crew members, "
 					+ "they too appear fine, just out.  When you enter the room you're attacked by a Rouge Cleaning Unit. "
@@ -46,6 +48,7 @@ public class CryoRoom extends Room{
 		}
 		else if(a == 2)
 		{
+			setNumberOfExits(4);
 			setRoomName("Cryo Room 2");
 			setRoomDescription("The crew in this rooms appears to be fine as well, sleeping in their chambers."
 					+ "The room is a dull metal grey with four doors each with a name plate. " 
@@ -54,6 +57,7 @@ public class CryoRoom extends Room{
 		}
 		else if(a == 3)
 		{
+			setNumberOfExits(3);
 			setRoomName("Cryo Room 3");
 			setRoomDescription("The room is a dull metal grey with three doors each with a name plate.  "
 					+ "To the north and south are red doors both labeled Cryogenics Room.  "
@@ -62,6 +66,7 @@ public class CryoRoom extends Room{
 		}
 		else if(a == 4)
 		{
+			setNumberOfExits(2);
 			setRoomName("Cryo Room 4");
 			setRoomDescription("The room is dull metal grey with two doors, one to the north and one to the south.  "
 					+ "They are both red and labeled Cryogenics Room. "
@@ -69,6 +74,7 @@ public class CryoRoom extends Room{
 		}
 		else if(a == 5)
 		{
+			setNumberOfExits(3);
 			setRoomName("Cryo Room 5");
 			setRoomDescription("The room is dull metal grey with three doors, the north and south door are both red.  "
 					+ "The south door is labeled Cryogenics and the north is Hallway.  "

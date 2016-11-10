@@ -16,6 +16,7 @@ public class Viewing extends Room{
 		
 		if(a == 1)
 		{
+			setNumberOfExits(2);
 			setRoomName("Viewing 1");
 			setRoomDescription("This room has panoramic viewing windows, "
 					+ "the length of the room. Through these windows one can "
@@ -24,6 +25,7 @@ public class Viewing extends Room{
 		}
 		else if(a == 2)
 		{
+			setNumberOfExits(2);
 			setRoomName("Viewing 2");
 			setRoomDescription("This a dull grey room. This room has panoramic "
 					+ "windows but the ships window shutters are closed. "

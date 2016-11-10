@@ -28,7 +28,7 @@ public class AlienCommando extends Monster implements MonsterInterface
 	public AlienCommando()
 	{
 
-		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMonsterName("Alien Commando");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);

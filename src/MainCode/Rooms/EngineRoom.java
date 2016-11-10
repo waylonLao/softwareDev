@@ -10,10 +10,11 @@ import MainCode.Monster.AlienCommando;
  * @author Joshua Tran
  * Date: Nov 9, 2016
  */
-public class EngineRoom extends Room{
+public class EngineRoom extends PoweredRoom{
 	
 	public EngineRoom()
 	{
+		setNumberOfExits(6);
 		setRoomName("Engine Room");
 		setRoomDescription("This is a large grey room with multiple exits. "
 				+ "There is a large Ion Thruster in the middle of the room. "

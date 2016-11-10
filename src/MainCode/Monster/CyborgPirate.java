@@ -24,7 +24,7 @@ public class CyborgPirate extends Monster implements MonsterInterface
 {
 	public CyborgPirate()
 	{
-		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMonsterName("Cyborg Pirate");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);

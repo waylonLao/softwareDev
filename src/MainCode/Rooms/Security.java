@@ -12,10 +12,11 @@ import MainCode.Puzzles.MagicSquare;
  * @author Joshua Tran
  * Date: Nov 9, 2016
  */
-public class Security extends Room{
+public class Security extends PoweredRoom{
 	
 	public Security()
 	{
+		setNumberOfExits(1);
 		setQuickJumpCapable(true);
 		setRoomName("Security");
 		setRoomDescription("Just like the other rooms it is dull gray but with a flickering overhead light.  "

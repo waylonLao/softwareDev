@@ -8,10 +8,11 @@ package MainCode.Rooms;
  * @author Joshua Tran
  * Date: Nov 9, 2016
  */
-public class Navigation extends Room{
+public class Navigation extends PoweredRoom{
 	
 	public Navigation()
 	{
+		setNumberOfExits(1);
 		setRoomName("Navigation Room");
 		setRoomDescription("There is only one way in and one way out in this room. "
 				+ "There is an elaborate navigation control panel. Some of the gauges "

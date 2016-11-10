@@ -49,11 +49,11 @@ public class ItemFactory implements ItemInterface {
 	{
 		return new LeadPipe();
 	}
-	else if(randomNumber <= 90)
+	else if(randomNumber >= 90)
 	{
 		return new Sparkles();
 	}
-	return null;
+	return new Sparkles();
 	}
 	public static void main(String[] args)
 	{

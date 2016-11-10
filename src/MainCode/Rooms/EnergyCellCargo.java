@@ -15,6 +15,7 @@ public class EnergyCellCargo extends Room{
 	
 	public EnergyCellCargo()
 	{
+		setNumberOfExits(2);
 		setRoomName("Energy Cell Cargo Room");
 		setRoomDescription("This is a dull grey room with six empty Energy Cell crates and "
 				+ "one locked energy crate. There is  a yellow door to the south that leads "

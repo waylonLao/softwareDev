@@ -24,7 +24,7 @@ import MainCode.Items.LeadPipe;
 	{
 		public LittleGreenMan()
 		{
-			//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+			setMonsterName("Little Green Man");
 			setMaxHealth(100);
 			setWeapon(new LeadPipe());
 			setMonsterID(9);

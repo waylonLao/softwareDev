@@ -22,9 +22,13 @@ public class Room {
 	private int itemChance;
 	private Item[] items;
 	private Item item;
+	private int numberOfExits;
+	
+	//ArrayLists for Room
 	private ArrayList<Item> roomItemArray;
 	private ArrayList<Monster> roomMonsterArray;
 	private ArrayList<Puzzle> roomPuzzleArray;
+	private ArrayList<Door> roomDoorArray;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -33,7 +37,7 @@ public class Room {
 	//Constructors
 	public Room()
 	{
-
+		
 	}
 	public Room(int roomID)
 	{
@@ -221,13 +225,17 @@ public class Room {
 		roomPuzzleArray.add(puzzle);
 	}
 	
+	public void addDoor(Door door1)
+	{
+		roomDoorArray.add(door1);
+	}
 	public void quickJump()
 	{
-
+		
 	}
 	public void exploreRoom()
 	{
-
+		
 	}
 	public void pickUpItem()
 	{
@@ -269,6 +277,30 @@ public class Room {
 	 */
 	public void setRoomItemArray(ArrayList<Item> roomItemArray) {
 		this.roomItemArray = roomItemArray;
+	}
+	/**
+	 * @return the roomDoorArray
+	 */
+	public ArrayList<Door> getRoomDoorArray() {
+		return roomDoorArray;
+	}
+	/**
+	 * @param roomDoorArray the roomDoorArray to set
+	 */
+	public void setRoomDoorArray(ArrayList<Door> roomDoorArray) {
+		this.roomDoorArray = roomDoorArray;
+	}
+	/**
+	 * @return the numberOfExits
+	 */
+	public int getNumberOfExits() {
+		return numberOfExits;
+	}
+	/**
+	 * @param numberOfExits the numberOfExits to set
+	 */
+	public void setNumberOfExits(int numberOfExits) {
+		this.numberOfExits = numberOfExits;
 	}
 	@Override
 	public String toString()

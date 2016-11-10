@@ -26,7 +26,7 @@ public class RogueCleaningUnit extends Monster implements MonsterInterface
 {
 	public RogueCleaningUnit()
 	{
-		
+		setMonsterName("Rogue Cleaning Unit");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);

@@ -16,6 +16,7 @@ public class CargoRoom extends Room{
 		
 		if(a == 1)
 		{
+			setNumberOfExits(2);
 			setRoomName("Cargo 1");
 			setRoomDescription("This is a dull grey room lined with empty cargo crates. "
 					+ "There are two doors in this room, one yellow door to the north and "
@@ -23,6 +24,7 @@ public class CargoRoom extends Room{
 		}
 		else if(a == 2)
 		{
+			setNumberOfExits(2);
 			setRoomName("Cargo 2");
 			setRoomDescription("This is a dull grey room with empty shelves, a yellow door "
 					+ "to the north that leads to cargo3 and a yellow door to the south that "
