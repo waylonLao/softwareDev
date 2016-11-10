@@ -1,5 +1,7 @@
 package MainCode.Items;
 
+import MainCode.Rooms.Door;
+
 /**
  * @author Joshua Tran
  * Date: Oct 31, 2016
@@ -28,4 +30,6 @@ public class Tool extends Item{
 	public void setToolID(int toolID) {
 		this.toolID = toolID;
 	}
+	
+	
 }

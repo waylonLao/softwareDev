@@ -102,4 +102,5 @@ public class Monster extends Sprite {
 		this.monsterStrength = monsterStrength;
 	}
 	
+	
 }
