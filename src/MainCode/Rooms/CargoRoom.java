@@ -30,5 +30,10 @@ public class CargoRoom extends Room{
 					+ "to the north that leads to cargo3 and a yellow door to the south that "
 					+ "leads to Cargo 1.");
 		}
+		else if(a == 3)
+		{
+			setNumberOfExits(2);
+			setRoomName("Cargo 3");
+		}
 	}
 }

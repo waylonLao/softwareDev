@@ -224,11 +224,14 @@ public class Room implements Serializable{
 	//add monster to room
 	public void addMonster(Monster monster)
 	{
+		ArrayList<Monster> roomMonsterArray = new ArrayList<Monster>();
 		roomMonsterArray.add(monster);
 	}
 	//add puzzle to room
 	public void addPuzzle(Puzzle puzzle)
 	{
+		ArrayList<Puzzle> roomPuzzleArray = new ArrayList<Puzzle>();
+		
 		roomPuzzleArray.add(puzzle);
 	}
 	

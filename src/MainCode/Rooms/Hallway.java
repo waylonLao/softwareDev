@@ -107,6 +107,16 @@ public class Hallway extends Room{
 					+ "To the west is Communications, and to the rest of the hallway towards the cryo room. "
 					+ "The door to the north has the word Engine written over it.");
 		}
+		else if(a == 8)
+		{
+			setNumberOfExits(3);
+			setRoomName("Hallway 8");
+		}
+		else if(a == 9)
+		{
+			setNumberOfExits(3);
+			setRoomName("Hallway 9");
+		}
 	}
 
 }
