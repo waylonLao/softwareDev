@@ -17,6 +17,7 @@ package MainCode.Monster;
 
 
 import MainCode.Items.ConcussionGrenade;
+import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
 public class RobotDoorman extends Monster implements monsterInterface
@@ -26,10 +27,10 @@ public class RobotDoorman extends Monster implements monsterInterface
 	{
 
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
-		setMaxHealth(100);
+		setMaxHealth(50);
 		setWeapon(new LeadPipe());
-		setMonsterID(9);
-		setItemDrop(new ConcussionGrenade());
+		setMonsterID(2);
+		setItemDrop(new HealthKit());
 
 	}
 

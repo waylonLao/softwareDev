@@ -27,7 +27,7 @@ public class CleaningUnit extends Monster implements monsterInterface
 	public CleaningUnit()
 	{
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
-		setMaxHealth(100);
+		setMaxHealth(50);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new HealthKit());

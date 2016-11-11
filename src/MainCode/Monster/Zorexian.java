@@ -4,6 +4,7 @@ package MainCode.Monster;
 
 
 import MainCode.Items.ConcussionGrenade;
+import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
 public class Zorexian extends Monster implements monsterInterface
@@ -16,7 +17,7 @@ public class Zorexian extends Monster implements monsterInterface
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
-		setItemDrop(new ConcussionGrenade());
+		setItemDrop(new HealthKit());
 
 	}
 

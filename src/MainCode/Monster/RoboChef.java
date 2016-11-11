@@ -2,6 +2,7 @@ package MainCode.Monster;
 
 import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.LeadPipe;
+import MainCode.Items.PlasmaInducer;
 
 /**
  * Class: roboChef.java
@@ -29,8 +30,8 @@ public class RoboChef extends Monster implements monsterInterface
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
-		setMonsterID(9);
-		setItemDrop(new ConcussionGrenade());
+		setMonsterID(4);
+		setItemDrop(new PlasmaInducer());
 
 	}
 
