@@ -15,6 +15,7 @@ public class Weapon extends Item implements ItemInterface
 		weaponDamage = 1;
 	}
 
+	
 	/**
 	 * @return the weaponDamage
 	 */
