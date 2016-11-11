@@ -15,9 +15,7 @@ public class SpaceKraken extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(10);
 		setItemDrop(new HealthKit());
-		setMonsterDescription("");
-
-
+		setMonsterDescription("A giant, anomalous squid.");
 		
 	}
 

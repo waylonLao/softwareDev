@@ -29,6 +29,8 @@ public class CyborgPirate extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(7);
 		setItemDrop(new KeyCard());
+		setMonsterDescription("A robotic pirate with a bad"
+				+ "attitude.");
 
 	}
 

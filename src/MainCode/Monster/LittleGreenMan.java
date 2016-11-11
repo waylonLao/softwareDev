@@ -30,6 +30,7 @@ import MainCode.Items.LeadPipe;
 			setWeapon(new LeadPipe());
 			setMonsterID(6);
 			setItemDrop(new DisintegratingPistol());
+			setMonsterDescription("A prototypical alien.");
 
 		}
 

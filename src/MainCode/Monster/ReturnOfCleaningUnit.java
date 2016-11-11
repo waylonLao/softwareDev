@@ -12,7 +12,7 @@ public class ReturnOfCleaningUnit extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(11);
 		setItemDrop(new HealthKit());
-		setMonsterDescription("");
+		setMonsterDescription("The first enemy. Still pissed off.");
 
 
 	}

@@ -32,7 +32,8 @@ public class MaskedRobot extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(8);
 		setItemDrop(new KeyCard());
-		setMonsterDescription("");
+		setMonsterDescription("An aggressive machine"
+				+ "who wants to wrestle.");
 
 	}
 

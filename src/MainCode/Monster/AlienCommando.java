@@ -33,6 +33,8 @@ public class AlienCommando extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new ConcussionGrenade());
+		setMonsterDescription("An incomprehensible alien"
+				+ "with an assault weapon.");
 
 	}
 
