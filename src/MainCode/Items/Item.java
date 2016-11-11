@@ -1,17 +1,22 @@
 package MainCode.Items;
+
+import java.io.Serializable;
+
 /**
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class Item {
+public class Item implements Serializable{
     
 	private int itemID;
     private String itemName;
     private String itemDescription;
     private String itemUse;
     private int sparkleValue;
-    private boolean isKeyItem;
-    private boolean isWeapon;
+    private String itemFunction;
+    //private boolean isKeyItem;
+    //private boolean isWeapon;
+    
     
     public Item()
     {
@@ -20,8 +25,8 @@ public class Item {
         itemDescription = "null";
         itemUse = "null";
         setSparkleValue(0);
-        setIsKeyItem(false);
-        setIsWeapon(false);
+        //setIsKeyItem(false);
+        //setIsWeapon(false);
         
     }
 
@@ -100,39 +105,58 @@ public class Item {
 	public void setSparkleValue(int sparkleValue) {
 		this.sparkleValue = sparkleValue;
 	}
+
+	/**
+	 * @return the itemFunction
+	 */
+	public String getItemFunction() {
+		return itemFunction;
+	}
+
+	/**
+	 * @param itemFunction the itemFunction to set
+	 */
+	public void setItemFunction(String itemFunction) {
+		this.itemFunction = itemFunction;
+	}
+	
+	
+	
+	
+	
     /*
 	public void dismantle(Item item)
 	{
 		setSparkleCounter( + item.getSparkleValue());
 	}*/
 
-	/**
-	 * @return the isKeyItem
-	 */
-	public boolean isKeyItem() {
-		return isKeyItem;
-	}
-
-	/**
-	 * @param isKeyItem the isKeyItem to set
-	 */
-	public void setIsKeyItem(boolean isKeyItem) {
-		this.isKeyItem = isKeyItem;
-	}
-
-	/**
-	 * @return the isWeapon
-	 */
-	public boolean isWeapon() {
-		return isWeapon;
-	}
-
-	/**
-	 * @param isWeapon the isWeapon to set
-	 */
-	public void setIsWeapon(boolean isWeapon) {
-		this.isWeapon = isWeapon;
-	}
+//	/**
+//	 * @return the isKeyItem
+//	 */
+//	public boolean isKeyItem() {
+//		return isKeyItem;
+//	}
+//
+//	/**
+//	 * @param isKeyItem the isKeyItem to set
+//	 */
+//	public void setIsKeyItem(boolean isKeyItem) {
+//		this.isKeyItem = isKeyItem;
+//	}
+//
+//	/**
+//	 * @return the isWeapon
+//	 */
+//	public boolean isWeapon() {
+//		return isWeapon;
+//	}
+//
+//	/**
+//	 * @param isWeapon the isWeapon to set
+//	 */
+//	public void setIsWeapon(boolean isWeapon) {
+//		this.isWeapon = isWeapon;
+//	}
     
     
 }

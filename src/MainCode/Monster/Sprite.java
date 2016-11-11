@@ -1,15 +1,22 @@
 package MainCode.Monster;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import MainCode.Items.Item;
+import MainCode.Items.Weapon;
 
 /**
 * @author nklemenc
 */
-public class Sprite {
+public class Sprite implements Serializable {
 	
 	protected int health;
 	protected int maxHealth;
-	protected MainCode.Items.Weapon weapon;
+	protected Weapon weapon;
 	protected String name;
+	private int stunDuration;
+	private ArrayList<Item> inventory;
 	
 	
 	public Sprite()
@@ -102,8 +109,24 @@ public class Sprite {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
 
 
+
+	/**
+	 * @return the stunDuration
+	 */
+	public int getStunDuration() {
+		return stunDuration;
+	}
+
+	/**
+	 * @param stunDuration the stunDuration to set
+	 */
+	public void setStunDuration(int stunDuration) {
+		this.stunDuration = stunDuration;
+	}
 
 	public String doDamage(Sprite target){
 		target.setHealth(target.getHealth() - this.getWeapon().getWeaponDamage());
@@ -116,11 +139,22 @@ public class Sprite {
 	}
 	
 	public String takeDamage(Sprite target){
+		if(target.getStunDuration() > 0){
+			target.setStunDuration(target.getStunDuration() - 1);
+			return target.getName() + "is stunned and cannot attack.";
+		}
+		
 		this.setHealth(this.getHealth() - target.getWeapon().getWeaponDamage());
 		if(this.getHealth() <= 0){
 			return "You died.";
 		}
 		return target.getName() + " has dealt " + target.getWeapon().getWeaponDamage() + " damage to you ";
 	}
+	
+	public String useItem(Item i){
+		return i.getItemFunction();
+	}
+	
+	
 
 }

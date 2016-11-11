@@ -19,15 +19,20 @@ import MainCode.Items.LeadPipe;
  */
 
 
-public class MaskedRobot extends Monster implements monsterInterface
+public class MaskedRobot extends Monster implements MonsterInterface
 {
 	public MaskedRobot()
 	{
+
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
 		setMaxHealth(50);
+
+		setMonsterName("Masked Robot");
+		setMaxHealth(100);
 		setWeapon(new LeadPipe());
 		setMonsterID(8);
 		setItemDrop(new KeyCard());
+		setMonsterDescription("");
 
 	}
 

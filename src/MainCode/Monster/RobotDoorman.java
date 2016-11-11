@@ -15,12 +15,11 @@ package MainCode.Monster;
  */
 
 
-
 import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
-public class RobotDoorman extends Monster implements monsterInterface
+public class RobotDoorman extends Monster implements MonsterInterface
 
 {
 	public RobotDoorman()
@@ -37,8 +36,7 @@ public class RobotDoorman extends Monster implements monsterInterface
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-
-	}
 		
 	}
+}
 

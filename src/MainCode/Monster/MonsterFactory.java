@@ -9,7 +9,7 @@ import MainCode.RandomGenerator;
 ///Use my factory as a template
 ///
 ///
-public class MonsterFactory implements monsterInterface
+public class MonsterFactory implements MonsterInterface
 {
 	static RandomGenerator rg = new RandomGenerator();
 	static int randomNumber = rg.generate(100);
@@ -29,7 +29,7 @@ public class MonsterFactory implements monsterInterface
 		}
 		else if (randomNumber <=20)
 		{
-		return new CleaningUnit();	
+		return new RogueCleaningUnit();	
 		}
 		else if (randomNumber <=35)
 		{
@@ -41,7 +41,7 @@ public class MonsterFactory implements monsterInterface
 		}
 		else if (randomNumber <=55)
 		{
-		return new ReturnCleaningUnit();	
+		return new ReturnOfCleaningUnit();	
 		}
 		else if (randomNumber <=65)
 		{

@@ -1,12 +1,15 @@
 package MainCode.Monster;
 
+import java.io.Serializable;
+
 import MainCode.Items.Weapon;
+import MainCode.Rooms.Door;
 import MainCode.Rooms.Room;
 
 /**
 * @author nklemenc
 */
-public class Player extends Sprite {
+public class Player extends Sprite implements Serializable {
 	
 	public int sparkleCounter = 0;
 	
@@ -23,6 +26,14 @@ public class Player extends Sprite {
 	
 	public void equipItem(){
 		//TODO update weaponID
+	}
+	
+	public String move(Door d){
+		if(d.getIsLocked()){
+			return "The door is locked shut.";
+		}
+		this.setRoomID(d.getConnection());
+		return d.getConnection().getRoomDescription();
 	}
 	
 	
@@ -54,5 +65,13 @@ public class Player extends Sprite {
 	public void setSparkleCounter(int sparkleCounter) {
 		this.sparkleCounter = sparkleCounter;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Player [health=" + health + ", maxHealth=" + maxHealth + ", weapon=" + weapon + ", name=" + name + "]";
+	}
+	
+	
 
 }

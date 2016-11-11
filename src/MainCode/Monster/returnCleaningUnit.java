@@ -3,7 +3,7 @@ package MainCode.Monster;
 import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
-public class ReturnCleaningUnit extends Monster implements monsterInterface
+public class ReturnCleaningUnit extends Monster implements MonsterInterface
 {
 	public ReturnCleaningUnit()
 	{
@@ -12,6 +12,8 @@ public class ReturnCleaningUnit extends Monster implements monsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(11);
 		setItemDrop(new HealthKit());
+		setMonsterDescription("");
+
 
 	}
 

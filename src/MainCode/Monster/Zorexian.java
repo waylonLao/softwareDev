@@ -1,15 +1,11 @@
 package MainCode.Monster;
 
-
-
-
 import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
-public class Zorexian extends Monster implements monsterInterface
+public class Zorexian extends Monster implements MonsterInterface 
 {
-
 	public Zorexian()
 	{
 
@@ -18,14 +14,14 @@ public class Zorexian extends Monster implements monsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new HealthKit());
+		setMonsterDescription("");
 
 	}
+
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
 
 	}
-
-
 }

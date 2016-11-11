@@ -22,7 +22,7 @@ import MainCode.Items.PlasmaInducer;
 
 
 
-public class RoboChef extends Monster implements monsterInterface
+public class RoboChef extends Monster implements MonsterInterface
 {
 	public RoboChef()
 	{
@@ -40,4 +40,5 @@ public class RoboChef extends Monster implements monsterInterface
 		// TODO Auto-generated method stub
 
 	}
+
 }

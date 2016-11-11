@@ -4,7 +4,7 @@ import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
-public class SpaceKraken extends Monster implements monsterInterface
+public class SpaceKraken extends Monster implements MonsterInterface
 
 {
 	public SpaceKraken()
@@ -15,13 +15,16 @@ public class SpaceKraken extends Monster implements monsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(10);
 		setItemDrop(new HealthKit());
+		setMonsterDescription("");
 
+
+		
 	}
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-
+		
 	}
 }
 

@@ -12,7 +12,7 @@ package MainCode.Monster;
 	*/
 
 
-public interface monsterInterface
+public interface MonsterInterface
 {
 	public void createMonster();
 
