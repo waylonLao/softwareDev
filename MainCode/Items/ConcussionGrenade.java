@@ -1,0 +1,30 @@
+package MainCode.Items;
+
+import MainCode.Monster.Sprite;
+
+/**
+ * @author Joshua Tran
+ * Date: Oct 31, 2016
+ */
+public class ConcussionGrenade extends Item{
+
+	
+	public ConcussionGrenade() {
+		super();
+		setItemName("Concussion Grenade");
+		setItemDescription("A powerful stun grenade.");
+		setItemUse("You throw out a concussion grenade.");
+	}
+
+	public void itemFuction(Sprite target){
+		target.setStunDuration(2);
+	}
+	
+	@Override
+	public String toString() {
+		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
+	}
+
+
+
+}
