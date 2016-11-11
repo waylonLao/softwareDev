@@ -27,15 +27,19 @@ import MainCode.Rooms.*;
 public class Game
 {
 	ObjectOutputStream outputs;
-	ObjectInputStream inputs;
+	static ObjectInputStream inputs;
 	
 	Player newPlayer;
 	Room room;
 	Inventory inv;
 	
-	public void newGame()
+	
+	
+	public static void newGame()
 	{
 		System.out.println("Welcome to Galaxy Explorer!");
+		System.out.println("Please create a new character");
+		System.out.println("Please type in your name:");
 	}
 
 	public void saveGame() throws FileNotFoundException, IOException
@@ -49,7 +53,7 @@ public class Game
 		outputs.writeObject(inv);
 	}
 
-	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
+	public static void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
 		//Hard coding the toString, may need to change to loop
@@ -60,7 +64,7 @@ public class Game
 		System.out.println(inputs.readObject());
 	}
 
-	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
+	/*public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		try
 		{
@@ -72,6 +76,6 @@ public class Game
 		{
 			System.out.println("No save data created");
 		}
-	}
+	}*/
 
 }

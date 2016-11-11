@@ -1,7 +1,7 @@
 package MainCode.GUI;
 
 import javax.swing.GroupLayout.Alignment;
-
+import MainCode.Game;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -69,10 +69,13 @@ public class MainMenuGUI extends Application{
 		primaryStage.show();	
 		
 		
-		/*newGame.setOnAction(e -> circle.setFill(Color.RED));
-		loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
-		help.setOnAction(e -> circle.setFill(Color.GREEN));
-		quit.setOnAction(e -> circle.setFill(Color.ORANGE));*/
+		newGame.setOnAction(e -> Game.newGame());
+		//loadGame.setOnAction(e -> Game.loadGame());
+		/////////////////////////
+		//Need to make a help GUI
+		/////////////////////////
+		//help.setOnAction(e -> );
+		quit.setOnAction(e -> primaryStage.close());
 		
 		
 
