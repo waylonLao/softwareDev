@@ -62,8 +62,8 @@ public class Puzzle {
 	}
 	@Override
 	public String toString() {
-		return "Puzzle [puzzleID=" + puzzleID + ", puzzleName=" + puzzleName + ", puzzleSolution=" + puzzleSolution
-				+ ", puzzleDescription=" + puzzleDescription + "]";
+		return "(" + puzzleID + ")" + " Puzzle Name: " + puzzleName
+				+ "\n -----------------------" + "\n Puzzle Description: " + puzzleDescription + ".";
 	}
 	
 }
