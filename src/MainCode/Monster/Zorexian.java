@@ -14,7 +14,8 @@ public class Zorexian extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new HealthKit());
-		setMonsterDescription("");
+		setMonsterDescription("An alien hound all the way from"
+				+ "Zocrexia.");
 
 	}
 

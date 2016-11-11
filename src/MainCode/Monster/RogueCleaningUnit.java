@@ -33,7 +33,7 @@ public class RogueCleaningUnit extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new HealthKit());
-		setMonsterDescription("");
+		setMonsterDescription("A suction hose with a chunk of metal stuck in it.");
 
 	}
 

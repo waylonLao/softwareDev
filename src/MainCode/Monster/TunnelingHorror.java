@@ -15,6 +15,10 @@ public class TunnelingHorror extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(9);
 		setItemDrop(new HealthKit());
+		setMonsterDescription("A large alien worm always found "
+				+ "in the keycard room.  If left unde-feated "
+				+ "for 2 trips into the keycard room she will"
+				+ " eat through the hull and the game is over. ");
 
 	}
 

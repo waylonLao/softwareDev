@@ -30,6 +30,7 @@ public class RobotDoorman extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(2);
 		setItemDrop(new HealthKit());
+		setMonsterDescription("A well-dressed robot in moderate disrepair");
 
 	}
 

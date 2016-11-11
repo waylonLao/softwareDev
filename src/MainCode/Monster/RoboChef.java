@@ -32,6 +32,8 @@ public class RoboChef extends Monster implements MonsterInterface
 		setWeapon(new LeadPipe());
 		setMonsterID(4);
 		setItemDrop(new PlasmaInducer());
+		setMonsterDescription("A deranged culinary robot with "
+				+ "a French accent and a curly moustache.");
 
 	}
 
