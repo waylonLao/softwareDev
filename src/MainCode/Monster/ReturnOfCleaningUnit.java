@@ -22,8 +22,4 @@ public class ReturnOfCleaningUnit extends Monster implements MonsterInterface
 		// TODO Auto-generated method stub
 
 	}
-	
-
-	
-	
 }
