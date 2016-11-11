@@ -14,8 +14,8 @@ public class Item implements Serializable{
     private String itemUse;
     private int sparkleValue;
     private String itemFunction;
-    //private boolean isKeyItem;
-    //private boolean isWeapon;
+    private boolean isKeyItem;
+    private boolean isWeapon;
     
     
     public Item()
@@ -25,8 +25,8 @@ public class Item implements Serializable{
         itemDescription = "null";
         itemUse = "null";
         setSparkleValue(0);
-        //setIsKeyItem(false);
-        //setIsWeapon(false);
+        setIsKeyItem(false);
+        setIsWeapon(false);
         
     }
 
@@ -129,34 +129,33 @@ public class Item implements Serializable{
 	{
 		setSparkleCounter( + item.getSparkleValue());
 	}*/
+	/**
+	 * @return the isKeyItem
+	 */
+	public boolean isKeyItem() {
+		return isKeyItem;
+	}
 
-//	/**
-//	 * @return the isKeyItem
-//	 */
-//	public boolean isKeyItem() {
-//		return isKeyItem;
-//	}
-//
-//	/**
-//	 * @param isKeyItem the isKeyItem to set
-//	 */
-//	public void setIsKeyItem(boolean isKeyItem) {
-//		this.isKeyItem = isKeyItem;
-//	}
-//
-//	/**
-//	 * @return the isWeapon
-//	 */
-//	public boolean isWeapon() {
-//		return isWeapon;
-//	}
-//
-//	/**
-//	 * @param isWeapon the isWeapon to set
-//	 */
-//	public void setIsWeapon(boolean isWeapon) {
-//		this.isWeapon = isWeapon;
-//	}
+	/**
+	 * @param isKeyItem the isKeyItem to set
+	 */
+	public void setIsKeyItem(boolean isKeyItem) {
+		this.isKeyItem = isKeyItem;
+	}
+
+	/**
+	 * @return the isWeapon
+	 */
+	public boolean isWeapon() {
+		return isWeapon;
+	}
+
+	/**
+	 * @param isWeapon the isWeapon to set
+	 */
+	public void setIsWeapon(boolean isWeapon) {
+		this.isWeapon = isWeapon;
+	}
     
     
 }
