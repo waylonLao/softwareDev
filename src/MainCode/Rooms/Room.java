@@ -25,10 +25,10 @@ public class Room {
 	private int numberOfExits;
 	
 	//ArrayLists for Room
-	private ArrayList<Item> roomItemArray;
-	private ArrayList<Monster> roomMonsterArray;
-	private ArrayList<Puzzle> roomPuzzleArray;
-	private ArrayList<Door> roomDoorArray;
+	private ArrayList<Item> roomItemArray = null;
+	private ArrayList<Monster> roomMonsterArray = null;
+	private ArrayList<Puzzle> roomPuzzleArray = null;
+	private ArrayList<Door> roomDoorArray = null;
 
 	private Monster monsterID;
 	private boolean quickJumpCapable;
@@ -37,6 +37,10 @@ public class Room {
 	//Constructors
 	public Room()
 	{
+		roomItemArray = null;
+		roomMonsterArray = null;
+		roomPuzzleArray = null;
+		roomDoorArray = null;
 		
 	}
 	public Room(int roomID)
@@ -212,6 +216,8 @@ public class Room {
 	//add item to room
 	public void addItem(Item item)
 	{
+		ArrayList<Item> roomItemArray = new ArrayList<Item>();
+		
 		roomItemArray.add(item);
 	}
 	//add monster to room
@@ -305,10 +311,7 @@ public class Room {
 	@Override
 	public String toString()
 	{
-		return "Room [roomID=" + roomID + ", roomDescription=" + roomDescription + ", monsterChance=" + monsterChance
-				+ ", puzzleChance=" + puzzleChance + ", itemChance=" + itemChance + ", items=" + Arrays.toString(items)
-				+ ", item=" + item + ", monsterID=" + monsterID + ", quickJumpCapable=" + quickJumpCapable
-				+ ", powered=" + powered + "]";
+		return roomName + roomDescription;
 	}
 	
 	
