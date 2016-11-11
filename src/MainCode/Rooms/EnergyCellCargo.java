@@ -5,7 +5,7 @@
 package MainCode.Rooms;
 
 import MainCode.Items.ECell;
-import MainCode.Puzzles.LogicPuzzle;
+import MainCode.Puzzles.BinaryPuzzle;
 
 /**
  * @author Joshua Tran
@@ -21,7 +21,7 @@ public class EnergyCellCargo extends Room{
 				+ "one locked energy crate. There is  a yellow door to the south that leads "
 				+ "to cargo2 and a yellow door to the north that leads to viewing room1.");
 		addItem(new ECell());
-		addPuzzle(new LogicPuzzle());
+		addPuzzle(new BinaryPuzzle());
 	}
 
 }
