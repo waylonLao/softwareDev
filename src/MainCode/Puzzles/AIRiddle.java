@@ -14,10 +14,10 @@
  */
 package MainCode.Puzzles;
 
-public class AIPuzzle extends RiddlePuzzle
+public class AIRiddle extends RiddlePuzzle
 
 {
-	public AIPuzzle() 
+	public AIRiddle() 
 	{
 		setPuzzleID(7);
 		setPuzzleDescription("Who is the test for AI"
