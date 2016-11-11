@@ -144,38 +144,6 @@ public class Item implements Serializable{
 	
 	
 	
-    /*
-	public void dismantle(Item item)
-	{
-		setSparkleCounter( + item.getSparkleValue());
-	}*/
-	/**
-	 * @return the isKeyItem
-	 */
-	public boolean isKeyItem() {
-		return isKeyItem;
-	}
 
-	/**
-	 * @param isKeyItem the isKeyItem to set
-	 */
-	public void setIsKeyItem(boolean isKeyItem) {
-		this.isKeyItem = isKeyItem;
-	}
-
-	/**
-	 * @return the isWeapon
-	 */
-	public boolean isWeapon() {
-		return isWeapon;
-	}
-
-	/**
-	 * @param isWeapon the isWeapon to set
-	 */
-	public void setIsWeapon(boolean isWeapon) {
-		this.isWeapon = isWeapon;
-	}
-    
     
 }
