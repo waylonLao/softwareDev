@@ -1,4 +1,9 @@
 package MainCode.Monster;
+
+import MainCode.Items.ConcussionGrenade;
+import MainCode.Items.LeadPipe;
+import MainCode.Items.PlasmaInducer;
+
 /**
  * Class: roboChef.java
  * 
@@ -14,19 +19,26 @@ package MainCode.Monster;
  *  Purpose: – ******
  */
 
+
+
+
 public class RoboChef extends Monster implements MonsterInterface
 {
-
 	public RoboChef()
 	{
-		setMonsterName("Robo Chef");
-	}
 
+		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMaxHealth(100);
+		setWeapon(new LeadPipe());
+		setMonsterID(4);
+		setItemDrop(new PlasmaInducer());
+
+	}
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

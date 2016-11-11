@@ -14,22 +14,29 @@ package MainCode.Monster;
  *  Purpose: – ******
  */
 
-public class RobotDoorman extends Monster implements MonsterInterface{
 
-	
+import MainCode.Items.ConcussionGrenade;
+import MainCode.Items.HealthKit;
+import MainCode.Items.LeadPipe;
+
+public class RobotDoorman extends Monster implements MonsterInterface
+
+{
 	public RobotDoorman()
 	{
-		setMonsterName("Robot Doorman");
+
+		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
+		setMaxHealth(50);
+		setWeapon(new LeadPipe());
+		setMonsterID(2);
+		setItemDrop(new HealthKit());
+
 	}
-
-
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
 		
 	}
-		
-		
-	}
+}
 

@@ -119,6 +119,26 @@ public class Item implements Serializable{
 	public void setItemFunction(String itemFunction) {
 		this.itemFunction = itemFunction;
 	}
+
+	public boolean isWeapon()
+	{
+		return isWeapon;
+	}
+
+	public void setIsWeapon(boolean isWeapon)
+	{
+		this.isWeapon = isWeapon;
+	}
+
+	public boolean isKeyItem()
+	{
+		return isKeyItem;
+	}
+
+	public void setIsKeyItem(boolean isKeyItem)
+	{
+		this.isKeyItem = isKeyItem;
+	}
 	
 	
 	

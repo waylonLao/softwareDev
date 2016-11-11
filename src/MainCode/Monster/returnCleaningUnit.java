@@ -1,30 +1,25 @@
 package MainCode.Monster;
 
-import MainCode.Items.ConcussionGrenade;
 import MainCode.Items.HealthKit;
 import MainCode.Items.LeadPipe;
 
-public class SpaceKraken extends Monster implements MonsterInterface
-
+public class ReturnCleaningUnit extends Monster implements MonsterInterface
 {
-	public SpaceKraken()
+	public ReturnCleaningUnit()
 	{
-
 		//super(100, new LeadPipe(), 9, "Alien Commando", "An incomprehensible alien with an assault weapon.");
-		setMaxHealth(150);
+		setMaxHealth(250);
 		setWeapon(new LeadPipe());
-		setMonsterID(10);
+		setMonsterID(11);
 		setItemDrop(new HealthKit());
 		setMonsterDescription("");
 
 
-		
 	}
 
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
-

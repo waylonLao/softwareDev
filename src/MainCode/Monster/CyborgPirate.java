@@ -27,7 +27,7 @@ public class CyborgPirate extends Monster implements MonsterInterface
 		setMonsterName("Cyborg Pirate");
 		setMaxHealth(100);
 		setWeapon(new LeadPipe());
-		setMonsterID(9);
+		setMonsterID(7);
 		setItemDrop(new KeyCard());
 
 	}

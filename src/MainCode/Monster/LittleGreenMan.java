@@ -1,5 +1,6 @@
 package MainCode.Monster;
 
+import MainCode.Items.DisintegratingPistol;
 import MainCode.Items.KeyCard;
 import MainCode.Items.LeadPipe;
 
@@ -27,8 +28,8 @@ import MainCode.Items.LeadPipe;
 			setMonsterName("Little Green Man");
 			setMaxHealth(100);
 			setWeapon(new LeadPipe());
-			setMonsterID(9);
-			setItemDrop(new KeyCard());
+			setMonsterID(6);
+			setItemDrop(new DisintegratingPistol());
 
 		}
 
