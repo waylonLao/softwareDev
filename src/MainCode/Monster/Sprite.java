@@ -3,6 +3,7 @@ package MainCode.Monster;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import MainCode.Items.Inventory;
 import MainCode.Items.Item;
 import MainCode.Items.Weapon;
 
@@ -16,7 +17,7 @@ public class Sprite{
 	protected Weapon weapon;
 	protected String name;
 	private int stunDuration;
-	private ArrayList<Item> inventory;
+	private Inventory spriteInv;
 	
 	
 	public Sprite(){
@@ -106,9 +107,6 @@ public class Sprite{
 		this.name = name;
 	}
 	
-	
-
-
 
 	/**
 	 * @return the stunDuration
@@ -123,29 +121,26 @@ public class Sprite{
 	public void setStunDuration(int stunDuration) {
 		this.stunDuration = stunDuration;
 	}
-
-	public String doDamage(Sprite target){
-		target.setHealth(target.getHealth() - this.getWeapon().getWeaponDamage());
-		if(target.getHealth() <= 0){
-			return target.getName() + " has been defeated!";
-		}
-		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();
-		
-		
-	}
 	
-	public String takeDamage(Sprite target){
-		if(target.getStunDuration() > 0){
-			target.setStunDuration(target.getStunDuration() - 1);
-			return target.getName() + "is stunned and cannot attack.";
-		}
-		
-		this.setHealth(this.getHealth() - target.getWeapon().getWeaponDamage());
-		if(this.getHealth() <= 0){
-			return "You died.";
-		}
-		return target.getName() + " has dealt " + target.getWeapon().getWeaponDamage() + " damage to you ";
+	
+	
+	
+
+	/**
+	 * @return the spriteInv
+	 */
+	public Inventory getSpriteInv() {
+		return spriteInv;
 	}
+
+	/**
+	 * @param spriteInv the spriteInv to set
+	 */
+	public void setSpriteInv(Inventory spriteInv) {
+		this.spriteInv = spriteInv;
+	}
+
+
 	
 
 	

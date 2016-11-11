@@ -3,8 +3,10 @@ package MainCode.Rooms;
 import java.io.Serializable;
 import java.util.Arrays;
 
+import MainCode.Items.Inventory;
 import MainCode.Items.Item;
 import MainCode.Monster.Monster;
+import MainCode.Puzzles.Puzzle;
 
 /**
  * @author Joshua Tran
@@ -15,8 +17,9 @@ public class Room{
 	private int roomID;
 	private String roomName;
 	private String roomDescription;
-	private Item[] items;
+	private Inventory roomInv;
 	private Monster monster;
+	private Puzzle puzzle;
 	private boolean quickJumpCapable;
 	private boolean powered;
 
@@ -34,11 +37,11 @@ public class Room{
 		powered = false;
 	}
 
-	public Room(int id,String n, String d, Monster m, boolean qj, boolean p){
+	public Room(int id, String d, Monster m, Inventory i, boolean qj, boolean p){
 		roomID = id;
-		roomName = n;
 		roomDescription = d;
 		monster = m;
+		roomInv = i;
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
 	}
@@ -78,17 +81,19 @@ public class Room{
 	public void setRoomDescription(String roomDescription) {
 		this.roomDescription = roomDescription;
 	}
+	
+	
 	/**
-	 * @return the items
+	 * @return the roomInv
 	 */
-	public Item[] getItems() {
-		return items;
+	public Inventory getRoomInv() {
+		return roomInv;
 	}
 	/**
-	 * @param items the items to set
+	 * @param roomInv the roomInv to set
 	 */
-	public void setItems(Item[] items) {
-		this.items = items;
+	public void setRoomInv(Inventory roomInv) {
+		this.roomInv = roomInv;
 	}
 	/**
 	 * @return the monster
@@ -101,6 +106,21 @@ public class Room{
 	 */
 	public void setMonster(Monster monster) {
 		this.monster = monster;
+	}
+	
+	
+	
+	/**
+	 * @return the puzzle
+	 */
+	public Puzzle getPuzzle() {
+		return puzzle;
+	}
+	/**
+	 * @param puzzle the puzzle to set
+	 */
+	public void setPuzzle(Puzzle puzzle) {
+		this.puzzle = puzzle;
 	}
 	/**
 	 * @return the quickJumpCapable

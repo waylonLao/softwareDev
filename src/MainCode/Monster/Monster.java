@@ -3,6 +3,7 @@ package MainCode.Monster;
 
 import MainCode.Items.Item;
 import MainCode.Items.Weapon;
+import MainCode.Rooms.Room;
 
 /**
 * @author nklemenc
@@ -59,6 +60,8 @@ public class Monster extends Sprite {
 	public void setItemDrop(Item itemDrop) {
 		this.itemDrop = itemDrop;
 	}
+	
+
 
 
 	
