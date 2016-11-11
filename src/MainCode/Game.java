@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 import MainCode.Items.*;
 import MainCode.Monster.*;
@@ -27,19 +28,33 @@ public class Game
 {
 	ObjectOutputStream outputs;
 	ObjectInputStream inputs;
+	
+	Player newPlayer;
+	Room room;
+	Inventory inv;
+	
+	public void newGame()
+	{
+		System.out.println("Welcome to Galaxy Explorer!");
+	}
 
 	public void saveGame() throws FileNotFoundException, IOException
 	{
 		outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
-		//Hard coding the objects in.
-		outputs.writeObject(new Player(500, new LeadPipe()));
-		outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
+		//outputs.writeObject(new Player(500, new LeadPipe()));
+		//outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
+		//outputs.writeObject(new Inventory());
+		outputs.writeObject(newPlayer);
+		outputs.writeObject(room);
+		outputs.writeObject(inv);
 	}
 
 	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
 		//Hard coding the toString, may need to change to loop
+		System.out.println(inputs.readObject());
+		System.out.println("|----------------------|");
 		System.out.println(inputs.readObject());
 		System.out.println("|----------------------|");
 		System.out.println(inputs.readObject());
@@ -55,7 +70,7 @@ public class Game
 		}
 		finally
 		{
-			System.out.println("fail??");
+			System.out.println("No save data created");
 		}
 	}
 
