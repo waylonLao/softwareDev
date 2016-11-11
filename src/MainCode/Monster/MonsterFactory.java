@@ -18,55 +18,54 @@ public class MonsterFactory implements MonsterInterface
 
 	public Monster manufactureMonster()
 	{
-		if(randomNumber <=20)	
+		if(randomNumber <=10)	
 		{
 			return new AlienCommando();
-			
 		}
-		else if (randomNumber <=10)
+		else if (randomNumber <=15)
 		{
-		return new CyborgPirate();	
+			return new CyborgPirate();	
 		}
 		else if (randomNumber <=20)
 		{
-		return new RogueCleaningUnit();	
+			return new RogueCleaningUnit();	
 		}
 		else if (randomNumber <=35)
 		{
-		return new LittleGreenMan();	
+			return new LittleGreenMan();	
 		}
 		else if (randomNumber <=45)
 		{
-		return new MaskedRobot();	
+			return new MaskedRobot();	
 		}
 		else if (randomNumber <=55)
 		{
-		return new ReturnOfCleaningUnit();	
+			return new ReturnOfCleaningUnit();	
 		}
 		else if (randomNumber <=65)
 		{
-		return new RoboChef();	
+			return new RoboChef();	
 		}
 		else if (randomNumber <=75)
 		{
-		return new RobotDoorman();
+			return new RobotDoorman();
 		}
 		else if (randomNumber <=85)
 		{
-		return new SpaceKraken();
+			return new SpaceKraken();
 		}
 		else if (randomNumber <=95)
 		{
-		return new TunnelingHorror();
+			return new TunnelingHorror();
 		}
 		else if (randomNumber <=100)
 		{
-		return new Zorexian();
+			return new Zorexian();
 		}
 		else
 			return null;
 	}
-	
+
 	public static void main(String[] args)
 	{
 		Monster ranMonster = new Monster();
@@ -77,7 +76,7 @@ public class MonsterFactory implements MonsterInterface
 	@Override
 	public void createMonster() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 
