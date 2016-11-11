@@ -70,6 +70,7 @@ public class MainMenuGUI extends Application{
 		
 		
 		newGame.setOnAction(e -> Game.newGame());
+		newGame.setOnAction(e -> primaryStage.close());
 		//loadGame.setOnAction(e -> Game.loadGame());
 		/////////////////////////
 		//Need to make a help GUI
