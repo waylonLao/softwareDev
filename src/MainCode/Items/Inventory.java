@@ -1,6 +1,7 @@
 package MainCode.Items;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -8,14 +9,15 @@ import java.util.ArrayList;
  * @author Joshua Tran
  * Date: Oct 31, 2016
  */
-public class Inventory {
+public class Inventory implements Serializable{
     
-    private ArrayList<Item> keyItemInventory = new ArrayList<Item>();
-    private ArrayList<Item> consumableInventory = new ArrayList<Item>();
+    private ArrayList<Item> keyItemInventory;
+    private ArrayList<Item> consumableInventory;
 
     public Inventory()
     {
-    	
+    	this.keyItemInventory = new ArrayList<Item>();
+    	this.consumableInventory = new ArrayList<Item>();
     }
     /**
      * @return the keyItemInventory

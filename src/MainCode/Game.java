@@ -1,14 +1,14 @@
 /**Class: ITECH
-	* @author Waylon Lao
-	* @version 1.0
-	* Course : ITEC 3150 Spring 2016
-	* Written: January 18, 2012
-	*
-	*
-	* This class – now describe what the class does
-	*
-	* Purpose: – Describe the purpose of this class
-	*/
+ * @author Waylon Lao
+ * @version 1.0
+ * Course : ITEC 3150 Spring 2016
+ * Written: January 18, 2012
+ *
+ *
+ * This class – now describe what the class does
+ *
+ * Purpose: – Describe the purpose of this class
+ */
 
 package MainCode;
 
@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 import MainCode.Items.*;
 import MainCode.Monster.*;
@@ -28,14 +29,26 @@ public class Game
 	ObjectOutputStream outputs;
 	ObjectInputStream inputs;
 	
+	Player newPlayer;
+	Room room;
+	Inventory inv;
+	
+	public void newGame()
+	{
+		System.out.println("Welcome to Galaxy Explorer!");
+	}
+
 	public void saveGame() throws FileNotFoundException, IOException
 	{
 		outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
-		//Hard coding the objects in.
-		outputs.writeObject(new Player(500, new LeadPipe()));
-		outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
+		//outputs.writeObject(new Player(500, new LeadPipe()));
+		//outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
+		//outputs.writeObject(new Inventory());
+		outputs.writeObject(newPlayer);
+		outputs.writeObject(room);
+		outputs.writeObject(inv);
 	}
-	
+
 	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
@@ -43,20 +56,22 @@ public class Game
 		System.out.println(inputs.readObject());
 		System.out.println("|----------------------|");
 		System.out.println(inputs.readObject());
+		System.out.println("|----------------------|");
+		System.out.println(inputs.readObject());
 	}
-	
+
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		try
 		{
-		Game game = new Game();
-		game.saveGame();
-		game.loadGame();
+			Game game = new Game();
+			game.saveGame();
+			game.loadGame();
 		}
 		finally
 		{
-			System.out.println("fail??");
+			System.out.println("No save data created");
 		}
 	}
-	
+
 }

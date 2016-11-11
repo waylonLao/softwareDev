@@ -8,11 +8,11 @@ package MainCode.Puzzles;
  * @author Joshua Tran
  * Date: Nov 9, 2016
  */
-public class LogicPuzzle extends Puzzle{
+public class RiddlePuzzle extends Puzzle{
 	
-	public LogicPuzzle()
+	public RiddlePuzzle()
 	{
-		setPuzzleName("Logic Puzzle");
+		setPuzzleName("Riddle");
 	}
 
 }

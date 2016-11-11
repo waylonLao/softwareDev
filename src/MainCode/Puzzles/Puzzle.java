@@ -60,5 +60,10 @@ public class Puzzle {
 	public void setPuzzleID(int puzzleID) {
 		this.puzzleID = puzzleID;
 	}
+	@Override
+	public String toString() {
+		return "Puzzle [puzzleID=" + puzzleID + ", puzzleName=" + puzzleName + ", puzzleSolution=" + puzzleSolution
+				+ ", puzzleDescription=" + puzzleDescription + "]";
+	}
 	
 }
