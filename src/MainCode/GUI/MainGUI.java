@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.text.*;
+import MainCode.Rooms.*;
 
 /**
  * @author Joshua Tran
@@ -39,7 +40,7 @@ public class MainGUI extends Application {
         text.setFont(new Font(20));
         text.setWrappingWidth(200);
         text.setTextAlignment(TextAlignment.JUSTIFY);
-        text.setText("The quick brown fox jumps over the lazy dog");
+        //text.setText("How do I link this to MainMenuGui???");
         StackPane.setAlignment(text, Pos.CENTER);
         StackPane.setAlignment(tf1, Pos.BOTTOM_CENTER);
         StackPane root = new StackPane();

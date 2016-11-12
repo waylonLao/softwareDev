@@ -251,6 +251,7 @@ public class Room implements Serializable{
 	{
 
 	}
+	
 	public void move()
 	{
 

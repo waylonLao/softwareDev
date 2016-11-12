@@ -26,12 +26,18 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import MainCode.GUI.MainGUI;
 
 public class MainMenuGUI extends Application{
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception 
 	{	
+
+		Game game = new Game();
+		MainGUI mg = new MainGUI();
+		FightGui fg = new FightGui();
+		
 		//Make the buttons
 		Button newGame = new Button("New Game");
 		Button loadGame = new Button("Load Game");
@@ -68,9 +74,10 @@ public class MainMenuGUI extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();	
 		
-		
-		newGame.setOnAction(e -> Game.newGame());
-		newGame.setOnAction(e -> primaryStage.close());
+		newGame.setOnAction(e -> game.newGame());
+		String args = null;
+		newGame.setOnAction(e -> mg.start(primaryStage));
+		//newGame.setOnAction(e -> primaryStage.close());
 		//loadGame.setOnAction(e -> Game.loadGame());
 		/////////////////////////
 		//Need to make a help GUI
@@ -84,10 +91,7 @@ public class MainMenuGUI extends Application{
 	
 	public static void main(String[] args)
 	{
-		
 		launch(args);
-		
-
 	}
 
 	
