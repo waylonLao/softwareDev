@@ -28,12 +28,12 @@ public class Game
 {
 	ObjectOutputStream outputs;
 	static ObjectInputStream inputs;
-	
+
 	Player newPlayer;
 	Room room;
 	Inventory inv;
-	
-	
+
+
 	public void newGame()
 	{
 		System.out.println("Welcome to Galaxy Explorer!");
@@ -44,24 +44,42 @@ public class Game
 
 	public void saveGame() throws FileNotFoundException, IOException
 	{
-		outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
-		//outputs.writeObject(new Player(500, new LeadPipe()));
-		//outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
-		//outputs.writeObject(new Inventory());
-		outputs.writeObject(newPlayer);
-		outputs.writeObject(room);
-		outputs.writeObject(inv);
+		try {
+			outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
+			outputs.writeObject(newPlayer);
+			outputs.writeObject(room);
+			outputs.writeObject(inv);
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} finally {
+			outputs.close();
+		}
 	}
 
-	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException
+	public void loadGame() //throws FileNotFoundException, IOException, ClassNotFoundException
 	{
-		inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
-		//Hard coding the toString, may need to change to loop
-		System.out.println(inputs.readObject());
-		System.out.println("|----------------------|");
-		System.out.println(inputs.readObject());
-		System.out.println("|----------------------|");
-		System.out.println(inputs.readObject());
+		try {
+			inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
+			//Hard coding the toString, may need to change to loop
+			System.out.println(inputs.readObject());
+			System.out.println("|----------------------|");
+			System.out.println(inputs.readObject());
+			System.out.println("|----------------------|");
+			System.out.println(inputs.readObject());
+
+		} catch (IOException ioe) {
+			// TODO Auto-generated catch block
+			ioe.printStackTrace();
+		} catch (ClassNotFoundException cnfe) {
+			cnfe.printStackTrace();
+		} finally {
+			try {
+				inputs.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
