@@ -22,24 +22,15 @@ public class MainGUI extends Application {
     @Override
     public void start(Stage primaryStage){
     	
-        Button btn = new Button();
-        btn.setText("Click it'");
         TextField tf1 = new TextField();
 
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-        
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
         Text text = new Text();
         Text inventoryText = new Text();
         Text battleText = new Text();
         text.setFont(new Font(20));
         text.setWrappingWidth(200);
         text.setTextAlignment(TextAlignment.JUSTIFY);
+       
         //text.setText("How do I link this to MainMenuGui???");
         StackPane.setAlignment(text, Pos.CENTER);
         StackPane.setAlignment(tf1, Pos.BOTTOM_CENTER);
