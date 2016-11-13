@@ -44,9 +44,12 @@ public class Room implements Serializable{
 		roomDoorArray = null;
 		
 	}
-	public Room(int roomID)
+	
+	//Constructors aren't used at all/correctly. Modify or delete.
+	
+	/*public Room(int roomID)
 	{
-		roomID = 0;
+		this.roomID = roomID;
 		roomDescription = "null";
 		monsterChance = 0;
 		puzzleChance = 0;
@@ -63,7 +66,7 @@ public class Room implements Serializable{
 		monsterID = m;
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
-	}
+	}*/
 
 	public Room(int id, String d, Item[] i, Monster m, boolean qj, boolean p){
 		roomID = id;

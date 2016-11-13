@@ -39,6 +39,7 @@ public class MainMenuGUI extends Application{
 
 		Game game = new Game();
 		MainGUI mg = new MainGUI();
+		mg.setGame(game);
 		FightGui fg = new FightGui();
 
 		//Make the buttons

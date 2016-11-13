@@ -32,6 +32,8 @@ public class Game
 	Player newPlayer;
 	Room room;
 	Inventory inv;
+	
+	String FILENAME = "gameSave.dat";
 
 
 	public void newGame()
@@ -40,32 +42,48 @@ public class Game
 		System.out.println("Please create a new character");
 		System.out.println("Please type in your name:");
 		this.room = new EngineRoom();
+		this.newPlayer = new Player(500, new LeadPipe());
+		this.inv = new Inventory();
 	}
 
-	public void saveGame() throws FileNotFoundException, IOException
+	public void saveGame()
 	{
 		try {
-			outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
+			ObjectOutputStream outputs1;
+			outputs = new ObjectOutputStream(new FileOutputStream(FILENAME));
+			outputs1 = new ObjectOutputStream(System.out);
 			outputs.writeObject(newPlayer);
 			outputs.writeObject(room);
 			outputs.writeObject(inv);
-		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
+			
+			outputs1.writeObject(newPlayer);
+			outputs1.writeObject(room);
+			outputs1.writeObject(inv);
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
 		} finally {
-			outputs.close();
+			try
+			{
+				outputs.close();
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("Game Saved!");
 		}
 	}
 
 	public void loadGame() //throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		try {
-			inputs = new ObjectInputStream(new FileInputStream("gameSave.dat"));
+			inputs = new ObjectInputStream(new FileInputStream(FILENAME));
 			//Hard coding the toString, may need to change to loop
-			System.out.println(inputs.readObject());
+			System.out.println((Player)inputs.readObject());
 			System.out.println("|----------------------|");
-			System.out.println(inputs.readObject());
+			System.out.println((Room)inputs.readObject());
 			System.out.println("|----------------------|");
-			System.out.println(inputs.readObject());
+			System.out.println((Inventory)inputs.readObject());
 
 		} catch (IOException ioe) {
 			// TODO Auto-generated catch block
@@ -80,6 +98,12 @@ public class Game
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public static void main(String[] args)
+	{
+		Game game = new Game();
+		game.loadGame();
 	}
 
 }

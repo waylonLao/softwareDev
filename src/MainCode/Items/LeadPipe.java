@@ -8,6 +8,7 @@ public class LeadPipe extends Weapon{
 	
 	public LeadPipe()
 	{
+		//super();
 		setItemID(1);
 		setItemName("Lead Pipe");
 		setItemDescription("A long heavy pipe made out of lead.");
@@ -27,5 +28,10 @@ public class LeadPipe extends Weapon{
 	 * @see MainCode.ItemInterface#createItem()
 	 */
 	
+	public static void main(String[] args)
+	{
+		LeadPipe lp = new LeadPipe();
+		
+	}
 
 }
