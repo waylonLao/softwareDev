@@ -21,6 +21,7 @@ import MainCode.Rooms.*;
 public class MainGUI extends Application {
 	
 	Game game;
+	MainMenuGUI mainMenu;
 
 	public Game getGame()
 	{
@@ -34,6 +35,10 @@ public class MainGUI extends Application {
 
 	@Override
 	public void start(Stage primaryStage){
+		
+		game = new Game();
+		mainMenu = new MainMenuGUI();
+		mainMenu.setGame(game);
 
 		TextField tf1 = new TextField();
 
@@ -44,16 +49,6 @@ public class MainGUI extends Application {
 		text.setWrappingWidth(200);
 		text.setTextAlignment(TextAlignment.JUSTIFY);
 		text.setText("How do I link this to MainMenuGui???");
-
-		tf1.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				System.out.println(tf1.getCharacters());
-				if ("save".equals(tf1.getCharacters().toString()))
-				{
-					game.saveGame();
-				}
-			}
-		});
 		
 		//text.setText();
 		
@@ -69,6 +64,26 @@ public class MainGUI extends Application {
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		tf1.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				System.out.println(tf1.getCharacters());
+				if ("save".equals(tf1.getCharacters().toString()))
+				{
+					game.saveGame();
+				} else if ("exit".equals(tf1.getCharacters().toString()))
+				{
+						try
+						{
+							mainMenu.start(primaryStage);
+						} catch (Exception e)
+						{
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+				}
+			}
+		});
 	}
 
 	/**

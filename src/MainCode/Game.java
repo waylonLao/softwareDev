@@ -38,9 +38,6 @@ public class Game
 
 	public void newGame()
 	{
-		System.out.println("Welcome to Galaxy Explorer!");
-		System.out.println("Please create a new character");
-		System.out.println("Please type in your name:");
 		this.room = new EngineRoom();
 		this.newPlayer = new Player(500, new LeadPipe());
 		this.inv = new Inventory();
@@ -51,14 +48,14 @@ public class Game
 		try {
 			ObjectOutputStream outputs1;
 			outputs = new ObjectOutputStream(new FileOutputStream(FILENAME));
-			outputs1 = new ObjectOutputStream(System.out);
+			//outputs1 = new ObjectOutputStream(System.out);
 			outputs.writeObject(newPlayer);
 			outputs.writeObject(room);
 			outputs.writeObject(inv);
 			
-			outputs1.writeObject(newPlayer);
+			/*outputs1.writeObject(newPlayer);
 			outputs1.writeObject(room);
-			outputs1.writeObject(inv);
+			outputs1.writeObject(inv);*/
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
@@ -100,10 +97,4 @@ public class Game
 		}
 	}
 	
-	public static void main(String[] args)
-	{
-		Game game = new Game();
-		game.loadGame();
-	}
-
 }

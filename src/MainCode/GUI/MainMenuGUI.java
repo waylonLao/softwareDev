@@ -32,6 +32,20 @@ import javafx.stage.Stage;
 import MainCode.GUI.MainGUI;
 
 public class MainMenuGUI extends Application{
+	
+	Game game;
+
+	public Game getGame()
+	{
+		return game;
+	}
+
+
+	public void setGame(Game game)
+	{
+		this.game = game;
+	}
+
 
 	@Override
 	public void start(Stage primaryStage) throws Exception
@@ -40,7 +54,6 @@ public class MainMenuGUI extends Application{
 		Game game = new Game();
 		MainGUI mg = new MainGUI();
 		mg.setGame(game);
-		FightGui fg = new FightGui();
 
 		//Make the buttons
 		Button newGame = new Button("New Game");
@@ -86,8 +99,10 @@ public class MainMenuGUI extends Application{
 		/////////////////////////
 		//help.setOnAction(e -> );
 		quit.setOnAction(e -> primaryStage.close());
+		
 
 	}
+	
 
 	public static void main(String[] args)
 	{
