@@ -43,7 +43,7 @@ public class HelpGui extends Application
 		title.setAlignment(Pos.CENTER);
 
 		Text text = new Text();
-		text.setText("Helpful commands here");
+		text.setText("Helpful commands \n\nNorth \n\nSouth \n\nWest \n\nEast \n\nSave \n\nExit");
 
 		//Add label and box to border pane
 		BorderPane bp= new BorderPane();

@@ -15,14 +15,7 @@ public class RoomArray {
 		CryoRoom cryoRoom3 = new CryoRoom(2);
 		CryoRoom cryoRoom4 = new CryoRoom(3);
 		CryoRoom cryoRoom5 = new CryoRoom(4);
-		
-		roomArray.add(cryoRoom1);
-		roomArray.add(cryoRoom2);
-		roomArray.add(cryoRoom3);
-		roomArray.add(cryoRoom4);
-		roomArray.add(cryoRoom5);
-		
-		
+	
 		//Hallways
 		Hallway hallway1 = new Hallway(0);
 		Hallway hallway2 = new Hallway(1);

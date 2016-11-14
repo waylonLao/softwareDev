@@ -128,7 +128,7 @@ public class MainGUI extends Application {
 						e.printStackTrace();
 					}
 				}
-				else if("next".equals(tf1.getCharacters().toString()))
+				else if("north".equals(tf1.getCharacters().toString()))
 				{
 					game.setRoom(masterRoomArray.getRoomArray().get(1));
 					text.setText(masterRoomArray.getRoomArray().get(1).getRoomName());
