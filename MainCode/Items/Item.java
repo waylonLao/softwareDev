@@ -3,8 +3,7 @@ package MainCode.Items;
 
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class Item{
     

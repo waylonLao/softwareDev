@@ -9,8 +9,7 @@ import MainCode.Monster.Monster;
 import MainCode.Puzzles.Puzzle;
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class Room{
 

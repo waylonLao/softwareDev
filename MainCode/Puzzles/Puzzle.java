@@ -2,6 +2,9 @@ package MainCode.Puzzles;
 
 import MainCode.Items.Item;
 
+/**
+ * @author Neal Klemenc
+ */
 public class Puzzle {
 	
 	private String puzzleName;

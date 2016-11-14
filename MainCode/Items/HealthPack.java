@@ -1,8 +1,10 @@
 package MainCode.Items;
 
-import MainCode.Monster.Player;
 import MainCode.Monster.Sprite;
 
+/**
+ * @author Neal Klemenc
+ */
 public class HealthPack extends Item {
 
 	public HealthPack() {

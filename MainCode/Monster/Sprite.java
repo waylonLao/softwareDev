@@ -21,7 +21,11 @@ public class Sprite{
 	
 	
 	public Sprite(){
-		
+		maxHealth = 50;
+		health = 50;
+		weapon = null;
+		name = "player";
+		spriteInv = new Inventory();
 	}
 	
 	/**
@@ -33,6 +37,7 @@ public class Sprite{
 		health = h;
 		weapon = w;
 		name = n;
+		spriteInv = new Inventory();
 	}
 
 

@@ -5,8 +5,7 @@ import java.util.ArrayList;
 
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class Inventory {
     
@@ -39,9 +38,8 @@ public class Inventory {
 
 
 	public void addItem(Item i){
-		if(i != null){
 		itemList.add(i);
-		}
+		
 	}
 	
 	public void removeItem(Item i){
