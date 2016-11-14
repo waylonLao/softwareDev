@@ -28,6 +28,8 @@ public class Game
 {
 	ObjectOutputStream outputs;
 	static ObjectInputStream inputs;
+	
+	RoomArray masterRoomArray = new RoomArray();
 
 	Player newPlayer;
 	Room room;
@@ -38,7 +40,7 @@ public class Game
 
 	public void newGame()
 	{
-		this.room = new EngineRoom();
+		this.room = masterRoomArray.getRoomArray().get(0);
 		this.newPlayer = new Player(500, new LeadPipe());
 		this.inv = new Inventory();
 	}

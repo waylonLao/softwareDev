@@ -37,29 +37,35 @@ public class MainGUI extends Application {
 	@Override
 	public void start(Stage primaryStage){
 		
-		game = new Game();
-		mainMenu = new MainMenuGUI();
-		mainMenu.setGame(game);
-		helpGui = new HelpGui();
-		helpGui.setGame(game);
+		
+		try{
+			game = new Game();
+			mainMenu = new MainMenuGUI();
+			mainMenu.setGame(game);
+			helpGui = new HelpGui();
+			helpGui.setGame(game);
+		
+		RoomArray masterRoomArray = new RoomArray();
 
 		TextField tf1 = new TextField();
 
-		Text text = new Text();
-		Text inventoryText = new Text();
+		//This my good sir is how you do it
+		Text text = new Text(masterRoomArray.getRoomArray().get(0).getRoomName());
+		Text roomText = new Text(masterRoomArray.getRoomArray().get(0).getRoomDescription());
 		Text battleText = new Text();
 		text.setFont(new Font(20));
 		text.setWrappingWidth(200);
 		text.setTextAlignment(TextAlignment.JUSTIFY);
-		text.setText("How do I link this to MainMenuGui???");
+		//text.setText("How do I link this to MainMenuGui???");
 		
 		//text.setText();
 		
 
-		StackPane.setAlignment(text, Pos.CENTER);
+		StackPane.setAlignment(text, Pos.TOP_CENTER);
+		StackPane.setAlignment(roomText, Pos.CENTER);
 		StackPane.setAlignment(tf1, Pos.BOTTOM_CENTER);
 		StackPane root = new StackPane();
-		root.getChildren().addAll(tf1, text);
+		root.getChildren().addAll(tf1, text, roomText);
 
 
 		Scene scene = new Scene(root, 500, 500);
@@ -67,8 +73,12 @@ public class MainGUI extends Application {
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
-		tf1.setOnAction(new EventHandler<ActionEvent>() {
+		}
+		catch (Exception e){
+			
+		}
+	}
+		/*tf1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//syso to see what is actually printed out
 				//System.out.println(tf1.getCharacters());
@@ -100,13 +110,15 @@ public class MainGUI extends Application {
 					}
 				}
 			}
-		});
-	}
+			catch (Exception e)
+			{
+				
+			}
+		*/
 
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		launch(args);
-	}
-}
+	}}
