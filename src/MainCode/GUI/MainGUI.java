@@ -19,7 +19,7 @@ import MainCode.Rooms.*;
  * Date: Oct 31, 2016
  */
 public class MainGUI extends Application {
-	
+
 	Game game;
 	MainMenuGUI mainMenu;
 	HelpGui helpGui;
@@ -36,15 +36,13 @@ public class MainGUI extends Application {
 
 	@Override
 	public void start(Stage primaryStage){
-		
-		
-		try{
-			game = new Game();
-			mainMenu = new MainMenuGUI();
-			mainMenu.setGame(game);
-			helpGui = new HelpGui();
-			helpGui.setGame(game);
-		
+
+		game = new Game();
+		mainMenu = new MainMenuGUI();
+		mainMenu.setGame(game);
+		helpGui = new HelpGui();
+		helpGui.setGame(game);
+
 		RoomArray masterRoomArray = new RoomArray();
 
 		TextField tf1 = new TextField();
@@ -57,9 +55,9 @@ public class MainGUI extends Application {
 		text.setWrappingWidth(200);
 		text.setTextAlignment(TextAlignment.JUSTIFY);
 		//text.setText("How do I link this to MainMenuGui???");
-		
+
 		//text.setText();
-		
+
 
 		StackPane.setAlignment(text, Pos.TOP_CENTER);
 		StackPane.setAlignment(roomText, Pos.CENTER);
@@ -73,12 +71,9 @@ public class MainGUI extends Application {
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		}
-		catch (Exception e){
-			
-		}
-	}
-		/*tf1.setOnAction(new EventHandler<ActionEvent>() {
+
+
+		tf1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				//syso to see what is actually printed out
 				//System.out.println(tf1.getCharacters());
@@ -89,15 +84,15 @@ public class MainGUI extends Application {
 					tf1.clear();
 				} else if ("exit".equals(tf1.getCharacters().toString()))
 				{
-						try
-						{
-							mainMenu.start(primaryStage);
-							
-						} catch (Exception e)
-						{
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+					try
+					{
+						mainMenu.start(primaryStage);
+
+					} catch (Exception e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else if ("help".equals(tf1.getCharacters().toString()))
 				{
 					try
@@ -110,15 +105,15 @@ public class MainGUI extends Application {
 					}
 				}
 			}
-			catch (Exception e)
-			{
-				
-			}
-		*/
+			});
+	}
+
 
 	/**
 	 * @param args the command line arguments
 	 */
 	public void main(String[] args) {
 		launch(args);
-	}}
+	}
+
+}

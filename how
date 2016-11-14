@@ -1,0 +1,679 @@
+[33mcommit fcde886ef067cabcf828400aba55a5c98e34b13f[m
+Author: nklemenc <nklemenc@ggc.edu>
+Date:   Mon Nov 14 09:33:45 2016 -0500
+
+    Add files via upload
+
+[1mdiff --git a/MainCode/GUI/MainGUI.java b/MainCode/GUI/MainGUI.java[m
+[1mindex f944074..3582f1d 100644[m
+[1m--- a/MainCode/GUI/MainGUI.java[m
+[1m+++ b/MainCode/GUI/MainGUI.java[m
+[36m@@ -2,9 +2,15 @@[m [mpackage MainCode.GUI;[m
+ [m
+ import static java.awt.SystemColor.text;[m
+ [m
+[32m+[m[32m//import java.awt.ScrollPane;[m
+ import java.util.HashMap;[m
+ [m
+[32m+[m[32mimport MainCode.Items.ConcussionGrenade;[m
+[32m+[m[32mimport MainCode.Items.HealthPack;[m
+[32m+[m[32mimport MainCode.Items.Inventory;[m
+[32m+[m[32mimport MainCode.Items.Item;[m
+ import MainCode.Items.Weapon;[m
+[32m+[m[32mimport MainCode.Items.Key;[m
+ import MainCode.Monster.Monster;[m
+ import MainCode.Monster.Player;[m
+ import MainCode.Puzzles.Puzzle;[m
+[36m@@ -12,6 +18,8 @@[m [mimport MainCode.Rooms.Door;[m
+ import MainCode.Rooms.Room;[m
+ import MainCode.Rooms.RoomFactory;[m
+ import javafx.application.Application;[m
+[32m+[m[32mimport javafx.collections.FXCollections;[m
+[32m+[m[32mimport javafx.collections.ObservableList;[m
+ import javafx.event.ActionEvent;[m
+ import javafx.event.EventHandler;[m
+ import javafx.geometry.Insets;[m
+[36m@@ -19,9 +27,13 @@[m [mimport javafx.geometry.Pos;[m
+ import javafx.scene.Scene;[m
+ import javafx.scene.control.Button;[m
+ import javafx.scene.control.Label;[m
+[32m+[m[32mimport javafx.scene.control.ListView;[m
+[32m+[m[32mimport javafx.scene.control.ScrollPane;[m
+[32m+[m[32mimport javafx.scene.control.SelectionMode;[m
+ import javafx.scene.control.TextField;[m
+ import javafx.scene.layout.BorderPane;[m
+ import javafx.scene.layout.GridPane;[m
+[32m+[m[32mimport javafx.scene.layout.HBox;[m
+ import javafx.scene.layout.Priority;[m
+ import javafx.scene.layout.StackPane;[m
+ import javafx.scene.layout.VBox;[m
+[36m@@ -29,74 +41,72 @@[m [mimport javafx.stage.Stage;[m
+ import javafx.scene.text.*;[m
+ [m
+ /**[m
+[31m- * @author Joshua Tran[m
+[31m- * Date: Oct 31, 2016[m
+[32m+[m[32m * @author Neal Klemenc[m
+  */[m
+ public class MainGUI extends Application {[m
+ [m
+[31m-	[m
+[31m-public Room room0 = new Room(0, "The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", null, null, false, true);[m
+[31m-	[m
+[31m-	public Room room1 = new Room(1, "The walls are dull grey and lined with the statis units for other crew members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\". To the north and south are red doors labeled \"Cryogenics Room\"", null, null, false, true);[m
+[31m-	[m
+[31m-	public Room room2 = new Room(2,"The crew in this rooms appears to be fine as well, sleeping in their cham-bers.  ", null, null, false, true);[m
+[31m-	[m
+[32m+[m	[32mWeapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);[m
+[32m+[m	[32mWeapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);[m
+[32m+[m	[32mWeapon largeDoor = new Weapon("A Large Door", "It's just a really big door", "Used to fight", 15);[m
+[32m+[m	[32mWeapon sharkTeeth = new Weapon("Sharp teeth", "Very sharp teeth", "Used to fight", 20);[m
+[32m+[m	[32mWeapon plasmaInducer = new Weapon("Plasma Inducer", "", "Used to fight", 25);[m
+[32m+[m	[32mWeapon houndTail = new Weapon("Hound Tail", "", "Used to fight", 30);[m
+[32m+[m	[32mWeapon disintegratorPistol = new Weapon("Disintegrator  Pistol", "", "Used to fight", 35);[m
+[32m+[m	[32mWeapon cutlass = new Weapon("Cutlass", "", "Used to fight", 40);[m
+[32m+[m	[32mWeapon wrestlingMoves = new Weapon("Wrestling Moves", "", "Used to fight", 45);[m
+[32m+[m	[32mWeapon plasmaRifle = new Weapon("Plasma Rifle", "", "Used to fight", 50);[m
+[32m+[m	[32mWeapon tentacles = new Weapon("Tentacles", "Terrible Towering Tentacles", "Used to fight", 55);[m
+[32m+[m	[32mWeapon flameThrower = new Weapon("FlameThrower", "Hot stuff", "Used to fight", 60);[m
+[32m+[m[41m	[m
+[32m+[m	[32mHealthPack healthKit = new HealthPack("Health Kit", "Some basic first-aid.", "Used to heal wounds.");[m
+[32m+[m	[32mConcussionGrenade concussionGrenade = new ConcussionGrenade();[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32mMonster rogueCleaningUnit = new Monster(30, suctionHose, "Rogue Cleaning Unit", "A pissed off vacuum cleaner, easily killed.", healthKit);[m
+[32m+[m	[32mMonster robotDoorman = new Monster(50, largeDoor, "Robot Doorman", "A well-dressed robot in moderate disprepair.", healthKit);[m
+[32m+[m	[32mMonster tunnelingHorror = new Monster(50, sharkTeeth, "Tunneling Horror", "A large alien worm.", healthKit);[m
+[32m+[m	[32mMonster roboChef4000 = new Monster(50, plasmaInducer, "ROBOCHEF4000", "A deranged culinary robot with a French accent and a curly moustache.", plasmaInducer);[m
+[32m+[m	[32mMonster zocrexianInfiltrator = new Monster(50, houndTail, "Zocrexian Infiltrator", "An alien hound all the way from zocrexia.", healthKit);[m
+[32m+[m	[32mMonster littleGreenMan = new Monster(100, disintegratorPistol, "Little Green Man", "A prototypical alien..", disintegratorPistol);[m
+[32m+[m	[32mMonster cyborgPirate = new Monster(100, cutlass, "Cyborg Pirate", "A robotic pirate with a bad attitude.", healthKit);[m
+[32m+[m	[32mMonster maskedRobot = new Monster(50, wrestlingMoves, "Masked Robot", "An aggressive machine who wants to wrestle.", healthKit);[m
+[32m+[m	[32mMonster alienCommando = new Monster(100, plasmaRifle, "Alien Commando", "An incomprehensible alien with an assault weapon.", concussionGrenade);[m
+[32m+[m	[32mMonster spaceKraken = new Monster(150, tentacles, "Space Kraken", "A giant, anomalous squid.", healthKit);[m
+[32m+[m	[32mMonster returnOfCleaningUnit = new Monster(250, flameThrower, "The Return of Cleaning Unit", "A pissed off vacuum cleaner, still mad.", healthKit);[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[32mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", rogueCleaningUnit, null, false, true);[m
+[32m+[m	[32mpublic Room room1 = new Room(1, "The walls are dull grey and lined with the statis units for other crew members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\". To the north and south are red doors labeled \"Cryogenics Room\"", robotDoorman, null, false, true);[m
+[32m+[m	[32mpublic Room room2 = new Room(2,"The crew in this rooms appears to be fine as well, sleeping in their cham-bers.", null, null, false, true);[m
+ 	public Room room3 = new Room(3,"The room is a dull metal grey with three doors each with a name plate.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room4 = new Room(4,"The room is dull metal grey with two doors. The crew in this room appears fine", null, null, false, true);[m
+[31m-	[m
+ 	public Room room5 = new Room(5,"The room is dull metal grey with three doors. The door to the east is the same dull grey as the rest of the ship but there appears to be a window near the top.  You give the stasis chambers a quick glance to ensure the crew is fine then go to check the window. The window is small but you can just make out what appears to be a room with something in it.  As you step back your foot catches against something on the floor.  Upon inspection, you realize there is an anchor point on the floor next to the door. ", null, null, false, true);[m
+[31m-	[m
+ 	public Room room6 = new Room(6,"The room is grey with two exits.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room7 = new Room(7,"The grey walls continue into this room as do the red doors.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room8 = new Room(8,"The walls are grey and there are two doors.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room9 = new Room(9,"Just like the other rooms it is dull gray but with a flickering overhead light.  Looking around the room the all the monitors are public except for the one in the command center which appears to be in working order.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room10 = new Room(10,"Once the door is pried open the air is sucking around you pulling you to the leaking hole.  Crawling around the wall you have reached the E-Cell create.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room11 = new Room(11, "Another hallway with dull gray walls", null, null, false, true);[m
+[31m-	[m
+ 	public Room room12 = new Room(12,"Like most of the hallways on the ship this is another dull gray walled room.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room13 = new Room(13,"This room is abnormally dark even compared to the crippled ship.  The light blinking on the server bank are creating a dancing shadow effect, giving a serial effect.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room14 = new Room(14,"You're struck by how well this room is intact and seems to be in working order.  All server banks seem to be powered on and communicating with the main system. ", null, null, false, true);[m
+[31m-	[m
+ 	public Room room15 = new Room(15,"This room largely resembles the others, with black server racks occupying most of the space.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room16 = new Room(16,"Besides the usual grey, the walls of this room are lined with blade servers, most of which remain relatively unscathed.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room17 = new Room(17,"These hallways all look the same, with the only indication that you've moved being the signs on the floor. That, and the fact that this room is just as cold as the cryogenic rooms.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room18 = new Room(18,"The walls of this hallway are a uniform grey throughout. Only about a quar-ter of the lights are working, so it is fairly dark.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room19 = new Room(19,"When you enter, the room is lit only by back power making it very dim.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room20 = new Room(20, "The hallway towards Communications is long, and includes two sections the walls are a neutral grey color, with the outlines of wall panels visible in some places.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room21 = new Room(21,"The second section of the hallway towards the com room seems identical to the first.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room22 = new Room(22,"This room is a uniform drab grey like the others. A few computer terminals with blinking lights populate the otherwise sparsely furnished room.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room23 = new Room(23,"The walls in this room are formed by dark paneling, but the lights are almost bright enough to hurt your eyes. There are quite a few terminals in this room as well, with a large table in the center which projects various holographic images above it. The panels cover every inch of the interior, with the excep-tion of the western wall, which is a large window.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room24 = new Room(24,"This is a dull grey room lined with empty cargo crates. There are two doors in this room, one yellow door to the north and a black door to the east.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room25 = new Room(25,"This is a large grey room with multiple exits. There is a large Ion Thruster in the middle of the room. The Ion thruster is not powered on, and all indicator gauges show that there is not enough impulse power to provide sufficient propulsion for escape. Damage to the thruster and missing e-cells are prohib-iting the engine from powering up.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room26 = new Room(26,"This is a dull grey room with empty shelves.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room27 = new Room(27,"This is a dull grey room with six empty Energy Cell crates and one locked energy crate.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room28 = new Room(28,"This room has panoramic viewing windows, the length of the room. Through these windows one can see our indigenous galaxy.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room29 = new Room(29,"This a dull grey room. This room has panoramic windows but the ships win-dow shutters are closed.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room30 = new Room(30,"There is only one way in and one way out in this room. There is an elaborate navigation control panel. Some of the gauges are damaged but overall the navigation controls appear to be fully functional.", null, null, false, true);[m
+[31m-	[m
+ 	public Room room31 = new Room(31,"You can barely see through the darkness to find the terminal to plug in the E-cell.", null, null, false, true);[m
+ 	[m
+ 	[m
+[36m@@ -135,6 +145,9 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 	public Door[] room31Doors = {new Door(room15, "northeast"), new Door(room14, "southeast"), new Door(room2, "northwest"), new Door(room1, "southwest")};[m
+ 	[m
+ 	[m
+[32m+[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+ 	public HashMap<Room, Door[]> myMap = new HashMap<Room, Door[]>()[m
+ 	{[m
+ 	    {[m
+[36m@@ -180,10 +193,18 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 	BorderPane mainPane = new BorderPane();[m
+ 	BorderPane puzzlePane = new BorderPane();[m
+ 	BorderPane fightPane = new BorderPane();[m
+[32m+[m	[32mGridPane directionalGrid = new GridPane();[m
+[32m+[m	[32mVBox roomInfoPane = new VBox();[m
+[32m+[m	[32mGridPane myGrid = new GridPane();[m
+[32m+[m	[32mGridPane fightGrid = new GridPane();[m
+[32m+[m	[32mGridPane mainInvPane = new GridPane();[m
+[32m+[m	[32mScrollPane roomInvPane = new ScrollPane();[m
+[32m+[m	[32mScrollPane playerInvPane = new ScrollPane();[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32mPlayer mainPlayer = new Player(200, bareHands, room0);[m
+ 	[m
+[31m-	Weapon theWeapon = new Weapon("dull blade", "a dull blade", "cut stuff, obviously", 50);[m
+[31m-	Player mainPlayer = new Player(200, theWeapon, room0);[m
+[31m-	Monster mainMonster = new Monster(100, theWeapon, "cleaner bot", "This is a monster", null);[m
+[32m+[m	[32mMonster mainMonster = mainPlayer.getRoomID().getMonster();[m
+ 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);[m
+ 	Button startFightBtn = new Button("Start Fight");[m
+ [m
+[36m@@ -193,12 +214,18 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 	Text action0 = new Text();[m
+ 	[m
+ 	[m
+[31m-	private Label mainText = new Label("Fight GUI");[m
+[31m-	private Label monsterName = new Label(mainMonster.getName());[m
+[31m-	private Label playerName = new Label(mainPlayer.getName());[m
+[31m-	private Label monsterHealth = new Label(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));[m
+[31m-	private Label playerHealth = new Label(String.valueOf(mainPlayer.getHealth()) + "/" + String.valueOf(mainPlayer.getMaxHealth()));[m
+[31m-	private Label puzzleName = new Label(mainPuzzle.getPuzzleName());[m
+[32m+[m[32m    Text monsterPaneHeader = new Text("Monster in this room:");[m
+[32m+[m[32m    Text monsterPaneMonster = new Text(mainMonster.getName());[m
+[32m+[m[32m    Text puzzlePaneHeader = new Text("Puzzle in this room:");[m
+[32m+[m[32m    Text puzzlePanePuzzle = new Text(mainPuzzle.getPuzzleName());[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m	[32mLabel monsterName = new Label(mainMonster.getName());[m
+[32m+[m	[32mLabel playerName = new Label(mainPlayer.getName());[m
+[32m+[m	[32mLabel monsterHealth = new Label(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));[m
+[32m+[m	[32mLabel playerHealth = new Label(String.valueOf(mainPlayer.getHealth()) + "/" + String.valueOf(mainPlayer.getMaxHealth()));[m
+[32m+[m	[32mLabel puzzleName = new Label(mainPuzzle.getPuzzleName());[m
+ 	[m
+ 	[m
+ 	private Button attackBtn = new Button("Attack");[m
+[36m@@ -213,15 +240,24 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 	//Puzzle Buttons[m
+ 	private Button startPuzzleBtn = new Button("Examine Puzzle");[m
+ 	[m
+[32m+[m	[32m//INVENTORY BUTTONS[m
+[32m+[m	[32mprivate Button takeItemBtn = new Button("Take Item");[m
+[32m+[m	[32mprivate Button useItemBtn = new Button("Use Item");[m
+ 	[m
+ 	[m
+[32m+[m	[32m//INVENTORY[m
+[32m+[m	[32mObservableList<Item> obRoomInv;[m
+[32m+[m	[32mObservableList<Item> obPlayerInv;[m
+[32m+[m	[32mListView<Item> roomItemList = new ListView<>(obRoomInv);[m
+[32m+[m	[32mListView<Item> playerItemList = new ListView<>(obPlayerInv);[m
+ 	[m
+[31m-	GridPane myGrid = new GridPane();[m
+ 	[m
+ [m
+     [m
+     @Override[m
+     public void start(Stage primaryStage){[m
+[32m+[m[41m    	[m
+[32m+[m[41m    	[m
+     	theStage = primaryStage;[m
+ [m
+         startFightBtn.setOnAction(e -> setFightScene());[m
+[36m@@ -246,44 +282,38 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 		textScroller.setAlignment(Pos.CENTER);[m
+ 		textScroller.getChildren().addAll(action2, action1, action0);[m
+ 		[m
+[31m-//		GridPane textGrid = new GridPane();[m
+[31m-//		textGrid.setAlignment(Pos.CENTER);[m
+[31m-//        textGrid.add(lastActions, 1, 0);[m
+[31m-//        textGrid.add(currentActions, 1, 2);[m
+[31m-        [m
+[32m+[m
+         [m
+[31m-        GridPane directionalGrid = new GridPane();[m
+[32m+[m[32m        //MOVEMENT[m
+         directionalGrid.setAlignment(Pos.CENTER);[m
+         directionalGrid.add(northBtn, 1, 0);[m
+         directionalGrid.add(southBtn, 1, 2);[m
+         directionalGrid.add(eastBtn, 2, 1);[m
+         directionalGrid.add(westBtn, 0, 1);[m
+         [m
+[31m-        [m
+[31m-        VBox roomMonsterPane = new VBox();[m
+[31m-        Text monsterPaneHeader = new Text("Monster in this room:");[m
+[31m-        Text monsterPaneMonster = new Text(mainMonster.getName());[m
+[31m-        Text puzzlePaneHeader = new Text("Puzzle in this room:");[m
+[31m-        Text puzzlePanePuzzle = new Text(mainPuzzle.getPuzzleName());[m
+[31m-        roomMonsterPane.setAlignment(Pos.CENTER);[m
+[31m-        roomMonsterPane.setPadding(new Insets(10,10,10,10));[m
+[31m-        roomMonsterPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);[m
+[31m-        [m
+[32m+[m[32m        //MONSTER AND PUZZLE INFO[m
+[32m+[m[32m        roomInfoPane.setAlignment(Pos.CENTER);[m
+[32m+[m[32m        roomInfoPane.setPadding(new Insets(10,10,10,10));[m
+[32m+[m[32m        roomInfoPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);[m
+         [m
+         [m
+[32m+[m[32m        //FIGHT INTERFACE[m
+[32m+[m[32m        fightGrid.setAlignment(Pos.CENTER);[m
+[32m+[m		[32mfightGrid.setPadding(new Insets(10,10,10,10));[m
+[32m+[m		[32mfightGrid.setHgap(5.0);[m
+[32m+[m		[32mfightGrid.setVgap(10.0);[m
+[32m+[m		[32mfightGrid.add(monsterName, 2, 1);[m
+[32m+[m		[32mfightGrid.add(monsterHealth, 2, 2);[m
+[32m+[m		[32mfightGrid.add(playerName, 0, 1);[m
+[32m+[m		[32mfightGrid.add(playerHealth, 0, 2);[m
+[32m+[m		[32mfightGrid.add(attackBtn, 1, 3);[m
+[32m+[m		[32mfightPane.setCenter(fightGrid);[m
+         [m
+[31m-        [m
+[31m-        mainPane.setCenter(directionalGrid);[m
+[31m-        mainPane.setRight(roomMonsterPane);[m
+[31m-        mainPane.setBottom(textScroller);[m
+[31m-[m
+ [m
+[31m-        [m
+[31m-        [m
+[31m-		fightPane.setCenter(getGrid());[m
+ 		[m
+ 		[m
+ 		[m
+[32m+[m		[32m//PUZZLE INTERFACE[m
+ 		VBox puzzleBox = new VBox();[m
+ 		puzzleBox.setAlignment(Pos.CENTER);[m
+         Text puzzleDescription = new Text(mainPuzzle.getPuzzleDescription());[m
+[36m@@ -293,14 +323,36 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+         [m
+         [m
+         puzzlePane.setCenter(puzzleBox);[m
+[32m+[m[32m        puzzlePane.setTop(puzzleName);[m
+ 		[m
+[31m-		[m
+[32m+[m[41m        [m
+[32m+[m[41m        [m
+[32m+[m[32m        //ItemInterface[m
+[32m+[m[32m        mainPlayer.takeItem(healthKit);[m
+[32m+[m[32m        obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());[m
+[32m+[m[32m        obPlayerInv.addAll(mainPlayer.getSpriteInv().getItemList());[m
+[32m+[m[32m        playerItemList = new ListView<>(obPlayerInv);[m
+[32m+[m[32m        roomItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);[m
+[32m+[m[32m        playerItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);[m
+[32m+[m[32m        roomInvPane.setContent(roomItemList);[m
+[32m+[m[32m        playerInvPane.setContent(playerItemList);[m
+[32m+[m[32m        mainInvPane.add(new Text("Room Items"), 0, 0);[m
+[32m+[m[32m        mainInvPane.add(new Text("Player Items"), 1, 0);[m
+[32m+[m[32m        mainInvPane.add(roomInvPane, 0, 1);[m
+[32m+[m[32m        mainInvPane.add(playerInvPane, 1, 1);[m
+[32m+[m[32m        mainInvPane.add(takeItemBtn, 0, 2);[m
+[32m+[m[32m        mainInvPane.add(useItemBtn, 1, 2);[m
+[32m+[m[32m        mainInvPane.setAlignment(Pos.CENTER);[m
+[32m+[m[32m        mainInvPane.setMaxHeight(300);[m
+ 		[m
+ 		[m
+ [m
+ 		[m
+ 		[m
+[31m-       [m
+[32m+[m[32m        mainPane.setCenter(directionalGrid);[m
+[32m+[m[32m        mainPane.setRight(roomInfoPane);[m
+[32m+[m[32m        mainPane.setBottom(textScroller);[m
+[32m+[m[32m        mainPane.setLeft(mainInvPane);[m
+         [m
+         mainScene = new Scene(mainPane, 1000, 1000);[m
+         fightScene = new Scene(fightPane, 1000, 1000);[m
+[36m@@ -325,18 +377,22 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ [m
+ 	private void moveNorth() {[m
+ 		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));[m
+[32m+[m		[32mupdateText();[m
+ 	}[m
+     [m
+     private void moveSouth() {[m
+     	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1]));[m
+[32m+[m[41m    [m	[32mupdateText();[m
+ 	}[m
+     [m
+     private void moveEast() {[m
+     	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2]));[m
+[32m+[m[41m    [m	[32mupdateText();[m
+ 	}[m
+     [m
+     private void moveWest() {[m
+     	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3]));[m
+[32m+[m[41m    [m	[32mupdateText();[m
+ 	}[m
+ [m
+ 	private void setFightScene() {[m
+[36m@@ -361,31 +417,14 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+     }[m
+ [m
+ [m
+[31m-	private GridPane getGrid(){[m
+[31m-		GridPane myGrid = new GridPane();[m
+[31m-		myGrid.setAlignment(Pos.CENTER);[m
+[31m-		myGrid.setPadding(new Insets(10,10,10,10));[m
+[31m-		myGrid.setHgap(5.0);[m
+[31m-		myGrid.setVgap(10.0);[m
+[31m-		myGrid.add(mainText, 1, 0);[m
+[31m-		myGrid.add(monsterName, 2, 1);[m
+[31m-		myGrid.add(monsterHealth, 2, 2);[m
+[31m-		myGrid.add(playerName, 0, 1);[m
+[31m-		myGrid.add(playerHealth, 0, 2);[m
+[31m-		myGrid.add(attackBtn, 1, 3);[m
+[31m-		//myGrid.add(lastActions, 1, 4);[m
+[31m-		//myGrid.add(currentActions, 1, 5);[m
+[31m-		return myGrid;[m
+[31m-	}[m
+[32m+[m
+ [m
+ [m
+ 	[m
+ 	private void doDamage() {[m
+ 		cycleText(mainPlayer.doDamage(mainMonster));[m
+[31m-		updateHealth();[m
+ 		if(mainMonster.getHealth()<=0){[m
+[31m-			attackBtn.setOnAction(returnBtn.getOnAction());[m
+[31m-			attackBtn.setText("return");[m
+[32m+[m			[32mupdateText();[m
+ 		}[m
+ 		else{[m
+ 		recieveDamage();[m
+[36m@@ -395,13 +434,45 @@[m [mpublic Room room0 = new Room(0, "The room has 4 doors and each door has a name p[m
+ 	[m
+ 	private void recieveDamage(){[m
+ 		cycleText(mainPlayer.takeDamage(mainMonster));[m
+[31m-		updateHealth();[m
+[32m+[m		[32mupdateText();[m
+ 	}[m
+ 	[m
+ 	[m
+ 	private void updateHealth(){[m
+[31m-		playerHealth.setText(String.valueOf(mainPlayer.getHealth()) + "/" + String.valueOf(mainPlayer.getMaxHealth()));[m
+[31m-		monsterHealth.setText(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));[m
+[32m+[m		[32mplayerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());[m
+[32m+[m		[32mmonsterHealth.setText(mainMonster.getHealth() + "/" + mainMonster.getMaxHealth());[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32mprivate void updateText(){[m
+[32m+[m		[32mmainMonster = mainPlayer.getRoomID().getMonster();[m
+[32m+[m		[32mmainPuzzle = mainPlayer.getRoomID().getPuzzle();[m
+[32m+[m		[32mplayerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());[m
+[32m+[m
+[32m+[m[41m		[m
+[32m+[m		[32mif(mainMonster == null || mainMonster.getHealth() <= 0){[m
+[32m+[m			[32mmainMonster = null;[m
+[32m+[m			[32mmonsterPaneMonster.setText("");[m
+[32m+[m			[32mmonsterHealth.setText("KO");[m
+[32m+[m			[32mattackBtn.setOnAction(e -> setMainScene());[m
+[32m+[m			[32mattackBtn.setText("return");[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse{[m
+[32m+[m			[32mmonsterPaneMonster.setText(mainMonster.getName());[m
+[32m+[m			[32mmonsterName.setText(mainMonster.getName());[m
+[32m+[m			[32mmonsterHealth.setText(mainMonster.getHealth() + "/" + mainMonster.getMaxHealth());[m
+[32m+[m			[32mattackBtn.setOnAction(e -> doDamage());[m
+[32m+[m			[32mattackBtn.setText("Attack");[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32mif(mainPuzzle == null){[m
+[32m+[m			[32mpuzzlePanePuzzle.setText("");[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse{[m
+[32m+[m			[32mpuzzlePanePuzzle.setText(mainPuzzle.getPuzzleName());[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+ 	}[m
+ [m
+ 	/**[m
+[1mdiff --git a/MainCode/Items/ConcussionGrenade.java b/MainCode/Items/ConcussionGrenade.java[m
+[1mindex 4080009..0b776ba 100644[m
+[1m--- a/MainCode/Items/ConcussionGrenade.java[m
+[1m+++ b/MainCode/Items/ConcussionGrenade.java[m
+[36m@@ -3,8 +3,7 @@[m [mpackage MainCode.Items;[m
+ import MainCode.Monster.Sprite;[m
+ [m
+ /**[m
+[31m- * @author Joshua Tran[m
+[31m- * Date: Oct 31, 2016[m
+[32m+[m[32m * @author Neal Klemenc[m[41m[m
+  */[m
+ public class ConcussionGrenade extends Item{[m
+ [m
+[1mdiff --git a/MainCode/Items/HealthPack.java b/MainCode/Items/HealthPack.java[m
+[1mindex d5da337..b2a0bac 100644[m
+[1m--- a/MainCode/Items/HealthPack.java[m
+[1m+++ b/MainCode/Items/HealthPack.java[m
+[36m@@ -1,8 +1,10 @@[m
+ package MainCode.Items;[m
+ [m
+[31m-import MainCode.Monster.Player;[m
+ import MainCode.Monster.Sprite;[m
+ [m
+[32m+[m[32m/**[m[41m[m
+[32m+[m[32m * @author Neal Klemenc[m[41m[m
+[32m+[m[32m */[m[41m[m
+ public class HealthPack extends Item {[m
+ [m
+ 	public HealthPack() {[m
+[1mdiff --git a/MainCode/Items/Inventory.java b/MainCode/Items/Inventory.java[m
+[1mindex a5ea3a8..2f57ab1 100644[m
+[1m--- a/MainCode/Items/Inventory.java[m
+[1m+++ b/MainCode/Items/Inventory.java[m
+[36m@@ -5,8 +5,7 @@[m [mimport java.util.ArrayList;[m
+ [m
+ [m
+ /**[m
+[31m- * @author Joshua Tran[m
+[31m- * Date: Oct 31, 2016[m
+[32m+[m[32m * @author Neal Klemenc[m
+  */[m
+ public class Inventory {[m
+     [m
+[36m@@ -39,9 +38,8 @@[m [mpublic class Inventory {[m
+ [m
+ [m
+ 	public void addItem(Item i){[m
+[31m-		if(i != null){[m
+ 		itemList.add(i);[m
+[31m-		}[m
+[32m+[m[41m		[m
+ 	}[m
+ 	[m
+ 	public void removeItem(Item i){[m
+[1mdiff --git a/MainCode/Items/Item.java b/MainCode/Items/Item.java[m
+[1mindex f591075..60bfed7 100644[m
+[1m--- a/MainCode/Items/Item.java[m
+[1m+++ b/MainCode/Items/Item.java[m
+[36m@@ -3,8 +3,7 @@[m [mpackage MainCode.Items;[m
+ [m
+ [m
+ /**[m
+[31m- * @author Joshua Tran[m
+[31m- * Date: Oct 31, 2016[m
+[32m+[m[32m * @author Neal Klemenc[m
+  */[m
+ public class Item{[m
+     [m
+[1mdiff --git a/MainCode/Items/Key.java b/MainCode/Items/Key.java[m
+[1mindex 3c3bb98..e27f4cb 100644[m
+[1m--- a/MainCode/Items/Key.java[m
+[1m+++ b/MainCode/Items/Key.java[m
+[36m@@ -2,6 +2,9 @@[m [mpackage MainCode.Items;[m
+ [m
+ import MainCode.Rooms.Door;[m
+ [m
+[32m+[m[32m/**[m[41m[m
+[32m+[m[32m * @author Neal Klemenc[m[41m[m
+[32m+[m[32m */[m[41m[m
+ public class Key extends Item {[m
+ 	[m
+ 	private Door keyTo;[m
+[1mdiff --git a/MainCode/Items/Weapon.java b/MainCode/Items/Weapon.java[m
+[1mindex a70c558..ff38eee 100644[m
+[1m--- a/MainCode/Items/Weapon.java[m
+[1m+++ b/MainCode/Items/Weapon.java[m
+[36m@@ -1,7 +1,8 @@[m
+ package MainCode.Items;[m
+[32m+[m[41m[m
+ /**[m
+[31m-* edited by nklemenc[m
+[31m-*/[m
+[32m+[m[32m * @author Neal Klemenc[m[41m[m
+[32m+[m[32m */[m[41m[m
+ public class Weapon extends Item[m
+ {[m
+ 	private int weaponDamage;[m
+[1mdiff --git a/MainCode/Monster/InvTester.java b/MainCode/Monster/InvTester.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ad750af[m
+[1m--- /dev/null[m
+[1m+++ b/MainCode/Monster/InvTester.java[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32mpackage MainCode.Monster;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mimport MainCode.Items.Item;[m[41m[m
+[32m+[m[32mimport MainCode.Items.Weapon;[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mpublic class InvTester {[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32mpublic InvTester() {[m[41m[m
+[32m+[m		[32m// TODO Auto-generated constructor stub[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32mpublic static void main(String[] args) {[m[41m[m
+[32m+[m		[32m//Weapon w = new Weapon("hand", "asdf", "use", 5);[m[41m[m
+[32m+[m		[32mPlayer p = new Player();[m[41m[m
+[32m+[m		[32m//System.out.println(p.getSpriteInv().toString());[m[41m[m
+[32m+[m		[32mItem i = new Item();[m[41m[m
+[32m+[m		[32mp.takeItem(i);[m[41m[m
+[32m+[m[41m		[m
+[32m+[m		[32mSystem.out.println(p.getSpriteInv().getItemList().size());[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m}[m[41m[m
+[1mdiff --git a/MainCode/Monster/Player.java b/MainCode/Monster/Player.java[m
+[1mindex 3a48ad1..f615492 100644[m
+[1m--- a/MainCode/Monster/Player.java[m
+[1m+++ b/MainCode/Monster/Player.java[m
+[36m@@ -21,6 +21,10 @@[m [mpublic class Player extends Sprite {[m
+ 		roomID = r;[m
+ 	}[m
+ 	[m
+[32m+[m	[32mpublic Player() {[m[41m[m
+[32m+[m		[32msuper();[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m[41m[m
+ 	public void useItem(Item i){[m
+ 	}[m
+ 	[m
+[36m@@ -73,7 +77,6 @@[m [mpublic class Player extends Sprite {[m
+ 		target.setHealth(target.getHealth() - this.getWeapon().getWeaponDamage());[m
+ 		if(target.getHealth() <= 0){[m
+ 			//this.getRoomID().getRoomInv().addItem(target.getItemDrop());[m
+[31m-			this.getRoomID().setMonster(null);[m
+ 			return target.getName() + " has been defeated!";[m
+ 		}[m
+ 		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();[m
+[1mdiff --git a/MainCode/Monster/Sprite.java b/MainCode/Monster/Sprite.java[m
+[1mindex 3b46127..a342520 100644[m
+[1m--- a/MainCode/Monster/Sprite.java[m
+[1m+++ b/MainCode/Monster/Sprite.java[m
+[36m@@ -21,7 +21,11 @@[m [mpublic class Sprite{[m
+ 	[m
+ 	[m
+ 	public Sprite(){[m
+[31m-		[m
+[32m+[m		[32mmaxHealth = 50;[m
+[32m+[m		[32mhealth = 50;[m
+[32m+[m		[32mweapon = null;[m
+[32m+[m		[32mname = "player";[m
+[32m+[m		[32mspriteInv = new Inventory();[m
+ 	}[m
+ 	[m
+ 	/**[m
+[36m@@ -33,6 +37,7 @@[m [mpublic class Sprite{[m
+ 		health = h;[m
+ 		weapon = w;[m
+ 		name = n;[m
+[32m+[m		[32mspriteInv = new Inventory();[m
+ 	}[m
+ [m
+ [m
+[1mdiff --git a/MainCode/Puzzles/Puzzle.java b/MainCode/Puzzles/Puzzle.java[m
+[1mindex c3ed649..19824cb 100644[m
+[1m--- a/MainCode/Puzzles/Puzzle.java[m
+[1m+++ b/MainCode/Puzzles/Puzzle.java[m
+[36m@@ -2,6 +2,9 @@[m [mpackage MainCode.Puzzles;[m
+ [m
+ import MainCode.Items.Item;[m
+ [m
+[32m+[m[32m/**[m
+[32m+[m[32m * @author Neal Klemenc[m
+[32m+[m[32m */[m
+ public class Puzzle {[m
+ 	[m
+ 	private String puzzleName;[m
+[1mdiff --git a/MainCode/Rooms/Door.java b/MainCode/Rooms/Door.java[m
+[1mindex 5878632..b2d1655 100644[m
+[1m--- a/MainCode/Rooms/Door.java[m
+[1m+++ b/MainCode/Rooms/Door.java[m
+[36m@@ -1,5 +1,8 @@[m
+ package MainCode.Rooms;[m
+ [m
+[32m+[m[32m/**[m
+[32m+[m[32m * @author Neal Klemenc[m
+[32m+[m[32m */[m
+ public class Door {[m
+ 	[m
+ 	Room connection;[m
+[1mdiff --git a/MainCode/Rooms/Room.java b/MainCode/Rooms/Room.java[m
+[1mindex c6c072d..cfe1da9 100644[m
+[1m--- a/MainCode/Rooms/Room.java[m
+[1m+++ b/MainCode/Rooms/Room.java[m
+[36m@@ -9,8 +9,7 @@[m [mimport MainCode.Monster.Monster;[m
+ import MainCode.Puzzles.Puzzle;[m
+ [m
+ /**[m
+[31m- * @author Joshua Tran[m
+[31m- * Date: Oct 31, 2016[m
+[32m+[m[32m * @author Neal Klemenc[m
+  */[m
+ public class Room{[m
+ [m
+[1mdiff --git a/MainCode/Rooms/RoomFactory.java b/MainCode/Rooms/RoomFactory.java[m
+[1mindex 9f92ca3..9b80cd2 100644[m
+[1m--- a/MainCode/Rooms/RoomFactory.java[m
+[1m+++ b/MainCode/Rooms/RoomFactory.java[m
+[36m@@ -5,6 +5,9 @@[m [mimport java.util.Map;[m
+ [m
+ import MainCode.Monster.Player;[m
+ [m
+[32m+[m[32m/**[m
+[32m+[m[32m * @author Neal Klemenc[m
+[32m+[m[32m */[m
+ public class RoomFactory {[m
+ 	[m
+ [m
