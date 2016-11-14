@@ -95,7 +95,7 @@ public class MainMenuGUI extends Application{
 		Text text = new Text();
 		text.setText("Helpful commands here");
 
-		//Add label and box to border pane
+		//Add label and box to border pane for HelpGui
 		BorderPane bp1= new BorderPane();
 		bp1.setCenter(text);
 		bp1.setTop(title1);

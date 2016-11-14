@@ -4,10 +4,13 @@ import static java.awt.SystemColor.text;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.text.*;
@@ -56,7 +59,27 @@ public class MainGUI extends Application {
 		text.setTextAlignment(TextAlignment.JUSTIFY);
 		//text.setText("How do I link this to MainMenuGui???");
 
-		//text.setText();
+		//Putting HelpGui into MainGui
+		//Make the title, make it pretty, and center it
+		Label title1 = new Label("Help Menu");
+		title1.setFont(Font.font("Arial", 40));
+		title1.setPadding(new Insets(20, 0, 0, 0));
+		title1.setMaxWidth(Double.MAX_VALUE);
+		title1.setAlignment(Pos.CENTER);
+
+		Text text1 = new Text();
+		text1.setText("Helpful commands here");
+
+		//Add label and box to border pane for HelpGui
+		BorderPane bp1= new BorderPane();
+		bp1.setCenter(text1);
+		bp1.setTop(title1);
+
+
+		Stage stage = new Stage();
+		stage.setTitle("Help");
+		stage.setScene(new Scene(bp1, 400, 500));
+		//stage.show();
 
 
 		StackPane.setAlignment(text, Pos.TOP_CENTER);
@@ -97,7 +120,8 @@ public class MainGUI extends Application {
 				{
 					try
 					{
-						helpGui.start(primaryStage);
+						//helpGui.start(primaryStage);
+						stage.show();
 					} catch (Exception e)
 					{
 						// TODO Auto-generated catch block
@@ -111,7 +135,7 @@ public class MainGUI extends Application {
 					roomText.setText(masterRoomArray.getRoomArray().get(1).getRoomDescription());
 				}
 			}
-			});
+		});
 	}
 
 
