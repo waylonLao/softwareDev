@@ -19,10 +19,7 @@ public class ConcussionGrenade extends Item{
 		target.setStunDuration(2);
 	}
 	
-	@Override
-	public String toString() {
-		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
-	}
+
 
 
 

@@ -16,6 +16,7 @@ public class InvTester {
 		Item i = new Item();
 		p.takeItem(i);
 		
+		
 		System.out.println(p.getSpriteInv().getItemList().size());
 	}
 
