@@ -61,6 +61,8 @@ public class Monster extends Sprite {
 		this.itemDrop = itemDrop;
 	}
 	
+	
+	
 
 
 

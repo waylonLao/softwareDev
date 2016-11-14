@@ -63,7 +63,7 @@ public class MainGUI extends Application {
 	
 	
 	Monster rogueCleaningUnit = new Monster(30, suctionHose, "Rogue Cleaning Unit", "A pissed off vacuum cleaner, easily killed.", healthKit);
-	Monster robotDoorman = new Monster(50, largeDoor, "Robot Doorman", "A well-dressed robot in moderate disprepair.", healthKit);
+	Monster robotDoorman = new Monster(50, largeDoor, "Robot Doorman", "A well-dressed robot in moderate disprepair.", concussionGrenade);
 	Monster tunnelingHorror = new Monster(50, sharkTeeth, "Tunneling Horror", "A large alien worm.", healthKit);
 	Monster roboChef4000 = new Monster(50, plasmaInducer, "ROBOCHEF4000", "A deranged culinary robot with a French accent and a curly moustache.", plasmaInducer);
 	Monster zocrexianInfiltrator = new Monster(50, houndTail, "Zocrexian Infiltrator", "An alien hound all the way from zocrexia.", healthKit);
@@ -203,7 +203,6 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 	
 	
 	Player mainPlayer = new Player(200, bareHands, room0);
-	
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
 	Button startFightBtn = new Button("Start Fight");
@@ -226,6 +225,9 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 	Label monsterHealth = new Label(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));
 	Label playerHealth = new Label(String.valueOf(mainPlayer.getHealth()) + "/" + String.valueOf(mainPlayer.getMaxHealth()));
 	Label puzzleName = new Label(mainPuzzle.getPuzzleName());
+	
+	Text roomItems = new Text();
+	Text playerItems= new Text();
 	
 	
 	private Button attackBtn = new Button("Attack");
@@ -270,6 +272,8 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 		westBtn.setOnAction(e -> moveWest());
 		
 		startPuzzleBtn.setOnAction(e -> setPuzzleScene());
+		
+		takeItemBtn.setOnAction(e -> takeItem());
 		
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
@@ -329,11 +333,15 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
         
         //ItemInterface
         mainPlayer.takeItem(healthKit);
+        //mainPlayer.getRoomID().getRoomInv().addItem(concussionGrenade);
         obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
-        obPlayerInv.addAll(mainPlayer.getSpriteInv().getItemList());
         playerItemList = new ListView<>(obPlayerInv);
+        obRoomInv = FXCollections.observableArrayList(mainPlayer.getRoomID().getRoomInv().getItemList());
+        roomItemList = new ListView<>(obRoomInv);
+        
         roomItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         playerItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        
         roomInvPane.setContent(roomItemList);
         playerInvPane.setContent(playerItemList);
         mainInvPane.add(new Text("Room Items"), 0, 0);
@@ -365,7 +373,16 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 
     
     
-    private void tryPuzzle(String s) {
+    private void takeItem() {
+		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()));
+		mainPlayer.getRoomID().getRoomInv().removeItem(roomItemList.getSelectionModel().getSelectedItem());
+		updateText();
+		
+	}
+
+
+
+	private void tryPuzzle(String s) {
     	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
 	}
 
@@ -424,6 +441,7 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 	private void doDamage() {
 		cycleText(mainPlayer.doDamage(mainMonster));
 		if(mainMonster.getHealth()<=0){
+			mainPlayer.getRoomID().getRoomInv().addItem(mainMonster.getItemDrop());
 			updateText();
 		}
 		else{
@@ -448,6 +466,12 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 
+		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
+        playerItemList = new ListView<>(obPlayerInv);
+        obRoomInv = FXCollections.observableArrayList(mainPlayer.getRoomID().getRoomInv().getItemList());
+        roomItemList = new ListView<>(obRoomInv);
+        roomInvPane.setContent(roomItemList);
+        playerInvPane.setContent(playerItemList);
 		
 		if(mainMonster == null || mainMonster.getHealth() <= 0){
 			mainMonster = null;
@@ -463,6 +487,8 @@ public Room room0 = new Room(0, "The room has 4 doors and each door has a name p
 			attackBtn.setOnAction(e -> doDamage());
 			attackBtn.setText("Attack");
 		}
+		
+		
 		
 		
 		if(mainPuzzle == null){

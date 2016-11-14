@@ -40,7 +40,12 @@ public class Room{
 		roomID = id;
 		roomDescription = d;
 		monster = m;
+		if(i == null){
+			roomInv = new Inventory();
+		}
+		else{
 		roomInv = i;
+		}
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
 	}
