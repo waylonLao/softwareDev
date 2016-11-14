@@ -63,16 +63,17 @@ public class HelpGui extends Application
 	{
 		return primaryStage;
 	}
-
-	public static void main(String[] args) {
-		launch(args);
-	}
-
+	
 	public void setGame(Game game)
 	{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 
 
 }

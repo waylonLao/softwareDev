@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.swing.GroupLayout.Alignment;
 import MainCode.Game;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -28,7 +29,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import MainCode.GUI.MainGUI;
 
 public class MainMenuGUI extends Application{
@@ -94,8 +97,6 @@ public class MainMenuGUI extends Application{
 		
 
 		quit.setOnAction(e -> primaryStage.close());
-
-
 	}
 
 
