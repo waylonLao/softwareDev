@@ -18,7 +18,7 @@ public class BlueCard extends KeyCard{
 		setItemName("Blue Key Card");
 		setItemDescription("A blue key card.");
 		setItemUse("Use this to open blue doors.");
-		setIsKeyItem(true);
+		//setIsKeyItem(true);
 	}
 	
 

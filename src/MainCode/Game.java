@@ -31,8 +31,8 @@ public class Game
 	public void saveGame() throws FileNotFoundException, IOException
 	{
 		outputs = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
-		outputs.writeObject(new Player(500, new LeadPipe()));
-		outputs.writeObject(new Room(3,"A test room", new LeadPipe(), new AlienCommando(), false, true));
+		outputs.writeObject(new Player(500, new LeadPipe(), null));
+		outputs.writeObject(new Room());
 	}
 	
 	public void loadGame() throws FileNotFoundException, IOException, ClassNotFoundException

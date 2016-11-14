@@ -1,5 +1,8 @@
 package MainCode.Rooms;
 
+/**
+ * @author Neal Klemenc
+ */
 public class Door {
 	
 	Room connection;

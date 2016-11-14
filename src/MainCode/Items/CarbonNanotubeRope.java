@@ -13,7 +13,7 @@ public class CarbonNanotubeRope extends Tool implements ItemInterface{
 		setItemName("Carbon Nanotube Rope");
 		setItemDescription("A black rope made out of carbon nanotubes.");
 		setItemUse("Use this to safely come back from outer space");
-		setSparkleValue(1);
+		//setSparkleValue(1);
 		this.isKeyItem = true;
 	}
 	

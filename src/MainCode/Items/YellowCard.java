@@ -19,7 +19,7 @@ public class YellowCard extends KeyCard{
 		setItemName("Yellow Key Card");
 		setItemDescription("A yellow key card.");
 		setItemUse("Use this to open yellow doors.");
-		setIsKeyItem(true);
+		//setIsKeyItem(true);
 	}
 
 

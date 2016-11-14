@@ -9,8 +9,7 @@ import MainCode.Monster.Monster;
 import MainCode.Puzzles.Puzzle;
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class Room{
 
@@ -41,7 +40,12 @@ public class Room{
 		roomID = id;
 		roomDescription = d;
 		monster = m;
+		if(i == null){
+			roomInv = new Inventory();
+		}
+		else{
 		roomInv = i;
+		}
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
 	}

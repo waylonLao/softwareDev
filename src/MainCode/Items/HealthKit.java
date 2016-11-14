@@ -13,7 +13,7 @@ public class HealthKit extends Consumable implements ItemInterface {
 		setItemName("Health Kit");
 		setItemUse("Use to heal yourself for 50 HP.");
 		setItemDescription("A white box with a swiss army cross on it.");
-		setSparkleValue(1);
+		//setSparkleValue(1);
 		this.isKeyItem = false;
 		
 	}

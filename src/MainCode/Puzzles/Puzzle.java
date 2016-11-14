@@ -2,6 +2,9 @@ package MainCode.Puzzles;
 
 import MainCode.Items.Item;
 
+/**
+ * @author Neal Klemenc
+ */
 public class Puzzle {
 	
 	private String puzzleName;
@@ -10,6 +13,10 @@ public class Puzzle {
 	private Item itemDrop;
 	private int remainingTries;
 	
+	public Puzzle()
+	{
+		
+	}
 	
 	public Puzzle(String n, String s, String d, Item i){
 		puzzleName = n;

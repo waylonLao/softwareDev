@@ -3,8 +3,7 @@ package MainCode.Items;
 
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class Item{
     
@@ -68,6 +67,11 @@ public class Item{
      */
     public void setItemUse(String itemUse) {
         this.itemUse = itemUse;
+    }
+    
+    @Override
+    public String toString(){
+    	return this.getItemName();
     }
 
 

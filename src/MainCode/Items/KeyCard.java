@@ -14,8 +14,8 @@ public class KeyCard extends Tool implements ItemInterface{
 		setItemName("Key Card");
 		setItemDescription("A small plastic card.");
 		setItemUse("Use to unlock colored doors.");
-		setSparkleValue(5);
-		setIsKeyItem(true);
+		//setSparkleValue(5);
+		//setIsKeyItem(true);
 	}
 	
 	@Override

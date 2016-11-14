@@ -32,4 +32,13 @@ public class PlasmaInducer extends Weapon implements ItemInterface{
 		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
 	}
 
+	/* (non-Javadoc)
+	 * @see MainCode.Items.ItemInterface#createItem()
+	 */
+	@Override
+	public void createItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

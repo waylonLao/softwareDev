@@ -18,7 +18,7 @@ public class RedCard extends KeyCard
 		setItemName("Red Key Card");
 		setItemDescription("A red security card.");
 		setItemUse("Use this to open red doors.");
-		setIsKeyItem(true);
+		//setIsKeyItem(true);
 	}
 	
 

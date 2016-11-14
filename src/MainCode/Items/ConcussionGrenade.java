@@ -3,8 +3,7 @@ package MainCode.Items;
 import MainCode.Monster.Sprite;
 
 /**
- * @author Joshua Tran
- * Date: Oct 31, 2016
+ * @author Neal Klemenc
  */
 public class ConcussionGrenade extends Item{
 
@@ -20,10 +19,7 @@ public class ConcussionGrenade extends Item{
 		target.setStunDuration(2);
 	}
 	
-	@Override
-	public String toString() {
-		return "\n" + getItemName() + "\n" + getItemDescription() + "\n" + getItemUse();
-	}
+
 
 
 

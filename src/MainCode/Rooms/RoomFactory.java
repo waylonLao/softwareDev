@@ -5,6 +5,9 @@ import java.util.Map;
 
 import MainCode.Monster.Player;
 
+/**
+ * @author Neal Klemenc
+ */
 public class RoomFactory {
 	
 

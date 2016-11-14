@@ -2,6 +2,9 @@ package MainCode.Items;
 
 import MainCode.Rooms.Door;
 
+/**
+ * @author Neal Klemenc
+ */
 public class Key extends Item {
 	
 	private Door keyTo;

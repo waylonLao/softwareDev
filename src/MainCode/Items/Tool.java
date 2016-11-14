@@ -17,7 +17,7 @@ public class Tool extends Item{
 	 * 
 	 */
 	public Tool() {
-		setSparkleValue(2);
+		//setSparkleValue(2);
 		// TODO Auto-generated constructor stub
 	}
 

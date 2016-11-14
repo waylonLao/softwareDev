@@ -21,6 +21,10 @@ public class Player extends Sprite {
 		roomID = r;
 	}
 	
+	public Player() {
+		super();
+	}
+
 	public void useItem(Item i){
 	}
 	
@@ -73,7 +77,6 @@ public class Player extends Sprite {
 		target.setHealth(target.getHealth() - this.getWeapon().getWeaponDamage());
 		if(target.getHealth() <= 0){
 			//this.getRoomID().getRoomInv().addItem(target.getItemDrop());
-			this.getRoomID().setMonster(null);
 			return target.getName() + " has been defeated!";
 		}
 		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();

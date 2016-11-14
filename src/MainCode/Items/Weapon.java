@@ -1,9 +1,16 @@
 package MainCode.Items;
+
 /**
-* edited by nklemenc
-*/
+ * @author Neal Klemenc
+ */
 public class Weapon extends Item
 {
+	
+	
+	public Weapon()
+	{
+		
+	}
 	private int weaponDamage;
 
      /**
