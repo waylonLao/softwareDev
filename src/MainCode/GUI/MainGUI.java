@@ -66,7 +66,7 @@ public class MainGUI extends Application {
 		root.getChildren().addAll(tf1, text, roomText);
 
 
-		Scene scene = new Scene(root, 500, 500);
+		Scene scene = new Scene(root, 800, 500);
 
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
@@ -103,6 +103,12 @@ public class MainGUI extends Application {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+				}
+				else if("next".equals(tf1.getCharacters().toString()))
+				{
+					game.setRoom(masterRoomArray.getRoomArray().get(1));
+					text.setText(masterRoomArray.getRoomArray().get(1).getRoomName());
+					roomText.setText(masterRoomArray.getRoomArray().get(1).getRoomDescription());
 				}
 			}
 			});
