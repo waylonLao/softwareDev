@@ -102,13 +102,13 @@ public class MainMenuGUI extends Application{
 
 		Stage stage = new Stage();
 		stage.setTitle("Test");
-		stage.setScene(new Scene(bp1, 410, 500));
+		stage.setScene(new Scene(bp1, 400, 500));
 		//stage.show();
 
 
 
 		//Set up the stage
-		Scene scene = new Scene(bp, 510, 600);
+		Scene scene = new Scene(bp, 400, 600);
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
 		primaryStage.show();	

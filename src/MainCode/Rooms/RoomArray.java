@@ -8,7 +8,7 @@ public class RoomArray {
 	
 	public RoomArray()
 	{
-		ArrayList<Room> roomArray = new ArrayList<Room>();
+		roomArray = new ArrayList<Room>();
 		
 		CryoRoom cryoRoom1 = new CryoRoom(0);
 		CryoRoom cryoRoom2 = new CryoRoom(1);

@@ -20,6 +20,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+import MainCode.GUI.MainGUI;
 import MainCode.Items.*;
 import MainCode.Monster.*;
 import MainCode.Rooms.*;
@@ -43,6 +44,10 @@ public class Game
 		this.room = masterRoomArray.getRoomArray().get(0);
 		this.newPlayer = new Player(500, new LeadPipe());
 		this.inv = new Inventory();
+		if()
+		{
+			this.room = masterRoomArray.getRoomArray().get(1);
+		}
 	}
 
 	public void saveGame()
