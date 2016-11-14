@@ -29,7 +29,6 @@ public class HelpGui extends Application
 {
 	Game game;
 	private Stage primaryStage;
-	@FXML private Label label;
 	
 	@Override
 	public void start(Stage primaryStage)

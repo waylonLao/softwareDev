@@ -84,6 +84,29 @@ public class MainMenuGUI extends Application{
 		bp.setCenter(vB1);
 		bp.setTop(title);
 
+		//Putting HelpGui into MainMenu
+		//Make the title, make it pretty, and center it
+		Label title1 = new Label("Help Menu");
+		title1.setFont(Font.font("Arial", 40));
+		title1.setPadding(new Insets(20, 0, 0, 0));
+		title1.setMaxWidth(Double.MAX_VALUE);
+		title1.setAlignment(Pos.CENTER);
+
+		Text text = new Text();
+		text.setText("Helpful commands here");
+
+		//Add label and box to border pane
+		BorderPane bp1= new BorderPane();
+		bp1.setCenter(text);
+		bp1.setTop(title1);
+
+		Stage stage = new Stage();
+		stage.setTitle("Test");
+		stage.setScene(new Scene(bp1, 410, 500));
+		//stage.show();
+
+
+
 		//Set up the stage
 		Scene scene = new Scene(bp, 510, 600);
 		primaryStage.setTitle("Galaxy Explorer");
@@ -93,10 +116,15 @@ public class MainMenuGUI extends Application{
 		newGame.setOnAction(e -> game.newGame());
 		newGame.setOnAction(e -> mg.start(primaryStage));
 		loadGame.setOnAction(e -> game.loadGame());
-		help.setOnAction(e -> hg.getStage().show());
-		
+		//help.setOnAction(e -> hg.getStage().show());
+		help.setOnAction(e -> stage.show());
+
 
 		quit.setOnAction(e -> primaryStage.close());
+
+
+
+
 	}
 
 
