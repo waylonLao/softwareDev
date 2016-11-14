@@ -12,7 +12,9 @@
 
 package MainCode.GUI;
 
+import MainCode.Game;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -25,9 +27,15 @@ import javafx.stage.Stage;
 
 public class HelpGui extends Application
 {
+	Game game;
+	private Stage primaryStage;
+	@FXML private Label label;
+	
 	@Override
-	public void start(Stage primaryStage) throws Exception
+	public void start(Stage primaryStage)
 	{
+		this.primaryStage = primaryStage;
+		
 		//Make the title, make it pretty, and center it
 		Label title = new Label("Help Menu");
 		title.setFont(Font.font("Arial", 40));
@@ -50,9 +58,20 @@ public class HelpGui extends Application
 		primaryStage.show();
 
 	}
+	
+	public Stage getStage()
+	{
+		return primaryStage;
+	}
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public void setGame(Game game)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 

@@ -22,6 +22,7 @@ public class MainGUI extends Application {
 	
 	Game game;
 	MainMenuGUI mainMenu;
+	HelpGui helpGui;
 
 	public Game getGame()
 	{
@@ -39,6 +40,8 @@ public class MainGUI extends Application {
 		game = new Game();
 		mainMenu = new MainMenuGUI();
 		mainMenu.setGame(game);
+		helpGui = new HelpGui();
+		helpGui.setGame(game);
 
 		TextField tf1 = new TextField();
 
@@ -73,17 +76,29 @@ public class MainGUI extends Application {
 				{
 					game.saveGame();
 					text.setText("Game Saved!");
+					tf1.clear();
 				} else if ("exit".equals(tf1.getCharacters().toString()))
 				{
 						try
 						{
 							mainMenu.start(primaryStage);
+							
 						} catch (Exception e)
 						{
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-				} //else if ("help".equals)
+				} else if ("help".equals(tf1.getCharacters().toString()))
+				{
+					try
+					{
+						helpGui.start(primaryStage);
+					} catch (Exception e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 			}
 		});
 	}

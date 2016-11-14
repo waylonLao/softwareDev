@@ -32,14 +32,8 @@ import javafx.stage.Stage;
 import MainCode.GUI.MainGUI;
 
 public class MainMenuGUI extends Application{
-	
+
 	Game game;
-
-	public Game getGame()
-	{
-		return game;
-	}
-
 
 	public void setGame(Game game)
 	{
@@ -54,6 +48,8 @@ public class MainMenuGUI extends Application{
 		Game game = new Game();
 		MainGUI mg = new MainGUI();
 		mg.setGame(game);
+		HelpGui hg = new HelpGui();
+		hg.setGame(game);
 
 		//Make the buttons
 		Button newGame = new Button("New Game");
@@ -94,15 +90,14 @@ public class MainMenuGUI extends Application{
 		newGame.setOnAction(e -> game.newGame());
 		newGame.setOnAction(e -> mg.start(primaryStage));
 		loadGame.setOnAction(e -> game.loadGame());
-		/////////////////////////
-		//Need to make a help GUI
-		/////////////////////////
-		//help.setOnAction(e -> );
-		quit.setOnAction(e -> primaryStage.close());
+		help.setOnAction(e -> hg.getStage().show());
 		
 
+		quit.setOnAction(e -> primaryStage.close());
+
+
 	}
-	
+
 
 	public static void main(String[] args)
 	{
