@@ -74,9 +74,24 @@ public class MainGUI extends Application {
 	Monster spaceKraken = new Monster(150, tentacles, "Space Kraken", "A giant, anomalous squid.", healthKit);
 	Monster returnOfCleaningUnit = new Monster(250, flameThrower, "The Return of Cleaning Unit", "A pissed off vacuum cleaner, still mad.", healthKit);
 	
+	Puzzle eCellPuzzle = new Puzzle("Binary Puzzle","","", null);
+	Puzzle communicationPuzzle = new Puzzle("Communications Puzzle","A frog is at the bottom of a 30 meter well. "
+			+ "Each day he summons enough energy for one 3 meter leap up the well. Exhausted, "
+			+ "he then hangs there for the rest of the day. At night, while he is asleep, "
+			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?  ","28 days", null);
+	Puzzle magicSquarePuzzle = new Puzzle("Magic Square Puzzle","","", null);
+	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes.  How many wolves "
+			+ "will be needed to catch sixty lambs in sixty minutes?","6", null);
+	Puzzle brothersPuzzle = new Puzzle("Brothers Puzzle","Brothers and sisters I have none but this man's "
+			+ "father is my father's son. Who is the man?","the man is my son", null);
+	Puzzle travelPuzzle = new Puzzle("Traveling Puzzle","What can travel around the world, while staying in a corner?","stamp", null);
+	Puzzle headPuzzle = new Puzzle("Head Puzzle","What has a head and a tail but no body?","a coin", null);
+	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", null);
+	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", null);
 	
 	
-public Room room0 = new Room(0, "The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", rogueCleaningUnit, null, false, true);
+	
+	public Room room0 = new Room(0, "The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", rogueCleaningUnit, null, false, true);
 	public Room room1 = new Room(1, "The walls are dull grey and lined with the statis units for other crew members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\". To the north and south are red doors labeled \"Cryogenics Room\"", robotDoorman, null, false, true);
 	public Room room2 = new Room(2,"The crew in this rooms appears to be fine as well, sleeping in their cham-bers.", null, null, false, true);
 	public Room room3 = new Room(3,"The room is a dull metal grey with three doors each with a name plate.", null, null, false, true);
