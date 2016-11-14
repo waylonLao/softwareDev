@@ -13,7 +13,10 @@ public class Puzzle {
 	private Item itemDrop;
 	private int remainingTries;
 	
-	
+	public Puzzle()
+	{
+		
+	}
 	public Puzzle(String n, String s, String d, Item i){
 		puzzleName = n;
 		puzzleSolution = s;

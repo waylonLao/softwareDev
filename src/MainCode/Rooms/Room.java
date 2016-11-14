@@ -36,7 +36,7 @@ public class Room{
 		powered = false;
 	}
 
-	public Room(int id, String d, Monster m, Inventory i, boolean qj, boolean p){
+	public Room(int id, String d, Monster m, Inventory i, boolean qj, boolean p, Puzzle puzzle){
 		roomID = id;
 		roomDescription = d;
 		monster = m;
