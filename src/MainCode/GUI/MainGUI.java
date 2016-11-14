@@ -225,6 +225,7 @@ public class MainGUI extends Application {
 	Text action2 = new Text();
 	Text action1 = new Text();
 	Text action0 = new Text();
+	Text roomNameText = new Text();
 	
 	
     Text monsterPaneHeader = new Text("Monster in this room:");
@@ -290,15 +291,17 @@ public class MainGUI extends Application {
 		takeItemBtn.setOnAction(e -> takeItem());
 		
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
+		roomNameText.setText(mainPlayer.getRoomID().getRoomName());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
+		roomNameText.setWrappingWidth(650);
 		
         
 
         
 		textScroller.setAlignment(Pos.CENTER);
-		textScroller.getChildren().addAll(action2, action1, action0);
+		textScroller.getChildren().addAll( roomNameText, action2, action1, action0);
 		
 
         
@@ -409,6 +412,7 @@ public class MainGUI extends Application {
 	private void moveNorth() {
 		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));
 		updateText();
+		//mainPlayer.setRoomID(myMap.get(mainPlayer.getRoomID()));
 	}
     
     private void moveSouth() {
@@ -479,6 +483,7 @@ public class MainGUI extends Application {
 		mainMonster = mainPlayer.getRoomID().getMonster();
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
+		mainPlayer.setRoomID(mainPlayer.getRoomID());
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
         playerItemList = new ListView<>(obPlayerInv);
@@ -487,7 +492,8 @@ public class MainGUI extends Application {
         roomInvPane.setContent(roomItemList);
         playerInvPane.setContent(playerItemList);
 		
-		if(mainMonster == null || mainMonster.getHealth() <= 0){
+		
+        if(mainMonster == null || mainMonster.getHealth() <= 0){
 			mainMonster = null;
 			monsterPaneMonster.setText("");
 			monsterHealth.setText("KO");
@@ -501,8 +507,6 @@ public class MainGUI extends Application {
 			attackBtn.setOnAction(e -> doDamage());
 			attackBtn.setText("Attack");
 		}
-		
-		
 		
 		
 		if(mainPuzzle == null){
