@@ -4,7 +4,7 @@ public class ReturnOfCleaningUnit extends Monster implements MonsterInterface
 {	
 	public ReturnOfCleaningUnit()
 	{
-		setMonsterName("The Return of the Cleaning Unit");
+		setName("The Return of the Cleaning Unit");
 	}
 
 

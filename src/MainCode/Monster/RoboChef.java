@@ -19,7 +19,7 @@ public class RoboChef extends Monster implements MonsterInterface
 
 	public RoboChef()
 	{
-		setMonsterName("Robo Chef");
+		setName("Robo Chef");
 	}
 
 

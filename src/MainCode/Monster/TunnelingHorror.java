@@ -6,7 +6,7 @@ public class TunnelingHorror extends Monster implements MonsterInterface
 {
 	public TunnelingHorror()
 	{
-		setMonsterName("Tunneling Horror");
+		setName("Tunneling Horror");
 		setItemDrop(new HealthKit());
 		setMaxHealth(50);
 		

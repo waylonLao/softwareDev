@@ -6,7 +6,7 @@ public class SpaceKraken extends Monster implements MonsterInterface
 	
 	public SpaceKraken()
 	{
-		setMonsterName("Space Kraken");
+		setName("Space Kraken");
 	}
 
 	@Override

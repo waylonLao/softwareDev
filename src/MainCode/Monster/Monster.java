@@ -12,6 +12,12 @@ public class Monster extends Sprite {
 
 	private String monsterDescription;
 	private Item itemDrop;
+	private int monsterID;
+	
+	public Monster()
+	{
+		
+	}
 	
 	public Monster(int h, Weapon w, String n, String md, Item i)
 	{
@@ -26,15 +32,15 @@ public class Monster extends Sprite {
 	 * @param monsterDescription
 	 * @param itemDrop
 	 */
-	/*public Monster(int health, Weapon weapon, int monsterId, 
+	public Monster(int health, Weapon weapon, int monsterId, 
 			String name, String monsterDescription)// Item itemDrop)
 	{
 	
 		super(health, weapon, name);
-		this.monsterID = 0;
+		this.setMonsterID(0);
 		this.monsterDescription = "null";
 		//this.itemDrop = "null";
-	}*/
+	}
 	
 
 
@@ -59,6 +65,20 @@ public class Monster extends Sprite {
 
 	public void setItemDrop(Item itemDrop) {
 		this.itemDrop = itemDrop;
+	}
+
+	/**
+	 * @return the monsterID
+	 */
+	public int getMonsterID() {
+		return monsterID;
+	}
+
+	/**
+	 * @param monsterID the monsterID to set
+	 */
+	public void setMonsterID(int monsterID) {
+		this.monsterID = monsterID;
 	}
 	
 

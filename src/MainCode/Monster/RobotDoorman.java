@@ -19,7 +19,7 @@ public class RobotDoorman extends Monster implements MonsterInterface{
 	
 	public RobotDoorman()
 	{
-		setMonsterName("Robot Doorman");
+		setName("Robot Doorman");
 	}
 
 

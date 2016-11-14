@@ -8,7 +8,7 @@ public class Zorexian extends Monster implements MonsterInterface
 
 	public Zorexian()
 	{
-		setMonsterName("Zorexian");
+		setName("Zorexian");
 	}
 	@Override
 	public void createMonster() {
