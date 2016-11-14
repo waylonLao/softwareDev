@@ -67,10 +67,12 @@ public class MainGUI extends Application {
 		
 		tf1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				System.out.println(tf1.getCharacters());
+				//syso to see what is actually printed out
+				//System.out.println(tf1.getCharacters());
 				if ("save".equals(tf1.getCharacters().toString()))
 				{
 					game.saveGame();
+					text.setText("Game Saved!");
 				} else if ("exit".equals(tf1.getCharacters().toString()))
 				{
 						try
@@ -81,7 +83,7 @@ public class MainGUI extends Application {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-				}
+				} //else if ("help".equals)
 			}
 		});
 	}
