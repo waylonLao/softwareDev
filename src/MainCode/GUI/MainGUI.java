@@ -124,7 +124,7 @@ public class MainGUI extends Application {
 			+ "quick glance to ensure the crew is fine then go to check the window. The window is small but you can just make out"
 			+ " what appears to be a room with something in it.  As you step back your foot catches against something on the floor.  "
 			+ "Upon inspection, you realize there is an anchor point on the floor next to the door. "
-			, null, null, false, true, null);
+			, null, null, false, true, eCellPuzzle);
 	
 	//Hallway
 	public Room room6 = new Room(6,"Hallway","The room is grey with two exits."
@@ -351,7 +351,7 @@ public class MainGUI extends Application {
 	ScrollPane playerInvPane = new ScrollPane();
 	
 	
-	Player mainPlayer = new Player();
+	Player mainPlayer = new Player(500, bareHands, room0);
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
 	Button startFightBtn = new Button("Start Fight");
@@ -526,7 +526,7 @@ public class MainGUI extends Application {
     
     
     private void takeItem() {
-		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()));
+		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()), null);
 		mainPlayer.getRoomID().getRoomInv().removeItem(roomItemList.getSelectionModel().getSelectedItem());
 		updateText();
 		
@@ -535,7 +535,7 @@ public class MainGUI extends Application {
 
 
 	private void tryPuzzle(String s) {
-    	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
+    	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)), null);
 	}
 
 
@@ -545,23 +545,30 @@ public class MainGUI extends Application {
 
 
 	private void moveNorth() {
-		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));
+		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0])
+				//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[0]) );
+				, null);
 		updateText();
-		//mainPlayer.setRoomID(myMap.get(mainPlayer.getRoomID()));
 	}
     
     private void moveSouth() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1]));
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1])
+    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[1]) );
+    			, null);
     	updateText();
 	}
     
     private void moveEast() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2]));
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2])
+    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[2]) );
+    			, null);
     	updateText();
 	}
     
     private void moveWest() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3]));
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3])
+    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[3]) );
+    			,null);
     	updateText();
 	}
 
@@ -580,10 +587,9 @@ public class MainGUI extends Application {
 		theStage.setScene(puzzleScene);
 	}
     
-    private void cycleText(String s){
-    	action2.setText(action1.getText());
-    	action1.setText(action0.getText());
+    private void cycleText(String s, String name){
     	action0.setText(s);
+    	roomNameText.setText(name);
     }
 
 
@@ -592,7 +598,7 @@ public class MainGUI extends Application {
 
 	
 	private void doDamage() {
-		cycleText(mainPlayer.doDamage(mainMonster));
+		cycleText(mainPlayer.doDamage(mainMonster), null);
 		if(mainMonster.getHealth()<=0){
 			mainPlayer.getRoomID().getRoomInv().addItem(mainMonster.getItemDrop());
 			updateText();
@@ -604,7 +610,7 @@ public class MainGUI extends Application {
 	}
 	
 	private void recieveDamage(){
-		cycleText(mainPlayer.takeDamage(mainMonster));
+		cycleText(mainPlayer.takeDamage(mainMonster), null);
 		updateText();
 	}
 	
@@ -630,8 +636,8 @@ public class MainGUI extends Application {
 		
         if(mainMonster == null || mainMonster.getHealth() <= 0){
 			mainMonster = null;
-			monsterPaneMonster.setText("");
-			monsterHealth.setText("KO");
+			monsterPaneMonster.setText("No Monster Here");
+			monsterHealth.setText("No Monster");
 			attackBtn.setOnAction(e -> setMainScene());
 			attackBtn.setText("return");
 		}

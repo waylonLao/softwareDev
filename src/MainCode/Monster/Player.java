@@ -38,7 +38,7 @@ public class Player extends Sprite {
 			return "The door is locked shut.";
 		}
 		this.setRoomID(d.getConnection());
-		return d.getConnection().getRoomDescription();
+		return d.getConnection().getRoomName() + "\n\n" + d.getConnection().getRoomDescription();
 	}
 	
 	
