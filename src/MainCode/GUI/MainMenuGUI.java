@@ -65,7 +65,7 @@ public class MainMenuGUI extends Application{
 		bp.setTop(title);
 		
 		//Set up the stage
-		Scene scene = new Scene(bp, 510, 600);
+		Scene scene = new Scene(bp, 800, 600);
 		primaryStage.setTitle("Galaxy Explorer");
 		primaryStage.setScene(scene);
 		primaryStage.show();	
