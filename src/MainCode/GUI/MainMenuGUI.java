@@ -29,6 +29,8 @@ import javafx.stage.Stage;
 
 public class MainMenuGUI extends Application{
 	
+	MainGUI mg = new MainGUI();
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception 
 	{	
@@ -69,10 +71,10 @@ public class MainMenuGUI extends Application{
 		primaryStage.show();	
 		
 		
-		/*newGame.setOnAction(e -> circle.setFill(Color.RED));
-		loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
-		help.setOnAction(e -> circle.setFill(Color.GREEN));
-		quit.setOnAction(e -> circle.setFill(Color.ORANGE));*/
+		newGame.setOnAction(e -> mg.start(primaryStage));
+		/*loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
+		help.setOnAction(e -> circle.setFill(Color.GREEN));*/
+		quit.setOnAction(e -> primaryStage.close());
 		
 		
 

@@ -337,6 +337,7 @@ public class MainGUI extends Application {
   
 	
 	Stage theStage;
+	
 	Scene mainScene, fightScene, puzzleScene;
 	
 	BorderPane mainPane = new BorderPane();
@@ -568,7 +569,7 @@ public class MainGUI extends Application {
 		theStage.setScene(fightScene);
 	}
     
-    private void setMainScene() {
+    void setMainScene() {
     	mainPane.setBottom(textScroller);
 		theStage.setScene(mainScene);
 	}
