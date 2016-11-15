@@ -91,38 +91,173 @@ public class MainGUI extends Application {
 	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", null);
 	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", null);
 	
-	public Room room0 = new Room(0,"Cryo Room","The room has 4 doors and each door has a name plate above it. To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\".", rogueCleaningUnit, null, false, true, null);
-	public Room room1 = new Room(1,"Cryo Room 1","The walls are dull grey and lined with the statis units for other crew members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\". To the north and south are red doors labeled \"Cryogenics Room\"", robotDoorman, null, false, true, null);
-	public Room room2 = new Room(2,"Cryo Room 2","The crew in this rooms appears to be fine as well, sleeping in their cham-bers.", null, null, false, true, null);
-	public Room room3 = new Room(3,"Cryo Room 3","The room is a dull metal grey with three doors each with a name plate.", null, null, false, true, null);
-	public Room room4 = new Room(4,"Cryo Room 4","The room is dull metal grey with two doors. The crew in this room appears fine", null, null, false, true, null);
-	public Room room5 = new Room(5,"Cryo Room 5","The room is dull metal grey with three doors. The door to the east is the same dull grey as the rest of the ship but there appears to be a window near the top.  You give the stasis chambers a quick glance to ensure the crew is fine then go to check the window. The window is small but you can just make out what appears to be a room with something in it.  As you step back your foot catches against something on the floor.  Upon inspection, you realize there is an anchor point on the floor next to the door. ", null, null, false, true, null);
-	public Room room6 = new Room(6,"Hallway","The room is grey with two exits.", null, null, false, true, eCellPuzzle);
-	public Room room7 = new Room(7,"Hallway 1","The grey walls continue into this room as do the red doors.", null, null, false, true, null);
-	public Room room8 = new Room(8,"Hallway 2","The walls are grey and there are two doors.", null, null, false, true, null);
-	public Room room9 = new Room(9,"Security","Just like the other rooms it is dull gray but with a flickering overhead light.  Looking around the room the all the monitors are public except for the one in the command center which appears to be in working order.", null, null, false, true, magicSquarePuzzle);
-	public Room room10 = new Room(10,"Spaced Energy Cell","Once the door is pried open the air is sucking around you pulling you to the leaking hole.  Crawling around the wall you have reached the E-Cell create.", null, null, false, true, eCellPuzzle);
-	public Room room11 = new Room(11,"Hallway 3", "Another hallway with dull gray walls", null, null, false, true, null);
-	public Room room12 = new Room(12,"Hallway 4","Like most of the hallways on the ship this is another dull gray walled room.", null, null, false, true, eCellPuzzle);
-	public Room room13 = new Room(13,"Server Bank 4","This room is abnormally dark even compared to the crippled ship.  The light blinking on the server bank are creating a dancing shadow effect, giving a serial effect.", null, null, false, true, null);
-	public Room room14 = new Room(14,"Server Bank 3","You're struck by how well this room is intact and seems to be in working order.  All server banks seem to be powered on and communicating with the main system. ", null, null, false, true, null);
-	public Room room15 = new Room(15,"Server Bank 2","This room largely resembles the others, with black server racks occupying most of the space.", null, null, false, true, null);
-	public Room room16 = new Room(16,"Server Bank 1","Besides the usual grey, the walls of this room are lined with blade servers, most of which remain relatively unscathed.", null, null, false, true, null);
-	public Room room17 = new Room(17,"Hallway 4 Iced","These hallways all look the same, with the only indication that you've moved being the signs on the floor. That, and the fact that this room is just as cold as the cryogenic rooms.", null, null, false, true, null);
-	public Room room18 = new Room(18,"Hallway 5","The walls of this hallway are a uniform grey throughout. Only about a quar-ter of the lights are working, so it is fairly dark.", null, null, false, true, null);
-	public Room room19 = new Room(19,"Command Center","When you enter, the room is lit only by back power making it very dim.", null, null, false, true, null);
-	public Room room20 = new Room(20,"Hallway 6", "The hallway towards Communications is long, and includes two sections the walls are a neutral grey color, with the outlines of wall panels visible in some places.", null, null, false, true, null);
-	public Room room21 = new Room(21,"Hallway 7","The second section of the hallway towards the com room seems identical to the first.", null, null, false, true, null);
-	public Room room22 = new Room(22,"Communications","This room is a uniform drab grey like the others. A few computer terminals with blinking lights populate the otherwise sparsely furnished room.", null, null, false, true, null);
-	public Room room23 = new Room(23,"Ship Weapons","The walls in this room are formed by dark paneling, but the lights are almost bright enough to hurt your eyes. There are quite a few terminals in this room as well, with a large table in the center which projects various holographic images above it. The panels cover every inch of the interior, with the excep-tion of the western wall, which is a large window.", null, null, false, true, null);
-	public Room room24 = new Room(24,"Cargo 1","This is a dull grey room lined with empty cargo crates. There are two doors in this room, one yellow door to the north and a black door to the east.", null, null, false, true, null);
-	public Room room25 = new Room(25,"Engine Room","This is a large grey room with multiple exits. There is a large Ion Thruster in the middle of the room. The Ion thruster is not powered on, and all indicator gauges show that there is not enough impulse power to provide sufficient propulsion for escape. Damage to the thruster and missing e-cells are prohib-iting the engine from powering up.", null, null, false, true, null);
-	public Room room26 = new Room(26,"Cargo 2","This is a dull grey room with empty shelves.", null, null, false, true, null);
-	public Room room27 = new Room(27,"Energy Cell Cargo","This is a dull grey room with six empty Energy Cell crates and one locked energy crate.", null, null, false, true, null);
-	public Room room28 = new Room(28,"Viewing 1","This room has panoramic viewing windows, the length of the room. Through these windows one can see our indigenous galaxy.", null, null, false, true, null);
-	public Room room29 = new Room(29,"Viewing 2","This a dull grey room. This room has panoramic windows but the ships win-dow shutters are closed.", null, null, false, true, null);
-	public Room room30 = new Room(30,"Navigation","There is only one way in and one way out in this room. There is an elaborate navigation control panel. Some of the gauges are damaged but overall the navigation controls appear to be fully functional.", null, null, false, true, null);
-	public Room room31 = new Room(31,"Ships AI","You can barely see through the darkness to find the terminal to plug in the E-cell.", null, null, false, true, null);
+	//Instantiate Rooms
+	
+	//Cryo Room
+	public Room room0 = new Room(0,"Cryo Room","The room has 4 doors and each door has a name plate above it. "
+			+ "To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the "
+			+ "south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\"."
+			, rogueCleaningUnit, null, false, true, null);
+	
+	//Cryo Room 1
+	public Room room1 = new Room(1,"Cryo Room 1","The walls are dull grey and lined with the statis units for other crew "
+			+ "members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To "
+			+ "the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\"."
+			+ " To the north and south are red doors labeled \"Cryogenics Room\""
+			, robotDoorman, null, false, true, null);
+	
+	//Cryo Room 2
+	public Room room2 = new Room(2,"Cryo Room 2","The crew in this rooms appears to be fine as well, sleeping in their cham-bers."
+			, null, null, false, true, null);
+	
+	//Cryo Room 3
+	public Room room3 = new Room(3,"Cryo Room 3","The room is a dull metal grey with three doors each with a name plate."
+			, null, null, false, true, null);
+	
+	//Cryo Room 4
+	public Room room4 = new Room(4,"Cryo Room 4","The room is dull metal grey with two doors. The crew in this room appears fine"
+			, null, null, false, true, null);
+	
+	//Cryo Room 5
+	public Room room5 = new Room(5,"Cryo Room 5","The room is dull metal grey with three doors. The door to the east is the same "
+			+ "dull grey as the rest of the ship but there appears to be a window near the top.  You give the stasis chambers a "
+			+ "quick glance to ensure the crew is fine then go to check the window. The window is small but you can just make out"
+			+ " what appears to be a room with something in it.  As you step back your foot catches against something on the floor.  "
+			+ "Upon inspection, you realize there is an anchor point on the floor next to the door. "
+			, null, null, false, true, null);
+	
+	//Hallway
+	public Room room6 = new Room(6,"Hallway","The room is grey with two exits."
+			, null, null, false, true, eCellPuzzle);
+	
+	//Hallway 1
+	public Room room7 = new Room(7,"Hallway 1","The grey walls continue into this room as do the red doors."
+			, cyborgPirate, null, false, true, null);
+	
+	//Hallway 2
+	public Room room8 = new Room(8,"Hallway 2","The walls are grey and there are two doors."
+			, null, null, false, true, null);
+	
+	//Security
+	public Room room9 = new Room(9,"Security","Just like the other rooms it is dull gray but with a flickering"
+			+ " overhead light.  Looking around the room the all the monitors are public except for the one in "
+			+ "the command center which appears to be in working order."
+			, null, null, false, true, magicSquarePuzzle);
+	
+	//Spaced Energy Cell
+	public Room room10 = new Room(10,"Spaced Energy Cell","Once the door is pried open the air is sucking around "
+			+ "you pulling you to the leaking hole.  Crawling around the wall you have reached the E-Cell create."
+			, null, null, false, true, eCellPuzzle);
+	
+	//Hallway 3
+	public Room room11 = new Room(11,"Hallway 3", "Another hallway with dull gray walls"
+			, null, null, false, true, null);
+	
+	//Hallway 4
+	public Room room12 = new Room(12,"Hallway 4","Like most of the hallways on the ship this is another dull gray "
+			+ "walled room."
+			, null, null, false, true, eCellPuzzle);
+	
+	//Server Bank 4
+	public Room room13 = new Room(13,"Server Bank 4","This room is abnormally dark even compared to the crippled ship."
+			+ "  The light blinking on the server bank are creating a dancing shadow effect, giving a serial effect."
+			, null, null, false, true, null);
+	
+	//Server Bank 3
+	public Room room14 = new Room(14,"Server Bank 3","You're struck by how well this room is intact and seems to be "
+			+ "in working order.  All server banks seem to be powered on and communicating with the main system. "
+			, null, null, false, true, null);
+	
+	//Server Bank 2
+	public Room room15 = new Room(15,"Server Bank 2","This room largely resembles the others, with black server racks "
+			+ "occupying most of the space."
+			, null, null, false, true, null);
+	
+	//Server Bank 1
+	public Room room16 = new Room(16,"Server Bank 1","Besides the usual grey, the walls of this room are lined with "
+			+ "blade servers, most of which remain relatively unscathed."
+			, null, null, false, true, null);
+	
+	//Hallway 4 Iced
+	public Room room17 = new Room(17,"Hallway 4 Iced","These hallways all look the same, with the only indication "
+			+ "that you've moved being the signs on the floor. That, and the fact that this room is just as cold as "
+			+ "the cryogenic rooms."
+			, null, null, false, true, null);
+	
+	//Hallway 5
+	public Room room18 = new Room(18,"Hallway 5","The walls of this hallway are a uniform grey throughout. Only about"
+			+ " a quar-ter of the lights are working, so it is fairly dark."
+			, null, null, false, true, null);
+	
+	//Command Center
+	public Room room19 = new Room(19,"Command Center","When you enter, the room is lit only by back power making it "
+			+ "very dim."
+			, null, null, false, true, null);
+	
+	//Hallway 6
+	public Room room20 = new Room(20,"Hallway 6", "The hallway towards Communications is long, and includes two "
+			+ "sections the walls are a neutral grey color, with the outlines of wall panels visible in some places."
+			, null, null, false, true, null);
+	
+	//Hallway 7
+	public Room room21 = new Room(21,"Hallway 7","The second section of the hallway towards the com room seems "
+			+ "identical to the first."
+			, null, null, false, true, null);
+	
+	//Communications
+	public Room room22 = new Room(22,"Communications","This room is a uniform drab grey like the others. A "
+			+ "few computer terminals with blinking lights populate the otherwise sparsely furnished room."
+			, null, null, false, true, null);
+	
+	//Ship Weapons
+	public Room room23 = new Room(23,"Ship Weapons","The walls in this room are formed by dark paneling, "
+			+ "but the lights are almost bright enough to hurt your eyes. There are quite a few terminals "
+			+ "in this room as well, with a large table in the center which projects various holographic "
+			+ "images above it. The panels cover every inch of the interior, with the excep-tion of the "
+			+ "western wall, which is a large window."
+			, spaceKraken , null, false, true, null);
+	
+	//Cargo 1
+	public Room room24 = new Room(24,"Cargo 1","This is a dull grey room lined with empty cargo crates. "
+			+ "There are two doors in this room, one yellow door to the north and a black door to the east."
+			, null, null, false, true, null);
+	
+	//Engine Room
+	public Room room25 = new Room(25,"Engine Room","This is a large grey room with multiple exits. There is "
+			+ "a large Ion Thruster in the middle of the room. The Ion thruster is not powered on, and all "
+			+ "indicator gauges show that there is not enough impulse power to provide sufficient propulsion "
+			+ "for escape. Damage to the thruster and missing e-cells are prohib-iting the engine from powering up."
+			, alienCommando, null, false, true, null);
+	
+	//Cargo 2
+	public Room room26 = new Room(26,"Cargo 2","This is a dull grey room with empty shelves."
+			, null, null, false, true, null);
+	
+	//Energy Cell Cargo
+	public Room room27 = new Room(27,"Energy Cell Cargo","This is a dull grey room with six empty Energy Cell "
+			+ "crates and one locked energy crate."
+			, null, null, false, true, null);
+	
+	//Viewing 1
+	public Room room28 = new Room(28,"Viewing 1","This room has panoramic viewing windows, the length of"
+			+ " the room. Through these windows one can see our indigenous galaxy."
+			, null, null, false, true, null);
+	
+	//Viewing 2
+	public Room room29 = new Room(29,"Viewing 2","This a dull grey room. This room has panoramic windows"
+			+ " but the ships win-dow shutters are closed."
+			, null, null, false, true, null);
+	
+	//Navigation
+	public Room room30 = new Room(30,"Navigation","There is only one way in and one way out in this room."
+			+ " There is an elaborate navigation control panel. Some of the gauges are damaged but overall"
+			+ " the navigation controls appear to be fully functional."
+			, littleGreenMan, null, false, true, null);
+	
+	//Ships AI
+	public Room room31 = new Room(31,"Ships AI","You can barely see through the darkness to find the "
+			+ "terminal to plug in the E-cell."
+			, cyborgPirate, null, false, true, null);
 	
 	
 	
@@ -216,7 +351,7 @@ public class MainGUI extends Application {
 	ScrollPane playerInvPane = new ScrollPane();
 	
 	
-	Player mainPlayer = new Player(200, bareHands, room0);
+	Player mainPlayer = new Player();
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
 	Button startFightBtn = new Button("Start Fight");
@@ -483,7 +618,7 @@ public class MainGUI extends Application {
 		mainMonster = mainPlayer.getRoomID().getMonster();
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
-		mainPlayer.setRoomID(mainPlayer.getRoomID());
+		
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
         playerItemList = new ListView<>(obPlayerInv);
@@ -510,7 +645,7 @@ public class MainGUI extends Application {
 		
 		
 		if(mainPuzzle == null){
-			puzzlePanePuzzle.setText("");
+			puzzlePanePuzzle.setText("No Puzzle");
 		}
 		else{
 			puzzlePanePuzzle.setText(mainPuzzle.getPuzzleName());
