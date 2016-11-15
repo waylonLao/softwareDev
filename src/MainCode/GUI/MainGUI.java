@@ -379,9 +379,9 @@ public class MainGUI extends Application {
         mainPane.setBottom(textScroller);
         mainPane.setLeft(mainInvPane);
         
-        mainScene = new Scene(mainPane, 1000, 1000);
-        fightScene = new Scene(fightPane, 1000, 1000);
-        puzzleScene = new Scene(puzzlePane, 1000, 1000);
+        mainScene = new Scene(mainPane, 800, 500);
+        fightScene = new Scene(fightPane, 800, 500);
+        puzzleScene = new Scene(puzzlePane, 800, 500);
         
         theStage.setTitle("Galaxy Explorer");
         theStage.setScene(mainScene);
