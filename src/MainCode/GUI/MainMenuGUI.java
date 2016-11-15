@@ -72,8 +72,8 @@ public class MainMenuGUI extends Application{
 		
 		
 		newGame.setOnAction(e -> mg.start(primaryStage));
-		/*loadGame.setOnAction(e -> circle.setFill(Color.BLUE));
-		help.setOnAction(e -> circle.setFill(Color.GREEN));*/
+		/*loadGame.setOnAction(e -> );
+		help.setOnAction(e -> );*/
 		quit.setOnAction(e -> primaryStage.close());
 		
 		
