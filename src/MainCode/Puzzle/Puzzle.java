@@ -107,6 +107,13 @@ public class Puzzle {
 	public void setRemainingTries(int remainingTries) {
 		this.remainingTries = remainingTries;
 	}
+	public void setPuzzle(Puzzle puzzle) {
+		// TODO Auto-generated method stub
+	this.puzzleName = puzzle.getPuzzleName();
+	this.puzzleDescription = puzzle.getPuzzleDescription();
+	this.puzzleSolution = puzzle.getPuzzleSolution();
+		
+	}
 	
 	
 	

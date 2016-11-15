@@ -108,7 +108,7 @@ public class MainGUI extends Application {
 	
 	//Cryo Room 2
 	public Room room2 = new Room(2,"Cryo Room 2","The crew in this rooms appears to be fine as well, sleeping in their cham-bers."
-			, null, null, false, true, null);
+			, null, null, false, true, communicationPuzzle);
 	
 	//Cryo Room 3
 	public Room room3 = new Room(3,"Cryo Room 3","The room is a dull metal grey with three doors each with a name plate."
@@ -171,7 +171,7 @@ public class MainGUI extends Application {
 	//Server Bank 2
 	public Room room15 = new Room(15,"Server Bank 2","This room largely resembles the others, with black server racks "
 			+ "occupying most of the space."
-			, null, null, false, true, null);
+			, null, null, false, true, headPuzzle);
 	
 	//Server Bank 1
 	public Room room16 = new Room(16,"Server Bank 1","Besides the usual grey, the walls of this room are lined with "
@@ -182,7 +182,7 @@ public class MainGUI extends Application {
 	public Room room17 = new Room(17,"Hallway 4 Iced","These hallways all look the same, with the only indication "
 			+ "that you've moved being the signs on the floor. That, and the fact that this room is just as cold as "
 			+ "the cryogenic rooms."
-			, null, null, false, true, null);
+			, null, null, false, true, travelPuzzle);
 	
 	//Hallway 5
 	public Room room18 = new Room(18,"Hallway 5","The walls of this hallway are a uniform grey throughout. Only about"
@@ -197,7 +197,7 @@ public class MainGUI extends Application {
 	//Hallway 6
 	public Room room20 = new Room(20,"Hallway 6", "The hallway towards Communications is long, and includes two "
 			+ "sections the walls are a neutral grey color, with the outlines of wall panels visible in some places."
-			, null, null, false, true, null);
+			, null, null, false, true, computerSystemPuzzle);
 	
 	//Hallway 7
 	public Room room21 = new Room(21,"Hallway 7","The second section of the hallway towards the com room seems "
@@ -207,7 +207,7 @@ public class MainGUI extends Application {
 	//Communications
 	public Room room22 = new Room(22,"Communications","This room is a uniform drab grey like the others. A "
 			+ "few computer terminals with blinking lights populate the otherwise sparsely furnished room."
-			, null, null, false, true, null);
+			, null, null, false, true, brothersPuzzle);
 	
 	//Ship Weapons
 	public Room room23 = new Room(23,"Ship Weapons","The walls in this room are formed by dark paneling, "
@@ -246,13 +246,13 @@ public class MainGUI extends Application {
 	//Viewing 2
 	public Room room29 = new Room(29,"Viewing 2","This a dull grey room. This room has panoramic windows"
 			+ " but the ships win-dow shutters are closed."
-			, null, null, false, true, null);
+			, null, null, false, true, towelPuzzle);
 	
 	//Navigation
 	public Room room30 = new Room(30,"Navigation","There is only one way in and one way out in this room."
 			+ " There is an elaborate navigation control panel. Some of the gauges are damaged but overall"
 			+ " the navigation controls appear to be fully functional."
-			, littleGreenMan, null, false, true, null);
+			, littleGreenMan, null, false, true, wolvesPuzzle);
 	
 	//Ships AI
 	public Room room31 = new Room(31,"Ships AI","You can barely see through the darkness to find the "
@@ -426,17 +426,16 @@ public class MainGUI extends Application {
 		takeItemBtn.setOnAction(e -> takeItem());
 		
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
-		roomNameText.setText(mainPlayer.getRoomID().getRoomName());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
-		roomNameText.setWrappingWidth(650);
+		
 		
         
 
         
 		textScroller.setAlignment(Pos.CENTER);
-		textScroller.getChildren().addAll( roomNameText, action2, action1, action0);
+		textScroller.getChildren().addAll(action2, action1, action0);
 		
 
         
@@ -526,7 +525,7 @@ public class MainGUI extends Application {
     
     
     private void takeItem() {
-		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()), null);
+		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()));
 		mainPlayer.getRoomID().getRoomInv().removeItem(roomItemList.getSelectionModel().getSelectedItem());
 		updateText();
 		
@@ -535,7 +534,7 @@ public class MainGUI extends Application {
 
 
 	private void tryPuzzle(String s) {
-    	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)), null);
+    	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
 	}
 
 
@@ -545,30 +544,22 @@ public class MainGUI extends Application {
 
 
 	private void moveNorth() {
-		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0])
-				//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[0]) );
-				, null);
+		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));
 		updateText();
 	}
     
     private void moveSouth() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1])
-    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[1]) );
-    			, null);
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1]));
     	updateText();
 	}
     
     private void moveEast() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2])
-    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[2]) );
-    			, null);
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2]));
     	updateText();
 	}
     
     private void moveWest() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3])
-    			//, mainPlayer.move(myMap.get(mainPlayer.getRoomID().getRoomName())[3]) );
-    			,null);
+    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3]));
     	updateText();
 	}
 
@@ -587,9 +578,9 @@ public class MainGUI extends Application {
 		theStage.setScene(puzzleScene);
 	}
     
-    private void cycleText(String s, String name){
+    private void cycleText(String s){
     	action0.setText(s);
-    	roomNameText.setText(name);
+ 
     }
 
 
@@ -598,7 +589,7 @@ public class MainGUI extends Application {
 
 	
 	private void doDamage() {
-		cycleText(mainPlayer.doDamage(mainMonster), null);
+		cycleText(mainPlayer.doDamage(mainMonster));
 		if(mainMonster.getHealth()<=0){
 			mainPlayer.getRoomID().getRoomInv().addItem(mainMonster.getItemDrop());
 			updateText();
@@ -610,7 +601,7 @@ public class MainGUI extends Application {
 	}
 	
 	private void recieveDamage(){
-		cycleText(mainPlayer.takeDamage(mainMonster), null);
+		cycleText(mainPlayer.takeDamage(mainMonster));
 		updateText();
 	}
 	
@@ -659,6 +650,18 @@ public class MainGUI extends Application {
 		
 		
 	}
+
+	public Puzzle getMainPuzzle() {
+		return mainPuzzle;
+	}
+
+
+
+	public void setMainPuzzle(Puzzle mainPuzzle) {
+		this.mainPuzzle = mainPuzzle;
+	}
+
+
 
 	/**
      * @param args the command line arguments
