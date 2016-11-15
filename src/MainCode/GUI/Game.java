@@ -12,7 +12,30 @@
 
 package MainCode.GUI;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+
+//Might move this into MainMenu. Maybe...TBD
+
 public class Game
 {
-
+	ObjectOutputStream output;
+	ObjectInputStream input;
+	
+	public void saveGame() throws FileNotFoundException, IOException{
+		
+		output = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
+		
+	}
+	
+	public void loadGame(){
+		
+		
+	}
+	
+	
 }
