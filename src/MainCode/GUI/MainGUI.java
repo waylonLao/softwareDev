@@ -512,6 +512,7 @@ public class MainGUI extends Application {
 	
 	Player mainPlayer = new Player(500, bareHands, rooms.get(0), "Player");
 
+
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle1 = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
 	Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
@@ -527,17 +528,11 @@ public class MainGUI extends Application {
 	Text roomNameText = new Text();
 
 
-	
-	
+	Label puzzlePaneHeader = new Label("Puzzle in this room");
+	Label monsterPaneHeader = new Label("Monster in this room");
+	Label puzzlePanePuzzle = new Label("No Puzzle");
+	Label monsterPaneMonster = new Label(mainPlayer.getRoomID().getMonster().getName());
 
-	
-	
-    Text monsterPaneHeader = new Text("Monster in this room:");
-    Text monsterPaneMonster = new Text();
-    Text puzzlePaneHeader = new Text("Puzzle in this room:");
-    Text puzzlePanePuzzle = new Text();
-	
-	
 
 	Label monsterName = new Label();
 
@@ -808,6 +803,20 @@ public class MainGUI extends Application {
 
 	}
 
+	private String getRoomPuzzleName()
+	{
+		String result = "";
+		if(mainPlayer.getRoomID().getPuzzle() == null)
+		{
+			puzzlePanePuzzle = new Label("No Puzzle");
+		}
+		else
+		{
+			result = mainPlayer.getRoomID().getPuzzle().getPuzzleName();
+			return result;
+		}
+		return result;
+	}
 
 	private void useItem()
 	{
