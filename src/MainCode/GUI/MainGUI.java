@@ -610,7 +610,8 @@ public class MainGUI extends Application {
 		vB1.setSpacing(70);
 		vB1.setPadding(new Insets(100, 100, 10, 100));
 
-		newGame.setOnAction(e -> primaryStage.setScene(mainScene));
+		newGame.setOnAction(e -> newGame());
+		//newGame.setOnAction(e -> primaryStage.setScene(mainScene));
 		/*loadGame.setOnAction(e -> );
 				help.setOnAction(e -> );*/
 		quit.setOnAction(e -> primaryStage.close());
@@ -865,6 +866,14 @@ public class MainGUI extends Application {
 
 	public void setMainPuzzle(Puzzle mainPuzzle) {
 		this.mainPuzzle = mainPuzzle;
+	}
+	
+	public Game newGame()
+	{
+		Game game = new Game();
+		theStage.setScene(mainScene);
+		return game;
+		
 	}
 
 
