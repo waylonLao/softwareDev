@@ -14,11 +14,11 @@ import MainCode.Rooms.Room;
 public class Player extends Sprite {
 
 
-	private Room roomID;
+	private Room currentRoom;
 
 	public Player(int health, Weapon wpn, Room r) {
 		super(health, wpn, "Player");
-		roomID = r;
+		currentRoom = r;
 	}
 
 	public Player() {
@@ -47,6 +47,7 @@ public class Player extends Sprite {
 
 
 	public String move(Door d){
+
 		if(d.getConnection() == null){
 			return "You can't go that way.";
 		}
@@ -63,14 +64,14 @@ public class Player extends Sprite {
 	 * @return the roomID
 	 */
 	public Room getRoomID() {
-		return roomID;
+		return currentRoom;
 	}
 
 	/**
 	 * @param roomID the roomID to set
 	 */
 	public void setRoomID(Room roomID) {
-		this.roomID = roomID;
+		this.currentRoom = roomID;
 	}
 
 

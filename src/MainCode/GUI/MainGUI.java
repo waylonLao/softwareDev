@@ -664,6 +664,7 @@ public class MainGUI extends Application {
 			cycleText("No Item");
 
 	}
+	
 
 	private void useItem()
 	{
