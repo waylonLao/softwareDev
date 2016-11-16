@@ -1,11 +1,11 @@
 package MainCode.Items;
 
-
+import java.io.Serializable;
 
 /**
  * @author Neal Klemenc
  */
-public class Item{
+public class Item implements Serializable{
     
 
     private String itemName;

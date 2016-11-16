@@ -11,7 +11,7 @@ import MainCode.Puzzle.Puzzle;
 /**
  * @author Neal Klemenc
  */
-public class Room{
+public class Room implements Serializable{
 
 	private int roomID;
 	private String roomName;

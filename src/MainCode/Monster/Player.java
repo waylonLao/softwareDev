@@ -9,17 +9,19 @@ import MainCode.Rooms.Door;
 import MainCode.Rooms.Room;
 
 /**
- * @author nklemenc
- */
-public class Player extends Sprite {
 
-
+* @author nklemenc
+*/
+public class Player extends Sprite implements Serializable{
+	
+	
 	private Room currentRoom;
-
-	public Player(int health, Weapon wpn, Room r) {
-		super(health, wpn, "Player");
+	
+	public Player(int health, Weapon wpn, Room r, String s) {
+		super(health, wpn, s);
 		currentRoom = r;
 	}
+
 
 	public Player() {
 		super();
