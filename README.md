@@ -10,6 +10,8 @@ Make sure you pull before working on your code
       -useItem(); --- done
       -updateHealth(); -- 11/15 works AF/WL
       -make items stack(have more than one) -- can have multiple of same item (but no stacking ye
+      -------------------------------------------------------------------------------------------------
+      
       -get inventory into fight gui and have health 
       kits and concussion grenades working in fight
       -equip weapons in main
@@ -25,8 +27,7 @@ Make sure you pull before working on your code
       
       -make key cards work by color
       -lock doors if there are no key cards
-    
-<<<<<<< HEAD
+  
 -Fix Bugs
       
       
@@ -42,6 +43,7 @@ Make sure you pull before working on your code
       -Cannot defeat Space Kraken --- still can't beat kraken with given equipment
       
       -------------------------------------------------------------------
+      
       -Need to balance health and attack 
      
 -Death
