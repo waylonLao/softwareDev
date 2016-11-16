@@ -27,7 +27,7 @@ public class Player extends Sprite {
 
 	public void useItem(Item i)
 	{
-		this.health = health + 50;
+		this.health = this.health + 50;
 		this.getSpriteInv().removeItem(i);
 		
 	}
