@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Door implements Serializable{
 	
+	String color;
 	Room connection;
 	String direction;
 	Boolean isLocked;

@@ -49,6 +49,7 @@ public class Room implements Serializable{
 		}
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
+		this.puzzle = puzzle;
 	}
 	/**
 	 * @return the roomID

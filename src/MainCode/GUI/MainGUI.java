@@ -2,6 +2,7 @@ package MainCode.GUI;
 
 import static java.awt.SystemColor.text;
 
+
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,6 +10,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 //import java.awt.ScrollPane;
 import java.util.HashMap;
 
@@ -33,6 +38,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -172,6 +178,9 @@ public class MainGUI extends Application {
 	
 	
 
+	Game game = new Game();
+	MainGUI mg;
+
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon leadPipe = new Weapon("Lead Pipe", "A sturdy pipe", "Used to fight", 15);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
@@ -185,11 +194,11 @@ public class MainGUI extends Application {
 	Weapon plasmaRifle = new Weapon("Plasma Rifle", "", "Used to fight", 50);
 	Weapon tentacles = new Weapon("Tentacles", "Terrible Towering Tentacles", "Used to fight", 55);
 	Weapon flameThrower = new Weapon("FlameThrower", "Hot stuff", "Used to fight", 60);
-	
+
 	HealthPack healthKit = new HealthPack("Health Kit", "Some basic first-aid.", "Used to heal wounds.");
 	ConcussionGrenade concussionGrenade = new ConcussionGrenade();
-	
-	
+
+
 	Monster rogueCleaningUnit = new Monster(30, suctionHose, "Rogue Cleaning Unit", "A pissed off vacuum cleaner, easily killed.", healthKit);
 	Monster robotDoorman = new Monster(50, largeDoor, "Robot Doorman", "A well-dressed robot in moderate disprepair.", concussionGrenade);
 	Monster tunnelingHorror = new Monster(50, sharkTeeth, "Tunneling Horror", "A large alien worm.", healthKit);
@@ -201,15 +210,15 @@ public class MainGUI extends Application {
 	Monster alienCommando = new Monster(100, plasmaRifle, "Alien Commando", "An incomprehensible alien with an assault weapon.", concussionGrenade);
 	Monster spaceKraken = new Monster(150, tentacles, "Space Kraken", "A giant, anomalous squid.", healthKit);
 	Monster returnOfCleaningUnit = new Monster(250, flameThrower, "The Return of Cleaning Unit", "A pissed off vacuum cleaner, still mad.", healthKit);
-	
+
 	//Instantiate all puzzles
 	ECellPuzzle eCellPuzzle = new ECellPuzzle();
 	Puzzle communicationPuzzle = new Puzzle("Communications Puzzle","A frog is at the bottom of a 30 meter well. "
 			+ "Each day he summons enough energy for one 3 meter leap up the well. Exhausted, "
 			+ "he then hangs there for the rest of the day. At night, while he is asleep, "
-			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?  ","28 days", null);
+			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?ï¿½ ","28 days", null);
 	MagicSquare magicSquarePuzzle = new MagicSquare();
-	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes.  How many wolves "
+	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes.ï¿½ How many wolves "
 			+ "will be needed to catch sixty lambs in sixty minutes?","6", null);
 	Puzzle brothersPuzzle = new Puzzle("Brothers Puzzle","Brothers and sisters I have none but this man's "
 			+ "father is my father's son. Who is the man?","the man is my son", null);
@@ -217,8 +226,9 @@ public class MainGUI extends Application {
 	Puzzle headPuzzle = new Puzzle("Head Puzzle","What has a head and a tail but no body?","a coin", null);
 	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", null);
 	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", null);
-	
+
 	//Instantiate Rooms
+
 	
 //	//Cryo Room
 //	public Room room0 = new Room(0,"Cryo Room","The room has 4 doors and each door has a name plate above it. "
@@ -465,19 +475,28 @@ public class MainGUI extends Application {
 	
 	Stage theStage;
 	
-	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene;
+	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene, deathScene;
 	
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
 	BorderPane fightPane = new BorderPane();
 	BorderPane menuPane= new BorderPane();
+
+
+	BorderPane deathPane = new BorderPane();
+
 	GridPane directionalGrid = new GridPane();
 	VBox roomInfoPane = new VBox();
 	GridPane myGrid = new GridPane();
 	GridPane fightGrid = new GridPane();
 	GridPane mainInvPane = new GridPane();
+
+	GridPane mainMenuGrid = new GridPane();
+
+	GridPane deathGrid = new GridPane();
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
+
 	VBox menuButtonPane = new VBox();
 	
 	VBox newGamePane = new VBox();
@@ -492,8 +511,10 @@ public class MainGUI extends Application {
 	
 	
 	Player mainPlayer = new Player(500, bareHands, rooms.get(0), "Player");
+
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
+	//Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	Button startFightBtn = new Button("Start Fight");
 
 	VBox textScroller = new VBox();
@@ -501,9 +522,9 @@ public class MainGUI extends Application {
 	Text action1 = new Text();
 	Text action0 = new Text();
 	Text roomNameText = new Text();
+
 	
-	//Make the title, make it pretty, and center it
-	Label menuTitle = new Label("Galaxy Explorer");
+	
 
 	
 	
@@ -515,47 +536,54 @@ public class MainGUI extends Application {
 	
 
 	Label monsterName = new Label();
+
+
+	Label menuTitle = new Label("Galaxy Explorer");	
+	Label deathLabel = new Label("You have died...");
+
 	Label playerName = new Label(mainPlayer.getName());
 	Label monsterHealth = new Label();
 	Label playerHealth = new Label();
 	Label puzzleName = new Label(mainPuzzle.getPuzzleName());
-	
+
 	Text roomItems = new Text();
 	Text playerItems= new Text();
-	
-	
+
+	private Button mainMenuBtn = new Button("Return to Main Menu");
+	private Button saveGame = new Button("Save Game");
 	private Button attackBtn = new Button("Attack");
 	private Button returnBtn = new Button("Return");
-	
+
 	//DIRECTION BUTTONS
 	private Button northBtn = new Button("north");
 	private Button southBtn = new Button("south");
 	private Button eastBtn = new Button("east");
 	private Button westBtn = new Button("west");
-	
-	//MainMenuButtons
-			Button newGame = new Button("New Game");
-			Button loadGame = new Button("Load Game");
-			Button help = new Button("Help");
-			Button quit= new Button("Quit");
+
 			
 			Button saveGameBtn = new Button("Save");
 	
+
 	//Puzzle Buttons
 	private Button startPuzzleBtn = new Button("Examine Puzzle");
-	
+
 	//INVENTORY BUTTONS
 	private Button takeItemBtn = new Button("Take Item");
 	private Button useItemBtn = new Button("Use Item");
-	
-	
+
+	//MainMenu Buttons
+	private Button newGame = new Button("New Game");
+	private Button loadGame = new Button("Load Game");
+	private Button help = new Button("Help");
+	private Button quit= new Button("Quit");
+
+
 	//INVENTORY
 	ObservableList<Item> obRoomInv;
 	ObservableList<Item> obPlayerInv;
 	ListView<Item> roomItemList = new ListView<>(obRoomInv);
 	ListView<Item> playerItemList = new ListView<>(obPlayerInv);
-	
-	
+
 
     
     @Override
@@ -567,34 +595,55 @@ public class MainGUI extends Application {
     	
 
 
-        startFightBtn.setOnAction(e -> setFightScene());
-        returnBtn.setOnAction(e -> setMainScene());
+		mainMenuBtn.setOnAction(e -> primaryStage.setScene(menuScene));
+		saveGame.setOnAction(e -> {
+			try {
+				game.saveGame(mainPlayer, mainPlayer.getRoomID(), mainPlayer.getSpriteInv());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+		startFightBtn.setOnAction(e -> setFightScene());
+		returnBtn.setOnAction(e -> setMainScene());
 		attackBtn.setOnAction(e -> doDamage());
-		
+
 		northBtn.setOnAction(e -> moveNorth());
 		southBtn.setOnAction(e -> moveSouth());
 		eastBtn.setOnAction(e -> moveEast());
 		westBtn.setOnAction(e -> moveWest());
-		
+
 		startPuzzleBtn.setOnAction(e -> setPuzzleScene());
-		
+
 		takeItemBtn.setOnAction(e -> takeItem());
+
 		newGame.setOnAction(e -> setNewGameScene());
 		loadGame.setOnAction(e -> setLoadGameScene());
 		saveGameBtn.setOnAction(e -> saveGame());
 		
+
+		useItemBtn.setOnAction(e -> useItem());
+
+
+
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
-		
-		
-        
 
-        
+
+
 		textScroller.setAlignment(Pos.CENTER);
-		textScroller.getChildren().addAll(action2, action1, action0);
+		textScroller.getChildren().addAll(action0, action1);
+
+
+
+
 		
+
 		
     	//MAIN MENU
 		menuTitle.setFont(Font.font("Arial", 40));
@@ -638,6 +687,26 @@ public class MainGUI extends Application {
         
         //FIGHT INTERFACE
         fightGrid.setAlignment(Pos.CENTER);
+
+
+
+
+		//newGame.setOnAction(e -> primaryStage.setScene(mainScene));
+		/*loadGame.setOnAction(e -> );
+				help.setOnAction(e -> );*/
+		quit.setOnAction(e -> primaryStage.close());
+
+
+
+
+		
+
+
+
+
+		//FIGHT INTERFACE
+		fightGrid.setAlignment(Pos.CENTER);
+
 		fightGrid.setPadding(new Insets(10,10,10,10));
 		fightGrid.setHgap(5.0);
 		fightGrid.setVgap(10.0);
@@ -647,60 +716,44 @@ public class MainGUI extends Application {
 		fightGrid.add(playerHealth, 0, 2);
 		fightGrid.add(attackBtn, 1, 3);
 		fightPane.setCenter(fightGrid);
-        
 
-		
-		
-		
+		//Death Interface
+		deathGrid.setAlignment(Pos.CENTER);
+		deathGrid.setPadding(new Insets(10, 10, 10, 10));
+		deathGrid.setHgap(5.0);
+		deathGrid.setVgap(10.0);
+		deathGrid.add(deathLabel, 0, 0);
+		deathGrid.add(mainMenuBtn, 0, 2);
+		deathPane.setCenter(deathGrid);
+
+
+
 		//PUZZLE INTERFACE
 		VBox puzzleBox = new VBox();
 		puzzleBox.setAlignment(Pos.CENTER);
-        Text puzzleDescription = new Text(mainPuzzle.getPuzzleDescription());
-        TextField puzzleScanner = new TextField();
-        puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
-        puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
-        
-        
-        puzzlePane.setCenter(puzzleBox);
-        puzzlePane.setTop(puzzleName);
 		
-        
-        
-        //ItemInterface
-        mainPlayer.takeItem(healthKit);
-        //mainPlayer.getRoomID().getRoomInv().addItem(concussionGrenade);
-        obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
-        playerItemList = new ListView<>(obPlayerInv);
-        obRoomInv = FXCollections.observableArrayList(mainPlayer.getRoomID().getRoomInv().getItemList());
-        roomItemList = new ListView<>(obRoomInv);
-        
-        roomItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        playerItemList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        
-        roomInvPane.setContent(roomItemList);
-        playerInvPane.setContent(playerItemList);
-        mainInvPane.add(new Text("Room Items"), 0, 0);
-        mainInvPane.add(new Text("Player Items"), 1, 0);
-        mainInvPane.add(roomInvPane, 0, 1);
-        mainInvPane.add(playerInvPane, 1, 1);
-        mainInvPane.add(takeItemBtn, 0, 2);
-        mainInvPane.add(useItemBtn, 1, 2);
-        mainInvPane.setAlignment(Pos.CENTER);
-        mainInvPane.setMaxHeight(300);
+		puzzlePane.setCenter(puzzleBox);
+		puzzlePane.setTop(puzzleName);
 		
-		
+		Text puzzleDescription = new Text(mainPuzzle.getPuzzleDescription());
+		TextField puzzleScanner = new TextField();
+		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
+		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
 
-		
+
 		mainPane.setTop(saveGameBtn);
         mainPane.setCenter(directionalGrid);
         mainPane.setRight(roomInfoPane);
         mainPane.setBottom(textScroller);
         mainPane.setLeft(mainInvPane);
         
+        
+        
         mainScene = new Scene(mainPane, 800, 500);
         fightScene = new Scene(fightPane, 800, 500);
         puzzleScene = new Scene(puzzlePane, 800, 500);
         menuScene = new Scene(menuPane, 800,500);
+        deathScene = new Scene(deathPane, 800,500);
         
         newGameScene = new Scene(newGamePane, 800, 500);
         loadGameScene = new Scene(loadGamePane, 800, 500);
@@ -712,12 +765,10 @@ public class MainGUI extends Application {
 
     
     
-    private void takeItem() {
-		cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()));
-		mainPlayer.getRoomID().getRoomInv().removeItem(roomItemList.getSelectionModel().getSelectedItem());
-		updateText();
-		
-	}
+
+
+
+
 
 
     private void setNewGameScene(){
@@ -728,61 +779,81 @@ public class MainGUI extends Application {
     	theStage.setScene(loadGameScene);
     }
 
-	private void tryPuzzle(String s) {
-    	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
+
+
+	private void takeItem()
+	{ 
+		if (roomItemList.getSelectionModel().getSelectedItem() != null)
+		{
+			cycleText(mainPlayer.takeItem(roomItemList.getSelectionModel().getSelectedItem()));
+			mainPlayer.getRoomID().getRoomInv().removeItem(roomItemList.getSelectionModel().getSelectedItem());
+			updateText(); 
+		}	
+		else 
+			cycleText("No Item");
+
 	}
 
 
+	private void useItem()
+	{
+
+		cycleText(mainPlayer.useItem(healthKit));
+		updateText();
+
+	}
 
 
-
+	private void tryPuzzle(String s) {
+		cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
+	}
 
 
 	private void moveNorth() {
 		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));
 		updateText();
 	}
-    
-    private void moveSouth() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1]));
-    	updateText();
+
+	private void moveSouth() {
+		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[1]));
+		updateText();
 	}
-    
-    private void moveEast() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2]));
-    	updateText();
+
+	private void moveEast() {
+		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[2]));
+		updateText();
 	}
-    
-    private void moveWest() {
-    	cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3]));
-    	updateText();
+
+	private void moveWest() {
+		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[3]));
+		updateText();
 	}
 
 	private void setFightScene() {
 		fightPane.setBottom(textScroller);
 		theStage.setScene(fightScene);
 	}
-    
-    void setMainScene() {
-    	mainPane.setBottom(textScroller);
+
+	void setMainScene() {
+		mainPane.setCenter(textScroller);
 		theStage.setScene(mainScene);
 	}
-    
+
 	private void setPuzzleScene() {
 		puzzlePane.setBottom(textScroller);
 		theStage.setScene(puzzleScene);
 	}
-    
-    private void cycleText(String s){
-    	action0.setText(s);
- 
-    }
 
+	private void setDeathScene()
+	{
+		theStage.setScene(deathScene);
+	}
 
+	private void cycleText(String s){
+		action0.setText(s);
 
+	}
 
-
-	
 	private void doDamage() {
 		cycleText(mainPlayer.doDamage(mainMonster));
 		if(mainMonster.getHealth()<=0){
@@ -790,37 +861,47 @@ public class MainGUI extends Application {
 			updateText();
 		}
 		else{
-		recieveDamage();
+			recieveDamage();
 		}
-		
+
 	}
-	
+
 	private void recieveDamage(){
-		cycleText(mainPlayer.takeDamage(mainMonster));
-		updateText();
+
+		if(mainPlayer.getHealth() <= 0)
+		{
+			setDeathScene();
+		}
+		else
+		{
+			cycleText(mainPlayer.takeDamage(mainMonster));
+			updateText();
+		}
 	}
+
+
 	
-	
+
 	private void updateHealth(){
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		monsterHealth.setText(mainMonster.getHealth() + "/" + mainMonster.getMaxHealth());
 	}
-	
+
 	private void updateText(){
 		mainMonster = mainPlayer.getRoomID().getMonster();
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
-		
+
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
-        playerItemList = new ListView<>(obPlayerInv);
-        obRoomInv = FXCollections.observableArrayList(mainPlayer.getRoomID().getRoomInv().getItemList());
-        roomItemList = new ListView<>(obRoomInv);
-        roomInvPane.setContent(roomItemList);
-        playerInvPane.setContent(playerItemList);
-		
-		
-        if(mainMonster == null || mainMonster.getHealth() <= 0){
+		playerItemList = new ListView<>(obPlayerInv);
+		obRoomInv = FXCollections.observableArrayList(mainPlayer.getRoomID().getRoomInv().getItemList());
+		roomItemList = new ListView<>(obRoomInv);
+		roomInvPane.setContent(roomItemList);
+		playerInvPane.setContent(playerItemList);
+
+
+		if(mainMonster == null || mainMonster.getHealth() <= 0){
 			mainMonster = null;
 			monsterPaneMonster.setText("No Monster Here");
 			monsterHealth.setText("No Monster");
@@ -834,16 +915,16 @@ public class MainGUI extends Application {
 			attackBtn.setOnAction(e -> doDamage());
 			attackBtn.setText("Attack");
 		}
-		
-		
+
+
 		if(mainPuzzle == null){
 			puzzlePanePuzzle.setText("No Puzzle");
 		}
 		else{
 			puzzlePanePuzzle.setText(mainPuzzle.getPuzzleName());
 		}
-		
-		
+
+
 	}
 
 	public Puzzle getMainPuzzle() {
@@ -856,6 +937,7 @@ public class MainGUI extends Application {
 		this.mainPuzzle = mainPuzzle;
 	}
 	
+
 	
 	public void startNewGame(String s){
 		rooms = rf.newRooms();
@@ -1034,11 +1116,11 @@ public class MainGUI extends Application {
 
 
 	/**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-        
-    }
-    
+	 * @param args the command line arguments
+	 */
+	public static void main(String[] args) {
+		launch(args);
+
+	}
+
 }
