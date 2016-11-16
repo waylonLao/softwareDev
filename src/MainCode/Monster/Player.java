@@ -25,7 +25,11 @@ public class Player extends Sprite {
 		super();
 	}
 
-	public void useItem(Item i){
+	public void useItem(Item i)
+	{
+		this.health = health + 50;
+		this.getSpriteInv().removeItem(i);
+		
 	}
 	
 
@@ -59,11 +63,13 @@ public class Player extends Sprite {
 	
 	
 	public String takeItem(Item i){
-		if(this.getSpriteInv().getItemList().contains(i)){
+		/*if(this.getSpriteInv().getItemList().contains(i)){
 			return "You cant carry any more of those";
-		}
+		}*/
+				
 		this.getSpriteInv().addItem(i);
 		return "You take the " + i.getItemName();
+		
 	}
 	
 	public String dropItem(Item i){
