@@ -2,6 +2,8 @@ package MainCode.GUI;
 
 import static java.awt.SystemColor.text;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 //import java.awt.ScrollPane;
 import java.util.HashMap;
 
@@ -47,6 +49,7 @@ import javafx.scene.text.*;
  */
 public class MainGUI extends Application {
 
+	Game game = new Game();
 	
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
@@ -513,7 +516,7 @@ public class MainGUI extends Application {
 	Text playerItems= new Text();
 
 	private Button mainMenuBtn = new Button("Return to Main Menu");
-	
+	private Button saveGame = new Button("Save Game");
 	private Button attackBtn = new Button("Attack");
 	private Button returnBtn = new Button("Return");
 
@@ -538,14 +541,23 @@ public class MainGUI extends Application {
 	ListView<Item> playerItemList = new ListView<>(obPlayerInv);
 
 	
-
-
 	@Override
 	public void start(Stage primaryStage){
 
 
 		theStage = primaryStage;
-	
+
+		saveGame.setOnAction(e -> {
+			try {
+				game.saveGame(mainPlayer, mainPlayer.getRoomID(), mainPlayer.getSpriteInv());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		startFightBtn.setOnAction(e -> setFightScene());
 		returnBtn.setOnAction(e -> setMainScene());
 		attackBtn.setOnAction(e -> doDamage());
