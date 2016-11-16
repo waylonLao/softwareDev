@@ -1,9 +1,11 @@
 package MainCode.Items;
 
+import java.io.Serializable;
+
 /**
  * @author Neal Klemenc
  */
-public class Weapon extends Item
+public class Weapon extends Item implements Serializable
 {
 	private int weaponDamage;
 

@@ -11,7 +11,7 @@ import MainCode.Rooms.Room;
 /**
 * @author nklemenc
 */
-public class Player extends Sprite {
+public class Player extends Sprite implements Serializable{
 	
 	
 	private Room roomID;

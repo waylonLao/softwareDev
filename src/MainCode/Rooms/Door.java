@@ -1,9 +1,11 @@
 package MainCode.Rooms;
 
+import java.io.Serializable;
+
 /**
  * @author Neal Klemenc
  */
-public class Door {
+public class Door implements Serializable{
 	
 	Room connection;
 	String direction;

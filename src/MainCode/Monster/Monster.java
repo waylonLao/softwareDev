@@ -1,6 +1,8 @@
 package MainCode.Monster;
 
 
+import java.io.Serializable;
+
 import MainCode.Items.Item;
 import MainCode.Items.Weapon;
 import MainCode.Rooms.Room;
@@ -8,7 +10,7 @@ import MainCode.Rooms.Room;
 /**
 * @author nklemenc
 */
-public class Monster extends Sprite {
+public class Monster extends Sprite implements Serializable{
 
 	private String monsterDescription;
 	private Item itemDrop;
