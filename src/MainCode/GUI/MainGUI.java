@@ -173,6 +173,7 @@ public class MainGUI extends Application {
 	
 
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
+	Weapon leadPipe = new Weapon("Lead Pipe", "A sturdy pipe", "Used to fight", 15);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
 	Weapon largeDoor = new Weapon("A Large Door", "It's just a really big door", "Used to fight", 15);
 	Weapon sharkTeeth = new Weapon("Sharp teeth", "Very sharp teeth", "Used to fight", 20);
@@ -464,7 +465,7 @@ public class MainGUI extends Application {
 	
 	Stage theStage;
 	
-	Scene mainScene, fightScene, puzzleScene, menuScene;
+	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene;
 	
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
@@ -479,8 +480,18 @@ public class MainGUI extends Application {
 	ScrollPane playerInvPane = new ScrollPane();
 	VBox menuButtonPane = new VBox();
 	
+	VBox newGamePane = new VBox();
+	VBox loadGamePane = new VBox();
+	Text newGameNameHeader = new Text("Enter your name");
+	TextField newGameNameScanner = new TextField();
+	Button submitNewNameBtn = new Button("Submit");
 	
-	Player mainPlayer = new Player(500, bareHands, rooms.get(0));
+	Text loadGameNameHeader = new Text("Enter your name");
+	TextField loadGameNameScanner = new TextField();
+	Button submitLoadNameBtn = new Button("Submit");
+	
+	
+	Player mainPlayer = new Player(500, bareHands, rooms.get(0), "Player");
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
 	Button startFightBtn = new Button("Start Fight");
@@ -568,8 +579,8 @@ public class MainGUI extends Application {
 		startPuzzleBtn.setOnAction(e -> setPuzzleScene());
 		
 		takeItemBtn.setOnAction(e -> takeItem());
-		newGame.setOnAction(e -> startNewGame());
-		loadGame.setOnAction(e -> loadGame());
+		newGame.setOnAction(e -> setNewGameScene());
+		loadGame.setOnAction(e -> setLoadGameScene());
 		saveGameBtn.setOnAction(e -> saveGame());
 		
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
@@ -601,7 +612,16 @@ public class MainGUI extends Application {
 		
 		menuPane.setTop(menuTitle);
 		menuPane.setCenter(menuButtonPane);
-
+		
+		
+		
+		//NEW GAME INTERFACE
+		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner);
+		newGameNameScanner.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
+		
+		//LOAD GAME INTERFACE
+		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner);
+		loadGameNameScanner.setOnAction(e -> loadGame(loadGameNameScanner.getText()));
         
         //MOVEMENT
         directionalGrid.setAlignment(Pos.CENTER);
@@ -682,6 +702,9 @@ public class MainGUI extends Application {
         puzzleScene = new Scene(puzzlePane, 800, 500);
         menuScene = new Scene(menuPane, 800,500);
         
+        newGameScene = new Scene(newGamePane, 800, 500);
+        loadGameScene = new Scene(loadGamePane, 800, 500);
+        
         theStage.setTitle("Galaxy Explorer");
         theStage.setScene(menuScene);
         theStage.show();
@@ -697,6 +720,13 @@ public class MainGUI extends Application {
 	}
 
 
+    private void setNewGameScene(){
+    	theStage.setScene(newGameScene);
+    }
+    
+    private void setLoadGameScene(){
+    	theStage.setScene(loadGameScene);
+    }
 
 	private void tryPuzzle(String s) {
     	cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
@@ -827,9 +857,19 @@ public class MainGUI extends Application {
 	}
 	
 	
-	public void startNewGame(){
+	public void startNewGame(String s){
 		rooms = rf.newRooms();
 		doors = rf.newDoors();
+		
+		rooms.get(1).setMonster(rogueCleaningUnit);
+		rooms.get(7).setMonster(cyborgPirate);
+		rooms.get(19).setMonster(tunnelingHorror);
+		rooms.get(23).setMonster(spaceKraken);
+		rooms.get(25).setMonster(alienCommando);
+		rooms.get(30).setMonster(littleGreenMan);
+		rooms.get(31).setMonster(cyborgPirate);
+		
+		rooms.get(1).getRoomInv().addItem(leadPipe);
 		
 		myMap = new HashMap<Room, Door[]>()
 		{
@@ -869,7 +909,7 @@ public class MainGUI extends Application {
 		    }
 		};
 		
-		mainPlayer = new Player(500, bareHands, rooms.get(0));
+		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
 		
 		
 		cycleText(mainPlayer.getRoomID().getRoomDescription());
@@ -880,7 +920,7 @@ public class MainGUI extends Application {
 	public void saveGame(){
 		try
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("file.dat"));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(mainPlayer.getName() + ".dat"));
             
             // write each room in turn
             for (int i =0; i< rooms.size(); i++)
@@ -910,12 +950,12 @@ public class MainGUI extends Application {
 		cycleText("Game Saved");
 	}
 	
-	public void loadGame(){
+	public void loadGame(String s){
 		// open file for reading
 				ObjectInputStream input = null;
 				
 				try {
-					input = new ObjectInputStream(new FileInputStream("file.dat"));
+					input = new ObjectInputStream(new FileInputStream(s + ".dat"));
 				} catch (IOException e) {
 					e.printStackTrace();
 					System.out.println("File not found");

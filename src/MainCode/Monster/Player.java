@@ -16,8 +16,8 @@ public class Player extends Sprite implements Serializable{
 	
 	private Room roomID;
 	
-	public Player(int health, Weapon wpn, Room r) {
-		super(health, wpn, "Player");
+	public Player(int health, Weapon wpn, Room r, String s) {
+		super(health, wpn, s);
 		roomID = r;
 	}
 	
