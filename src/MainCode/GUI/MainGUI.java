@@ -493,8 +493,8 @@ public class MainGUI extends Application {
 
 	Player mainPlayer = new Player(500, bareHands, room0);
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
-	//Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
-	Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
+	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
+	//Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	Button startFightBtn = new Button("Start Fight");
 
 	VBox textScroller = new VBox();
