@@ -25,6 +25,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -477,6 +478,8 @@ public class MainGUI extends Application {
 	GridPane myGrid = new GridPane();
 	GridPane fightGrid = new GridPane();
 	GridPane mainInvPane = new GridPane();
+	
+	GridPane deathGrid = new GridPane();
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
 
@@ -499,7 +502,7 @@ public class MainGUI extends Application {
 	Text puzzlePanePuzzle = new Text(mainPuzzle.getPuzzleName());
 
 
-
+	Label deathLabel = new Label("You have died...");
 	Label monsterName = new Label(mainMonster.getName());
 	Label playerName = new Label(mainPlayer.getName());
 	Label monsterHealth = new Label(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));
@@ -542,7 +545,7 @@ public class MainGUI extends Application {
 
 
 		theStage = primaryStage;
-		
+	
 		startFightBtn.setOnAction(e -> setFightScene());
 		returnBtn.setOnAction(e -> setMainScene());
 		attackBtn.setOnAction(e -> doDamage());
@@ -596,7 +599,13 @@ public class MainGUI extends Application {
 		fightPane.setCenter(fightGrid);
 
 		//Death Interface
-		
+		deathGrid.setAlignment(Pos.CENTER);
+		deathGrid.setPadding(new Insets(10, 10, 10, 10));
+		deathGrid.setHgap(5.0);
+		deathGrid.setVgap(10.0);
+		deathGrid.add(deathLabel, 0, 0);
+		deathGrid.add(mainMenuBtn, 0, 2);
+		deathPane.setCenter(deathGrid);
 
 
 
@@ -648,6 +657,7 @@ public class MainGUI extends Application {
 		mainScene = new Scene(mainPane, 800, 500);
 		fightScene = new Scene(fightPane, 800, 500);
 		puzzleScene = new Scene(puzzlePane, 800, 500);
+		deathScene = new Scene(deathPane, 800, 500);
 
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(mainScene);
@@ -743,7 +753,7 @@ public class MainGUI extends Application {
 		
 		if(mainPlayer.getHealth() <= 0)
 		{
-			
+			setDeathScene();
 		}
 		else
 		{

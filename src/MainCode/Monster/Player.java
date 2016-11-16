@@ -98,6 +98,7 @@ public class Player extends Sprite {
 			//this.getRoomID().getRoomInv().addItem(target.getItemDrop());
 			return target.getName() + " has been defeated!";
 		}
+		
 		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();
 
 
