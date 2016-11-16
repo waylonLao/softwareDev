@@ -661,12 +661,12 @@ public class MainGUI extends Application {
 
 
 
-		mainPane.setCenter(directionalGrid);
+		mainPane.setCenter(textScroller);
 		mainPane.setRight(roomInfoPane);
-		mainPane.setBottom(textScroller);
-		mainPane.setLeft(mainInvPane);
+		mainPane.setBottom(mainInvPane);
+		mainPane.setLeft(directionalGrid);
 
-		mainScene = new Scene(mainPane, 800, 500);
+		mainScene = new Scene(mainPane, 1000, 500);
 		fightScene = new Scene(fightPane, 800, 500);
 		puzzleScene = new Scene(puzzlePane, 800, 500);
 		deathScene = new Scene(deathPane, 800, 500);
