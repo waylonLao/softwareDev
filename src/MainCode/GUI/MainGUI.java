@@ -766,7 +766,7 @@ public class MainGUI extends Application {
 	}
 
 	void setMainScene() {
-		mainPane.setBottom(textScroller);
+		mainPane.setCenter(textScroller);
 		theStage.setScene(mainScene);
 	}
 
