@@ -470,7 +470,7 @@ public class MainGUI extends Application {
 
 	Stage theStage;
 
-	Scene mainScene, fightScene, puzzleScene, deathScene;
+	Scene mainScene, fightScene, puzzleScene, deathScene, mainMenuScene;
 
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
@@ -481,7 +481,7 @@ public class MainGUI extends Application {
 	GridPane myGrid = new GridPane();
 	GridPane fightGrid = new GridPane();
 	GridPane mainInvPane = new GridPane();
-	
+	GridPane mainMenuGrid = new GridPane();
 	GridPane deathGrid = new GridPane();
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
@@ -533,7 +533,13 @@ public class MainGUI extends Application {
 	private Button takeItemBtn = new Button("Take Item");
 	private Button useItemBtn = new Button("Use Item");
 
-
+	//MainMenu Buttons
+	private Button newGame = new Button("New Game");
+	private Button loadGame = new Button("Load Game");
+	private Button help = new Button("Help");
+	private Button quit= new Button("Quit");
+	
+	
 	//INVENTORY
 	ObservableList<Item> obRoomInv;
 	ObservableList<Item> obPlayerInv;
@@ -583,7 +589,23 @@ public class MainGUI extends Application {
 		textScroller.setAlignment(Pos.CENTER);
 		textScroller.getChildren().addAll(action0, action1);
 
-
+		//Align buttons
+				newGame.setMaxWidth(Double.MAX_VALUE);
+				loadGame.setMaxWidth(Double.MAX_VALUE);
+				help.setMaxWidth(Double.MAX_VALUE);
+				quit.setMaxWidth(Double.MAX_VALUE);
+				
+				//Add buttons to vertical box
+				VBox vB1 = new VBox();
+				vB1.getChildren().addAll(newGame, loadGame, help, quit);
+				vB1.setSpacing(70);
+				vB1.setPadding(new Insets(100, 100, 10, 100));
+				
+				newGame.setOnAction(e -> setMainScene());
+				/*loadGame.setOnAction(e -> );
+				help.setOnAction(e -> );*/
+				quit.setOnAction(e -> primaryStage.close());
+				
 
 		//MOVEMENT
 		directionalGrid.setAlignment(Pos.CENTER);
@@ -596,7 +618,12 @@ public class MainGUI extends Application {
 		roomInfoPane.setAlignment(Pos.CENTER);
 		roomInfoPane.setPadding(new Insets(10,10,10,10));
 		roomInfoPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
-
+		
+		//MainMenu 
+		mainMenuGrid.setAlignment(Pos.TOP_CENTER);
+		mainMenuGrid.add(vB1, 0, 0);
+		
+		
 
 		//FIGHT INTERFACE
 		fightGrid.setAlignment(Pos.CENTER);
@@ -666,13 +693,14 @@ public class MainGUI extends Application {
 		mainPane.setBottom(mainInvPane);
 		mainPane.setLeft(directionalGrid);
 
+		mainMenuScene = new Scene(mainMenuGrid, 300, 500);
 		mainScene = new Scene(mainPane, 1000, 500);
-		fightScene = new Scene(fightPane, 800, 500);
-		puzzleScene = new Scene(puzzlePane, 800, 500);
-		deathScene = new Scene(deathPane, 800, 500);
+		fightScene = new Scene(fightPane, 1000, 500);
+		puzzleScene = new Scene(puzzlePane, 1000, 500);
+		deathScene = new Scene(deathPane, 1000, 500);
 
 		theStage.setTitle("Galaxy Explorer");
-		theStage.setScene(mainScene);
+		theStage.setScene(mainMenuScene);
 		theStage.show();
 	}
 
