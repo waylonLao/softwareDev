@@ -5,8 +5,8 @@ Make sure you pull before working on your code
 
 -Get inventory working
       
-      -useItem Button
-      -useItem();
+      -useItem Button --- done
+      -useItem(); --- done
       -updateHealth(); -- 11/15 works AF/WL
       -make items stack(have more than one) -- can have multiple of same item (but no stacking yet)
       
@@ -24,7 +24,18 @@ Make sure you pull before working on your code
     
 -Fix Bugs
       
-      -Cannot get back from Hallway 1
-      -Cannot defeat Space Kraken
-      -Need to balance health and attack
+      
+      -Need to be able to equip items
+      -Unable to properly start a new game 
+      -Need ECell feature working
+      -Need quickjump working
+      -Save/Load feature
+      
+      ----------------------------------------------------------------
+      	
+      -Cannot get back from Hallway 1 --- fixed -josh
+      -Cannot defeat Space Kraken --- still can't beat kraken with given equipment
+      
+      -------------------------------------------------------------------
+      -Need to balance health and attack 
       

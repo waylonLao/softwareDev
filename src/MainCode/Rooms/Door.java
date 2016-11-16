@@ -5,6 +5,7 @@ package MainCode.Rooms;
  */
 public class Door {
 	
+	String color;
 	Room connection;
 	String direction;
 	Boolean isLocked;
