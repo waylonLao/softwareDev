@@ -261,38 +261,165 @@ public class MainGUI extends Application {
 
 
 
-	public Door[] room0Doors = {new Door(room1, "north"), new Door(room19, "south", true), new Door(room11, "east"), new Door(room20, "west")};
-	public Door[] room1Doors = {new Door(room2, "north"), new Door(room0, "south"), new Door(room31, "east"), new Door(room25, "west")};
-	public Door[] room2Doors = {new Door(room3, "north"), new Door(room1, "south"), new Door(room31, "east"), new Door(room25, "west")};
-	public Door[] room3Doors = {new Door(room4, "north"), new Door(room2, "south"), new Door(room18, "east"), new Door(null, "west")};
-	public Door[] room4Doors = {new Door(room5, "north"), new Door(room3, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room5Doors = {new Door(room6, "north"), new Door(room4, "south"), new Door(room10, "east"), new Door(null, "west")};
-	public Door[] room6Doors = {new Door(null, "north"), new Door(room5, "south"), new Door(room7, "east"), new Door(null, "west")};
-	public Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room8, "east"), new Door(room7, "west")};
-	public Door[] room8Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room9, "east"), new Door(room7, "west")};
-	public Door[] room9Doors = {new Door(null, "north"), new Door(null, "south"), new Door(null, "east"), new Door(room8, "west")};
-	public Door[] room10Doors = {new Door(null, "north"), new Door(room17, "south"), new Door(null, "east"), new Door(room5, "west")};
-	public Door[] room11Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room12, "east"), new Door(room0, "west")};
-	public Door[] room12Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room13, "east"), new Door(room11, "west")};
-	public Door[] room13Doors = {new Door(room14, "north"), new Door(null, "south"), new Door(null, "east"), new Door(room12, "west")};
-	public Door[] room14Doors = {new Door(room15, "north"), new Door(room13, "south"), new Door(null, "east"), new Door(room31, "west")};
-	public Door[] room15Doors = {new Door(room16, "north"), new Door(room14, "south"), new Door(null, "east"), new Door(room31, "west")};
-	public Door[] room16Doors = {new Door(null, "north"), new Door(room15, "south"), new Door(null, "east"), new Door(room17, "west")};
-	public Door[] room17Doors = {new Door(room10, "north"), new Door(null, "south"), new Door(room16, "east"), new Door(room18, "west")};
-	public Door[] room18Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room17, "east"), new Door(room3, "west")};
-	public Door[] room19Doors = {new Door(room0, "north"), new Door(null, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room20Doors = {new Door(room25, "north"), new Door(null, "south"), new Door(room0, "east"), new Door(room21, "west")};
-	public Door[] room21Doors = {new Door(room25, "north"), new Door(null, "south"), new Door(room20, "east"), new Door(room22, "west")};
-	public Door[] room22Doors = {new Door(room23, "north"), new Door(null, "south"), new Door(room21, "east"), new Door(null, "west")};
-	public Door[] room23Doors = {new Door(room24, "north"), new Door(room22, "south"), new Door(room25, "east"), new Door(null, "west")};
-	public Door[] room24Doors = {new Door(room26, "north"), new Door(room23, "south"), new Door(room25, "east"), new Door(null, "west")};
-	public Door[] room25Doors = {new Door(room2, "northeast"), new Door(room1, "southeast"), new Door(room24, "northwest"), new Door(room23, "southwest")};
-	public Door[] room26Doors = {new Door(room27, "north"), new Door(room24, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room27Doors = {new Door(room28, "north"), new Door(room26, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room28Doors = {new Door(room29, "north"), new Door(room27, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room29Doors = {new Door(room30, "north"), new Door(room28, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room30Doors = {new Door(null, "north"), new Door(room29, "south"), new Door(null, "east"), new Door(null, "west")};
-	public Door[] room31Doors = {new Door(room15, "northeast"), new Door(room14, "southeast"), new Door(room2, "northwest"), new Door(room1, "southwest")};
+	public Door[] room0Doors = {new Door(room1, "north")
+			, new Door(room19, "south", true)
+			, new Door(room11, "east")
+			, new Door(room20, "west")};
+	
+	public Door[] room1Doors = {new Door(room2, "north")
+			, new Door(room0, "south")
+			, new Door(room31, "east")
+			, new Door(room25, "west")};
+	
+	public Door[] room2Doors = {new Door(room3, "north")
+			, new Door(room1, "south")
+			, new Door(room31, "east")
+			, new Door(room25, "west")};
+	
+	public Door[] room3Doors = {new Door(room4, "north")
+			, new Door(room2, "south")
+			, new Door(room18, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room4Doors = {new Door(room5, "north")
+			, new Door(room3, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room5Doors = {new Door(room6, "north")
+			, new Door(room4, "south")
+			, new Door(room10, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room6Doors = {new Door(null, "north")
+			, new Door(room5, "south")
+			, new Door(room7, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room7Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(room8, "east")
+			, new Door(room6, "west")};
+	
+	public Door[] room8Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(room9, "east")
+			, new Door(room7, "west")};
+	
+	public Door[] room9Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(null, "east")
+			, new Door(room8, "west")};
+	
+	public Door[] room10Doors = {new Door(null, "north")
+			, new Door(room17, "south")
+			, new Door(null, "east")
+			, new Door(room5, "west")};
+	
+	public Door[] room11Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(room12, "east")
+			, new Door(room0, "west")};
+	
+	public Door[] room12Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(room13, "east")
+			, new Door(room11, "west")};
+	
+	public Door[] room13Doors = {new Door(room14, "north")
+			, new Door(null, "south")
+			, new Door(null, "east")
+			, new Door(room12, "west")};
+	
+	public Door[] room14Doors = {new Door(room15, "north")
+			, new Door(room13, "south")
+			, new Door(null, "east")
+			, new Door(room31, "west")};
+	
+	public Door[] room15Doors = {new Door(room16, "north")
+			, new Door(room14, "south")
+			, new Door(null, "east")
+			, new Door(room31, "west")};
+	
+	public Door[] room16Doors = {new Door(null, "north")
+			, new Door(room15, "south")
+			, new Door(null, "east")
+			, new Door(room17, "west")};
+	
+	public Door[] room17Doors = {new Door(room10, "north")
+			, new Door(null, "south")
+			, new Door(room16, "east")
+			, new Door(room18, "west")};
+	
+	public Door[] room18Doors = {new Door(null, "north")
+			, new Door(null, "south")
+			, new Door(room17, "east")
+			, new Door(room3, "west")};
+	
+	public Door[] room19Doors = {new Door(room0, "north")
+			, new Door(null, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room20Doors = {new Door(room25, "north")
+			, new Door(null, "south")
+			, new Door(room0, "east")
+			, new Door(room21, "west")};
+	
+	public Door[] room21Doors = {new Door(room25, "north")
+			, new Door(null, "south")
+			, new Door(room20, "east")
+			, new Door(room22, "west")};
+	
+	public Door[] room22Doors = {new Door(room23, "north")
+			, new Door(null, "south")
+			, new Door(room21, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room23Doors = {new Door(room24, "north")
+			, new Door(room22, "south")
+			, new Door(room25, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room24Doors = {new Door(room26, "north")
+			, new Door(room23, "south")
+			, new Door(room25, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room25Doors = {new Door(room2, "northeast")
+			, new Door(room1, "southeast")
+			, new Door(room24, "northwest")
+			, new Door(room23, "southwest")};
+	
+	public Door[] room26Doors = {new Door(room27, "north")
+			, new Door(room24, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room27Doors = {new Door(room28, "north")
+			, new Door(room26, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room28Doors = {new Door(room29, "north")
+			, new Door(room27, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room29Doors = {new Door(room30, "north")
+			, new Door(room28, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room30Doors = {new Door(null, "north")
+			, new Door(room29, "south")
+			, new Door(null, "east")
+			, new Door(null, "west")};
+	
+	public Door[] room31Doors = {new Door(room15, "northeast")
+			, new Door(room14, "southeast")
+			, new Door(room2, "northwest")
+			, new Door(room1, "southwest")};
 
 
 
