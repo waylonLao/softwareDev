@@ -491,7 +491,7 @@ public class MainGUI extends Application {
 	ScrollPane playerInvPane = new ScrollPane();
 
 
-	Player mainPlayer = new Player(500, bareHands, room0);
+	Player mainPlayer = new Player(1000, bareHands, room0);
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
 	Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	//Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
@@ -503,10 +503,10 @@ public class MainGUI extends Application {
 	Text action0 = new Text();
 	Text roomNameText = new Text();
 
-	Label puzzlePaneHeader = new Label();
-	Label monsterPaneHeader = new Label();
-	Label puzzlePanePuzzle = new Label();
-	Label monsterPaneMonster = new Label();
+	Label puzzlePaneHeader = new Label("Puzzle in this room");
+	Label monsterPaneHeader = new Label("Monster in this room");
+	Label puzzlePanePuzzle = new Label("No Puzzle");
+	Label monsterPaneMonster = new Label(mainPlayer.getRoomID().getMonster().getName());
 	
 	
 	Label menuTitle = new Label("Galaxy Explorer");	
@@ -730,6 +730,20 @@ public class MainGUI extends Application {
 
 	}
 
+	private String getRoomPuzzleName()
+	{
+		String result = "";
+		if(mainPlayer.getRoomID().getPuzzle() == null)
+		{
+			puzzlePanePuzzle = new Label("No Puzzle");
+		}
+		else
+		{
+			result = mainPlayer.getRoomID().getPuzzle().getPuzzleName();
+			return result;
+		}
+		return result;
+	}
 
 	private void useItem()
 	{

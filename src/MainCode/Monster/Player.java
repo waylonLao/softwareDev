@@ -29,13 +29,13 @@ public class Player extends Sprite {
 	{ 
 		if(this.getSpriteInv().getItemList().contains(i))
 		{ //need to put an if to differentiate between health kit and concussion grenade
-			if (this.health <= 440) {
+			if (this.health <= 950) {
 				this.health = this.health + 50;
 				this.getSpriteInv().removeItem(i);
 				return "50 Health restored.\n Your current health is " + this.health;
 			} 
 			else {
-				this.health = 500;
+				this.health = 1000;
 				this.getSpriteInv().removeItem(i);
 				return "You are at Max Health.";
 			}
