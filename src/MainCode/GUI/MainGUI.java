@@ -46,6 +46,8 @@ import javafx.scene.text.*;
  */
 public class MainGUI extends Application {
 
+	MainMenuGUI mainMenuGUI = new MainMenuGUI();
+	
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
 	Weapon largeDoor = new Weapon("A Large Door", "It's just a really big door", "Used to fight", 15);
@@ -465,11 +467,12 @@ public class MainGUI extends Application {
 
 	Stage theStage;
 
-	Scene mainScene, fightScene, puzzleScene;
+	Scene mainScene, fightScene, puzzleScene, deathScene;
 
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
 	BorderPane fightPane = new BorderPane();
+	BorderPane deathPane = new BorderPane();
 	GridPane directionalGrid = new GridPane();
 	VBox roomInfoPane = new VBox();
 	GridPane myGrid = new GridPane();
@@ -507,7 +510,8 @@ public class MainGUI extends Application {
 	Text roomItems = new Text();
 	Text playerItems= new Text();
 
-
+	private Button mainMenuBtn = new Button("Return to Main Menu");
+	
 	private Button attackBtn = new Button("Attack");
 	private Button returnBtn = new Button("Return");
 
@@ -540,6 +544,14 @@ public class MainGUI extends Application {
 
 		theStage = primaryStage;
 
+		mainMenuBtn.setOnAction(e -> {
+			try {
+				mainMenuGUI.start(primaryStage);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		startFightBtn.setOnAction(e -> setFightScene());
 		returnBtn.setOnAction(e -> setMainScene());
 		attackBtn.setOnAction(e -> doDamage());
@@ -563,7 +575,7 @@ public class MainGUI extends Application {
 
 
 		textScroller.setAlignment(Pos.CENTER);
-		textScroller.getChildren().addAll(action2, action1, action0);
+		textScroller.getChildren().addAll(action0, action1);
 
 
 
@@ -592,7 +604,8 @@ public class MainGUI extends Application {
 		fightGrid.add(attackBtn, 1, 3);
 		fightPane.setCenter(fightGrid);
 
-
+		//Death Interface
+		
 
 
 
@@ -648,6 +661,19 @@ public class MainGUI extends Application {
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(mainScene);
 		theStage.show();
+	}
+
+
+
+	private Object setMainMenu() {
+		// TODO Auto-generated method stub
+		try {
+			mainMenuGUI.start(theStage);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return action0;
 	}
 
 
@@ -714,6 +740,11 @@ public class MainGUI extends Application {
 		puzzlePane.setBottom(textScroller);
 		theStage.setScene(puzzleScene);
 	}
+	
+	private void setDeathScene()
+	{
+		theStage.setScene(deathScene);
+	}
 
 	private void cycleText(String s){
 		action0.setText(s);
@@ -733,8 +764,16 @@ public class MainGUI extends Application {
 	}
 
 	private void recieveDamage(){
-		cycleText(mainPlayer.takeDamage(mainMonster));
-		updateText();
+		
+		if(mainPlayer.getHealth() <= 0)
+		{
+			
+		}
+		else
+		{
+			cycleText(mainPlayer.takeDamage(mainMonster));
+			updateText();
+		}
 	}
 
 
