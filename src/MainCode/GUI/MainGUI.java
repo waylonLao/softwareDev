@@ -556,6 +556,7 @@ public class MainGUI extends Application {
 
 		theStage = primaryStage;
 
+		mainMenuBtn.setOnAction(e -> primaryStage.setScene(mainMenuScene));
 		saveGame.setOnAction(e -> {
 			try {
 				game.saveGame(mainPlayer, mainPlayer.getRoomID(), mainPlayer.getSpriteInv());
