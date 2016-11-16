@@ -513,7 +513,7 @@ public class MainGUI extends Application {
 	Player mainPlayer = new Player(500, bareHands, rooms.get(0), "Player");
 
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
-	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
+	Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	//Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	Button startFightBtn = new Button("Start Fight");
 
@@ -522,6 +522,7 @@ public class MainGUI extends Application {
 	Text action1 = new Text();
 	Text action0 = new Text();
 	Text roomNameText = new Text();
+
 
 	
 	
@@ -538,13 +539,21 @@ public class MainGUI extends Application {
 	Label monsterName = new Label();
 
 
+
+	
+	
+
 	Label menuTitle = new Label("Galaxy Explorer");	
 	Label deathLabel = new Label("You have died...");
 
 	Label playerName = new Label(mainPlayer.getName());
+
 	Label monsterHealth = new Label();
 	Label playerHealth = new Label();
-	Label puzzleName = new Label(mainPuzzle.getPuzzleName());
+
+
+	Label puzzleName = new Label();
+
 
 	Text roomItems = new Text();
 	Text playerItems= new Text();
@@ -569,7 +578,7 @@ public class MainGUI extends Application {
 
 	//INVENTORY BUTTONS
 	private Button takeItemBtn = new Button("Take Item");
-	private Button useItemBtn = new Button("Use Item");
+	private Button useItemBtn = new Button("Use Healthkit");
 
 	//MainMenu Buttons
 	private Button newGame = new Button("New Game");
@@ -731,11 +740,14 @@ public class MainGUI extends Application {
 		//PUZZLE INTERFACE
 		VBox puzzleBox = new VBox();
 		puzzleBox.setAlignment(Pos.CENTER);
+
 		
 		puzzlePane.setCenter(puzzleBox);
 		puzzlePane.setTop(puzzleName);
 		
-		Text puzzleDescription = new Text(mainPuzzle.getPuzzleDescription());
+
+		Text puzzleDescription = new Text();
+
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
 		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
@@ -763,8 +775,7 @@ public class MainGUI extends Application {
         theStage.show();
     }
 
-    
-    
+
 
 
 
@@ -938,6 +949,7 @@ public class MainGUI extends Application {
 	}
 	
 
+
 	
 	public void startNewGame(String s){
 		rooms = rf.newRooms();
@@ -992,12 +1004,9 @@ public class MainGUI extends Application {
 		};
 		
 		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
-		
-		
-		cycleText(mainPlayer.getRoomID().getRoomDescription());
-		updateText();
-		setMainScene();
-	}
+}
+
+
 	
 	public void saveGame(){
 		try
