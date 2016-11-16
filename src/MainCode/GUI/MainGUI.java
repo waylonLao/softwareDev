@@ -689,7 +689,8 @@ public class MainGUI extends Application {
 
 
 
-
+		mainPane.setAlignment(saveGame, Pos.TOP_CENTER);
+		mainPane.setTop(saveGame);
 		mainPane.setCenter(textScroller);
 		mainPane.setRight(roomInfoPane);
 		mainPane.setBottom(mainInvPane);
