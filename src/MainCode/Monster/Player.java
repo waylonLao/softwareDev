@@ -101,7 +101,6 @@ public class Player extends Sprite {
 		
 		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();
 
-
 	}
 
 	public String takeDamage(Monster target){
