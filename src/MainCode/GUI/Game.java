@@ -41,7 +41,7 @@ public class Game
 	
 	public void loadGame() throws FileNotFoundException, IOException{
 		
-		new ObjectInputStream(new FileInputStream("peoples.dat"));
+		input = new ObjectInputStream(new FileInputStream("peoples.dat"));
 	}
 	
 	

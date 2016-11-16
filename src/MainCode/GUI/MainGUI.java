@@ -693,10 +693,6 @@ public class MainGUI extends Application {
 		mainInvPane.setAlignment(Pos.CENTER);
 		mainInvPane.setMaxHeight(300);
 
-
-
-
-
 		mainPane.setCenter(textScroller);
 		mainPane.setRight(roomInfoPane);
 		mainPane.setBottom(mainInvPane);
