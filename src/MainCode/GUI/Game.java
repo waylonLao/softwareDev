@@ -12,11 +12,16 @@
 
 package MainCode.GUI;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+import MainCode.Items.Inventory;
+import MainCode.Monster.Player;
+import MainCode.Rooms.Room;
 
 
 //Might move this into MainMenu. Maybe...TBD
@@ -26,15 +31,17 @@ public class Game
 	ObjectOutputStream output;
 	ObjectInputStream input;
 	
-	public void saveGame() throws FileNotFoundException, IOException{
+	public void saveGame(Player player, Room room, Inventory inv) throws FileNotFoundException, IOException{
 		
 		output = new ObjectOutputStream(new FileOutputStream("gameSave.dat"));
-		
+		output.writeObject(player);
+		output.writeObject(room);
+		output.writeObject(inv);
 	}
 	
-	public void loadGame(){
+	public void loadGame() throws FileNotFoundException, IOException{
 		
-		
+		new ObjectInputStream(new FileInputStream("peoples.dat"));
 	}
 	
 	
