@@ -7,8 +7,8 @@ Make sure you pull before working on your code
       
       -useItem Button
       -useItem();
-      -updateHealth();
-      -make items stack(have more than one)
+      -updateHealth(); -- 11/15 works AF/WL
+      -make items stack(have more than one) -- can have multiple of same item (but no stacking yet)
       
 -Get Puzzle pane working
       

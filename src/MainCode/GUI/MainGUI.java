@@ -425,14 +425,13 @@ public class MainGUI extends Application {
 		startPuzzleBtn.setOnAction(e -> setPuzzleScene());
 
 		takeItemBtn.setOnAction(e -> takeItem());
-		useItemBtn.setOnAction(e -> mainPlayer.useItem(healthKit));
-
+		useItemBtn.setOnAction(e -> useItem());
+		
+		
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
-
-
 
 
 
@@ -536,19 +535,21 @@ public class MainGUI extends Application {
 		}	
 		else 
 			cycleText("No Item");
-		
 
 	}
 
+	private void useItem()
+	{
+
+			cycleText(mainPlayer.useItem(healthKit));
+			updateText();
+		
+	}
+	
 
 	private void tryPuzzle(String s) {
 		cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
 	}
-
-
-
-
-
 
 
 	private void moveNorth() {
@@ -590,11 +591,6 @@ public class MainGUI extends Application {
 		action0.setText(s);
 
 	}
-
-
-
-
-
 
 	private void doDamage() {
 		cycleText(mainPlayer.doDamage(mainMonster));
