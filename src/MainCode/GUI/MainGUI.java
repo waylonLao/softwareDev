@@ -815,6 +815,11 @@ public class MainGUI extends Application {
 		}
 	}
 
+	public void saveGame()
+	{
+		
+	}
+	
 
 	private void updateHealth(){
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
