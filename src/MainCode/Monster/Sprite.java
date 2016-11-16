@@ -10,7 +10,7 @@ import MainCode.Items.Weapon;
 /**
 * @author nklemenc
 */
-public class Sprite{
+public class Sprite implements Serializable{
 	
 	protected int health;
 	protected int maxHealth;

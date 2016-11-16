@@ -1,13 +1,14 @@
 package MainCode.Items;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 /**
  * @author Neal Klemenc
  */
-public class Inventory {
+public class Inventory implements Serializable{
     
     private ArrayList<Item> itemList = new ArrayList<Item>();
 
