@@ -46,7 +46,6 @@ import javafx.scene.text.*;
  */
 public class MainGUI extends Application {
 
-	MainMenuGUI mainMenuGUI = new MainMenuGUI();
 	
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
@@ -535,7 +534,7 @@ public class MainGUI extends Application {
 	ListView<Item> roomItemList = new ListView<>(obRoomInv);
 	ListView<Item> playerItemList = new ListView<>(obPlayerInv);
 
-
+	
 
 
 	@Override
@@ -543,15 +542,7 @@ public class MainGUI extends Application {
 
 
 		theStage = primaryStage;
-
-		mainMenuBtn.setOnAction(e -> {
-			try {
-				mainMenuGUI.start(primaryStage);
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		});
+		
 		startFightBtn.setOnAction(e -> setFightScene());
 		returnBtn.setOnAction(e -> setMainScene());
 		attackBtn.setOnAction(e -> doDamage());
@@ -662,21 +653,6 @@ public class MainGUI extends Application {
 		theStage.setScene(mainScene);
 		theStage.show();
 	}
-
-
-
-	private Object setMainMenu() {
-		// TODO Auto-generated method stub
-		try {
-			mainMenuGUI.start(theStage);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return action0;
-	}
-
-
 
 	private void takeItem()
 	{ 
