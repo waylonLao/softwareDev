@@ -50,6 +50,7 @@ import javafx.scene.text.*;
 public class MainGUI extends Application {
 
 	Game game = new Game();
+	MainGUI mg;
 
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);

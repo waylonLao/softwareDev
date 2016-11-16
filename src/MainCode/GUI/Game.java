@@ -34,6 +34,8 @@ public class Game
 	ObjectOutputStream output;
 	ObjectInputStream input;
 	
+	MainGUI mg;
+	
 	Player player;
 	private HealthPack healthKit = new HealthPack("Health Kit", "Some basic first-aid.", "Used to heal wounds.");
 	private Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
