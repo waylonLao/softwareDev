@@ -19,7 +19,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import MainCode.Items.HealthPack;
 import MainCode.Items.Inventory;
+import MainCode.Items.Weapon;
+import MainCode.Monster.Monster;
 import MainCode.Monster.Player;
 import MainCode.Rooms.Room;
 
@@ -32,7 +35,13 @@ public class Game
 	ObjectInputStream input;
 	
 	Player player;
-	Room room;
+	private HealthPack healthKit = new HealthPack("Health Kit", "Some basic first-aid.", "Used to heal wounds.");
+	private Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
+	private Monster rogueCleaningUnit = new Monster(30, suctionHose, "Rogue Cleaning Unit", "A pissed off vacuum cleaner, easily killed.", healthKit);
+	Room room = new Room(0,"Cryo Room","The room has 4 doors and each door has a name plate above it. "
+			+ "To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the "
+			+ "south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\"."
+			, rogueCleaningUnit, null, false, true, null);
 	Inventory inventory;
 	
 	public void saveGame(Player player, Room room, Inventory inv) throws FileNotFoundException, IOException{
