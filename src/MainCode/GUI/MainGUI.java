@@ -50,7 +50,7 @@ import javafx.scene.text.*;
 public class MainGUI extends Application {
 
 	Game game = new Game();
-	
+
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
 	Weapon largeDoor = new Weapon("A Large Door", "It's just a really big door", "Used to fight", 15);
@@ -270,157 +270,157 @@ public class MainGUI extends Application {
 			, new Door(room19, "south", true)
 			, new Door(room11, "east")
 			, new Door(room20, "west")};
-	
+
 	public Door[] room1Doors = {new Door(room2, "north")
 			, new Door(room0, "south")
 			, new Door(room31, "east")
 			, new Door(room25, "west")};
-	
+
 	public Door[] room2Doors = {new Door(room3, "north")
 			, new Door(room1, "south")
 			, new Door(room31, "east")
 			, new Door(room25, "west")};
-	
+
 	public Door[] room3Doors = {new Door(room4, "north")
 			, new Door(room2, "south")
 			, new Door(room18, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room4Doors = {new Door(room5, "north")
 			, new Door(room3, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room5Doors = {new Door(room6, "north")
 			, new Door(room4, "south")
 			, new Door(room10, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room6Doors = {new Door(null, "north")
 			, new Door(room5, "south")
 			, new Door(room7, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room7Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(room8, "east")
 			, new Door(room6, "west")};
-	
+
 	public Door[] room8Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(room9, "east")
 			, new Door(room7, "west")};
-	
+
 	public Door[] room9Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(null, "east")
 			, new Door(room8, "west")};
-	
+
 	public Door[] room10Doors = {new Door(null, "north")
 			, new Door(room17, "south")
 			, new Door(null, "east")
 			, new Door(room5, "west")};
-	
+
 	public Door[] room11Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(room12, "east")
 			, new Door(room0, "west")};
-	
+
 	public Door[] room12Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(room13, "east")
 			, new Door(room11, "west")};
-	
+
 	public Door[] room13Doors = {new Door(room14, "north")
 			, new Door(null, "south")
 			, new Door(null, "east")
 			, new Door(room12, "west")};
-	
+
 	public Door[] room14Doors = {new Door(room15, "north")
 			, new Door(room13, "south")
 			, new Door(null, "east")
 			, new Door(room31, "west")};
-	
+
 	public Door[] room15Doors = {new Door(room16, "north")
 			, new Door(room14, "south")
 			, new Door(null, "east")
 			, new Door(room31, "west")};
-	
+
 	public Door[] room16Doors = {new Door(null, "north")
 			, new Door(room15, "south")
 			, new Door(null, "east")
 			, new Door(room17, "west")};
-	
+
 	public Door[] room17Doors = {new Door(room10, "north")
 			, new Door(null, "south")
 			, new Door(room16, "east")
 			, new Door(room18, "west")};
-	
+
 	public Door[] room18Doors = {new Door(null, "north")
 			, new Door(null, "south")
 			, new Door(room17, "east")
 			, new Door(room3, "west")};
-	
+
 	public Door[] room19Doors = {new Door(room0, "north")
 			, new Door(null, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room20Doors = {new Door(room25, "north")
 			, new Door(null, "south")
 			, new Door(room0, "east")
 			, new Door(room21, "west")};
-	
+
 	public Door[] room21Doors = {new Door(room25, "north")
 			, new Door(null, "south")
 			, new Door(room20, "east")
 			, new Door(room22, "west")};
-	
+
 	public Door[] room22Doors = {new Door(room23, "north")
 			, new Door(null, "south")
 			, new Door(room21, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room23Doors = {new Door(room24, "north")
 			, new Door(room22, "south")
 			, new Door(room25, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room24Doors = {new Door(room26, "north")
 			, new Door(room23, "south")
 			, new Door(room25, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room25Doors = {new Door(room2, "northeast")
 			, new Door(room1, "southeast")
 			, new Door(room24, "northwest")
 			, new Door(room23, "southwest")};
-	
+
 	public Door[] room26Doors = {new Door(room27, "north")
 			, new Door(room24, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room27Doors = {new Door(room28, "north")
 			, new Door(room26, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room28Doors = {new Door(room29, "north")
 			, new Door(room27, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room29Doors = {new Door(room30, "north")
 			, new Door(room28, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room30Doors = {new Door(null, "north")
 			, new Door(room29, "south")
 			, new Door(null, "east")
 			, new Door(null, "west")};
-	
+
 	public Door[] room31Doors = {new Door(room15, "northeast")
 			, new Door(room14, "southeast")
 			, new Door(room2, "northwest")
@@ -472,6 +472,7 @@ public class MainGUI extends Application {
 
 	Scene mainScene, fightScene, puzzleScene, deathScene, mainMenuScene;
 
+	BorderPane mainMenuPane = new BorderPane();
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
 	BorderPane fightPane = new BorderPane();
@@ -481,9 +482,9 @@ public class MainGUI extends Application {
 	GridPane myGrid = new GridPane();
 	GridPane fightGrid = new GridPane();
 	GridPane mainInvPane = new GridPane();
-	
+
 	GridPane mainMenuGrid = new GridPane();
-	
+
 	GridPane deathGrid = new GridPane();
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
@@ -506,7 +507,7 @@ public class MainGUI extends Application {
 	Text puzzlePaneHeader = new Text("Puzzle in this room:");
 	Text puzzlePanePuzzle = new Text(mainPuzzle.getPuzzleName());
 
-
+	Label menuTitle = new Label("Galaxy Explorer");	
 	Label deathLabel = new Label("You have died...");
 	Label monsterName = new Label(mainMonster.getName());
 	Label playerName = new Label(mainPlayer.getName());
@@ -540,15 +541,15 @@ public class MainGUI extends Application {
 	private Button loadGame = new Button("Load Game");
 	private Button help = new Button("Help");
 	private Button quit= new Button("Quit");
-	
-	
+
+
 	//INVENTORY
 	ObservableList<Item> obRoomInv;
 	ObservableList<Item> obPlayerInv;
 	ListView<Item> roomItemList = new ListView<>(obRoomInv);
 	ListView<Item> playerItemList = new ListView<>(obPlayerInv);
 
-	
+
 	@Override
 	public void start(Stage primaryStage){
 
@@ -579,8 +580,8 @@ public class MainGUI extends Application {
 
 		takeItemBtn.setOnAction(e -> takeItem());
 		useItemBtn.setOnAction(e -> useItem());
-		
-		
+
+
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
@@ -592,22 +593,27 @@ public class MainGUI extends Application {
 		textScroller.getChildren().addAll(action0, action1);
 
 		//Align buttons
-				newGame.setMaxWidth(Double.MAX_VALUE);
-				loadGame.setMaxWidth(Double.MAX_VALUE);
-				help.setMaxWidth(Double.MAX_VALUE);
-				quit.setMaxWidth(Double.MAX_VALUE);
-				
-				//Add buttons to vertical box
-				VBox vB1 = new VBox();
-				vB1.getChildren().addAll(newGame, loadGame, help, quit);
-				vB1.setSpacing(70);
-				vB1.setPadding(new Insets(100, 100, 10, 100));
-				
-				newGame.setOnAction(e -> primaryStage.setScene(mainScene));
-				/*loadGame.setOnAction(e -> );
+		newGame.setMaxWidth(Double.MAX_VALUE);
+		loadGame.setMaxWidth(Double.MAX_VALUE);
+		help.setMaxWidth(Double.MAX_VALUE);
+		quit.setMaxWidth(Double.MAX_VALUE);
+
+		menuTitle.setFont(Font.font("Arial", 40));
+		menuTitle.setPadding(new Insets(20, 0, 0, 0));
+		menuTitle.setMaxWidth(Double.MAX_VALUE);
+		menuTitle.setAlignment(Pos.CENTER);
+		
+		//Add buttons to vertical box
+		VBox vB1 = new VBox();
+		vB1.getChildren().addAll(newGame, loadGame, help, quit);
+		vB1.setSpacing(70);
+		vB1.setPadding(new Insets(100, 100, 10, 100));
+
+		newGame.setOnAction(e -> primaryStage.setScene(mainScene));
+		/*loadGame.setOnAction(e -> );
 				help.setOnAction(e -> );*/
-				quit.setOnAction(e -> primaryStage.close());
-				
+		quit.setOnAction(e -> primaryStage.close());
+
 
 		//MOVEMENT
 		directionalGrid.setAlignment(Pos.CENTER);
@@ -620,12 +626,12 @@ public class MainGUI extends Application {
 		roomInfoPane.setAlignment(Pos.CENTER);
 		roomInfoPane.setPadding(new Insets(10,10,10,10));
 		roomInfoPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
-		
+
 		//MainMenu 
 		mainMenuGrid.setAlignment(Pos.TOP_CENTER);
 		mainMenuGrid.add(vB1, 0, 0);
-		
-		
+
+
 
 		//FIGHT INTERFACE
 		fightGrid.setAlignment(Pos.CENTER);
@@ -662,7 +668,8 @@ public class MainGUI extends Application {
 		puzzlePane.setCenter(puzzleBox);
 		puzzlePane.setTop(puzzleName);
 
-
+		mainMenuPane.setCenter(vB1);
+		mainMenuPane.setTop(menuTitle);
 
 		//ItemInterface
 		mainPlayer.takeItem(healthKit);
@@ -695,7 +702,7 @@ public class MainGUI extends Application {
 		mainPane.setBottom(mainInvPane);
 		mainPane.setLeft(directionalGrid);
 
-		mainMenuScene = new Scene(mainMenuGrid, 300, 500);
+		mainMenuScene = new Scene(mainMenuPane, 510, 600);
 		mainScene = new Scene(mainPane, 1000, 500);
 		fightScene = new Scene(fightPane, 1000, 500);
 		puzzleScene = new Scene(puzzlePane, 1000, 500);
@@ -718,16 +725,16 @@ public class MainGUI extends Application {
 			cycleText("No Item");
 
 	}
-	
+
 
 	private void useItem()
 	{
 
-			cycleText(mainPlayer.useItem(healthKit));
-			updateText();
-		
+		cycleText(mainPlayer.useItem(healthKit));
+		updateText();
+
 	}
-	
+
 
 	private void tryPuzzle(String s) {
 		cycleText((mainPlayer.tryPuzzle(s, mainPuzzle)));
@@ -768,7 +775,7 @@ public class MainGUI extends Application {
 		puzzlePane.setBottom(textScroller);
 		theStage.setScene(puzzleScene);
 	}
-	
+
 	private void setDeathScene()
 	{
 		theStage.setScene(deathScene);
@@ -792,7 +799,7 @@ public class MainGUI extends Application {
 	}
 
 	private void recieveDamage(){
-		
+
 		if(mainPlayer.getHealth() <= 0)
 		{
 			setDeathScene();
