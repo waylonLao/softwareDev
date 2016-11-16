@@ -531,7 +531,7 @@ public class MainGUI extends Application {
 	Label puzzlePaneHeader = new Label("Puzzle in this room");
 	Label monsterPaneHeader = new Label("Monster in this room");
 	Label puzzlePanePuzzle = new Label("No Puzzle");
-	Label monsterPaneMonster = new Label(mainPlayer.getRoomID().getMonster().getName());
+	Label monsterPaneMonster = new Label(getRoomPuzzleName());
 
 
 	Label monsterName = new Label();
@@ -744,7 +744,7 @@ public class MainGUI extends Application {
 		puzzlePane.setTop(puzzleName);
 		
 
-		Text puzzleDescription = new Text();
+		Text puzzleDescription = new Text(getRoomDescription());
 
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
@@ -813,6 +813,20 @@ public class MainGUI extends Application {
 		else
 		{
 			result = mainPlayer.getRoomID().getPuzzle().getPuzzleName();
+			return result;
+		}
+		return result;
+	}
+	private String getRoomDescription()
+	{
+		String result = "";
+		if(mainPlayer.getRoomID().getPuzzle() == null)
+		{
+			result = "No Puzzle";
+		}
+		else
+		{
+			result = mainPlayer.getRoomID().getPuzzle().getPuzzleDescription();
 			return result;
 		}
 		return result;
