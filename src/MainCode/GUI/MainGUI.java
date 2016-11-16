@@ -481,7 +481,9 @@ public class MainGUI extends Application {
 	GridPane myGrid = new GridPane();
 	GridPane fightGrid = new GridPane();
 	GridPane mainInvPane = new GridPane();
+	
 	GridPane mainMenuGrid = new GridPane();
+	
 	GridPane deathGrid = new GridPane();
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
@@ -601,7 +603,7 @@ public class MainGUI extends Application {
 				vB1.setSpacing(70);
 				vB1.setPadding(new Insets(100, 100, 10, 100));
 				
-				newGame.setOnAction(e -> setMainScene());
+				newGame.setOnAction(e -> primaryStage.setScene(mainScene));
 				/*loadGame.setOnAction(e -> );
 				help.setOnAction(e -> );*/
 				quit.setOnAction(e -> primaryStage.close());
