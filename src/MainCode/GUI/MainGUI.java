@@ -493,7 +493,7 @@ public class MainGUI extends Application {
 
 	Player mainPlayer = new Player(500, bareHands, room0);
 	Monster mainMonster = mainPlayer.getRoomID().getMonster();
-	Puzzle mainPuzzle = new Puzzle("Test Puzzle", "xyzzy", "The is the test Puzzle. The solution is 'xyzzy'", null);
+	Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	//Puzzle mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 	Button startFightBtn = new Button("Start Fight");
 
@@ -503,19 +503,19 @@ public class MainGUI extends Application {
 	Text action0 = new Text();
 	Text roomNameText = new Text();
 
-
-	Text monsterPaneHeader = new Text("Monster in this room:");
-	Text monsterPaneMonster = new Text(mainMonster.getName());
-	Text puzzlePaneHeader = new Text("Puzzle in this room:");
-	Text puzzlePanePuzzle = new Text(mainPuzzle.getPuzzleName());
-
+	Label puzzlePaneHeader = new Label();
+	Label monsterPaneHeader = new Label();
+	Label puzzlePanePuzzle = new Label();
+	Label monsterPaneMonster = new Label();
+	
+	
 	Label menuTitle = new Label("Galaxy Explorer");	
 	Label deathLabel = new Label("You have died...");
 	Label monsterName = new Label(mainMonster.getName());
 	Label playerName = new Label(mainPlayer.getName());
 	Label monsterHealth = new Label(String.valueOf(mainMonster.getHealth()) + "/" + String.valueOf(mainMonster.getMaxHealth()));
 	Label playerHealth = new Label(String.valueOf(mainPlayer.getHealth()) + "/" + String.valueOf(mainPlayer.getMaxHealth()));
-	Label puzzleName = new Label(mainPuzzle.getPuzzleName());
+	Label puzzleName = new Label();
 
 	Text roomItems = new Text();
 	Text playerItems= new Text();
@@ -536,7 +536,7 @@ public class MainGUI extends Application {
 
 	//INVENTORY BUTTONS
 	private Button takeItemBtn = new Button("Take Item");
-	private Button useItemBtn = new Button("Use Item");
+	private Button useItemBtn = new Button("Use Healthkit");
 
 	//MainMenu Buttons
 	private Button newGame = new Button("New Game");
@@ -663,7 +663,7 @@ public class MainGUI extends Application {
 		//PUZZLE INTERFACE
 		VBox puzzleBox = new VBox();
 		puzzleBox.setAlignment(Pos.CENTER);
-		Text puzzleDescription = new Text(mainPuzzle.getPuzzleDescription());
+		Text puzzleDescription = new Text();
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
 		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
@@ -672,6 +672,7 @@ public class MainGUI extends Application {
 		puzzlePane.setCenter(puzzleBox);
 		puzzlePane.setTop(puzzleName);
 
+		//MainMenu pane
 		mainMenuPane.setCenter(vB1);
 		mainMenuPane.setTop(menuTitle);
 
@@ -873,6 +874,8 @@ public class MainGUI extends Application {
 	public Game newGame()
 	{
 		Game game = new Game();
+		mainPlayer.setRoomID(room0);
+		mainPane.setCenter(textScroller);
 		theStage.setScene(mainScene);
 		return game;
 		
