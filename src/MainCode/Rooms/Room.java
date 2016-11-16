@@ -49,6 +49,7 @@ public class Room{
 		}
 		boolean quickJumpCapable = qj;
 		boolean powered = p;
+		this.puzzle = puzzle;
 	}
 	/**
 	 * @return the roomID
