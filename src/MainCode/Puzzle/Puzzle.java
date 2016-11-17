@@ -1,11 +1,13 @@
 package MainCode.Puzzle;
 
+import java.io.Serializable;
+
 import MainCode.Items.Item;
 
 /**
  * @author Neal Klemenc
  */
-public class Puzzle {
+public class Puzzle implements Serializable{
 	
 	private String puzzleName;
 	private String puzzleSolution;
