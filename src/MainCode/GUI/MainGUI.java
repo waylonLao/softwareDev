@@ -759,14 +759,14 @@ public class MainGUI extends Application {
 
 
 
-		mainScene = new Scene(mainPane, 800, 500);
-		fightScene = new Scene(fightPane, 800, 500);
-		puzzleScene = new Scene(puzzlePane, 800, 500);
-		menuScene = new Scene(menuPane, 800,500);
-		deathScene = new Scene(deathPane, 800,500);
+		mainScene = new Scene(mainPane, 800, 600);
+		fightScene = new Scene(fightPane, 800, 600);
+		puzzleScene = new Scene(puzzlePane, 800, 600);
+		menuScene = new Scene(menuPane, 510,600);
+		deathScene = new Scene(deathPane, 800,600);
 
-		newGameScene = new Scene(newGamePane, 800, 500);
-		loadGameScene = new Scene(loadGamePane, 800, 500);
+		newGameScene = new Scene(newGamePane, 800, 600);
+		loadGameScene = new Scene(loadGamePane, 800, 600);
 
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(menuScene);
