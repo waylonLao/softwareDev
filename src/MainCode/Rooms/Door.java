@@ -18,10 +18,11 @@ public class Door implements Serializable{
 		isLocked = false;
 	}
 	
-	public Door(Room r, String d, Boolean l){
+	public Door(Room r, String d, Boolean l, String color){
 		connection = r;
 		direction = d;
 		isLocked = l;
+		this.color = color;
 	}
 
 	/**
@@ -66,7 +67,13 @@ public class Door implements Serializable{
 		this.isLocked = isLocked;
 	}
 	
-	
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 	
 	
 

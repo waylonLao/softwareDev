@@ -8,7 +8,13 @@ import MainCode.Rooms.Door;
 public class Key extends Item {
 	
 	private Door keyTo;
+	private String color;
 
+	public Key(String color)
+	{
+		this.color = color;
+	}
+	
 	public Key(String name, String description, String use, Door k) {
 		super(name, description, use);
 		keyTo = k;
