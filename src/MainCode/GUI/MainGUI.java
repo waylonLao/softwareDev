@@ -634,23 +634,13 @@ public class MainGUI extends Application {
 
 		useItemBtn.setOnAction(e -> useItem());
 
-
-
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
 
-
-
 		textScroller.setAlignment(Pos.CENTER);
 		textScroller.getChildren().addAll(action0, action1);
-
-
-
-
-
-
 
 		//MAIN MENU
 		menuTitle.setFont(Font.font("Arial", 40));
@@ -672,8 +662,9 @@ public class MainGUI extends Application {
 
 
 		//NEW GAME INTERFACE
-		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner);
-		newGameNameScanner.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
+		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner, submitNewNameBtn);
+		submitNewNameBtn.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
+
 
 		//LOAD GAME INTERFACE
 		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner);
