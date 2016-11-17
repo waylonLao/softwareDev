@@ -682,11 +682,10 @@ public class MainGUI extends Application {
 		roomInfoPane.setPadding(new Insets(10,10,10,10));
 		roomInfoPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
 
-
-		//FIGHT INTERFACE
-		fightGrid.setAlignment(Pos.CENTER);
-
-
+		//Inventory Interface
+		mainInvPane.setAlignment(Pos.CENTER);
+		mainInvPane.add(roomInvPane, 1, 0);
+		mainInvPane.add(playerInvPane, 2, 0);
 
 
 		//newGame.setOnAction(e -> primaryStage.setScene(mainScene));
