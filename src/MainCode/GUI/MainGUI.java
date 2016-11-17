@@ -763,9 +763,6 @@ public class MainGUI extends Application {
 	}
 
 
-
-
-
 	
 
 
@@ -1014,10 +1011,11 @@ public class MainGUI extends Application {
 				put(rooms.get(29), doors.get(29));
 				put(rooms.get(30), doors.get(30));
 				put(rooms.get(31), doors.get(31));
-				theStage.setScene(mainScene);
+				
 			}
 		};
 
+		theStage.setScene(mainScene);
 		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
 	}
 
@@ -1133,7 +1131,8 @@ public class MainGUI extends Application {
 
 		cycleText(mainPlayer.getRoomID().getRoomDescription());
 		updateText();
-		setMainScene();
+		theStage.setScene(mainScene);
+		
 
 	}
 
