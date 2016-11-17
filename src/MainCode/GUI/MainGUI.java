@@ -966,7 +966,18 @@ public class MainGUI extends Application {
 		rooms.get(30).setMonster(littleGreenMan);
 		rooms.get(31).setMonster(cyborgPirate);
 		
+		rooms.get(2).setPuzzle(computerSystemPuzzle);
 		rooms.get(6).setPuzzle(eCellPuzzle);
+		rooms.get(9).setPuzzle(magicSquarePuzzle);
+		rooms.get(10).setPuzzle(eCellPuzzle);
+		rooms.get(12).setPuzzle(eCellPuzzle);
+		rooms.get(15).setPuzzle(brothersPuzzle);
+		rooms.get(18).setPuzzle(wolvesPuzzle);
+		rooms.get(20).setPuzzle(eCellPuzzle);
+		rooms.get(22).setPuzzle(communicationPuzzle);
+		rooms.get(25).setPuzzle(travelPuzzle);
+		rooms.get(27).setPuzzle(headPuzzle);
+		rooms.get(31).setPuzzle(towelPuzzle);
 
 		
 		
