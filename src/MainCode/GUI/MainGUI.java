@@ -556,6 +556,7 @@ public class MainGUI extends Application {
 	Text roomItems = new Text();
 	Text playerItems= new Text();
 
+	private Button equipItemBtn = new Button("Equip Strongest");
 	private Button mainMenuBtn = new Button("Return to Main Menu");
 	private Button saveGame = new Button("Save Game");
 	private Button attackBtn = new Button("Attack");
@@ -601,7 +602,7 @@ public class MainGUI extends Application {
 
 
 
-
+		equipItemBtn.setOnAction(e -> equipItem());
 		mainMenuBtn.setOnAction(e -> primaryStage.setScene(menuScene));
 		saveGame.setOnAction(e -> {
 			try {
@@ -688,6 +689,12 @@ public class MainGUI extends Application {
 		mainInvPane.add(playerInvPane, 2, 0);
 		mainInvPane.add(takeItemBtn, 1, 1);
 		mainInvPane.add(useItemBtn, 2, 1);
+		
+		
+		VBox inventoryVBox = new VBox();
+		inventoryVBox.setPadding(new Insets(10,10,10,10));
+		inventoryVBox.getChildren().addAll(equipItemBtn);
+		mainInvPane.add(inventoryVBox, 3, 0);
 
 
 		//newGame.setOnAction(e -> primaryStage.setScene(mainScene));
@@ -723,14 +730,9 @@ public class MainGUI extends Application {
 		//PUZZLE INTERFACE
 		VBox puzzleBox = new VBox();
 		puzzleBox.setAlignment(Pos.CENTER);
-
-
 		puzzlePane.setCenter(puzzleBox);
 		puzzlePane.setTop(puzzleName);
-
-
-		Text puzzleDescription = new Text(getRoomDescription());
-
+		Text puzzleDescription = new Text(getRoomPuzzleDescription());
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
 		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
@@ -758,6 +760,27 @@ public class MainGUI extends Application {
 
 
 	
+
+
+	private void equipItem() {
+		if(mainPlayer.getSpriteInv().getItemList().contains(plasmaInducer))
+		{
+			mainPlayer.setWeapon(plasmaInducer);
+			mainPlayer.getSpriteInv().getItemList().remove(plasmaInducer);
+		}
+		else if(mainPlayer.getSpriteInv().getItemList().contains(disintegratorPistol))
+		{
+			mainPlayer.setWeapon(disintegratorPistol);
+			mainPlayer.getSpriteInv().getItemList().remove(disintegratorPistol);
+		}
+		else
+		{
+			mainPlayer.setWeapon(bareHands);
+		}
+	}
+
+
+
 
 
 	private void setNewGameScene(){
@@ -797,7 +820,7 @@ public class MainGUI extends Application {
 		}
 		return result;
 	}
-	private String getRoomDescription()
+	private String getRoomPuzzleDescription()
 	{
 		String result = "";
 		if(mainPlayer.getRoomID().getPuzzle() == null)

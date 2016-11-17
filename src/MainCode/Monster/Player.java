@@ -70,7 +70,7 @@ public class Player extends Sprite implements Serializable{
 		return d.getConnection().getRoomName() + "\n\n" + d.getConnection().getRoomDescription();
 	}
 
-
+	
 
 	/**
 	 * @return the roomID
