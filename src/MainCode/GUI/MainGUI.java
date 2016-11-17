@@ -531,7 +531,7 @@ public class MainGUI extends Application {
 	Label puzzlePaneHeader = new Label("Puzzle in this room");
 	Label monsterPaneHeader = new Label("Monster in this room");
 	Label puzzlePanePuzzle = new Label("No Puzzle");
-	Label monsterPaneMonster = new Label(getRoomPuzzleName());
+	Label monsterPaneMonster = new Label("No Monster");
 
 
 	Label monsterName = new Label();
@@ -966,7 +966,10 @@ public class MainGUI extends Application {
 		rooms.get(25).setMonster(alienCommando);
 		rooms.get(30).setMonster(littleGreenMan);
 		rooms.get(31).setMonster(cyborgPirate);
+		
+		rooms.get(6).setPuzzle(eCellPuzzle);
 
+		
 		
 		
 		rooms.get(1).getRoomInv().addItem(leadPipe);
