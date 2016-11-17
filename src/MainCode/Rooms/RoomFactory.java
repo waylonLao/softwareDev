@@ -233,45 +233,45 @@ public class RoomFactory {
 				, new Door(rooms.get(31), "east")
 				, new Door(rooms.get(25), "west")};
 		
-		Door[] room2Doors = {new Door(rooms.get(3), "north")
-				, new Door(rooms.get(1), "south")
+		Door[] room2Doors = {new Door(rooms.get(3), "north", true, "red")
+				, new Door(rooms.get(1), "south", true, "red")
 				, new Door(rooms.get(31), "east")
 				, new Door(rooms.get(25), "west")};
 		
-		Door[] room3Doors = {new Door(rooms.get(4), "north")
-				, new Door(rooms.get(2), "south")
+		Door[] room3Doors = {new Door(rooms.get(4), "north", true, "red")
+				, new Door(rooms.get(2), "south", true, "red")
 				, new Door(rooms.get(18), "east")
 				, new Door(null, "west")};
 		
-		Door[] room4Doors = {new Door(rooms.get(5), "north")
-				, new Door(rooms.get(3), "south")
+		Door[] room4Doors = {new Door(rooms.get(5), "north", true, "red")
+				, new Door(rooms.get(3), "south", true, "red")
 				, new Door(null, "east")
 				, new Door(null, "west")};
 		
-		Door[] room5Doors = {new Door(rooms.get(6), "north")
-				, new Door(rooms.get(4), "south")
+		Door[] room5Doors = {new Door(rooms.get(6), "north", true, "red")
+				, new Door(rooms.get(4), "south", true, "red")
 				, new Door(rooms.get(10), "east")
 				, new Door(null, "west")};
 		
 		Door[] room6Doors = {new Door(null, "north")
-				, new Door(rooms.get(5), "south")
-				, new Door(rooms.get(7), "east")
+				, new Door(rooms.get(5), "south", true, "red")
+				, new Door(rooms.get(7), "east", true, "red")
 				, new Door(null, "west")};
 		
 		Door[] room7Doors = {new Door(null, "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(8), "east")
-				, new Door(rooms.get(6), "west")};
+				, new Door(rooms.get(8), "east", true, "red")
+				, new Door(rooms.get(6), "west", true, "red")};
 		
 		Door[] room8Doors = {new Door(null, "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(9), "east")
-				, new Door(rooms.get(7), "west")};
+				, new Door(rooms.get(9), "east", true, "red")
+				, new Door(rooms.get(7), "west", true, "red")};
 		
 		Door[] room9Doors = {new Door(null, "north")
 				, new Door(null, "south")
 				, new Door(null, "east")
-				, new Door(rooms.get(8), "west")};
+				, new Door(rooms.get(8), "west", true, "red")};
 		
 		Door[] room10Doors = {new Door(null, "north")
 				, new Door(rooms.get(17), "south")
@@ -280,43 +280,43 @@ public class RoomFactory {
 		
 		Door[] room11Doors = {new Door(null, "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(12), "east")
-				, new Door(rooms.get(0), "west")};
+				, new Door(rooms.get(12), "east", true, "blue")
+				, new Door(rooms.get(0), "west", true, "blue")};
 		
 		Door[] room12Doors = {new Door(null, "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(13), "east")
-				, new Door(rooms.get(11), "west")};
+				, new Door(rooms.get(13), "east", true, "blue")
+				, new Door(rooms.get(11), "west", true, "blue")};
 		
-		Door[] room13Doors = {new Door(rooms.get(14), "north")
+		Door[] room13Doors = {new Door(rooms.get(14), "north", true, "blue")
 				, new Door(null, "south")
 				, new Door(null, "east")
-				, new Door(rooms.get(12), "west")};
+				, new Door(rooms.get(12), "west", true, "blue")};
 		
-		Door[] room14Doors = {new Door(rooms.get(15), "north")
-				, new Door(rooms.get(13), "south")
+		Door[] room14Doors = {new Door(rooms.get(15), "north", true, "blue")
+				, new Door(rooms.get(13), "south", true, "blue")
 				, new Door(null, "east")
 				, new Door(rooms.get(31), "west")};
 		
-		Door[] room15Doors = {new Door(rooms.get(16), "north")
-				, new Door(rooms.get(14), "south")
+		Door[] room15Doors = {new Door(rooms.get(16), "north", true, "blue")
+				, new Door(rooms.get(14), "south", true, "blue")
 				, new Door(null, "east")
 				, new Door(rooms.get(31), "west")};
 		
 		Door[] room16Doors = {new Door(null, "north")
-				, new Door(rooms.get(15), "south")
-				, new Door(null, "east")
-				, new Door(rooms.get(17), "west")};
+				, new Door(rooms.get(15), "south", true, "blue")
+				, new Door(rooms.get(17), "east", true, "blue")
+				, new Door(null, "west")};
 		
 		Door[] room17Doors = {new Door(rooms.get(10), "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(16), "east")
-				, new Door(rooms.get(18), "west")};
+				, new Door(rooms.get(16), "east", true, "blue")
+				, new Door(rooms.get(18), "west", true, "blue")};
 		
 		Door[] room18Doors = {new Door(null, "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(17), "east")
-				, new Door(rooms.get(3), "west")};
+				, new Door(rooms.get(17), "east", true, "blue")
+				, new Door(rooms.get(3), "west", true, "blue")};
 		
 		Door[] room19Doors = {new Door(rooms.get(0), "north")
 				, new Door(null, "south")
@@ -325,26 +325,26 @@ public class RoomFactory {
 		
 		Door[] room20Doors = {new Door(rooms.get(25)
 				, "north"), new Door(null, "south")
-				, new Door(rooms.get(0), "east")
-				, new Door(rooms.get(21), "west")};
+				, new Door(rooms.get(0), "east", true, "yellow")
+				, new Door(rooms.get(21), "west", true, "yellow")};
 		
 		Door[] room21Doors = {new Door(rooms.get(25), "north")
 				, new Door(null, "south")
-				, new Door(rooms.get(20), "east")
-				, new Door(rooms.get(22), "west")};
+				, new Door(rooms.get(20), "east", true, "yellow")
+				, new Door(rooms.get(22), "west", true, "yellow")};
 		
-		Door[] room22Doors = {new Door(rooms.get(23), "north")
+		Door[] room22Doors = {new Door(rooms.get(23), "north", true, "yellow")
 				, new Door(null, "south")
-				, new Door(rooms.get(21), "east")
+				, new Door(rooms.get(21), "east", true, "yellow")
 				, new Door(null, "west")};
 		
-		Door[] room23Doors = {new Door(rooms.get(24), "north")
-				, new Door(rooms.get(22), "south")
+		Door[] room23Doors = {new Door(rooms.get(24), "north", true, "yellow")
+				, new Door(rooms.get(22), "south", true, "yellow")
 				, new Door(rooms.get(25), "east")
 				, new Door(null, "west")};
 		
-		Door[] room24Doors = {new Door(rooms.get(26), "north")
-				, new Door(rooms.get(23), "south")
+		Door[] room24Doors = {new Door(rooms.get(26), "north", true, "yellow")
+				, new Door(rooms.get(23), "south", true, "yellow")
 				, new Door(rooms.get(25), "east")
 				, new Door(null, "west")};
 		
@@ -353,23 +353,23 @@ public class RoomFactory {
 				, new Door(rooms.get(24), "northwest")
 				, new Door(rooms.get(23), "southwest")};
 		
-		Door[] room26Doors = {new Door(rooms.get(27), "north")
-				, new Door(rooms.get(24), "south")
+		Door[] room26Doors = {new Door(rooms.get(27), "north", true, "yellow")
+				, new Door(rooms.get(24), "south", true, "yellow")
 				, new Door(null, "east")
 				, new Door(null, "west")};
 		
-		Door[] room27Doors = {new Door(rooms.get(28), "north")
-				, new Door(rooms.get(26), "south")
+		Door[] room27Doors = {new Door(rooms.get(28), "north", true, "yellow")
+				, new Door(rooms.get(26), "south", true, "yellow")
 				, new Door(null, "east")
 				, new Door(null, "west")};
 		
-		Door[] room28Doors = {new Door(rooms.get(29), "north")
-				, new Door(rooms.get(27), "south")
+		Door[] room28Doors = {new Door(rooms.get(29), "north", true, "yellow")
+				, new Door(rooms.get(27), "south", true, "yellow")
 				, new Door(null, "east")
 				, new Door(null, "west")};
 		
 		Door[] room29Doors = {new Door(rooms.get(30), "north")
-				, new Door(rooms.get(28), "south")
+				, new Door(rooms.get(28), "south", true, "yellow")
 				, new Door(null, "east")
 				, new Door(null, "west")};
 		
