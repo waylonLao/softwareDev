@@ -46,6 +46,7 @@ public class Player extends Sprite implements Serializable{
 				}
 			} else if(i.getItemName().contains("Grenade"))
 			{
+				currentRoom.getMonster().setStunDuration (2);
 				return "Stun";
 			}
 			else 

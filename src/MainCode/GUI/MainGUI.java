@@ -949,6 +949,7 @@ public class MainGUI extends Application {
 			monsterName.setText(mainMonster.getName());
 			monsterHealth.setText(mainMonster.getHealth() + "/" + mainMonster.getMaxHealth());
 			attackBtn.setOnAction(e -> doDamage());
+	
 			attackBtn.setText("Attack");
 		}
 
