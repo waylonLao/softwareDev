@@ -197,6 +197,11 @@ public class MainGUI extends Application {
 
 	HealthPack healthKit = new HealthPack("Health Kit", "Some basic first-aid.", "Used to heal wounds.");
 	ConcussionGrenade concussionGrenade = new ConcussionGrenade();
+	
+	//Key Cards
+	Key redCard = new Key("red");
+	Key blueCard = new Key("blue");
+	Key yellowCard = new Key("yellow");
 
 
 	Monster rogueCleaningUnit = new Monster(30, suctionHose, "Rogue Cleaning Unit", "A pissed off vacuum cleaner, easily killed.", healthKit);
@@ -1029,7 +1034,7 @@ public class MainGUI extends Application {
 		theStage.setScene(mainScene);
 		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
 		mainPlayer.getRoomID().getRoomInv().addItem(healthKit);
-		mainPlayer.getRoomID().getRoomInv().addItem(healthKit);
+		mainPlayer.getRoomID().getRoomInv().addItem(redCard);
 		updateText();
 	}
 
