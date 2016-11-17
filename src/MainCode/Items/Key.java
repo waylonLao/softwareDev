@@ -12,6 +12,7 @@ public class Key extends Item {
 
 	public Key(String color)
 	{
+		super();
 		this.color = color;
 	}
 	
