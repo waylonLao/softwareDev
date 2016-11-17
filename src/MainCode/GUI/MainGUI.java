@@ -752,10 +752,10 @@ public class MainGUI extends Application {
 		
 
 		mainPane.setTop(saveGameBtn);
-		mainPane.setCenter(directionalGrid);
+		mainPane.setCenter(textScroller);
 		mainPane.setRight(roomInfoPane);
-		mainPane.setBottom(textScroller);
-		mainPane.setLeft(mainInvPane);
+		mainPane.setBottom(mainInvPane);
+		mainPane.setLeft(directionalGrid);
 
 
 		mainScene = new Scene(mainPane, 800, 500);
@@ -987,6 +987,8 @@ public class MainGUI extends Application {
 		rooms.get(30).setMonster(littleGreenMan);
 		rooms.get(31).setMonster(cyborgPirate);
 
+		
+		
 		rooms.get(1).getRoomInv().addItem(leadPipe);
 
 		myMap = new HashMap<Room, Door[]>()
@@ -1024,6 +1026,7 @@ public class MainGUI extends Application {
 				put(rooms.get(29), doors.get(29));
 				put(rooms.get(30), doors.get(30));
 				put(rooms.get(31), doors.get(31));
+				
 				theStage.setScene(mainScene);
 			}
 		};
