@@ -14,6 +14,7 @@ public class Puzzle implements Serializable{
 	private String puzzleDescription;
 	private Item itemDrop;
 	private int remainingTries;
+	private boolean isSolved = false;
 	
 	public Puzzle()
 	{
@@ -21,8 +22,8 @@ public class Puzzle implements Serializable{
 	}
 	public Puzzle(String n, String s, String d, Item i){
 		puzzleName = n;
-		puzzleSolution = d;
-		puzzleDescription = s;
+		puzzleSolution = s;
+		puzzleDescription = d;
 		itemDrop = i;
 		remainingTries = 3;
 	}
@@ -108,6 +109,23 @@ public class Puzzle implements Serializable{
 	 */
 	public void setRemainingTries(int remainingTries) {
 		this.remainingTries = remainingTries;
+	}
+	
+	
+	
+	
+	
+	/**
+	 * @return the isSolved
+	 */
+	public boolean isSolved() {
+		return isSolved;
+	}
+	/**
+	 * @param isSolved the isSolved to set
+	 */
+	public void setSolved(boolean isSolved) {
+		this.isSolved = isSolved;
 	}
 	public void setPuzzle(Puzzle puzzle) {
 		// TODO Auto-generated method stub

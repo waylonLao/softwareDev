@@ -14,14 +14,12 @@ public class Monster extends Sprite implements Serializable{
 
 	private String monsterDescription;
 	private Item itemDrop;
-	private int stunDuration;
 	
 	public Monster(int h, Weapon w, String n, String md, Item i)
 	{
 		super(h,w,n);
 		monsterDescription = md;
 		itemDrop = i;
-		stunDuration = 0;
 	}
 	
 	/**
@@ -64,14 +62,11 @@ public class Monster extends Sprite implements Serializable{
 	public void setItemDrop(Item itemDrop) {
 		this.itemDrop = itemDrop;
 	}
-	public int getStunDuration() {
-		return stunDuration;
-	}
-
-	public void setStunDuration(int stunDuration) {
-		this.stunDuration = stunDuration;
-	}
 	
+	
+	
+
+
 
 	
 	

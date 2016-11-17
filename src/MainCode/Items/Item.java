@@ -69,6 +69,10 @@ public class Item implements Serializable{
         this.itemUse = itemUse;
     }
     
+//    public String itemFunction(){
+//    	return "something";
+//    }
+    
     @Override
     public String toString(){
     	return this.getItemName();
