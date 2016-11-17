@@ -6,7 +6,7 @@ Make sure you pull before working on your code
 -Get Inventory working
       
       -get inventory into fight gui and have health 
-      kits and concussion grenades working in fight
+      kits and concussion grenades working in fight 
       -equip weapons in main
 
       

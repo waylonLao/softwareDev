@@ -740,7 +740,7 @@ public class MainGUI extends Application {
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
 		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
-
+		
 
 		mainPane.setTop(saveGameBtn);
 		mainPane.setCenter(directionalGrid);
@@ -748,13 +748,11 @@ public class MainGUI extends Application {
 		mainPane.setBottom(textScroller);
 		mainPane.setLeft(mainInvPane);
 
-
-
-		mainScene = new Scene(mainPane, 800, 600);
-		fightScene = new Scene(fightPane, 800, 600);
-		puzzleScene = new Scene(puzzlePane, 800, 600);
-		menuScene = new Scene(menuPane, 510,600);
-		deathScene = new Scene(deathPane, 800,600);
+		mainScene = new Scene(mainPane, 800, 500);
+		fightScene = new Scene(fightPane, 800, 500);
+		puzzleScene = new Scene(puzzlePane, 800, 500);
+		menuScene = new Scene(menuPane, 800,500);
+		deathScene = new Scene(deathPane, 800,500);
 
 		newGameScene = new Scene(newGamePane, 800, 600);
 		loadGameScene = new Scene(loadGamePane, 800, 600);
@@ -768,7 +766,7 @@ public class MainGUI extends Application {
 
 
 
-
+	
 
 
 	private void setNewGameScene(){
@@ -941,6 +939,7 @@ public class MainGUI extends Application {
 			monsterName.setText(mainMonster.getName());
 			monsterHealth.setText(mainMonster.getHealth() + "/" + mainMonster.getMaxHealth());
 			attackBtn.setOnAction(e -> doDamage());
+	
 			attackBtn.setText("Attack");
 		}
 
@@ -964,8 +963,6 @@ public class MainGUI extends Application {
 	public void setMainPuzzle(Puzzle mainPuzzle) {
 		this.mainPuzzle1 = mainPuzzle;
 	}
-
-
 
 
 	public void startNewGame(String s){
@@ -1017,6 +1014,7 @@ public class MainGUI extends Application {
 				put(rooms.get(29), doors.get(29));
 				put(rooms.get(30), doors.get(30));
 				put(rooms.get(31), doors.get(31));
+				theStage.setScene(mainScene);
 			}
 		};
 

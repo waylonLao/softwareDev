@@ -10,13 +10,13 @@ import MainCode.Rooms.Room;
 
 /**
 
-* @author nklemenc
-*/
+ * @author nklemenc
+ */
 public class Player extends Sprite implements Serializable{
-	
-	
+
+
 	private Room currentRoom;
-	
+
 	public Player(int health, Weapon wpn, Room r, String s) {
 		super(health, wpn, s);
 		currentRoom = r;
@@ -30,20 +30,30 @@ public class Player extends Sprite implements Serializable{
 	public String useItem(Item i)
 	{ 
 		if(this.getSpriteInv().getItemList().contains(i))
-		{ //need to put an if to differentiate between health kit and concussion grenade
-			if (this.health <= 950) {
-				this.health = this.health + 50;
-				this.getSpriteInv().removeItem(i);
-				return "50 Health restored.\n Your current health is " + this.health;
-			} 
-			else {
-				this.health = 1000;
-				this.getSpriteInv().removeItem(i);
-				return "You are at Max Health.";
+		{ 
+			//need to put an if to differentiate between health kit and concussion grenade
+			if (i.getItemName().contains("health"))
+			{
+				if (this.health <= 950) {
+					this.health = this.health + 50;
+					this.getSpriteInv().removeItem(i);
+					return "50 Health restored.\n Your current health is " + this.health;
+				} 
+				else {
+					this.health = 1000;
+					this.getSpriteInv().removeItem(i);
+					return "You are at Max Health.";
+				}
+			} else if(i.getItemName().contains("Grenade"))
+			{
+				currentRoom.getMonster().setStunDuration (2);
+				return "Stun";
 			}
-		} else 
-			return "No Health Kits in your inventory";
-
+			else 
+				return "No consumables in your inventory";
+		}
+		else
+			return "No such item in inventory";
 	}
 
 
@@ -100,7 +110,7 @@ public class Player extends Sprite implements Serializable{
 			//this.getRoomID().getRoomInv().addItem(target.getItemDrop());
 			return target.getName() + " has been defeated!";
 		}
-		
+
 		return this.getName() + " dealt " + this.getWeapon().getWeaponDamage() + " damage to the " + target.getName();
 
 	}
