@@ -635,9 +635,9 @@ public class MainGUI extends Application {
 		useItemBtn.setOnAction(e -> useItem());
 
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
-		action0.setWrappingWidth(650);
-		action1.setWrappingWidth(650);
-		action2.setWrappingWidth(650);
+		action0.setWrappingWidth(350);
+		action1.setWrappingWidth(350);
+		action2.setWrappingWidth(350);
 
 		textScroller.setAlignment(Pos.CENTER);
 		textScroller.getChildren().addAll(action0, action1);
@@ -742,14 +742,14 @@ public class MainGUI extends Application {
 		mainPane.setBottom(mainInvPane);
 		mainPane.setLeft(directionalGrid);
 
-		mainScene = new Scene(mainPane, 800, 500);
-		fightScene = new Scene(fightPane, 800, 500);
-		puzzleScene = new Scene(puzzlePane, 800, 500);
-		menuScene = new Scene(menuPane, 800,500);
-		deathScene = new Scene(deathPane, 800,500);
+		mainScene = new Scene(mainPane, 800, 800);
+		fightScene = new Scene(fightPane, 800, 800);
+		puzzleScene = new Scene(puzzlePane, 800, 800);
+		menuScene = new Scene(menuPane, 510, 600);
+		deathScene = new Scene(deathPane, 800,800);
 
-		newGameScene = new Scene(newGamePane, 800, 500);
-		loadGameScene = new Scene(loadGamePane, 800, 500);
+		newGameScene = new Scene(newGamePane, 300, 300);
+		loadGameScene = new Scene(loadGamePane, 300, 300);
 
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(menuScene);
