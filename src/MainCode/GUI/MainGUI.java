@@ -686,6 +686,8 @@ public class MainGUI extends Application {
 		mainInvPane.setAlignment(Pos.CENTER);
 		mainInvPane.add(roomInvPane, 1, 0);
 		mainInvPane.add(playerInvPane, 2, 0);
+		mainInvPane.add(takeItemBtn, 1, 1);
+		mainInvPane.add(useItemBtn, 2, 1);
 
 
 		//newGame.setOnAction(e -> primaryStage.setScene(mainScene));
