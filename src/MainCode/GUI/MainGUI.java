@@ -634,23 +634,13 @@ public class MainGUI extends Application {
 
 		useItemBtn.setOnAction(e -> useItem());
 
-
-
 		action0.setText(mainPlayer.getRoomID().getRoomDescription());
 		action0.setWrappingWidth(650);
 		action1.setWrappingWidth(650);
 		action2.setWrappingWidth(650);
 
-
-
 		textScroller.setAlignment(Pos.CENTER);
 		textScroller.getChildren().addAll(action0, action1);
-
-
-
-
-
-
 
 		//MAIN MENU
 		menuTitle.setFont(Font.font("Arial", 40));
@@ -672,8 +662,9 @@ public class MainGUI extends Application {
 
 
 		//NEW GAME INTERFACE
-		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner);
-		newGameNameScanner.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
+		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner, submitNewNameBtn);
+		submitNewNameBtn.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
+
 
 		//LOAD GAME INTERFACE
 		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner);
@@ -757,23 +748,19 @@ public class MainGUI extends Application {
 		mainPane.setBottom(mainInvPane);
 		mainPane.setLeft(directionalGrid);
 
-
 		mainScene = new Scene(mainPane, 800, 500);
 		fightScene = new Scene(fightPane, 800, 500);
 		puzzleScene = new Scene(puzzlePane, 800, 500);
 		menuScene = new Scene(menuPane, 800,500);
 		deathScene = new Scene(deathPane, 800,500);
 
-		newGameScene = new Scene(newGamePane, 800, 500);
-		loadGameScene = new Scene(loadGamePane, 800, 500);
+		newGameScene = new Scene(newGamePane, 800, 600);
+		loadGameScene = new Scene(loadGamePane, 800, 600);
 
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(menuScene);
 		theStage.show();
 	}
-
-
-
 
 
 	
@@ -1027,10 +1014,11 @@ public class MainGUI extends Application {
 				put(rooms.get(30), doors.get(30));
 				put(rooms.get(31), doors.get(31));
 				
-				theStage.setScene(mainScene);
+
 			}
 		};
 
+		theStage.setScene(mainScene);
 		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
 	}
 
@@ -1146,7 +1134,8 @@ public class MainGUI extends Application {
 
 		cycleText(mainPlayer.getRoomID().getRoomDescription());
 		updateText();
-		setMainScene();
+		theStage.setScene(mainScene);
+		
 
 	}
 
