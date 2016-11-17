@@ -13,6 +13,7 @@ public class Key extends Item {
 	public Key(String color)
 	{
 		super();
+		setItemName(color + " card");
 		this.color = color;
 	}
 	
