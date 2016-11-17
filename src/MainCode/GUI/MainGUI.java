@@ -695,13 +695,6 @@ public class MainGUI extends Application {
 		quit.setOnAction(e -> primaryStage.close());
 
 
-
-
-
-
-
-
-
 		//FIGHT INTERFACE
 		fightGrid.setAlignment(Pos.CENTER);
 
@@ -754,8 +747,8 @@ public class MainGUI extends Application {
 		menuScene = new Scene(menuPane, 800,500);
 		deathScene = new Scene(deathPane, 800,500);
 
-		newGameScene = new Scene(newGamePane, 800, 600);
-		loadGameScene = new Scene(loadGamePane, 800, 600);
+		newGameScene = new Scene(newGamePane, 800, 500);
+		loadGameScene = new Scene(loadGamePane, 800, 500);
 
 		theStage.setTitle("Galaxy Explorer");
 		theStage.setScene(menuScene);
