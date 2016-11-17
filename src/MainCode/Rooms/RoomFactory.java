@@ -113,7 +113,7 @@ public class RoomFactory {
 		//Command Center
 		 Room room19 = new Room(19,"Command Center","When you enter, the room is lit only by back power making it "
 				+ "very dim."
-				, null, null, false, true, null);
+				, null, null, false, false, null);
 		
 		//Hallway 6
 		 Room room20 = new Room(20,"Hallway 6", "The hallway towards Communications is long, and includes two "
