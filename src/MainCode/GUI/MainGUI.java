@@ -749,14 +749,13 @@ public class MainGUI extends Application {
 		TextField puzzleScanner = new TextField();
 		puzzleScanner.setOnAction(e -> tryPuzzle(puzzleScanner.getText()));
 		puzzleBox.getChildren().addAll(puzzleDescription, puzzleScanner, returnBtn);
-
+		
 
 		mainPane.setTop(saveGameBtn);
 		mainPane.setCenter(directionalGrid);
 		mainPane.setRight(roomInfoPane);
 		mainPane.setBottom(textScroller);
 		mainPane.setLeft(mainInvPane);
-
 
 
 		mainScene = new Scene(mainPane, 800, 500);
@@ -777,7 +776,7 @@ public class MainGUI extends Application {
 
 
 
-
+	
 
 
 	private void setNewGameScene(){
@@ -973,8 +972,6 @@ public class MainGUI extends Application {
 	public void setMainPuzzle(Puzzle mainPuzzle) {
 		this.mainPuzzle1 = mainPuzzle;
 	}
-
-
 
 
 	public void startNewGame(String s){
