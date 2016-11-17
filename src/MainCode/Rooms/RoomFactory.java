@@ -230,7 +230,7 @@ public class RoomFactory {
 		Door[] room4Doors = {new Door(rooms.get(5), "north"), new Door(rooms.get(3), "south"), new Door(null, "east"), new Door(null, "west")};
 		Door[] room5Doors = {new Door(rooms.get(6), "north"), new Door(rooms.get(4), "south"), new Door(rooms.get(10), "east"), new Door(null, "west")};
 		Door[] room6Doors = {new Door(null, "north"), new Door(rooms.get(5), "south"), new Door(rooms.get(7), "east"), new Door(null, "west")};
-		Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(8), "east"), new Door(rooms.get(7), "west")};
+		Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(8), "east"), new Door(rooms.get(6), "west")};
 		Door[] room8Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(9), "east"), new Door(rooms.get(7), "west")};
 		Door[] room9Doors = {new Door(null, "north"), new Door(null, "south"), new Door(null, "east"), new Door(rooms.get(8), "west")};
 		Door[] room10Doors = {new Door(null, "north"), new Door(rooms.get(17), "south"), new Door(null, "east"), new Door(rooms.get(5), "west")};
