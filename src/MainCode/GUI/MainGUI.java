@@ -1051,6 +1051,9 @@ public class MainGUI extends Application {
 
 		theStage.setScene(mainScene);
 		mainPlayer = new Player(500, bareHands, rooms.get(0), s);
+		mainPlayer.getRoomID().getRoomInv().addItem(healthKit);
+		mainPlayer.getRoomID().getRoomInv().addItem(healthKit);
+		updateText();
 	}
 
 

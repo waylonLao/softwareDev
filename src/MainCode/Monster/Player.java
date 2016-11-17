@@ -57,6 +57,10 @@ public class Player extends Sprite implements Serializable{
 	}
 
 
+	public boolean unlock()
+	{
+		return false;
+	}
 
 	public String move(Door d){
 
