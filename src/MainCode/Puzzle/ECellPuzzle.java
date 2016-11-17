@@ -4,6 +4,8 @@
  */
 package MainCode.Puzzle;
 import java.util.*;
+
+import MainCode.Items.EnergyCell;
 /**
  * @author Joshua Tran
  * Date: Nov 14, 2016
@@ -19,6 +21,7 @@ public class ECellPuzzle extends Puzzle{
 		setPuzzleName("Binary Puzzle");
 		setPuzzleDescription("Convert this Binary number into an Integer: " + Integer.toBinaryString(number));
 		setPuzzleSolution(Integer.toString(number));
+		setItemDrop(new EnergyCell());
 		
 	}
 
