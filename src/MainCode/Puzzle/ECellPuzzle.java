@@ -3,25 +3,26 @@
  * Date: Nov 14, 2016
  */
 package MainCode.Puzzle;
+import java.io.Serializable;
 import java.util.*;
 
-import MainCode.Items.EnergyCell;
+import MainCode.Items.Item;
 /**
  * @author Joshua Tran
  * Date: Nov 14, 2016
  */
-public class ECellPuzzle extends Puzzle{
+public class ECellPuzzle extends Puzzle implements Serializable{
 	
 
 	Random rand = new Random();
 	int number = rand.nextInt(20);
 	
-	public ECellPuzzle()
+	public ECellPuzzle(Item i)
 	{
 		setPuzzleName("Binary Puzzle");
 		setPuzzleDescription("Convert this Binary number into an Integer: " + Integer.toBinaryString(number));
 		setPuzzleSolution(Integer.toString(number));
-		setItemDrop(new EnergyCell());
+		setItemDrop(i);
 		
 	}
 
@@ -41,8 +42,8 @@ public class ECellPuzzle extends Puzzle{
 	
 	public static void main(String[] args)
 	{
-		ECellPuzzle testPuzzle = new ECellPuzzle();
-		System.out.println(testPuzzle);
+		//ECellPuzzle testPuzzle = new ECellPuzzle();
+		//System.out.println(testPuzzle);
 		
 	}
 

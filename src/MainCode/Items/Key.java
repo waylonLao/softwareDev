@@ -1,43 +1,40 @@
 package MainCode.Items;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import MainCode.Rooms.Door;
 
 /**
  * @author Neal Klemenc
  */
-public class Key extends Item {
+public class Key extends Item implements Serializable{
 	
-	private Door keyTo;
-	private String color;
+	
+	private List<Door> keyTo = new ArrayList<Door>();
 
-	public Key(String color)
-	{
-		super();
-		setItemName(color + " card");
-		this.color = color;
-	}
-	
-	public Key(String name, String description, String use, Door k) {
+	public Key(String name, String description, String use, List<Door> list) {
 		super(name, description, use);
-		keyTo = k;
+		keyTo = list;
 	}
 
 	/**
 	 * @return the keyTo
 	 */
-	public Door getKeyTo() {
+	public List<Door> getKeyTo() {
 		return keyTo;
 	}
 
 	/**
 	 * @param keyTo the keyTo to set
 	 */
-	public void setKeyTo(Door keyTo) {
+	public void setKeyTo(ArrayList<Door> keyTo) {
 		this.keyTo = keyTo;
 	}
 	
 	public String itemFunction(Door d){
-		if(keyTo == d){
+		if(keyTo.contains(d)){
 			d.setIsLocked(false);
 			return "The door to the " + d.getConnection().getRoomName() + " can now be reached";
 		}

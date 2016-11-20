@@ -7,7 +7,6 @@ import java.io.Serializable;
  */
 public class Door implements Serializable{
 	
-	String color;
 	Room connection;
 	String direction;
 	Boolean isLocked;
@@ -18,11 +17,10 @@ public class Door implements Serializable{
 		isLocked = false;
 	}
 	
-	public Door(Room r, String d, Boolean l, String color){
+	public Door(Room r, String d, Boolean l){
 		connection = r;
 		direction = d;
 		isLocked = l;
-		this.color = color;
 	}
 
 	/**
@@ -67,13 +65,7 @@ public class Door implements Serializable{
 		this.isLocked = isLocked;
 	}
 	
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
-	}
+	
 	
 	
 

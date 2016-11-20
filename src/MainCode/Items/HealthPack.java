@@ -1,11 +1,13 @@
 package MainCode.Items;
 
+import java.io.Serializable;
+
 import MainCode.Monster.Sprite;
 
 /**
  * @author Neal Klemenc
  */
-public class HealthPack extends Item {
+public class HealthPack extends Item implements Serializable{
 
 	public HealthPack() {
 		// TODO Auto-generated constructor stub
