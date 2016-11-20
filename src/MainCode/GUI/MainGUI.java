@@ -193,7 +193,7 @@ public class MainGUI extends Application {
 	ConcussionGrenade concussionGrenade = new ConcussionGrenade();
 	ECell energyCell = new ECell("Energy Cell", "A standard energy storage device", "Used to power rooms");
 	
-	Key redKey = new Key("Red Key Card", "A red key card", "Used to open Red doors", Arrays.asList(doors.get(0)[0]));
+	Key redKey = new Key("Red Key Card", "A red key card", "Used to open Red doors", Door.doorType.RED);
 	Key blueKey = new Key("Blue Key Card", "A blue key card", "Used to open Blue doors", Arrays.asList(doors.get(0)[2], doors.get(3)[2]));
 	Key yellowKey = new Key("Yellow Key Card", "A Yellow key card", "Used to open Yellow doors", Arrays.asList(doors.get(0)[3]));
 	Key commandKey = new Key("Command Key Card", "A command key card", "Used to access the command center", Arrays.asList(doors.get(0)[1]));

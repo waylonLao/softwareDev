@@ -223,7 +223,7 @@ public class RoomFactory {
 	}
 	
 	public ArrayList<Door[]> newDoors(){
-		Door[] room0Doors = {new Door(rooms.get(1), "north", true), new Door(rooms.get(19), "south", true), new Door(rooms.get(11), "east", true), new Door(rooms.get(20), "west", true)};
+		Door[] room0Doors = {new Door(rooms.get(1), "north", true, Door.doorType.RED), new Door(rooms.get(19), "south", true), new Door(rooms.get(11), "east", true), new Door(rooms.get(20), "west", true)};
 		Door[] room1Doors = {new Door(rooms.get(2), "north"), new Door(rooms.get(0), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
 		Door[] room2Doors = {new Door(rooms.get(3), "north"), new Door(rooms.get(1), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
 		Door[] room3Doors = {new Door(rooms.get(4), "north"), new Door(rooms.get(2), "south"), new Door(rooms.get(18), "east", true), new Door(null, "west")};

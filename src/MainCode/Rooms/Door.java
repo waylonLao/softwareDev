@@ -2,6 +2,8 @@ package MainCode.Rooms;
 
 import java.io.Serializable;
 
+import MainCode.Rooms.Door.doorType;
+
 /**
  * @author Neal Klemenc
  */
@@ -10,6 +12,14 @@ public class Door implements Serializable{
 	Room connection;
 	String direction;
 	Boolean isLocked;
+	public enum doorType {
+			RED,
+			YELLOW,
+			BLUE
+	};
+	doorType color;
+
+
 
 	public Door(Room r, String d) {
 		connection = r;
@@ -21,6 +31,14 @@ public class Door implements Serializable{
 		connection = r;
 		direction = d;
 		isLocked = l;
+	}
+
+	public Door(Room room, String string, boolean b, doorType color)
+	{
+		connection = room;
+		direction = string;
+		isLocked = b;
+		color = color;
 	}
 
 	/**
@@ -65,7 +83,15 @@ public class Door implements Serializable{
 		this.isLocked = isLocked;
 	}
 	
-	
+	public doorType getColor()
+	{
+		return color;
+	}
+
+	public void setColor(doorType color)
+	{
+		this.color = color;
+	}
 	
 	
 
