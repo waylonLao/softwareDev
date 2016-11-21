@@ -22,8 +22,8 @@ public class Puzzle implements Serializable{
 	}
 	public Puzzle(String n, String s, String d, Item i){
 		puzzleName = n;
-		puzzleSolution = s;
-		puzzleDescription = d;
+		puzzleSolution = d;
+		puzzleDescription = s;
 		itemDrop = i;
 		remainingTries = 3;
 	}
