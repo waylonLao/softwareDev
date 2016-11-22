@@ -764,7 +764,7 @@ public class MainGUI extends Application {
         mainScene = new Scene(mainPane, 800, 500);
         fightScene = new Scene(fightPane, 800, 500);
         puzzleScene = new Scene(puzzlePane, 800, 500);
-        menuScene = new Scene(menuPane, 800,500);
+        menuScene = new Scene(menuPane, 500, 610);
         keyScene = new Scene(keyPane, 800,500);
         powerScene = new Scene(powerPane, 800,500);
         
