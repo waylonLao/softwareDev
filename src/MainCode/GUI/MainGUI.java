@@ -532,6 +532,9 @@ public class MainGUI extends Application {
 	Label playerHealth = new Label("" + mainPlayer.getHealth());
 	Label puzzleName = new Label();
 	
+	Text playerHealthMain = new Text();
+	
+	
 	Text roomItems = new Text();
 	Text playerItems= new Text();
 	
@@ -598,7 +601,6 @@ public class MainGUI extends Application {
     	
     	
     	theStage = primaryStage;
-    	
     	
 
 
@@ -677,9 +679,10 @@ public class MainGUI extends Application {
         directionalGrid.add(westBtn, 0, 1);
         
         //MONSTER AND PUZZLE INFO
+        playerHealthMain.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
         roomInfoPane.setAlignment(Pos.CENTER);
         roomInfoPane.setPadding(new Insets(10,10,10,10));
-        roomInfoPane.getChildren().addAll(playerHealthHeader, playerHealth, monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
+        roomInfoPane.getChildren().addAll(playerHealthHeader, playerHealthMain, monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
         
         
         //FIGHT INTERFACE
@@ -928,10 +931,10 @@ public class MainGUI extends Application {
 	}
 	
 	private void updateText(){
-		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		mainMonster = mainPlayer.getRoomID().getMonster();
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
+		playerHealthMain.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
