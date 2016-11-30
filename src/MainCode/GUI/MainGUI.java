@@ -518,7 +518,7 @@ public class MainGUI extends Application {
 	Label menuTitle = new Label("Galaxy Explorer");
 
 	
-	
+	Text playerHealthHeader = new Text("Your Health: ");
     Text monsterPaneHeader = new Text("Monster in this room:");
     Text monsterPaneMonster = new Text();
     Text puzzlePaneHeader = new Text("Puzzle in this room:");
@@ -529,7 +529,7 @@ public class MainGUI extends Application {
 	Label monsterName = new Label();
 	Label playerName = new Label(mainPlayer.getName());
 	Label monsterHealth = new Label();
-	Label playerHealth = new Label();
+	Label playerHealth = new Label("" + mainPlayer.getHealth());
 	Label puzzleName = new Label();
 	
 	Text roomItems = new Text();
@@ -679,7 +679,7 @@ public class MainGUI extends Application {
         //MONSTER AND PUZZLE INFO
         roomInfoPane.setAlignment(Pos.CENTER);
         roomInfoPane.setPadding(new Insets(10,10,10,10));
-        roomInfoPane.getChildren().addAll(monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
+        roomInfoPane.getChildren().addAll(playerHealthHeader, playerHealth, monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
         
         
         //FIGHT INTERFACE
@@ -928,6 +928,7 @@ public class MainGUI extends Application {
 	}
 	
 	private void updateText(){
+		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		mainMonster = mainPlayer.getRoomID().getMonster();
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
