@@ -40,6 +40,10 @@ public class Player extends Sprite implements Serializable{
 		if(d.getConnection().isPowered() == false){
 			return "The power to the " + d.getConnection().getRoomName() + " is offline. Go to the Command Center to power the room";
 		}
+		//if(d.getConnection().getMonster() != null)
+		//{
+		//	return "You have to kill the monster first!";
+		//}
 		this.setRoomID(d.getConnection());
 		return d.getConnection().getRoomName() + "\n\n" + d.getConnection().getRoomDescription();
 	}

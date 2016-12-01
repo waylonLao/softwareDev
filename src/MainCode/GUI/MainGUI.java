@@ -174,11 +174,12 @@ public class MainGUI extends Application {
 	
 	VBox newGamePane = new VBox();
 	VBox loadGamePane = new VBox();
-	Text newGameNameHeader = new Text("Enter your name");
+	GridPane loadGameGrid = new GridPane();
+	Text newGameNameHeader = new Text("Enter Your Name");
 	TextField newGameNameScanner = new TextField();
 	Button submitNewNameBtn = new Button("Submit");
 	
-	Text loadGameNameHeader = new Text("Enter your name");
+	Text loadGameNameHeader = new Text("Load Your Game");
 	TextField loadGameNameScanner = new TextField();
 	Button submitLoadNameBtn = new Button("Submit");
 	
@@ -379,6 +380,8 @@ public class MainGUI extends Application {
 		//LOAD GAME INTERFACE
 		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner);
 		loadGameNameScanner.setOnAction(e -> loadGame(loadGameNameScanner.getText()));
+		loadGameGrid.add(loadGamePane, 1, 1);
+		loadGameGrid.add(returnToMenu, 1, 2);
         
         //MOVEMENT
         directionalGrid.setAlignment(Pos.CENTER);
@@ -486,7 +489,7 @@ public class MainGUI extends Application {
         powerScene = new Scene(powerPane, 800,500);
         
         newGameScene = new Scene(newGamePane, 800, 500);
-        loadGameScene = new Scene(loadGamePane, 800, 500);
+        loadGameScene = new Scene(loadGameGrid, 800, 500);
         
         theStage.setTitle("Galaxy Explorer");
         theStage.setScene(menuScene);
