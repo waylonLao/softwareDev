@@ -277,6 +277,7 @@ public class MainGUI extends Application {
 	BorderPane deathPane = new BorderPane();
 	Text deathText = new Text("You Have Died a Valiant Death");
 	Button returnToMenu = new Button("Return to Main Menu");
+	GridPane deathGrid = new GridPane();
 	
 
 	File cwdFile = new File (".");
@@ -445,7 +446,8 @@ public class MainGUI extends Application {
         
         //Death
         deathVBox.getChildren().addAll(deathText, returnToMenu);
-        deathPane.setCenter(deathVBox);
+        deathGrid.add(deathVBox, 0, 0);
+        deathPane.setCenter(deathGrid);
 		
 		mainPane.setTop(saveGameBtn);
         mainPane.setCenter(directionalGrid);
