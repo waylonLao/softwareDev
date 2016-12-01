@@ -100,81 +100,6 @@ public class MainGUI extends Application {
 	    }
 	};
 	
-//	public Door[] room0Doors = {new Door(rooms.get(1), "north"), new Door(rooms.get(19), "south", true), new Door(rooms.get(11), "east"), new Door(rooms.get(20), "west")};
-//	public Door[] room1Doors = {new Door(rooms.get(2), "north"), new Door(rooms.get(0), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
-//	public Door[] room2Doors = {new Door(rooms.get(3), "north"), new Door(rooms.get(1), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
-//	public Door[] room3Doors = {new Door(rooms.get(4), "north"), new Door(rooms.get(2), "south"), new Door(rooms.get(18), "east"), new Door(null, "west")};
-//	public Door[] room4Doors = {new Door(rooms.get(5), "north"), new Door(rooms.get(3), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room5Doors = {new Door(rooms.get(6), "north"), new Door(rooms.get(4), "south"), new Door(rooms.get(10), "east"), new Door(null, "west")};
-//	public Door[] room6Doors = {new Door(null, "north"), new Door(rooms.get(5), "south"), new Door(rooms.get(7), "east"), new Door(null, "west")};
-//	public Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(8), "east"), new Door(rooms.get(7), "west")};
-//	public Door[] room8Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(9), "east"), new Door(rooms.get(7), "west")};
-//	public Door[] room9Doors = {new Door(null, "north"), new Door(null, "south"), new Door(null, "east"), new Door(rooms.get(8), "west")};
-//	public Door[] room10Doors = {new Door(null, "north"), new Door(rooms.get(17), "south"), new Door(null, "east"), new Door(rooms.get(5), "west")};
-//	public Door[] room11Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(12), "east"), new Door(rooms.get(0), "west")};
-//	public Door[] room12Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(13), "east"), new Door(rooms.get(11), "west")};
-//	public Door[] room13Doors = {new Door(rooms.get(14), "north"), new Door(null, "south"), new Door(null, "east"), new Door(rooms.get(12), "west")};
-//	public Door[] room14Doors = {new Door(rooms.get(15), "north"), new Door(rooms.get(13), "south"), new Door(null, "east"), new Door(rooms.get(31), "west")};
-//	public Door[] room15Doors = {new Door(rooms.get(16), "north"), new Door(rooms.get(14), "south"), new Door(null, "east"), new Door(rooms.get(31), "west")};
-//	public Door[] room16Doors = {new Door(null, "north"), new Door(rooms.get(15), "south"), new Door(null, "east"), new Door(rooms.get(17), "west")};
-//	public Door[] room17Doors = {new Door(rooms.get(10), "north"), new Door(null, "south"), new Door(rooms.get(16), "east"), new Door(rooms.get(18), "west")};
-//	public Door[] room18Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(17), "east"), new Door(rooms.get(3), "west")};
-//	public Door[] room19Doors = {new Door(rooms.get(0), "north"), new Door(null, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room20Doors = {new Door(rooms.get(25), "north"), new Door(null, "south"), new Door(rooms.get(0), "east"), new Door(rooms.get(21), "west")};
-//	public Door[] room21Doors = {new Door(rooms.get(25), "north"), new Door(null, "south"), new Door(rooms.get(20), "east"), new Door(rooms.get(22), "west")};
-//	public Door[] room22Doors = {new Door(rooms.get(23), "north"), new Door(null, "south"), new Door(rooms.get(21), "east"), new Door(null, "west")};
-//	public Door[] room23Doors = {new Door(rooms.get(24), "north"), new Door(rooms.get(22), "south"), new Door(rooms.get(25), "east"), new Door(null, "west")};
-//	public Door[] room24Doors = {new Door(rooms.get(26), "north"), new Door(rooms.get(23), "south"), new Door(rooms.get(25), "east"), new Door(null, "west")};
-//	public Door[] room25Doors = {new Door(rooms.get(2), "northeast"), new Door(rooms.get(1), "southeast"), new Door(rooms.get(24), "northwest"), new Door(rooms.get(23), "southwest")};
-//	public Door[] room26Doors = {new Door(rooms.get(27), "north"), new Door(rooms.get(24), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room27Doors = {new Door(rooms.get(28), "north"), new Door(rooms.get(26), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room28Doors = {new Door(rooms.get(29), "north"), new Door(rooms.get(27), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room29Doors = {new Door(rooms.get(30), "north"), new Door(rooms.get(28), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room30Doors = {new Door(null, "north"), new Door(rooms.get(29), "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room31Doors = {new Door(rooms.get(15), "northeast"), new Door(rooms.get(14), "southeast"), new Door(rooms.get(2), "northwest"), new Door(rooms.get(1), "southwest")};
-//	
-//	
-//	
-//	public HashMap<Room, Door[]> myMap = new HashMap<Room, Door[]>()
-//	{
-//	    {
-//	        put(rooms.get(0), room0Doors);
-//	        put(rooms.get(1), room1Doors);
-//	        put(rooms.get(2), room2Doors);
-//	        put(rooms.get(3), room3Doors);
-//	        put(rooms.get(4), room4Doors);
-//	        put(rooms.get(5), room5Doors);
-//	        put(rooms.get(6), room6Doors);
-//	        put(rooms.get(7), room7Doors);
-//	        put(rooms.get(8), room8Doors);
-//	        put(rooms.get(9), room9Doors);
-//	        put(rooms.get(10), room10Doors);
-//	        put(rooms.get(11), room11Doors);
-//	        put(rooms.get(12), room12Doors);
-//	        put(rooms.get(13), room13Doors);
-//	        put(rooms.get(14), room14Doors);
-//	        put(rooms.get(15), room15Doors);
-//	        put(rooms.get(16), room16Doors);
-//	        put(rooms.get(17), room17Doors);
-//	        put(rooms.get(18), room18Doors);
-//	        put(rooms.get(19), room19Doors);
-//	        put(rooms.get(20), room20Doors);
-//	        put(rooms.get(21), room21Doors);
-//	        put(rooms.get(22), room22Doors);
-//	        put(rooms.get(23), room23Doors);
-//	        put(rooms.get(24), room24Doors);
-//	        put(rooms.get(25), room25Doors);
-//	        put(rooms.get(26), room26Doors);
-//	        put(rooms.get(27), room27Doors);
-//	        put(rooms.get(28), room28Doors);
-//	        put(rooms.get(29), room29Doors);
-//	        put(rooms.get(30), room30Doors);
-//	        put(rooms.get(31), room31Doors);
-//	    }
-//	};
-	
-	
-
 	Weapon bareHands = new Weapon("Bare hands", "Your weak, fleshy hands", "Used to fight", 10);
 	Weapon leadPipe = new Weapon("Lead Pipe", "A sturdy pipe", "Used to fight", 15);
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
@@ -228,254 +153,9 @@ public class MainGUI extends Application {
 	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", null);
 	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", null);
 	
-	//Instantiate Rooms
-	
-//	//Cryo Room
-//	public Room room0 = new Room(0,"Cryo Room","The room has 4 doors and each door has a name plate above it. "
-//			+ "To the west is a yellow door marked, to the east is a blue door both marked \"Hallway\". To the "
-//			+ "south holds a grey door labeled \"Command Center\" and to the north is a red door labeled \"Cryogenics Room\"."
-//			, rogueCleaningUnit, null, false, true, null);
-//	
-//	//Cryo Room 1
-//	public Room room1 = new Room(1,"Cryo Room 1","The walls are dull grey and lined with the statis units for other crew "
-//			+ "members, they too appear fine, just out. The room has 4 doors and each door has a name plate above it. To "
-//			+ "the west and east there are black doors, the west is labeled \"Engine Room\" and the east is labeled \"Ship AI\"."
-//			+ " To the north and south are red doors labeled \"Cryogenics Room\""
-//			, robotDoorman, null, false, true, null);
-//	
-//	//Cryo Room 2
-//	public Room room2 = new Room(2,"Cryo Room 2","The crew in this rooms appears to be fine as well, sleeping in their cham-bers."
-//			, null, null, false, true, communicationPuzzle);
-//	
-//	//Cryo Room 3
-//	public Room room3 = new Room(3,"Cryo Room 3","The room is a dull metal grey with three doors each with a name plate."
-//			, null, null, false, true, null);
-//	
-//	//Cryo Room 4
-//	public Room room4 = new Room(4,"Cryo Room 4","The room is dull metal grey with two doors. The crew in this room appears fine"
-//			, null, null, false, true, null);
-//	
-//	//Cryo Room 5
-//	public Room room5 = new Room(5,"Cryo Room 5","The room is dull metal grey with three doors. The door to the east is the same "
-//			+ "dull grey as the rest of the ship but there appears to be a window near the top.  You give the stasis chambers a "
-//			+ "quick glance to ensure the crew is fine then go to check the window. The window is small but you can just make out"
-//			+ " what appears to be a room with something in it.  As you step back your foot catches against something on the floor.  "
-//			+ "Upon inspection, you realize there is an anchor point on the floor next to the door. "
-//			, null, null, false, true, eCellPuzzle);
-//	
-//	//Hallway
-//	public Room room6 = new Room(6,"Hallway","The room is grey with two exits."
-//			, null, null, false, true, eCellPuzzle);
-//	
-//	//Hallway 1
-//	public Room room7 = new Room(7,"Hallway 1","The grey walls continue into this room as do the red doors."
-//			, cyborgPirate, null, false, true, null);
-//	
-//	//Hallway 2
-//	public Room room8 = new Room(8,"Hallway 2","The walls are grey and there are two doors."
-//			, null, null, false, true, null);
-//	
-//	//Security
-//	public Room room9 = new Room(9,"Security","Just like the other rooms it is dull gray but with a flickering"
-//			+ " overhead light.  Looking around the room the all the monitors are public except for the one in "
-//			+ "the command center which appears to be in working order."
-//			, null, null, false, true, magicSquarePuzzle);
-//	
-//	//Spaced Energy Cell
-//	public Room room10 = new Room(10,"Spaced Energy Cell","Once the door is pried open the air is sucking around "
-//			+ "you pulling you to the leaking hole.  Crawling around the wall you have reached the E-Cell create."
-//			, null, null, false, true, eCellPuzzle);
-//	
-//	//Hallway 3
-//	public Room room11 = new Room(11,"Hallway 3", "Another hallway with dull gray walls"
-//			, null, null, false, true, null);
-//	
-//	//Hallway 4
-//	public Room room12 = new Room(12,"Hallway 4","Like most of the hallways on the ship this is another dull gray "
-//			+ "walled room."
-//			, null, null, false, true, eCellPuzzle);
-//	
-//	//Server Bank 4
-//	public Room room13 = new Room(13,"Server Bank 4","This room is abnormally dark even compared to the crippled ship."
-//			+ "  The light blinking on the server bank are creating a dancing shadow effect, giving a serial effect."
-//			, null, null, false, true, null);
-//	
-//	//Server Bank 3
-//	public Room room14 = new Room(14,"Server Bank 3","You're struck by how well this room is intact and seems to be "
-//			+ "in working order.  All server banks seem to be powered on and communicating with the main system. "
-//			, null, null, false, true, null);
-//	
-//	//Server Bank 2
-//	public Room room15 = new Room(15,"Server Bank 2","This room largely resembles the others, with black server racks "
-//			+ "occupying most of the space."
-//			, null, null, false, true, headPuzzle);
-//	
-//	//Server Bank 1
-//	public Room room16 = new Room(16,"Server Bank 1","Besides the usual grey, the walls of this room are lined with "
-//			+ "blade servers, most of which remain relatively unscathed."
-//			, null, null, false, true, null);
-//	
-//	//Hallway 4 Iced
-//	public Room room17 = new Room(17,"Hallway 4 Iced","These hallways all look the same, with the only indication "
-//			+ "that you've moved being the signs on the floor. That, and the fact that this room is just as cold as "
-//			+ "the cryogenic rooms."
-//			, null, null, false, true, travelPuzzle);
-//	
-//	//Hallway 5
-//	public Room room18 = new Room(18,"Hallway 5","The walls of this hallway are a uniform grey throughout. Only about"
-//			+ " a quar-ter of the lights are working, so it is fairly dark."
-//			, null, null, false, true, null);
-//	
-//	//Command Center
-//	public Room room19 = new Room(19,"Command Center","When you enter, the room is lit only by back power making it "
-//			+ "very dim."
-//			, null, null, false, true, null);
-//	
-//	//Hallway 6
-//	public Room room20 = new Room(20,"Hallway 6", "The hallway towards Communications is long, and includes two "
-//			+ "sections the walls are a neutral grey color, with the outlines of wall panels visible in some places."
-//			, null, null, false, true, computerSystemPuzzle);
-//	
-//	//Hallway 7
-//	public Room room21 = new Room(21,"Hallway 7","The second section of the hallway towards the com room seems "
-//			+ "identical to the first."
-//			, null, null, false, true, null);
-//	
-//	//Communications
-//	public Room room22 = new Room(22,"Communications","This room is a uniform drab grey like the others. A "
-//			+ "few computer terminals with blinking lights populate the otherwise sparsely furnished room."
-//			, null, null, false, true, brothersPuzzle);
-//	
-//	//Ship Weapons
-//	public Room room23 = new Room(23,"Ship Weapons","The walls in this room are formed by dark paneling, "
-//			+ "but the lights are almost bright enough to hurt your eyes. There are quite a few terminals "
-//			+ "in this room as well, with a large table in the center which projects various holographic "
-//			+ "images above it. The panels cover every inch of the interior, with the excep-tion of the "
-//			+ "western wall, which is a large window."
-//			, spaceKraken , null, false, true, null);
-//	
-//	//Cargo 1
-//	public Room room24 = new Room(24,"Cargo 1","This is a dull grey room lined with empty cargo crates. "
-//			+ "There are two doors in this room, one yellow door to the north and a black door to the east."
-//			, null, null, false, true, null);
-//	
-//	//Engine Room
-//	public Room room25 = new Room(25,"Engine Room","This is a large grey room with multiple exits. There is "
-//			+ "a large Ion Thruster in the middle of the room. The Ion thruster is not powered on, and all "
-//			+ "indicator gauges show that there is not enough impulse power to provide sufficient propulsion "
-//			+ "for escape. Damage to the thruster and missing e-cells are prohib-iting the engine from powering up."
-//			, alienCommando, null, false, true, null);
-//	
-//	//Cargo 2
-//	public Room room26 = new Room(26,"Cargo 2","This is a dull grey room with empty shelves."
-//			, null, null, false, true, null);
-//	
-//	//Energy Cell Cargo
-//	public Room room27 = new Room(27,"Energy Cell Cargo","This is a dull grey room with six empty Energy Cell "
-//			+ "crates and one locked energy crate."
-//			, null, null, false, true, null);
-//	
-//	//Viewing 1
-//	public Room room28 = new Room(28,"Viewing 1","This room has panoramic viewing windows, the length of"
-//			+ " the room. Through these windows one can see our indigenous galaxy."
-//			, null, null, false, true, null);
-//	
-//	//Viewing 2
-//	public Room room29 = new Room(29,"Viewing 2","This a dull grey room. This room has panoramic windows"
-//			+ " but the ships win-dow shutters are closed."
-//			, null, null, false, true, towelPuzzle);
-//	
-//	//Navigation
-//	public Room room30 = new Room(30,"Navigation","There is only one way in and one way out in this room."
-//			+ " There is an elaborate navigation control panel. Some of the gauges are damaged but overall"
-//			+ " the navigation controls appear to be fully functional."
-//			, littleGreenMan, null, false, true, wolvesPuzzle);
-//	
-//	//Ships AI
-//	public Room room31 = new Room(31,"Ships AI","You can barely see through the darkness to find the "
-//			+ "terminal to plug in the E-cell."
-//			, cyborgPirate, null, false, true, null);
-//	
-	
-	
-//	public Door[] room0Doors = {new Door(room1, "north"), new Door(room19, "south", true), new Door(room11, "east"), new Door(room20, "west")};
-//	public Door[] room1Doors = {new Door(room2, "north"), new Door(room0, "south"), new Door(room31, "east"), new Door(room25, "west")};
-//	public Door[] room2Doors = {new Door(room3, "north"), new Door(room1, "south"), new Door(room31, "east"), new Door(room25, "west")};
-//	public Door[] room3Doors = {new Door(room4, "north"), new Door(room2, "south"), new Door(room18, "east"), new Door(null, "west")};
-//	public Door[] room4Doors = {new Door(room5, "north"), new Door(room3, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room5Doors = {new Door(room6, "north"), new Door(room4, "south"), new Door(room10, "east"), new Door(null, "west")};
-//	public Door[] room6Doors = {new Door(null, "north"), new Door(room5, "south"), new Door(room7, "east"), new Door(null, "west")};
-//	public Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room8, "east"), new Door(room7, "west")};
-//	public Door[] room8Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room9, "east"), new Door(room7, "west")};
-//	public Door[] room9Doors = {new Door(null, "north"), new Door(null, "south"), new Door(null, "east"), new Door(room8, "west")};
-//	public Door[] room10Doors = {new Door(null, "north"), new Door(room17, "south"), new Door(null, "east"), new Door(room5, "west")};
-//	public Door[] room11Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room12, "east"), new Door(room0, "west")};
-//	public Door[] room12Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room13, "east"), new Door(room11, "west")};
-//	public Door[] room13Doors = {new Door(room14, "north"), new Door(null, "south"), new Door(null, "east"), new Door(room12, "west")};
-//	public Door[] room14Doors = {new Door(room15, "north"), new Door(room13, "south"), new Door(null, "east"), new Door(room31, "west")};
-//	public Door[] room15Doors = {new Door(room16, "north"), new Door(room14, "south"), new Door(null, "east"), new Door(room31, "west")};
-//	public Door[] room16Doors = {new Door(null, "north"), new Door(room15, "south"), new Door(null, "east"), new Door(room17, "west")};
-//	public Door[] room17Doors = {new Door(room10, "north"), new Door(null, "south"), new Door(room16, "east"), new Door(room18, "west")};
-//	public Door[] room18Doors = {new Door(null, "north"), new Door(null, "south"), new Door(room17, "east"), new Door(room3, "west")};
-//	public Door[] room19Doors = {new Door(room0, "north"), new Door(null, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room20Doors = {new Door(room25, "north"), new Door(null, "south"), new Door(room0, "east"), new Door(room21, "west")};
-//	public Door[] room21Doors = {new Door(room25, "north"), new Door(null, "south"), new Door(room20, "east"), new Door(room22, "west")};
-//	public Door[] room22Doors = {new Door(room23, "north"), new Door(null, "south"), new Door(room21, "east"), new Door(null, "west")};
-//	public Door[] room23Doors = {new Door(room24, "north"), new Door(room22, "south"), new Door(room25, "east"), new Door(null, "west")};
-//	public Door[] room24Doors = {new Door(room26, "north"), new Door(room23, "south"), new Door(room25, "east"), new Door(null, "west")};
-//	public Door[] room25Doors = {new Door(room2, "northeast"), new Door(room1, "southeast"), new Door(room24, "northwest"), new Door(room23, "southwest")};
-//	public Door[] room26Doors = {new Door(room27, "north"), new Door(room24, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room27Doors = {new Door(room28, "north"), new Door(room26, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room28Doors = {new Door(room29, "north"), new Door(room27, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room29Doors = {new Door(room30, "north"), new Door(room28, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room30Doors = {new Door(null, "north"), new Door(room29, "south"), new Door(null, "east"), new Door(null, "west")};
-//	public Door[] room31Doors = {new Door(room15, "northeast"), new Door(room14, "southeast"), new Door(room2, "northwest"), new Door(room1, "southwest")};
-//	
-//	
-//	
-//	public HashMap<Room, Door[]> myMap = new HashMap<Room, Door[]>()
-//	{
-//	    {
-//	        put(room0, room0Doors);
-//	        put(room1, room1Doors);
-//	        put(room2, room2Doors);
-//	        put(room3, room3Doors);
-//	        put(room4, room4Doors);
-//	        put(room5, room5Doors);
-//	        put(room6, room6Doors);
-//	        put(room7, room7Doors);
-//	        put(room8, room8Doors);
-//	        put(room9, room9Doors);
-//	        put(room10, room10Doors);
-//	        put(room11, room11Doors);
-//	        put(room12, room12Doors);
-//	        put(room13, room13Doors);
-//	        put(room14, room14Doors);
-//	        put(room15, room15Doors);
-//	        put(room16, room16Doors);
-//	        put(room17, room17Doors);
-//	        put(room18, room18Doors);
-//	        put(room19, room19Doors);
-//	        put(room20, room20Doors);
-//	        put(room21, room21Doors);
-//	        put(room22, room22Doors);
-//	        put(room23, room23Doors);
-//	        put(room24, room24Doors);
-//	        put(room25, room25Doors);
-//	        put(room26, room26Doors);
-//	        put(room27, room27Doors);
-//	        put(room28, room28Doors);
-//	        put(room29, room29Doors);
-//	        put(room30, room30Doors);
-//	        put(room31, room31Doors);
-//	    }
-//	};
-	
-  
-	
 	Stage theStage;
 	
-	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene, keyScene, powerScene;
+	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene, keyScene, powerScene, deathScene;
 	
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
@@ -592,6 +272,12 @@ public class MainGUI extends Application {
 	Button navigationsBtn = new Button("Navigations");
 	Button exitPowerScene = new Button("Return");
 	
+	//DeathScene
+	VBox deathVBox = new VBox();
+	BorderPane deathPane = new BorderPane();
+	Text deathText = new Text("You Have Died a Valiant Death");
+	Button returnToMenu = new Button("Return to Main Menu");
+	
 
 	File cwdFile = new File (".");
 	String cwd = cwdFile.getAbsolutePath();
@@ -602,7 +288,7 @@ public class MainGUI extends Application {
     	
     	theStage = primaryStage;
     	
-
+        returnToMenu.setOnAction(e -> setMainMenu());
 
         startFightBtn.setOnAction(e -> setFightScene());
         returnBtn.setOnAction(e -> setMainScene());
@@ -757,6 +443,9 @@ public class MainGUI extends Application {
         powerPane.setCenter(powerVBox);
         powerPane.setTop(powerHeader);
         
+        //Death
+        deathVBox.getChildren().addAll(deathText, returnToMenu);
+        deathPane.setCenter(deathVBox);
 		
 		mainPane.setTop(saveGameBtn);
         mainPane.setCenter(directionalGrid);
@@ -764,6 +453,7 @@ public class MainGUI extends Application {
         mainPane.setBottom(textScroller);
         mainPane.setLeft(mainInvPane);
         
+        deathScene = new Scene(deathPane, 800, 500);
         mainScene = new Scene(mainPane, 800, 500);
         fightScene = new Scene(fightPane, 800, 500);
         puzzleScene = new Scene(puzzlePane, 800, 500);
@@ -828,6 +518,12 @@ public class MainGUI extends Application {
     	}
     }
 
+    private void setMainMenu()
+    {
+    	
+    	theStage.setScene(menuScene);
+    	updateText();
+    }
     private void setPowerScene(){
     	powerPane.setBottom(textScroller);
     	theStage.setScene(powerScene);
@@ -855,12 +551,6 @@ public class MainGUI extends Application {
     	}
     	updateText();
 	}
-
-
-
-
-
-
 
 	private void moveNorth() {
 		cycleText(mainPlayer.move(myMap.get(mainPlayer.getRoomID())[0]));
@@ -912,6 +602,10 @@ public class MainGUI extends Application {
 		if(mainMonster.getHealth()<=0){
 			mainPlayer.getRoomID().getRoomInv().addItem(mainMonster.getItemDrop());
 			updateText();
+		}
+		else if(mainPlayer.getHealth() <= 0)
+		{
+			theStage.setScene(deathScene);
 		}
 		else{
 		recieveDamage();
