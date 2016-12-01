@@ -217,9 +217,9 @@ public class MainGUI extends Application {
 	Puzzle communicationPuzzle = new Puzzle("Communications Puzzle","A frog is at the bottom of a 30 meter well. "
 			+ "Each day he summons enough energy for one 3 meter leap up the well. Exhausted, "
 			+ "he then hangs there for the rest of the day. At night, while he is asleep, "
-			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?  ","28 days", null);
+			+ "he slips 2 meters backwards. How many days does it take him to escape from the well? ","28 days", null);
 	MagicSquare magicSquarePuzzle = new MagicSquare(commandKey);
-	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes.  How many wolves "
+	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes. How many wolves "
 			+ "will be needed to catch sixty lambs in sixty minutes?","6", energyCell);
 	Puzzle brothersPuzzle = new Puzzle("Brothers Puzzle","Brothers and sisters I have none but this man's "
 			+ "father is my father's son. Who is the man?","the man is my son", concussionGrenade);
@@ -543,10 +543,10 @@ public class MainGUI extends Application {
 	private Button returnBtn = new Button("Return");
 	
 	//DIRECTION BUTTONS
-	private Button northBtn = new Button("north");
-	private Button southBtn = new Button("south");
-	private Button eastBtn = new Button("east");
-	private Button westBtn = new Button("west");
+	private Button northBtn = new Button("N");
+	private Button southBtn = new Button("S");
+	private Button eastBtn = new Button("E");
+	private Button westBtn = new Button("W");
 	
 	//MainMenuButtons
 			Button newGame = new Button("New Game");
