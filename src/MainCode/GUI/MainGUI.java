@@ -279,6 +279,28 @@ public class MainGUI extends Application {
 	Button returnToMenu = new Button("Return to Main Menu");
 	GridPane deathGrid = new GridPane();
 	
+	//Description
+	Text gameDescription = new Text("NEWS FLASH "
+			+ "\n\nToday’s the day folks, after years of research and planning the first space voyage that requires its members to be placed into stasis happens "
+			+ "\ntoday.  In just a few moments we will watch live as the crew is launched on this momentous journey.  Their destination is a planet which they believe "
+			+ "\nwill support life as we know it. The journey is so long that the crew will have to be placed in stasis for the duration.  Each crew member has been "
+			+ "\ncarefully selected to ensure the crew has a good mix of skill sets to colonize this new planet.  Once launched we will receive word from the pilot "
+			+ "\nconfirming all systems are operational before the pilot joins the rest of his crew in stasis. After this we will have no contact with the human crew "
+			+ "\nuntil they reach their destination. Our thoughts and prayers will be with these brave men and women. "
+			+ "\n\nAt launch site "
+			+ "\n\nIt’s finally the day, you were selected for this mission almost two years ago. Since then you've spent hours upon hours learning about the ship so "
+			+ "\nyou can be the most effective ship engineer you can be.  There’s been countless plans and meetings and check-ups but it has all been worth it because "
+			+ "\nnow you’re walking into the ship which will take you to an entirely unknown planet.  One of the many doctors comes up and begins fitting you with "
+			+ "\nwires and monitors that will keep your body alive during the journey. They tell you not to worry it’ll just feel like you’re going to sleep and when "
+			+ "\nyou wake up you’ll be somewhere new. A nurse comes over and with the doctor the two get you situated in the pod and begin hooking up wires."
+			+ "\n\n'Are you ready?', the doctor asks. "
+			+ "\n\nYou nod, too nervous to speak. "
+			+ "\nThe doctor smiles lightly and presses some buttons, the world begins to grey and you let your eyes slide "
+			+ "\nclosed secure in the knowledge when you wake you’ll be at a new planet. "
+			+ "\n\nLevel 1 goal: open the command center "
+			+ "\nLevel 2 goal: power up the ship's AI "
+			+ "\nLevel 3 goal: power up the engine room "
+			+ "\nLevel 4 goal (final): power up the navigation then return to the command center to fly off ");
 
 	File cwdFile = new File (".");
 	String cwd = cwdFile.getAbsolutePath();
@@ -351,7 +373,7 @@ public class MainGUI extends Application {
 		
 		
 		//NEW GAME INTERFACE
-		newGamePane.getChildren().addAll(newGameNameHeader, newGameNameScanner);
+		newGamePane.getChildren().addAll(gameDescription, newGameNameHeader, newGameNameScanner);
 		newGameNameScanner.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
 		
 		//LOAD GAME INTERFACE
