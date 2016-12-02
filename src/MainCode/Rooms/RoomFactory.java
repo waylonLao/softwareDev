@@ -222,38 +222,165 @@ public class RoomFactory {
 	}
 	
 	public ArrayList<Door[]> newDoors(){
-		Door[] room0Doors = {new Door(rooms.get(1), "north", true), new Door(rooms.get(19), "south", true), new Door(rooms.get(11), "east", true), new Door(rooms.get(20), "west", true)};
-		Door[] room1Doors = {new Door(rooms.get(2), "north"), new Door(rooms.get(0), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
-		Door[] room2Doors = {new Door(rooms.get(3), "north"), new Door(rooms.get(1), "south"), new Door(rooms.get(31), "east"), new Door(rooms.get(25), "west")};
-		Door[] room3Doors = {new Door(rooms.get(4), "north"), new Door(rooms.get(2), "south"), new Door(rooms.get(18), "east", true), new Door(null, "west")};
-		Door[] room4Doors = {new Door(rooms.get(5), "north"), new Door(rooms.get(3), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room5Doors = {new Door(rooms.get(6), "north"), new Door(rooms.get(4), "south"), new Door(rooms.get(10), "east", true), new Door(null, "west")};
-		Door[] room6Doors = {new Door(null, "north"), new Door(rooms.get(5), "south"), new Door(rooms.get(7), "east"), new Door(null, "west")};
-		Door[] room7Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(8), "east"), new Door(rooms.get(6), "west")};
-		Door[] room8Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(9), "east"), new Door(rooms.get(7), "west")};
-		Door[] room9Doors = {new Door(null, "north"), new Door(null, "south"), new Door(null, "east"), new Door(rooms.get(8), "west")};
-		Door[] room10Doors = {new Door(null, "north"), new Door(rooms.get(17), "south"), new Door(null, "east"), new Door(rooms.get(5), "west")};
-		Door[] room11Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(12), "east"), new Door(rooms.get(0), "west")};
-		Door[] room12Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(13), "east"), new Door(rooms.get(11), "west")};
-		Door[] room13Doors = {new Door(rooms.get(14), "north"), new Door(null, "south"), new Door(null, "east"), new Door(rooms.get(12), "west")};
-		Door[] room14Doors = {new Door(rooms.get(15), "north"), new Door(rooms.get(13), "south"), new Door(null, "east"), new Door(rooms.get(31), "west")};
-		Door[] room15Doors = {new Door(rooms.get(16), "north"), new Door(rooms.get(14), "south"), new Door(null, "east"), new Door(rooms.get(31), "west")};
-		Door[] room16Doors = {new Door(null, "north"), new Door(rooms.get(15), "south"), new Door(null, "east"), new Door(rooms.get(17), "west")};
-		Door[] room17Doors = {new Door(rooms.get(10), "north", true), new Door(null, "south"), new Door(rooms.get(16), "east"), new Door(rooms.get(18), "west")};
-		Door[] room18Doors = {new Door(null, "north"), new Door(null, "south"), new Door(rooms.get(17), "east"), new Door(rooms.get(3), "west")};
-		Door[] room19Doors = {new Door(rooms.get(0), "north"), new Door(null, "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room20Doors = {new Door(rooms.get(25), "north"), new Door(null, "south"), new Door(rooms.get(0), "east"), new Door(rooms.get(21), "west")};
-		Door[] room21Doors = {new Door(rooms.get(25), "north"), new Door(null, "south"), new Door(rooms.get(20), "east"), new Door(rooms.get(22), "west")};
-		Door[] room22Doors = {new Door(rooms.get(23), "north"), new Door(null, "south"), new Door(rooms.get(21), "east"), new Door(null, "west")};
-		Door[] room23Doors = {new Door(rooms.get(24), "north"), new Door(rooms.get(22), "south"), new Door(rooms.get(25), "east"), new Door(null, "west")};
-		Door[] room24Doors = {new Door(rooms.get(26), "north"), new Door(rooms.get(23), "south"), new Door(rooms.get(25), "east"), new Door(null, "west")};
-		Door[] room25Doors = {new Door(rooms.get(2), "northeast"), new Door(rooms.get(1), "southeast"), new Door(rooms.get(24), "northwest"), new Door(rooms.get(23), "southwest")};
-		Door[] room26Doors = {new Door(rooms.get(27), "north"), new Door(rooms.get(24), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room27Doors = {new Door(rooms.get(28), "north"), new Door(rooms.get(26), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room28Doors = {new Door(rooms.get(29), "north"), new Door(rooms.get(27), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room29Doors = {new Door(rooms.get(30), "north"), new Door(rooms.get(28), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room30Doors = {new Door(null, "north"), new Door(rooms.get(29), "south"), new Door(null, "east"), new Door(null, "west")};
-		Door[] room31Doors = {new Door(rooms.get(15), "northeast"), new Door(rooms.get(14), "southeast"), new Door(rooms.get(2), "northwest"), new Door(rooms.get(1), "southwest")};
+		Door[] room0Doors = {new Door(rooms.get(1), "north", true)
+				, new Door(rooms.get(19), "south", true)
+				, new Door(rooms.get(11), "east", true)
+				, new Door(rooms.get(20), "west", true)};
+		
+		Door[] room1Doors = {new Door(rooms.get(2), "north")
+				, new Door(rooms.get(0), "south")
+				, new Door(rooms.get(31), "east")
+				, new Door(rooms.get(25), "west")};
+		
+		Door[] room2Doors = {new Door(rooms.get(3), "north")
+				, new Door(rooms.get(1), "south")
+				, new Door(rooms.get(31), "east")
+				, new Door(rooms.get(25), "west")};
+		
+		Door[] room3Doors = {new Door(rooms.get(4), "north")
+				, new Door(rooms.get(2), "south")
+				, new Door(rooms.get(18), "east", true)
+				, new Door(null, "west")};
+		
+		Door[] room4Doors = {new Door(rooms.get(5), "north")
+				, new Door(rooms.get(3), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room5Doors = {new Door(rooms.get(6), "north")
+				, new Door(rooms.get(4), "south")
+				, new Door(rooms.get(10), "east", true)
+				, new Door(null, "west")};
+		
+		Door[] room6Doors = {new Door(null, "north")
+				, new Door(rooms.get(5), "south")
+				, new Door(rooms.get(7), "east")
+				, new Door(null, "west")};
+		
+		Door[] room7Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(8), "east")
+				, new Door(rooms.get(6), "west")};
+		
+		Door[] room8Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(9), "east")
+				, new Door(rooms.get(7), "west")};
+		
+		Door[] room9Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(8), "west")};
+		
+		Door[] room10Doors = {new Door(null, "north")
+				, new Door(rooms.get(17), "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(5), "west")};
+		
+		Door[] room11Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(12), "east")
+				, new Door(rooms.get(0), "west")};
+		
+		Door[] room12Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(13), "east")
+				, new Door(rooms.get(11), "west")};
+		
+		Door[] room13Doors = {new Door(rooms.get(14), "north")
+				, new Door(null, "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(12), "west")};
+		
+		Door[] room14Doors = {new Door(rooms.get(15), "north")
+				, new Door(rooms.get(13), "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(31), "west")};
+		
+		Door[] room15Doors = {new Door(rooms.get(16), "north")
+				, new Door(rooms.get(14), "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(31), "west")};
+		
+		Door[] room16Doors = {new Door(null, "north")
+				, new Door(rooms.get(15), "south")
+				, new Door(null, "east")
+				, new Door(rooms.get(17), "west")};
+		
+		Door[] room17Doors = {new Door(rooms.get(10), "north", true)
+				, new Door(null, "south")
+				, new Door(rooms.get(16), "east")
+				, new Door(rooms.get(18), "west")};
+		
+		Door[] room18Doors = {new Door(null, "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(17), "east")
+				, new Door(rooms.get(3), "west")};
+		
+		Door[] room19Doors = {new Door(rooms.get(0), "north")
+				, new Door(null, "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room20Doors = {new Door(rooms.get(25), "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(0), "east")
+				, new Door(rooms.get(21), "west")};
+		
+		Door[] room21Doors = {new Door(rooms.get(25), "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(20), "east")
+				, new Door(rooms.get(22), "west")};
+		
+		Door[] room22Doors = {new Door(rooms.get(23), "north")
+				, new Door(null, "south")
+				, new Door(rooms.get(21), "east")
+				, new Door(null, "west")};
+		
+		Door[] room23Doors = {new Door(rooms.get(24), "north")
+				, new Door(rooms.get(22), "south")
+				, new Door(rooms.get(25), "east")
+				, new Door(null, "west")};
+		
+		Door[] room24Doors = {new Door(rooms.get(26), "north")
+				, new Door(rooms.get(23), "south")
+				, new Door(rooms.get(25), "east")
+				, new Door(null, "west")};
+		
+		Door[] room25Doors = {new Door(rooms.get(2), "northeast")
+				, new Door(rooms.get(1), "southeast")
+				, new Door(rooms.get(24), "northwest")
+				, new Door(rooms.get(23), "southwest")};
+		
+		Door[] room26Doors = {new Door(rooms.get(27), "north")
+				, new Door(rooms.get(24), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room27Doors = {new Door(rooms.get(28), "north")
+				, new Door(rooms.get(26), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room28Doors = {new Door(rooms.get(29), "north")
+				, new Door(rooms.get(27), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room29Doors = {new Door(rooms.get(30), "north")
+				, new Door(rooms.get(28), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room30Doors = {new Door(null, "north")
+				, new Door(rooms.get(29), "south")
+				, new Door(null, "east")
+				, new Door(null, "west")};
+		
+		Door[] room31Doors = {new Door(rooms.get(18), "north")
+				, new Door(rooms.get(11), "south")
+				, new Door(rooms.get(15), "east")
+				, new Door(rooms.get(2), "west")};
 		
 		doors = new ArrayList<Door[]>(){
 			{

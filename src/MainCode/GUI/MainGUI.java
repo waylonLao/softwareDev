@@ -561,6 +561,7 @@ public class MainGUI extends Application {
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof Weapon){
     		cycleText(mainPlayer.equipWeapon((Weapon) playerItemList.getSelectionModel().getSelectedItem()));
     		mainPlayer.getSpriteInv().removeItem(((Weapon) playerItemList.getSelectionModel().getSelectedItem()));
+    		updateText();
     	}
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof HealthPack){
     		cycleText(((HealthPack) playerItemList.getSelectionModel().getSelectedItem()).itemFunction(mainPlayer));
