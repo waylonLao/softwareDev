@@ -176,8 +176,7 @@ public class RoomFactory {
 				, null, null, false, false, null);
 		
 		//Ships AI
-		 Room room31 = new Room(31,"Ships AI","You can barely see through the darkness to find the "
-				+ "terminal to plug in the E-cell."
+		 Room room31 = new Room(31,"Ships AI","You can barely see through the darkness."
 				, null, null, false, false, null);
 		
 		

@@ -23,7 +23,7 @@ public class HealthPack extends Item implements Serializable{
 		if(p.getHealth() == p.getMaxHealth()){
 			return "You are already fully healed.";
 		}
-		p.setHealth(Math.min(p.getHealth() + 50, p.getMaxHealth()));
+		p.setHealth(Math.min(p.getHealth() + 100, p.getMaxHealth()));
 		return "You bandage your wounds.";
 	}
 

@@ -521,6 +521,7 @@ public class MainGUI extends Application {
     private void useItem(){
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof Weapon){
     		cycleText(mainPlayer.equipWeapon((Weapon) playerItemList.getSelectionModel().getSelectedItem()));
+    		mainPlayer.getSpriteInv().removeItem(((Weapon) playerItemList.getSelectionModel().getSelectedItem()));
     	}
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof HealthPack){
     		cycleText(((HealthPack) playerItemList.getSelectionModel().getSelectedItem()).itemFunction(mainPlayer));
@@ -743,13 +744,16 @@ public class MainGUI extends Application {
 		
 		
 		rooms.get(1).getRoomInv().addItem(leadPipe);
+		rooms.get(15).getRoomInv().addItem(disintegratorPistol);
 		
 		rooms.get(6).setPuzzle(eCellPuzzle);
 		rooms.get(9).setPuzzle(magicSquarePuzzle);
+		rooms.get(10).setPuzzle(eCellPuzzle);
 		rooms.get(12).setPuzzle(eCellPuzzle);
 		rooms.get(20).setPuzzle(eCellPuzzle);
 		rooms.get(22).setPuzzle(brothersPuzzle);
 		rooms.get(27).setPuzzle(wolvesPuzzle);
+		
 		
 		myMap = new HashMap<Room, Door[]>()
 		{
@@ -917,6 +921,10 @@ public class MainGUI extends Application {
 				updateText();
 				setMainScene();
 				
+	}
+	private void shipsAIText()
+	{
+		
 	}
 
 
