@@ -574,7 +574,9 @@ public class MainGUI extends Application {
     	}
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof Key){
     		selectedKey = (Key) playerItemList.getSelectionModel().getSelectedItem();
+    		mainPlayer.getSpriteInv().removeItem(((Key) playerItemList.getSelectionModel().getSelectedItem()));
     		setKeyScene();
+    		
     	}
     	if(playerItemList.getSelectionModel().getSelectedItem() instanceof ECell){
     		if(mainPlayer.getRoomID() == rooms.get(19)){
