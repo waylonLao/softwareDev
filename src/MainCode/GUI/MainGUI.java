@@ -159,12 +159,13 @@ public class MainGUI extends Application {
 	
 	Stage theStage;
 	
-	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene, keyScene, powerScene, deathScene;
+	Scene mainScene, fightScene, puzzleScene, menuScene, newGameScene, loadGameScene, keyScene, powerScene, deathScene, helpScene;
 	
 	BorderPane mainPane = new BorderPane();
 	BorderPane puzzlePane = new BorderPane();
 	BorderPane fightPane = new BorderPane();
 	BorderPane menuPane= new BorderPane();
+	BorderPane helpPane = new BorderPane();
 	GridPane directionalGrid = new GridPane();
 	VBox roomInfoPane = new VBox();
 	GridPane myGrid = new GridPane();
@@ -174,6 +175,16 @@ public class MainGUI extends Application {
 	ScrollPane roomInvPane = new ScrollPane();
 	ScrollPane playerInvPane = new ScrollPane();
 	VBox menuButtonPane = new VBox();
+	
+	VBox helpVBox = new VBox();
+	
+	GridPane helpGrid = new GridPane();
+	
+	Text helpText1 = new Text("Use the Buttons to Navigate Around the Ship.");
+	Text helpText2 = new Text("Select Items in Inventory and Press the Use Item Button to Use Them.");
+	Text helpText3 = new Text("Press the Save Game Button to Save Your Progress.");
+	Text helpText4 = new Text("To Load a Saved Game, Type in the Name You Used to Start a New Game.");
+	Text helpText5 = new Text("");
 
 	
 	VBox newGamePane = new VBox();
@@ -283,6 +294,10 @@ public class MainGUI extends Application {
 	BorderPane deathPane = new BorderPane();
 	Text deathText = new Text("You Have Died a Valiant Death");
 	Button returnToMenu = new Button("Return to Main Menu");
+	Button returnToMenu1 = new Button("Return to Main Menu");
+	Button returnToMenu2 = new Button("Return to Main Menu");
+	Button returnToMenu3 = new Button("Return to Main Menu");
+	
 	GridPane deathGrid = new GridPane();
 	
 	//Description
@@ -322,6 +337,11 @@ public class MainGUI extends Application {
     	
     	quit.setOnAction(e -> theStage.close());
         returnToMenu.setOnAction(e -> setMainMenu());
+        returnToMenu1.setOnAction(e -> setMainMenu());
+        returnToMenu2.setOnAction(e -> setMainMenu());
+        returnToMenu3.setOnAction(e -> setMainMenu());
+        
+        help.setOnAction(e -> theStage.setScene(helpScene));
 
         startFightBtn.setOnAction(e -> setFightScene());
         returnBtn.setOnAction(e -> setMainScene());
@@ -375,22 +395,32 @@ public class MainGUI extends Application {
 		
 		menuButtonPane.getChildren().addAll(newGame, loadGame, help, quit);
 		menuButtonPane.setSpacing(70);
-		menuButtonPane.setPadding(new Insets(120, 100, 10, 100));
+		menuButtonPane.setPadding(new Insets(80, 100, 10, 100));
 		
 		menuPane.setTop(menuTitle);
 		menuPane.setCenter(menuButtonPane);
 		
+		//helpGrid.add(helpText1, 0, 0);
+		//helpGrid.add(helpText2, 0, 1);
+		//helpGrid.add(helpText3, 0, 2);
+		//helpGrid.add(helpText4, 0, 3);
+		//helpGrid.add(returnToMenu, 0, 4);
+		
+		helpVBox.getChildren().addAll(helpText1, helpText2, helpText3, helpText4, returnToMenu1);
+		helpVBox.setSpacing(70);
+		helpVBox.setPadding(new Insets(80, 100, 10, 100));
+		helpPane.setCenter(helpVBox);
+		
 		
 		
 		//NEW GAME INTERFACE
-		newGamePane.getChildren().addAll(gameDescription, newGameNameHeader, newGameNameScanner);
+		newGamePane.getChildren().addAll(gameDescription, newGameNameHeader, newGameNameScanner, returnToMenu3);
 		newGameNameScanner.setOnAction(e -> startNewGame(newGameNameScanner.getText()));
 		
 		//LOAD GAME INTERFACE
-		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner);
+		loadGamePane.getChildren().addAll(loadGameNameHeader, loadGameNameScanner, returnToMenu2);
 		loadGameNameScanner.setOnAction(e -> loadGame(loadGameNameScanner.getText()));
-		loadGameGrid.add(loadGamePane, 1, 1);
-		loadGameGrid.add(returnToMenu, 1, 2);
+
         
         //MOVEMENT
         directionalGrid.setAlignment(Pos.CENTER);
@@ -496,9 +526,9 @@ public class MainGUI extends Application {
         menuScene = new Scene(menuPane, 800,500);
         keyScene = new Scene(keyPane, 800,500);
         powerScene = new Scene(powerPane, 800,500);
-        
+        helpScene = new Scene(helpPane, 800, 500);
         newGameScene = new Scene(newGamePane, 800, 500);
-        loadGameScene = new Scene(loadGameGrid, 800, 500);
+        loadGameScene = new Scene(loadGamePane, 800, 500);
         
         theStage.setTitle("Galaxy Explorer");
         theStage.setScene(menuScene);
