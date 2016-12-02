@@ -132,6 +132,7 @@ public class MainGUI extends Application {
 	Monster zocrexianInfiltrator = new Monster(50, houndTail, "Zocrexian Infiltrator", "An alien hound all the way from zocrexia.", healthKit);
 	Monster littleGreenMan = new Monster(100, disintegratorPistol, "Little Green Man", "A prototypical alien..", disintegratorPistol);
 	Monster cyborgPirate = new Monster(100, cutlass, "Cyborg Pirate", "A robotic pirate with a bad attitude.", blueKey);
+	Monster cyborgPirate1 = new Monster(100, cutlass, "Cyborg Pirate", "A robotic pirate with a bad attitude.", healthKit);
 	Monster maskedRobot = new Monster(50, wrestlingMoves, "Masked Robot", "An aggressive machine who wants to wrestle.", healthKit);
 	Monster alienCommando = new Monster(100, plasmaRifle, "Alien Commando", "An incomprehensible alien with an assault weapon.", concussionGrenade);
 	Monster spaceKraken = new Monster(150, tentacles, "Space Kraken", "A giant, anomalous squid.", healthKit);
@@ -139,6 +140,9 @@ public class MainGUI extends Application {
 	
 	//Instantiate all puzzles
 	ECellPuzzle eCellPuzzle = new ECellPuzzle(energyCell);
+	ECellPuzzle eCellPuzzle1 = new ECellPuzzle(energyCell);
+	ECellPuzzle eCellPuzzle2 = new ECellPuzzle(energyCell);
+	ECellPuzzle eCellPuzzle3 = new ECellPuzzle(energyCell);
 	Puzzle communicationPuzzle = new Puzzle("Communications Puzzle","A frog is at the bottom of a 30 meter well. "
 			+ "Each day he summons enough energy for one 3 meter leap up the well. Exhausted, "
 			+ "he then hangs there for the rest of the day. At night, while he is asleep, "
@@ -214,7 +218,8 @@ public class MainGUI extends Application {
 	Label puzzleName = new Label();
 	
 	Text playerHealthMain = new Text();
-	
+	Text playerWeaponHeader = new Text("Equipped Weapon");
+	Text playerWeaponName = new Text();
 	
 	Text roomItems = new Text();
 	Text playerItems= new Text();
@@ -294,14 +299,17 @@ public class MainGUI extends Application {
 			+ "\nnow you’re walking into the ship which will take you to an entirely unknown planet.  One of the many doctors comes up and begins fitting you with "
 			+ "\nwires and monitors that will keep your body alive during the journey. They tell you not to worry it’ll just feel like you’re going to sleep and when "
 			+ "\nyou wake up you’ll be somewhere new. A nurse comes over and with the doctor the two get you situated in the pod and begin hooking up wires."
-			+ "\n\n'Are you ready?', the doctor asks. "
-			+ "\n\nYou nod, too nervous to speak. "
+			+ "\n'Are you ready?', the doctor asks. "
+			+ "\nYou nod, too nervous to speak. "
 			+ "\nThe doctor smiles lightly and presses some buttons, the world begins to grey and you let your eyes slide "
 			+ "\nclosed secure in the knowledge when you wake you’ll be at a new planet. "
-			+ "\n\nLevel 1 goal: open the command center "
+			+ "\nObjectives"
+			+ "\nLevel 1 goal: open the command center "
 			+ "\nLevel 2 goal: power up the ship's AI "
 			+ "\nLevel 3 goal: power up the engine room "
-			+ "\nLevel 4 goal (final): power up the navigation then return to the command center to fly off ");
+			+ "\nLevel 4 goal (final): power up the navigation then return to the command center to fly off "
+			+ "\nYou can only carry one of each item! BE CAREFUL!"
+			+ "\n");
 
 	File cwdFile = new File (".");
 	String cwd = cwdFile.getAbsolutePath();
@@ -394,7 +402,7 @@ public class MainGUI extends Application {
         playerHealthMain.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
         roomInfoPane.setAlignment(Pos.CENTER);
         roomInfoPane.setPadding(new Insets(10,10,10,10));
-        roomInfoPane.getChildren().addAll(playerHealthHeader, playerHealthMain, monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
+        roomInfoPane.getChildren().addAll(playerHealthHeader, playerHealthMain, playerWeaponHeader, playerWeaponName, monsterPaneHeader, monsterPaneMonster, startFightBtn, puzzlePaneHeader, puzzlePanePuzzle, startPuzzleBtn);
         
         
         //FIGHT INTERFACE
@@ -657,6 +665,7 @@ public class MainGUI extends Application {
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		playerHealthMain.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
+		playerWeaponName.setText(mainPlayer.getWeapon().getItemName() + " : " + mainPlayer.getWeapon().getWeaponDamage());
 		
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
@@ -748,9 +757,9 @@ public class MainGUI extends Application {
 		
 		rooms.get(6).setPuzzle(eCellPuzzle);
 		rooms.get(9).setPuzzle(magicSquarePuzzle);
-		rooms.get(10).setPuzzle(eCellPuzzle);
-		rooms.get(12).setPuzzle(eCellPuzzle);
-		rooms.get(20).setPuzzle(eCellPuzzle);
+		rooms.get(10).setPuzzle(eCellPuzzle1);
+		rooms.get(12).setPuzzle(eCellPuzzle3);
+		rooms.get(20).setPuzzle(eCellPuzzle2);
 		rooms.get(22).setPuzzle(brothersPuzzle);
 		rooms.get(27).setPuzzle(wolvesPuzzle);
 		
