@@ -232,10 +232,10 @@ public class MainGUI extends Application {
 	private Button returnBtn = new Button("Return");
 	
 	//DIRECTION BUTTONS
-	private Button northBtn = new Button("north");
-	private Button southBtn = new Button("south");
-	private Button eastBtn = new Button("east");
-	private Button westBtn = new Button("west");
+	private Button northBtn = new Button("North");
+	private Button southBtn = new Button("South");
+	private Button eastBtn = new Button("East");
+	private Button westBtn = new Button("West");
 	
 	//MainMenuButtons
 			Button newGame = new Button("New Game");
@@ -320,6 +320,7 @@ public class MainGUI extends Application {
     	
     	theStage = primaryStage;
     	
+    	quit.setOnAction(e -> theStage.close());
         returnToMenu.setOnAction(e -> setMainMenu());
 
         startFightBtn.setOnAction(e -> setFightScene());
@@ -665,7 +666,7 @@ public class MainGUI extends Application {
 		mainPuzzle = mainPlayer.getRoomID().getPuzzle();
 		playerHealth.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
 		playerHealthMain.setText(mainPlayer.getHealth() + "/" + mainPlayer.getMaxHealth());
-		playerWeaponName.setText(mainPlayer.getWeapon().getItemName() + " : " + mainPlayer.getWeapon().getWeaponDamage());
+		playerWeaponName.setText(mainPlayer.getWeapon().getItemName() + " : " + mainPlayer.getWeapon().getWeaponDamage() + "\n");
 		
 
 		obPlayerInv = FXCollections.observableArrayList(mainPlayer.getSpriteInv().getItemList());
