@@ -105,7 +105,7 @@ public class MainGUI extends Application {
 	Weapon suctionHose = new Weapon("Suction Hose", "A weak suction hose", "Used to fight", 10);
 	Weapon largeDoor = new Weapon("A Large Door", "It's just a really big door", "Used to fight", 15);
 	Weapon sharkTeeth = new Weapon("Sharp teeth", "Very sharp teeth", "Used to fight", 20);
-	Weapon plasmaInducer = new Weapon("Plasma Inducer", "", "Used to fight", 25);
+	Weapon plasmaInducer = new Weapon("Plasma Inducer", "", "Used to fight", 40);
 	Weapon houndTail = new Weapon("Hound Tail", "", "Used to fight", 30);
 	Weapon disintegratorPistol = new Weapon("Disintegrator  Pistol", "", "Used to fight", 35);
 	Weapon cutlass = new Weapon("Cutlass", "", "Used to fight", 40);
@@ -146,16 +146,16 @@ public class MainGUI extends Application {
 	Puzzle communicationPuzzle = new Puzzle("Communications Puzzle","A frog is at the bottom of a 30 meter well. "
 			+ "Each day he summons enough energy for one 3 meter leap up the well. Exhausted, "
 			+ "he then hangs there for the rest of the day. At night, while he is asleep, "
-			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?  ","28 days", null);
+			+ "he slips 2 meters backwards. How many days does it take him to escape from the well?  ","28 days", healthKit);
 	MagicSquare magicSquarePuzzle = new MagicSquare(commandKey);
 	Puzzle wolvesPuzzle = new Puzzle("Wolves Puzzle","Six wolves catch six lambs in six minutes.  How many wolves "
-			+ "will be needed to catch sixty lambs in sixty minutes?","6", energyCell);
+			+ "will be needed to catch sixty lambs in sixty minutes?","6", healthKit);
 	Puzzle brothersPuzzle = new Puzzle("Brothers Puzzle","Brothers and sisters I have none but this man's "
 			+ "father is my father's son. Who is the man?","the man is my son", concussionGrenade);
-	Puzzle travelPuzzle = new Puzzle("Traveling Puzzle","What can travel around the world, while staying in a corner?","stamp", null);
-	Puzzle headPuzzle = new Puzzle("Head Puzzle","What has a head and a tail but no body?","a coin", null);
-	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", null);
-	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", null);
+	Puzzle travelPuzzle = new Puzzle("Traveling Puzzle","What can travel around the world, while staying in a corner?","stamp", concussionGrenade);
+	Puzzle headPuzzle = new Puzzle("Head Puzzle","What has a head and a tail but no body?","a coin", plasmaInducer);
+	Puzzle computerSystemPuzzle = new Puzzle("Computer System Puzzle","Who is the test for AI in a computer system named for?","turing", sharkTeeth);
+	Puzzle towelPuzzle = new Puzzle("Wetter Puzzle","What gets wetter and wetter the more it dries? ","A towel", flameThrower);
 	
 	Stage theStage;
 	
@@ -778,7 +778,7 @@ public class MainGUI extends Application {
 		rooms.get(23).setMonster(spaceKraken);
 		rooms.get(25).setMonster(alienCommando);
 		rooms.get(30).setMonster(littleGreenMan);
-		rooms.get(31).setMonster(cyborgPirate);
+		rooms.get(31).setMonster(cyborgPirate1);
 		
 		//set keys
 		rooms.get(0).getRoomInv().addItem(redKey);
@@ -789,13 +789,20 @@ public class MainGUI extends Application {
 		rooms.get(1).getRoomInv().addItem(leadPipe);
 		rooms.get(15).getRoomInv().addItem(disintegratorPistol);
 		
+		rooms.get(2).setPuzzle(computerSystemPuzzle);
+		rooms.get(4).setPuzzle(travelPuzzle);
 		rooms.get(6).setPuzzle(eCellPuzzle);
 		rooms.get(9).setPuzzle(magicSquarePuzzle);
 		rooms.get(10).setPuzzle(eCellPuzzle1);
 		rooms.get(12).setPuzzle(eCellPuzzle3);
+		rooms.get(15).setPuzzle(headPuzzle);
 		rooms.get(20).setPuzzle(eCellPuzzle2);
+		rooms.get(21).setPuzzle(towelPuzzle);
 		rooms.get(22).setPuzzle(brothersPuzzle);
+		rooms.get(25).setPuzzle(mainPuzzle);
 		rooms.get(27).setPuzzle(wolvesPuzzle);
+		rooms.get(30).setPuzzle(communicationPuzzle);
+		
 		
 		
 		myMap = new HashMap<Room, Door[]>()
